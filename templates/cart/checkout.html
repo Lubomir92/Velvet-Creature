@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="checkout-page">
+
+    <h1 class="section-title">Secure Checkout</h1>
+
+    <div class="checkout-layout">
+
+        <!-- LEFT -->
+        <div class="checkout-box">
+
+            <h2>Order summary</h2>
+
+            <p class="big-total">€{{ total }}</p>
+
+            <div style="margin-top:20px;color:#888;">
+                <p>✔ Secure Stripe payment</p>
+                <p>✔ Instant order confirmation</p>
+                <p>✔ Encrypted checkout</p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="checkout-payment">
+
+            <h2>Payment</h2>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <button class="btn-primary full">
+                    Pay securely with card
+                </button>
+
+            </form>
+
+            <p style="margin-top:15px;color:#777;font-size:13px;">
+                You will be redirected to Stripe secure payment page.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

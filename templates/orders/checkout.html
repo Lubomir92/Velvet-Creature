@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="checkout-page">
+
+    <h1 class="section-title">Secure Checkout</h1>
+
+    <div class="checkout-layout">
+
+        <!-- LEFT -->
+        <div class="checkout-items">
+
+            <div class="checkout-card">
+                <h2>Total</h2>
+                <h1 class="gold">€{{ total }}</h1>
+            </div>
+
+            <div class="trust-box">
+                <p>🔒 Secure payment via Stripe</p>
+                <p>⚡ Instant processing</p>
+                <p>📦 Fast shipping worldwide</p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="checkout-summary">
+
+            <h2>Payment</h2>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <button type="submit" class="btn-primary full">
+                    Pay securely 💳
+                </button>
+            </form>
+
+            <p class="small-text">
+                Your payment is encrypted and safe.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

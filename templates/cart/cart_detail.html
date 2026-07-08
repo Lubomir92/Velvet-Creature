@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block title %}
+Cart
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="cart-page">
+
+
+<h1 class="section-title">
+    Your Cart
+</h1>
+
+
+
+{% if cart_items %}
+
+
+
+<div class="cart-layout">
+
+
+
+<div class="cart-items">
+
+
+
+{% for item in cart_items %}
+
+
+
+<div class="cart-card">
+
+
+
+<div class="cart-info">
+
+
+<h3>
+{{ item.product.name }}
+</h3>
+
+
+<p class="muted">
+
+Unit price:
+€{{ item.product.price }}
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="cart-controls">
+
+
+
+<button type="button"
+class="qty-btn"
+onclick="changeQty({{ item.product.id }}, 'decrease')">
+
+−
+
+</button>
+
+
+
+
+<span class="qty-number">
+
+{{ item.quantity }}
+
+</span>
+
+
+
+
+
+<button type="button"
+class="qty-btn"
+onclick="changeQty({{ item.product.id }}, 'increase')">
+
++
+
+</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+<div class="price">
+
+€{{ item.total_price }}
+
+</div>
+
+
+
+
+
+
+<button
+type="button"
+class="remove-btn"
+onclick="removeItem({{ item.product.id }})">
+
+✕
+
+</button>
+
+
+
+
+</div>
+
+
+
+
+{% endfor %}
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="cart-summary">
+
+
+<h2>
+Summary
+</h2>
+
+
+
+<div class="summary-row">
+
+
+<span>
+Total
+</span>
+
+
+<strong>
+
+€{{ cart_total }}
+
+</strong>
+
+
+</div>
+
+
+
+
+
+<a href="{% url 'checkout' %}"
+class="btn-primary full">
+
+Proceed to Checkout →
+
+</a>
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+{% else %}
+
+
+
+<div class="empty-cart">
+
+<h2>
+Your cart is empty
+</h2>
+
+<p>
+Add something to start shopping.
+</p>
+
+
+</div>
+
+
+
+{% endif %}
+
+
+
+</div>
+
+
+{% endblock %}

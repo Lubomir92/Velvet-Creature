@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+
+<div class="product-page">
+
+    <div class="product-container">
+
+        <!-- IMAGE (SAFE VERSION) -->
+        <div class="product-image">
+
+            {% if product.image %}
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            {% else %}
+                <div class="no-image">
+                    No image available
+                </div>
+            {% endif %}
+
+        </div>
+
+        <!-- INFO -->
+        <div class="product-info">
+
+            <span class="product-subtitle">
+                Velvet Creature Collection
+            </span>
+
+            <h1>{{ product.name }}</h1>
+
+            <p class="price">
+                €{{ product.price }}
+            </p>
+
+            <p class="description">
+                {{ product.description }}
+            </p>
+
+            <div class="product-actions">
+
+                <button
+    type="button"
+    class="btn-primary"
+    onclick="addToCart({{ product.id }}); return false;">
+                    Add to cart 🛒
+                </button>
+
+                <a href="{% url 'shop' %}" class="btn-secondary">
+                    ← Back to collection
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

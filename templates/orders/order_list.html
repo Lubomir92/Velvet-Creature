@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}My Orders{% endblock %}
+
+{% block content %}
+
+<div class="orders-page">
+
+    <h1 style="color:#d4af37; text-align:center;">My Orders</h1>
+
+    {% if orders %}
+
+        <div class="orders-container">
+
+            {% for order in orders %}
+
+            <div class="order-card">
+
+                <h3>Order #{{ order.id }}</h3>
+
+                <p>Date: {{ order.created }}</p>
+
+                <p>Total: <strong>{{ order.total_price }} €</strong></p>
+
+                <hr>
+
+                <h4>Items:</h4>
+
+                {% for item in order.items.all %}
+                    <p>
+                        {{ item.product.name }} × {{ item.quantity }} 
+                        ({{ item.price }} €)
+                    </p>
+                {% endfor %}
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <p style="text-align:center; color:#aaa;">
+            You have no orders yet.
+        </p>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

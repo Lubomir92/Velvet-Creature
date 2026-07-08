@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Velvet Creature{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="hero-subtitle">
+            {% trans "Luxury 3D Printed Collectibles" %}
+        </span>
+
+        <h1>Velvet Creature</h1>
+
+        <p>
+            {% trans "Enter a world where gothic elegance meets handcrafted 3D design. Each creation is sculpted with precision, darkness and imagination." %}
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{% url 'shop' %}" class="btn">
+                {% trans "Shop" %}
+            </a>
+
+            <a href="#new" class="btn secondary">
+                {% trans "New Arrivals" %}
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY SECTION -->
+<section class="why">
+
+    <h2 class="section-title">
+        {% trans "Why Velvet Creature?" %}
+    </h2>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <h3>{% trans "3D Printed" %}</h3>
+            <p>{% trans "Precision-crafted models with high-end detail and texture." %}</p>
+        </div>
+
+        <div class="why-card">
+            <h3>{% trans "Hand Finished" %}</h3>
+            <p>{% trans "Each piece is refined manually for premium quality." %}</p>
+        </div>
+
+        <div class="why-card">
+            <h3>{% trans "Dark Aesthetic" %}</h3>
+            <p>{% trans "Inspired by gothic art, fantasy worlds and cinematic design." %}</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURED -->
+<section id="new">
+
+    <h2 class="section-title">
+        {% trans "New Arrivals" %}
+    </h2>
+
+    <div class="featured-grid">
+
+        {% for product in featured_products %}
+
+        <div class="featured-card">
+
+            <div class="product-image-wrapper">
+
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% endif %}
+
+                {% if product.stock > 0 %}
+                    <span class="stock-badge">{% trans "In Stock" %}</span>
+                {% else %}
+                    <span class="stock-badge sold">{% trans "Sold Out" %}</span>
+                {% endif %}
+
+            </div>
+
+            <h3>{{ product.name }}</h3>
+
+            <p class="price">{{ product.price }} €</p>
+
+            <div class="product-buttons">
+
+                <a href="{% url 'product_detail' product.id %}" class="btn">
+                    {% trans "Detail" %}
+                </a>
+
+                {% if product.stock > 0 %}
+<button
+    type="button"
+    class="btn secondary"
+    onclick="addToCart({{ product.id }}); return false;">
+    {% trans "Add to cart" %}
+</button>
+{% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+
+    <div class="quote-box">
+
+        <p>
+            {% trans "Every creature begins as an idea — shaped by darkness, refined by imagination." %}
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}

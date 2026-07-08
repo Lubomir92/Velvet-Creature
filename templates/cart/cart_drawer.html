@@ -1,0 +1,138 @@
+<div class="drawer-header">
+
+    <h3>
+        Your Cart 
+        (<span class="drawer-count">{{ cart_count }}</span>)
+    </h3>
+
+
+    <button type="button" onclick="closeCart()">
+        ✕
+    </button>
+
+</div>
+
+
+
+<div class="drawer-content">
+
+
+{% for item in cart_items %}
+
+
+<div class="drawer-item">
+
+
+    <!-- PRODUCT INFO -->
+
+    <div class="drawer-info">
+
+
+        <h4>
+            {{ item.product.name }}
+        </h4>
+
+
+        <p class="drawer-price">
+            €{{ item.total_price }}
+        </p>
+
+
+
+        <div class="drawer-controls">
+
+
+            <button type="button"
+            onclick="changeQty({{ item.product.id }}, 'decrease')">
+                −
+            </button>
+
+
+
+            <span class="drawer-qty">
+                {{ item.quantity }}
+            </span>
+
+
+
+            <button type="button"
+            onclick="changeQty({{ item.product.id }}, 'increase')">
+                +
+            </button>
+
+
+
+            <button type="button"
+            class="drawer-remove"
+            onclick="removeItem({{ item.product.id }})">
+                ✕
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+{% empty %}
+
+
+<div class="drawer-empty">
+
+    Your cart is empty
+
+</div>
+
+
+{% endfor %}
+
+
+</div>
+
+
+
+
+
+<div class="drawer-footer">
+
+
+    <div class="drawer-total">
+
+
+        Total:
+
+        <strong>
+            €{{ cart_total }}
+        </strong>
+
+
+    </div>
+
+
+
+
+    <a href="{% url 'cart_detail' %}"
+       class="drawer-btn">
+
+        View Cart →
+
+    </a>
+
+
+
+
+    <a href="{% url 'checkout' %}"
+       class="drawer-btn gold">
+
+        Checkout →
+
+    </a>
+
+
+</div>

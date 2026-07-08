@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Success{% endblock %}
+
+{% block content %}
+
+<div class="success-page">
+
+    <div class="success-box">
+
+        <h1>Payment successful 🎉</h1>
+
+        <p>Order #{{ order.id }} was paid.</p>
+
+        <a href="{% url 'shop' %}" class="btn">
+            Continue shopping
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

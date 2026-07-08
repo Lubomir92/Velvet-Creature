@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<section class="shop-page">
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+
+        <div>
+            {% if product.image %}
+                <img src="{{ product.image.url }}" style="width:100%;border-radius:12px;">
+            {% endif %}
+        </div>
+
+        <div>
+
+            <h1 style="color:#d4af37;">{{ product.name }}</h1>
+
+            <p style="margin:15px 0;">
+                {{ product.description }}
+            </p>
+
+            <h2 style="color:#d4af37;">
+                {{ product.price }} €
+            </h2>
+
+            {% if product.stock > 0 %}
+                <p style="color:lightgreen;">In Stock</p>
+            {% else %}
+                <p style="color:red;">Sold Out</p>
+            {% endif %}
+
+            <br>
+
+            {% if product.stock > 0 %}
+           
+<button
+    type="button"
+    class="btn secondary"
+    onclick="addToCart({{ product.id }}); return false;">
+    Add to cart
+</button>
+{% endif %}
+            
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

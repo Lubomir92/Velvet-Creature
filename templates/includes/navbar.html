@@ -1,0 +1,61 @@
+{% load i18n %}
+
+<nav class="navbar" id="navbar">
+
+    <!-- LOGO -->
+    <a href="{% url 'home' %}" class="logo">
+        Velvet Creature
+    </a>
+
+    <!-- MENU -->
+    <div class="menu">
+        <a href="{% url 'home' %}">{% trans "Home" %}</a>
+        <a href="{% url 'shop' %}">{% trans "Shop" %}</a>
+        <a href="#">{% trans "About" %}</a>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="icons">
+
+        <!-- CART (OPENS DRAWER + fallback page) -->
+       <div class="mini-cart">
+
+    <a href="#"
+       class="cart-icon"
+       onclick="openCart(); return false;">
+        🛒
+    </a>
+
+    <span class="cart-count">
+        {{ cart_count }}
+    </span>
+
+</div>
+
+        <!-- LANGUAGE SWITCH -->
+        <form action="{% url 'set_language' %}" method="post" class="lang-switch">
+            {% csrf_token %}
+
+            <input type="hidden" name="next" value="{{ request.get_full_path }}">
+
+            <select name="language" onchange="this.form.submit()">
+
+                <option value="en" {% if LANGUAGE_CODE == "en" %}selected{% endif %}>
+                    🇬🇧 English
+                </option>
+
+                <option value="fr" {% if LANGUAGE_CODE == "fr" %}selected{% endif %}>
+                    🇫🇷 Français
+                </option>
+
+                <option value="sk" {% if LANGUAGE_CODE == "sk" %}selected{% endif %}>
+                    🇸🇰 Slovenčina
+                </option>
+
+            </select>
+
+        </form>
+
+    </div>
+
+</nav>

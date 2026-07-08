@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cart</title>
+</head>
+
+<body style="background:#0d0d0d;color:#f0ece5;font-family:Arial;">
+
+<h1 style="color:#d4af37;text-align:center;">Your Cart</h1>
+
+<div style="padding:40px;">
+
+    {% for product in products %}
+        <div style="background:#151515;padding:20px;margin-bottom:10px;">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.qty }} x {{ product.price }} €</p>
+            <p style="color:#d4af37;">
+                {{ product.total_price }} €
+            </p>
+        </div>
+    {% empty %}
+        <p>Cart is empty</p>
+    {% endfor %}
+
+    <hr>
+
+    <h2>Total: {{ total }} €</h2>
+
+</div>
+
+</body>
+</html>

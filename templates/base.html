@@ -1,0 +1,384 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+
+    <title>
+        {% block title %}
+        Velvet Creature
+        {% endblock %}
+    </title>
+
+
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+</head>
+
+
+<body>
+
+
+{% include "includes/navbar.html" %}
+
+
+
+
+<main class="container">
+
+    {% block content %}
+
+    {% endblock %}
+
+</main>
+
+
+
+
+
+<!-- ================= CART DRAWER ================= -->
+
+
+<div id="drawer-overlay"
+     class="drawer-overlay"
+     onclick="closeCart()">
+</div>
+
+
+
+
+<div id="cart-drawer"
+     class="cart-drawer">
+
+
+    {% include "cart/cart_drawer.html" %}
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+
+<script>
+
+
+console.log("CART SYSTEM LOADED");
+
+
+
+
+
+// =========================
+// OPEN CART
+// =========================
+
+
+window.openCart = function(){
+
+
+    document
+    .getElementById("cart-drawer")
+    .classList.add("open");
+
+
+
+    document
+    .getElementById("drawer-overlay")
+    .classList.add("active");
+
+
+}
+
+
+
+
+
+
+
+// =========================
+// CLOSE CART
+// =========================
+
+
+window.closeCart = function(){
+
+
+    document
+    .getElementById("cart-drawer")
+    .classList.remove("open");
+
+
+
+    document
+    .getElementById("drawer-overlay")
+    .classList.remove("active");
+
+
+}
+
+
+
+
+
+
+
+
+
+// =========================
+// ADD TO CART
+// =========================
+
+
+window.addToCart = function(id){
+
+
+fetch(`/cart/add/${id}/`)
+
+
+.then(response => response.json())
+
+
+.then(data => {
+
+
+    if(!data.success)
+        return;
+
+
+
+    updateBadge(data.cart_count);
+
+
+    refreshDrawer();
+
+
+    openCart();
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// =========================
+// CHANGE QUANTITY
+// =========================
+
+
+window.changeQty = function(id, action){
+
+
+
+fetch(`/cart/${action}/${id}/`)
+
+
+.then(response => response.json())
+
+
+.then(data => {
+
+
+
+    if(!data.success)
+        return;
+
+
+
+    updateBadge(data.cart_count);
+
+
+
+    refreshDrawer();
+
+
+
+    // ak sme na Your Cart stránke
+    if(document.querySelector(".cart-page")){
+
+        location.reload();
+
+    }
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// =========================
+// REMOVE ITEM
+// =========================
+
+
+window.removeItem = function(id){
+
+
+
+fetch(`/cart/remove/${id}/`)
+
+
+.then(response => response.json())
+
+
+.then(data => {
+
+
+
+    if(!data.success)
+        return;
+
+
+
+    updateBadge(data.cart_count);
+
+
+
+    refreshDrawer();
+
+
+
+
+    // ak sme na Your Cart stránke
+
+    if(document.querySelector(".cart-page")){
+
+        location.reload();
+
+    }
+
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// =========================
+// UPDATE BADGE
+// =========================
+
+
+function updateBadge(count){
+
+
+
+document
+.querySelectorAll(
+    ".cart-count, .drawer-count"
+)
+
+.forEach(element => {
+
+
+    element.innerText = count;
+
+
+});
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// =========================
+// REFRESH DRAWER
+// =========================
+
+
+function refreshDrawer(){
+
+
+
+fetch("/cart/drawer/")
+
+
+.then(response => response.text())
+
+
+.then(html => {
+
+
+
+document
+.getElementById("cart-drawer")
+.innerHTML = html;
+
+
+
+});
+
+
+
+}
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>

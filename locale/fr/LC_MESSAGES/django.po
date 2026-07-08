@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Shop"
+msgstr "Boutique"
+
+msgid "About"
+msgstr "À propos"
+
+msgid "Payment Cancelled"
+msgstr "Paiement annulé"
+
+msgid "You can try again whenever you're ready."
+msgstr "Vous pouvez réessayer quand vous êtes prêt."
+
+msgid "Back to Checkout"
+msgstr "Retour au paiement"
+
+msgid "Luxury 3D Printed Collectibles"
+msgstr "Objets de collection imprimés en 3D de luxe"
+
+msgid "Enter a world where gothic elegance meets handcrafted 3D design. Each creation is sculpted with precision, darkness and imagination."
+msgstr "Entrez dans un monde où l’élégance gothique rencontre le design 3D artisanal. Chaque création est sculptée avec précision, obscurité et imagination."
+
+msgid "New Arrivals"
+msgstr "Nouveautés"
+
+msgid "Why Velvet Creature?"
+msgstr "Pourquoi Velvet Creature ?"
+
+msgid "3D Printed"
+msgstr "Imprimé en 3D"
+
+msgid "Precision-crafted models with high-end detail and texture."
+msgstr "Modèles fabriqués avec précision avec des détails et textures haut de gamme."
+
+msgid "Hand Finished"
+msgstr "Finition artisanale"
+
+msgid "Each piece is refined manually for premium quality."
+msgstr "Chaque pièce est raffinée manuellement pour une qualité premium."
+
+msgid "Dark Aesthetic"
+msgstr "Esthétique sombre"
+
+msgid "Inspired by gothic art, fantasy worlds and cinematic design."
+msgstr "Inspiré par l’art gothique, les mondes fantastiques et le design cinématographique."
+
+msgid "In Stock"
+msgstr "En stock"
+
+msgid "Sold Out"
+msgstr "Épuisé"
+
+msgid "Detail"
+msgstr "Détail"
+
+msgid "Add to cart"
+msgstr "Ajouter au panier"
+
+msgid "Every creature begins as an idea — shaped by darkness, refined by imagination."
+msgstr "Chaque créature commence comme une idée — façonnée par l’obscurité et raffinée par l’imagination."

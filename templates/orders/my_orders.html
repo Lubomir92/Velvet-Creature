@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Order Detail{% endblock %}
+
+{% block content %}
+
+<div class="container" style="max-width:900px; margin:0 auto; padding:40px 20px;">
+
+    <!-- HEADER -->
+    <div style="margin-bottom:30px;">
+        <h1 style="color:#d4af37; margin-bottom:5px;">
+            Order #{{ order.id }}
+        </h1>
+
+        <p style="color:#aaa; margin:0;">
+            Date: {{ order.created }}
+        </p>
+    </div>
+
+    <hr style="border:1px solid #2b2b2b; margin:20px 0;">
+
+    <!-- ITEMS -->
+    <h3 style="color:#fff; margin-bottom:20px;">Items</h3>
+
+    {% if order.items.all %}
+
+        {% for item in order.items.all %}
+
+            <div style="
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                padding:15px 0;
+                border-bottom:1px solid #1f1f1f;
+            ">
+
+                <!-- LEFT -->
+                <div>
+                    <strong style="color:#fff;">
+                        {{ item.product.name }}
+                    </strong>
+
+                    <div style="color:#aaa; font-size:13px;">
+                        Quantity: {{ item.quantity }}
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div style="color:#d4af37; font-weight:bold;">
+                    {{ item.price }} €
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p style="color:#aaa;">No items in this order.</p>
+
+    {% endif %}
+
+    <!-- TOTAL -->
+    <div style="
+        margin-top:25px;
+        display:flex;
+        justify-content:space-between;
+        font-size:18px;
+        color:#fff;
+    ">
+
+        <span>Total:</span>
+        <strong style="color:#d4af37;">
+            {{ order.total_price }} €
+        </strong>
+
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div style="margin-top:30px;">
+        <a href="{% url 'my_orders' %}" style="
+            display:inline-block;
+            padding:10px 18px;
+            border:1px solid #444;
+            color:#aaa;
+            text-decoration:none;
+            border-radius:8px;
+        ">
+            ← Back to Orders
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<section class="shop-page">
+
+    <div class="shop-header">
+        <h1 class="shop-title">{% trans "Shop" %}</h1>
+        <p class="shop-subtitle">Velvet Creature Collection</p>
+    </div>
+
+    <div class="shop-grid">
+
+        {% for product in products %}
+
+        <div class="shop-card">
+
+            <!-- IMAGE -->
+            <div class="shop-image">
+
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                    <div class="no-image">No image</div>
+                {% endif %}
+
+                <!-- BADGE -->
+                {% if product.stock > 0 %}
+                    <span class="shop-badge">In Stock</span>
+                {% else %}
+                    <span class="shop-badge sold">Sold Out</span>
+                {% endif %}
+
+            </div>
+
+            <!-- CONTENT -->
+            <div class="shop-card-content">
+
+                <h3>{{ product.name }}</h3>
+
+                <div class="price">
+                    €{{ product.price }}
+                </div>
+
+                <div class="shop-actions">
+
+                    <a href="{% url 'product_detail' product.id %}" class="btn">
+                        View details
+                    </a>
+
+                    {% if product.stock > 0 %}
+                    <button type="button"
+        class="btn secondary"
+        onclick="addToCart({{ product.id }}); return false;">
+    Add to cart
+</button>
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
