@@ -5,68 +5,176 @@
 
 <section class="shop-page">
 
+
     <div class="shop-header">
-        <h1 class="shop-title">{% trans "Shop" %}</h1>
-        <p class="shop-subtitle">Velvet Creature Collection</p>
+
+        <h1 class="shop-title">
+            {% trans "Shop" %}
+        </h1>
+
+        <p class="shop-subtitle">
+            Velvet Creature Collection
+        </p>
+
     </div>
+
+
 
     <div class="shop-grid">
 
+
         {% for product in products %}
+
 
         <div class="shop-card">
 
-            <!-- IMAGE -->
+
             <div class="shop-image">
 
+
                 {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+
+                    <img src="{{ product.image.url }}"
+                         alt="{{ product.name }}">
+
                 {% else %}
-                    <div class="no-image">No image</div>
+
+                    <div class="no-image">
+                        No image
+                    </div>
+
                 {% endif %}
 
-                <!-- BADGE -->
+
+
                 {% if product.stock > 0 %}
-                    <span class="shop-badge">In Stock</span>
+
+                    <span class="shop-badge">
+                        In Stock
+                    </span>
+
                 {% else %}
-                    <span class="shop-badge sold">Sold Out</span>
+
+                    <span class="shop-badge sold">
+                        Sold Out
+                    </span>
+
                 {% endif %}
+
 
             </div>
 
-            <!-- CONTENT -->
+
+
+
+
             <div class="shop-card-content">
 
-                <h3>{{ product.name }}</h3>
+
+                <h3>
+                    {{ product.name }}
+                </h3>
+
+
+
+                <!-- WISHLIST -->
+
+               <div class="wishlist-area">
+
+
+    {% if user.is_authenticated %}
+
+
+        <a href="{% url 'toggle_wishlist' product.id %}"
+           class="wishlist-btn">
+
+
+            {% if product.id in wishlist_products %}
+
+                ❤️
+
+            {% else %}
+
+                ♡
+
+            {% endif %}
+
+
+        </a>
+
+
+    {% else %}
+
+
+        <a href="{% url 'login' %}"
+           class="wishlist-btn">
+
+            ♡
+
+        </a>
+
+
+    {% endif %}
+
+
+</div>
+
+
+
 
                 <div class="price">
+
                     €{{ product.price }}
+
                 </div>
+
+
+
 
                 <div class="shop-actions">
 
-                    <a href="{% url 'product_detail' product.id %}" class="btn">
+
+                    <a href="{% url 'product_detail' product.id %}"
+                       class="btn">
+
                         View details
+
                     </a>
 
+
+
+
                     {% if product.stock > 0 %}
+
                     <button type="button"
-        class="btn secondary"
-        onclick="addToCart({{ product.id }}); return false;">
-    Add to cart
-</button>
+                            class="btn secondary"
+                            onclick="addToCart({{ product.id }}); return false;">
+
+                        Add to cart
+
+                    </button>
+
                     {% endif %}
+
+
 
                 </div>
 
+
+
             </div>
+
 
         </div>
 
+
         {% endfor %}
+
 
     </div>
 
+
 </section>
+
 
 {% endblock %}

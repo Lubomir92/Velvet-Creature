@@ -18,7 +18,7 @@
         {% endblock %}
     </title>
 
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet"
           href="{% static 'css/style.css' %}">
 
@@ -193,7 +193,6 @@ fetch(`/cart/add/${id}/`)
 window.changeQty = function(id, action){
 
 
-
 fetch(`/cart/${action}/${id}/`)
 
 
@@ -204,8 +203,13 @@ fetch(`/cart/${action}/${id}/`)
 
 
 
-    if(!data.success)
+    if(!data.success){
+
+        alert(data.message);
+
         return;
+
+    }
 
 
 
@@ -229,9 +233,7 @@ fetch(`/cart/${action}/${id}/`)
 });
 
 
-
 }
-
 
 
 

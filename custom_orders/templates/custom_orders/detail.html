@@ -1,0 +1,541 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+
+{% block title %}
+
+{% trans "Custom Order" %} #{{ custom_order.id }}
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+
+
+<section class="order-detail-page">
+
+
+
+<div class="card">
+
+
+
+<h1 style="color:#d4af37;">
+
+🖨 {% trans "Custom Project" %} #{{ custom_order.id }}
+
+</h1>
+
+
+
+<p>
+
+{% trans "Created" %}:
+
+<strong>
+
+{{ custom_order.created|date:"d M Y" }}
+
+</strong>
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- STATUS -->
+
+
+
+<div class="card">
+
+
+<h3>
+
+{% trans "Project Status" %}
+
+</h3>
+
+
+
+<div class="order-progress">
+
+
+
+<div class="step active">
+
+✓
+
+<span>
+{% trans "Request sent" %}
+</span>
+
+</div>
+
+
+
+<div class="line"></div>
+
+
+
+<div class="step 
+{% if custom_order.status != 'new' %}active{% endif %}">
+
+✓
+
+<span>
+{% trans "Review" %}
+</span>
+
+</div>
+
+
+
+<div class="line"></div>
+
+
+
+<div class="step 
+{% if custom_order.status == 'quote_sent' or custom_order.status == 'accepted' or custom_order.status == 'printing' or custom_order.status == 'finished' or custom_order.status == 'shipped' %}active{% endif %}">
+
+✓
+
+<span>
+{% trans "Quote sent" %}
+</span>
+
+</div>
+
+
+
+<div class="line"></div>
+
+
+
+<div class="step 
+{% if custom_order.status == 'finished' or custom_order.status == 'shipped' %}active{% endif %}">
+
+✓
+
+<span>
+{% trans "Finished" %}
+</span>
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- PROJECT DETAILS -->
+
+
+
+<div class="card">
+
+
+<h3>
+
+{% trans "Project Details" %}
+
+</h3>
+
+
+
+<p>
+
+{% trans "Service" %}:
+
+<strong>
+
+{{ custom_order.get_service_display }}
+
+</strong>
+
+</p>
+
+
+
+<p>
+
+{% trans "Material" %}:
+
+<strong>
+
+{{ custom_order.material }}
+
+</strong>
+
+</p>
+
+
+
+<p>
+
+{% trans "Color" %}:
+
+<strong>
+
+{{ custom_order.color|default:"-" }}
+
+</strong>
+
+</p>
+
+
+
+
+<p>
+
+{% trans "Quantity" %}:
+
+<strong>
+
+{{ custom_order.quantity }}
+
+</strong>
+
+</p>
+
+
+
+
+
+<p>
+
+{% trans "Size" %}:
+
+<strong>
+
+{{ custom_order.width }} ×
+
+{{ custom_order.height }} ×
+
+{{ custom_order.depth }}
+
+mm
+
+</strong>
+
+</p>
+
+
+
+
+<p>
+
+{% trans "Description" %}:
+
+</p>
+
+
+<p>
+
+{{ custom_order.description }}
+
+</p>
+
+<hr>
+
+
+<h3>
+
+{% trans "Engraving" %}
+
+</h3>
+
+
+
+<p>
+
+{% trans "Enabled" %}:
+
+<strong>
+
+{% if custom_order.engraving %}
+
+{% trans "Yes" %}
+
+{% else %}
+
+{% trans "No" %}
+
+{% endif %}
+
+</strong>
+
+</p>
+
+
+
+
+
+{% if custom_order.engraving %}
+
+
+
+<p>
+
+{% trans "Engraving type" %}:
+
+<strong>
+
+{{ custom_order.get_engraving_type_display }}
+
+</strong>
+
+</p>
+
+
+
+
+
+{% if custom_order.engraving_text %}
+
+
+<p>
+
+{% trans "Engraving text" %}:
+
+<strong>
+
+{{ custom_order.engraving_text }}
+
+</strong>
+
+</p>
+
+
+{% endif %}
+
+
+
+
+
+
+{% if custom_order.engraving_image %}
+
+
+<p>
+
+{% trans "Engraving image" %}
+
+</p>
+
+
+
+<img src="{{ custom_order.engraving_image.url }}"
+style="max-width:300px; border-radius:10px;">
+
+
+
+{% endif %}
+
+
+
+
+
+{% endif %}
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- FILES -->
+
+
+<div class="card">
+
+
+<h3>
+
+{% trans "Files" %}
+
+</h3>
+
+
+
+{% if custom_order.model_file %}
+
+
+<p>
+
+📁
+
+<a href="{{ custom_order.model_file.url }}">
+{% trans "Download 3D model" %}
+</a>
+
+</p>
+
+
+{% endif %}
+
+
+
+
+{% if custom_order.image %}
+
+
+<p>
+
+{% trans "Preview image" %}
+
+</p>
+
+
+<img src="{{ custom_order.image.url }}"
+style="max-width:300px; border-radius:10px;">
+
+
+{% endif %}
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- PRICE -->
+
+
+<div class="card">
+
+
+<h3>
+
+{% trans "Price"
+
+%}
+
+</h3>
+
+
+
+
+{% if custom_order.estimated_price %}
+
+
+<h2 style="color:#d4af37;">
+
+€
+
+{{ custom_order.estimated_price }}
+
+</h2>
+
+
+
+{% else %}
+
+
+
+<p>
+
+{% trans "Waiting for quote from our team." %}
+
+</p>
+
+
+
+{% endif %}
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ADMIN NOTE -->
+
+
+{% if custom_order.admin_note %}
+
+
+
+<div class="card">
+
+
+<h3>
+
+{% trans "Message from Velvet Creature" %}
+
+</h3>
+
+
+<p>
+
+{{ custom_order.admin_note }}
+
+</p>
+
+
+</div>
+
+
+
+{% endif %}
+
+
+
+
+
+<a href="{% url 'profile' %}"
+class="btn">
+
+
+← {% trans "Back to account" %}
+
+
+</a>
+
+
+
+
+</section>
+
+
+
+{% endblock %}

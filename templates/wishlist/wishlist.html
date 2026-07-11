@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+My Wishlist
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="wishlist-page">
+
+
+<h1 style="color:#d4af37;">
+❤️ My Wishlist
+</h1>
+
+
+
+{% for item in items %}
+
+
+<div class="card">
+
+
+<h3>
+{{ item.product.name }}
+</h3>
+
+
+<p>
+€{{ item.product.price }}
+</p>
+
+
+
+<a href="{% url 'shop' %}">
+View Product
+</a>
+
+
+
+<a href="{% url 'toggle_wishlist' item.product.id %}">
+Remove ❤️
+</a>
+
+
+</div>
+
+
+
+{% empty %}
+
+
+<p>
+Your wishlist is empty.
+</p>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+{% endblock %}

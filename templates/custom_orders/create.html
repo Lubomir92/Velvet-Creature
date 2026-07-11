@@ -1,0 +1,567 @@
+{% extends "base.html" %}
+
+{% block title %}
+Custom Order
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="how-it-works">
+
+
+    <h2>
+        How it works
+    </h2>
+
+
+    <div class="steps">
+
+
+        <div class="step-card">
+            <div class="step-number">1</div>
+
+            <h3>
+                Send your idea
+            </h3>
+
+            <p>
+                Describe your project and upload your 3D model or reference image.
+            </p>
+        </div>
+
+
+
+        <div class="step-card">
+            <div class="step-number">2</div>
+
+            <h3>
+                Project review
+            </h3>
+
+            <p>
+                We check your requirements, material and possibilities.
+            </p>
+        </div>
+
+
+
+        <div class="step-card">
+            <div class="step-number">3</div>
+
+            <h3>
+                Price estimation
+            </h3>
+
+            <p>
+                You receive a custom quote.
+            </p>
+        </div>
+
+
+
+        <div class="step-card">
+            <div class="step-number">4</div>
+
+            <h3>
+                Production
+            </h3>
+
+            <p>
+                Your creation goes into production.
+            </p>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<section class="custom-order-page">
+
+
+<div class="shop-header">
+
+
+<h1 class="shop-title">
+Custom 3D Print
+</h1>
+
+
+<p class="shop-subtitle">
+Bring your idea to life with custom 3D printing and engraving.
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="custom-order-card">
+
+
+
+<form method="POST"
+      enctype="multipart/form-data">
+
+
+{% csrf_token %}
+
+
+
+{% if form.errors %}
+
+<div class="form-errors">
+
+{{ form.errors }}
+
+</div>
+
+{% endif %}
+
+
+
+
+
+<!-- CUSTOMER -->
+
+<h3>
+Customer Information
+</h3>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+Name
+</label>
+
+{{ form.name }}
+
+</div>
+
+
+
+
+<div class="form-group">
+
+<label>
+Email
+</label>
+
+{{ form.email }}
+
+</div>
+
+
+
+
+<div class="form-group">
+
+<label>
+Phone
+</label>
+
+{{ form.phone }}
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- SERVICE -->
+
+
+<h3>
+Project Type
+</h3>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+Service
+</label>
+
+{{ form.service }}
+
+</div>
+
+
+
+
+<div class="form-group">
+
+<label>
+Material
+</label>
+
+{{ form.material }}
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="form-group full-width">
+
+
+<label>
+Description
+</label>
+
+
+{{ form.description }}
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ENGRAVING -->
+
+
+<div class="engraving-section"
+     id="engraving-fields">
+
+
+<h3>
+Engraving
+</h3>
+
+
+
+<div class="form-group">
+
+
+<label>
+Enable engraving
+</label>
+
+
+{{ form.engraving }}
+
+
+</div>
+
+
+
+
+<div class="form-grid">
+
+
+
+<div class="form-group">
+
+<label>
+Engraving type
+</label>
+
+{{ form.engraving_type }}
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Engraving text
+</label>
+
+{{ form.engraving_text }}
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<div class="form-group">
+
+
+<label>
+Engraving image / logo
+</label>
+
+
+{{ form.engraving_image }}
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- PRINTING -->
+
+
+<div id="printing-fields">
+
+
+
+<div class="form-grid">
+
+
+
+<div class="form-group">
+
+<label>
+Color
+</label>
+
+{{ form.color }}
+
+</div>
+
+
+
+
+<div class="form-group">
+
+<label>
+Quantity
+</label>
+
+{{ form.quantity }}
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<h3>
+Dimensions (mm)
+</h3>
+
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+Width
+</label>
+
+{{ form.width }}
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Height
+</label>
+
+{{ form.height }}
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+Depth
+</label>
+
+{{ form.depth }}
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<h3>
+Files
+</h3>
+
+
+
+
+<div class="form-group">
+
+<label>
+3D Model
+</label>
+
+{{ form.model_file }}
+
+</div>
+
+
+
+
+<div class="form-group">
+
+<label>
+Image
+</label>
+
+{{ form.image }}
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<button class="btn-primary">
+
+Send Request
+
+</button>
+
+
+
+
+</form>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    const service = document.getElementById("id_service");
+
+    const printing = document.getElementById("printing-fields");
+
+    const engraving = document.getElementById("engraving-fields");
+
+
+
+    function updateForm(){
+
+
+        const value = service.value;
+
+
+
+        if(value === "printing"){
+
+            printing.style.display = "block";
+            engraving.style.display = "none";
+
+        }
+
+
+        else if(value === "engraving"){
+
+
+            printing.style.display = "none";
+            engraving.style.display = "block";
+
+        }
+
+
+        else{
+
+
+            printing.style.display = "block";
+            engraving.style.display = "block";
+
+        }
+
+
+    }
+
+
+
+    updateForm();
+
+
+    service.addEventListener(
+        "change",
+        updateForm
+    );
+
+
+});
+
+
+</script>
+
+
+
+{% endblock %}

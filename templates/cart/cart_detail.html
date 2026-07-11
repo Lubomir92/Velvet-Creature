@@ -51,6 +51,25 @@ Unit price:
 €{{ item.product.price }}
 
 </p>
+<p class="muted">
+
+Available:
+{{ item.product.stock }} pcs
+
+</p>
+
+
+{% if item.quantity > item.product.stock %}
+
+<div class="stock-warning">
+
+⚠️ Not enough stock.
+Available only:
+{{ item.product.stock }}
+
+</div>
+
+{% endif %}
 
 
 </div>
@@ -86,12 +105,14 @@ onclick="changeQty({{ item.product.id }}, 'decrease')">
 
 <button type="button"
 class="qty-btn"
-onclick="changeQty({{ item.product.id }}, 'increase')">
+onclick="changeQty({{ item.product.id }}, 'increase')"
+{% if item.quantity >= item.product.stock %}
+disabled
+{% endif %}>
 
 +
 
 </button>
-
 
 
 
@@ -173,12 +194,29 @@ Total
 
 
 
+{% with stock_ok=True %}
+
+{% for item in cart_items %}
+
+{% if item.quantity > item.product.stock %}
+
+{% with stock_ok=False %}
+{% endwith %}
+
+{% endif %}
+
+{% endfor %}
+
+
 <a href="{% url 'checkout' %}"
 class="btn-primary full">
 
 Proceed to Checkout →
 
 </a>
+
+
+{% endwith %}
 
 
 

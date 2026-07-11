@@ -69,3 +69,29 @@ msgstr "Pridať do košíka"
 
 msgid "Every creature begins as an idea — shaped by darkness, refined by imagination."
 msgstr "Každé stvorenie začína ako myšlienka — tvarovaná temnotou a dotvorená predstavivosťou."
+
+msgid "Custom Order"
+msgstr "Zákazková tlač"
+
+msgid "My Account"
+msgstr "Môj účet"
+
+
+msgid "My Orders"
+msgstr "Moje objednávky"
+
+
+msgid "Wishlist"
+msgstr "Obľúbené"
+
+
+msgid "Logout"
+msgstr "Odhlásiť"
+
+
+msgid "Login"
+msgstr "Prihlásiť"
+
+
+msgid "Register"
+msgstr "Registrácia"

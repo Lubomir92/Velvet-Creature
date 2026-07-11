@@ -1,20 +1,295 @@
 {% extends "base.html" %}
 
+
+{% block title %}
+Order #{{ order.id }}
+{% endblock %}
+
+
+
 {% block content %}
 
-<h1>Order #{{ order.id }}</h1>
 
-<p>Status: {{ order.status }}</p>
-<p>Total: {{ order.total_price }} €</p>
+<div class="order-detail-page">
 
-<h3>Items:</h3>
+
+<h1 style="color:#d4af37;">
+    Order {{ order.order_number }}
+</h1>
+
+
+
+<!-- ORDER STATUS TRACKER -->
+
+<div class="card">
+
+
+<h3>
+    Order progress
+</h3>
+
+
+
+<div class="order-progress">
+
+
+
+<div class="step {% if order.status == 'pending' or order.status == 'paid' or order.status == 'shipped' or order.status == 'delivered' %}active{% endif %}">
+
+    ✓
+
+    <span>
+        Order created
+    </span>
+
+</div>
+
+
+
+
+<div class="line"></div>
+
+
+
+
+<div class="step {% if order.status == 'paid' or order.status == 'shipped' or order.status == 'delivered' %}active{% endif %}">
+
+    ✓
+
+    <span>
+        Paid
+    </span>
+
+</div>
+
+
+
+
+<div class="line"></div>
+
+
+
+
+<div class="step {% if order.status == 'shipped' or order.status == 'delivered' %}active{% endif %}">
+
+    ✓
+
+    <span>
+        Shipped
+    </span>
+
+</div>
+
+
+
+
+<div class="line"></div>
+
+
+
+
+<div class="step {% if order.status == 'delivered' %}active{% endif %}">
+
+    ✓
+
+    <span>
+        Delivered
+    </span>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- ORDER INFORMATION -->
+
+
+<div class="card">
+
+
+<h3>
+    Order information
+</h3>
+
+
+
+<p>
+    Current status:
+
+    <strong>
+        {{ order.get_status_display }}
+    </strong>
+
+</p>
+
+
+
+<p>
+    Total:
+
+    <strong>
+        €{{ order.total_price }}
+    </strong>
+
+</p>
+
+
+
+<p>
+    Date:
+    {{ order.created }}
+</p>
+
+
+
+</div>
+
+
+
+
+
+<!-- CUSTOMER -->
+
+
+<div class="card">
+
+
+<h3>
+    Customer details
+</h3>
+
+
+<p>
+    {{ order.first_name }}
+    {{ order.last_name }}
+</p>
+
+
+<p>
+    {{ order.email }}
+</p>
+
+
+<p>
+    {{ order.address }}
+</p>
+
+
+<p>
+    {{ order.city }}
+    {{ order.country }}
+</p>
+
+
+
+</div>
+
+
+
+
+
+<!-- ITEMS -->
+
+
+<div class="card">
+
+
+<h3>
+    Items
+</h3>
+
+
 
 {% for item in order.items.all %}
-    <div>
-        {{ item.product.name }} |
-        Qty: {{ item.quantity }} |
-        {{ item.get_total }} €
-    </div>
+
+
+
+<div style="margin-bottom:15px;">
+
+
+<strong>
+{{ item.product.name }}
+</strong>
+
+
+<br>
+
+
+Quantity:
+{{ item.quantity }}
+
+
+<br>
+
+
+Price:
+€{{ item.price }}
+
+
+<br>
+
+
+Total:
+€{{ item.get_total }}
+
+
+
+</div>
+
+
+
+{% empty %}
+
+
+<p>
+No items found.
+</p>
+
+
 {% endfor %}
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- BUTTONS -->
+
+
+<div style="margin-top:30px;">
+
+
+
+<a href="{% url 'invoice' order.id %}"
+class="btn">
+
+📄 Download Invoice
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
 
 {% endblock %}

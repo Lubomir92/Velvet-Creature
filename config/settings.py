@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-change-me'
@@ -28,6 +29,7 @@ INSTALLED_APPS = [
     'orders',
     'custom_orders',
     'accounts',
+    "wishlist",
 ]
 
 
@@ -174,7 +176,19 @@ STRIPE_WEBHOOK_SECRET = "whsec_013b34afc8aa6782df1fc00ab323a4a13955f763c4b4fd4b0
 # EMAIL
 # =========================================================
 
+
+
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+
+DEFAULT_FROM_EMAIL = (
+    "Velvet Creature <noreply@velvetcreature.com>"
+)
+
+
+DEFAULT_ADMIN_EMAIL = (
+    "tvoj_email@example.com"
+)
 
 
 # =========================================================

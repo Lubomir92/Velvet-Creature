@@ -93,4 +93,4 @@ class Product(models.Model):
     # STRING
     # ==========================================
     def __str__(self):
-        return self.namedm
+        return self.name

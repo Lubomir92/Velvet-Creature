@@ -29,6 +29,10 @@ urlpatterns += i18n_patterns(
     path("accounts/", include("accounts.urls")),
 
     path("custom/", include("custom_orders.urls")),
+    path(
+    "wishlist/",
+    include("wishlist.urls")
+),
 
 )
 

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+<div class="profile-page">
+
+
+<h1 style="color:#d4af37;">
+    My Orders
+</h1>
+
+
+
+{% for order in orders %}
+
+
+<div class="card" style="margin-bottom:15px;">
+
+
+<h3>
+    Order {{ order.order_number }}
+</h3>
+
+
+<p>
+Total: €{{ order.total_price }}
+</p>
+
+
+<p>
+Status: {{ order.status }}
+</p>
+
+
+<p style="color:#aaa;">
+{{ order.created }}
+</p>
+
+
+
+<a href="{% url 'order_detail' order.id %}"
+class="btn-primary">
+
+View details →
+
+</a>
+
+
+</div>
+
+
+
+{% empty %}
+
+
+<p>
+No orders yet.
+</p>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+{% endblock %}

@@ -121,20 +121,39 @@ def increase_qty(request, product_id):
 
     cart = request.session.get("cart", {})
 
-
     product_id = str(product_id)
 
 
     if product_id in cart:
 
-        cart[product_id] += 1
+        product = get_object_or_404(
+            Product,
+            id=product_id
+        )
+
+
+        if cart[product_id] < product.stock:
+
+            cart[product_id] += 1
+
+
+        else:
+
+            return JsonResponse({
+
+                "success": False,
+
+                "message": f"Only {product.stock} pieces available",
+
+                "cart_count": sum(cart.values())
+
+            })
 
 
 
     request.session["cart"] = cart
 
     request.session.modified = True
-
 
 
     data = get_cart_data(request)
@@ -250,29 +269,6 @@ def remove_from_cart(request, product_id):
 # CHECKOUT
 # ==================================================
 
-@login_required
-def checkout(request):
-
-    data = get_cart_data(request)
-
-
-    if not data["cart_items"]:
-
-        return redirect("cart_detail")
-
-
-
-    return render(
-        request,
-        "cart/checkout.html",
-        {
-
-            "items": data["cart_items"],
-
-            "total": data["cart_total"]
-
-        }
-    )
 
 
 

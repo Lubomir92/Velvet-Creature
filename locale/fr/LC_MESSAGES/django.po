@@ -69,3 +69,24 @@ msgstr "Ajouter au panier"
 
 msgid "Every creature begins as an idea — shaped by darkness, refined by imagination."
 msgstr "Chaque créature commence comme une idée — façonnée par l’obscurité et raffinée par l’imagination."
+
+msgid "Custom Order"
+msgstr "Commande personnalisée"
+
+msgid "My Account"
+msgstr "Mon compte"
+
+msgid "My Orders"
+msgstr "Mes commandes"
+
+msgid "Wishlist"
+msgstr "Liste de souhaits"
+
+msgid "Logout"
+msgstr "Déconnexion"
+
+msgid "Login"
+msgstr "Connexion"
+
+msgid "Register"
+msgstr "Créer un compte"
