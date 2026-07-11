@@ -1,97 +1,321 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-11 16:54+0200\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n "
+">= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2 : 3);\n"
 
-msgid "Home"
-msgstr "Domov"
-
-msgid "Shop"
-msgstr "Obchod"
-
-msgid "About"
-msgstr "O nás"
-
-msgid "Payment Cancelled"
-msgstr "Platba zrušená"
-
-msgid "You can try again whenever you're ready."
-msgstr "Môžeš to skúsiť znova kedykoľvek budeš pripravený."
-
-msgid "Back to Checkout"
-msgstr "Späť k pokladni"
-
-msgid "Luxury 3D Printed Collectibles"
-msgstr "Luxusné 3D tlačené zberateľské predmety"
-
-msgid "Enter a world where gothic elegance meets handcrafted 3D design. Each creation is sculpted with precision, darkness and imagination."
-msgstr "Vstúp do sveta, kde sa gotická elegancia stretáva s ručne navrhnutým 3D dizajnom. Každý výtvor je tvarovaný presnosťou, temnotou a fantáziou."
-
-msgid "New Arrivals"
-msgstr "Novinky"
-
-msgid "Why Velvet Creature?"
-msgstr "Prečo Velvet Creature?"
-
-msgid "3D Printed"
-msgstr "3D tlač"
-
-msgid "Precision-crafted models with high-end detail and texture."
-msgstr "Precízne vytvorené modely s vysokou úrovňou detailov a textúr."
-
-msgid "Hand Finished"
-msgstr "Ručne dokončené"
-
-msgid "Each piece is refined manually for premium quality."
-msgstr "Každý kus je ručne upravený pre prémiovú kvalitu."
-
-msgid "Dark Aesthetic"
-msgstr "Temná estetika"
-
-msgid "Inspired by gothic art, fantasy worlds and cinematic design."
-msgstr "Inšpirované gotickým umením, fantasy svetmi a filmovým dizajnom."
-
-msgid "In Stock"
-msgstr "Na sklade"
-
-msgid "Sold Out"
-msgstr "Vypredané"
-
-msgid "Detail"
-msgstr "Detail"
-
-msgid "Add to cart"
-msgstr "Pridať do košíka"
-
-msgid "Every creature begins as an idea — shaped by darkness, refined by imagination."
-msgstr "Každé stvorenie začína ako myšlienka — tvarovaná temnotou a dotvorená predstavivosťou."
-
-msgid "Custom Order"
-msgstr "Zákazková tlač"
-
+#: .\accounts\templates\accounts\profile.html:10
+#: .\accounts\templates\accounts\profile.html:25
+#: .\templates\includes\navbar.html:122
 msgid "My Account"
 msgstr "Môj účet"
 
+#: .\accounts\templates\accounts\profile.html:30
+msgid "Welcome back"
+msgstr ""
 
+#: .\accounts\templates\accounts\profile.html:50
+#, fuzzy
+#| msgid "My Account"
+msgid "Account"
+msgstr "Môj účet"
+
+#: .\accounts\templates\accounts\profile.html:58
+msgid "Username"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:73
+msgid "Email"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:88
+msgid "Member since"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:113
+msgid "Customer Information"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:122
+msgid "Full name"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:150
+msgid "Country"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:168
+msgid "Phone"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:201
+#: .\templates\includes\navbar.html:136
 msgid "My Orders"
 msgstr "Moje objednávky"
 
+#: .\accounts\templates\accounts\profile.html:223
+#, fuzzy
+#| msgid "My Orders"
+msgid "Order"
+msgstr "Moje objednávky"
 
+#: .\accounts\templates\accounts\profile.html:228
+#: .\accounts\templates\accounts\profile.html:348
+#: .\custom_orders\templates\custom_orders\detail.html:37
+msgid "Created"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:267
+#: .\accounts\templates\accounts\profile.html:399
+#, fuzzy
+#| msgid "Detail"
+msgid "Details"
+msgstr "Detail"
+
+#: .\accounts\templates\accounts\profile.html:292
+msgid "You have no orders yet."
+msgstr ""
+
+
+
+#: .\accounts\templates\accounts\profile.html:337
+#: .\custom_orders\templates\custom_orders\detail.html:8
+#: .\templates\includes\navbar.html:35
+msgid "Custom Order"
+msgstr "Zákazková objednávka"
+
+#: .\accounts\templates\accounts\profile.html:358
+#: .\custom_orders\templates\custom_orders\detail.html:184
+msgid "Material"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:423
+msgid "Waiting for quote"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:458
+msgid "You have no custom projects yet."
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:29
+#, fuzzy
+#| msgid "Custom Order"
+msgid "Custom Project"
+msgstr "Zákazková tlač"
+
+#: .\custom_orders\templates\custom_orders\detail.html:66
+msgid "Project Status"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:81
+msgid "Request sent"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:98
+msgid "Review"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:115
+msgid "Quote sent"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:132
+#, fuzzy
+#| msgid "Hand Finished"
+msgid "Finished"
+msgstr "Ručne dokončené"
+
+#: .\custom_orders\templates\custom_orders\detail.html:162
+msgid "Project Details"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:170
+msgid "Service"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:198
+msgid "Color"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:213
+msgid "Quantity"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:229
+msgid "Size"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:250
+msgid "Description"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:266
+msgid "Engraving"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:274
+msgid "Enabled"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:280
+msgid "Yes"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:284
+msgid "No"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:302
+msgid "Engraving type"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:321
+msgid "Engraving text"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:344
+msgid "Engraving image"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:382
+msgid "Files"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:396
+msgid "Download 3D model"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:412
+msgid "Preview image"
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:471
+msgid "Waiting for quote from our team."
+msgstr ""
+
+#: .\custom_orders\templates\custom_orders\detail.html:503
+#, fuzzy
+#| msgid "Why Velvet Creature?"
+msgid "Message from Velvet Creature"
+msgstr "Prečo Velvet Creature?"
+
+#: .\custom_orders\templates\custom_orders\detail.html:529
+#, fuzzy
+#| msgid "Back to Checkout"
+msgid "Back to account"
+msgstr "Späť k pokladni"
+
+#: .\templates\includes\navbar.html:23
+msgid "Home"
+msgstr "Domov"
+
+#: .\templates\includes\navbar.html:29 .\templates\products\home.html:28
+#: .\templates\products\shop.html:12
+msgid "Shop"
+msgstr "Kolekcia"
+
+#: .\templates\includes\navbar.html:41
+msgid "About"
+msgstr "O nás"
+
+#: .\templates\includes\navbar.html:150
 msgid "Wishlist"
-msgstr "Obľúbené"
+msgstr "Moje obľúbené"
 
-
+#: .\templates\includes\navbar.html:165
 msgid "Logout"
-msgstr "Odhlásiť"
+msgstr "Odhlásiť sa"
 
-
+#: .\templates\includes\navbar.html:184
 msgid "Login"
-msgstr "Prihlásiť"
+msgstr "Prihlásenie"
 
-
+#: .\templates\includes\navbar.html:197
 msgid "Register"
 msgstr "Registrácia"
+
+#: .\templates\orders\payment_cancel.html:8
+msgid "Payment Cancelled"
+msgstr "Platba zrušená"
+
+#: .\templates\orders\payment_cancel.html:11
+msgid "You can try again whenever you're ready."
+msgstr "Môžeš to skúsiť znova kedykoľvek budeš pripravený."
+
+#: .\templates\orders\payment_cancel.html:15
+msgid "Back to Checkout"
+msgstr "Späť k pokladni"
+
+#: .\templates\products\home.html:16
+msgid "Luxury 3D Printed Collectibles"
+msgstr "Luxusné 3D tlačené zberateľské predmety"
+
+#: .\templates\products\home.html:22
+msgid ""
+"Enter a world where gothic elegance meets handcrafted 3D design. Each "
+"creation is sculpted with precision, darkness and imagination."
+msgstr ""
+"Vstúp do sveta, kde sa gotická elegancia stretáva s ručne navrhnutým 3D "
+"dizajnom. Každý výtvor je tvarovaný presnosťou, temnotou a fantáziou."
+
+#: .\templates\products\home.html:32 .\templates\products\home.html:73
+msgid "New Arrivals"
+msgstr "Novinky"
+
+#: .\templates\products\home.html:45
+msgid "Why Velvet Creature?"
+msgstr "Prečo Velvet Creature?"
+
+#: .\templates\products\home.html:51
+msgid "3D Printed"
+msgstr "3D tlač"
+
+#: .\templates\products\home.html:52
+msgid "Precision-crafted models with high-end detail and texture."
+msgstr "Precízne vytvorené modely s vysokou úrovňou detailov a textúr."
+
+#: .\templates\products\home.html:56
+msgid "Hand Finished"
+msgstr "Ručne dokončené"
+
+#: .\templates\products\home.html:57
+msgid "Each piece is refined manually for premium quality."
+msgstr "Každý kus je ručne upravený pre prémiovú kvalitu."
+
+#: .\templates\products\home.html:61
+msgid "Dark Aesthetic"
+msgstr "Temná estetika"
+
+#: .\templates\products\home.html:62
+msgid "Inspired by gothic art, fantasy worlds and cinematic design."
+msgstr "Inšpirované gotickým umením, fantasy svetmi a filmovým dizajnom."
+
+#: .\templates\products\home.html:89
+msgid "In Stock"
+msgstr "Na sklade"
+
+#: .\templates\products\home.html:91
+msgid "Sold Out"
+msgstr "Vypredané"
+
+#: .\templates\products\home.html:103
+msgid "Detail"
+msgstr "Detail"
+
+#: .\templates\products\home.html:111
+msgid "Add to cart"
+msgstr "Pridať do košíka"
+
+#: .\templates\products\home.html:131
+msgid ""
+"Every creature begins as an idea — shaped by darkness, refined by "
+"imagination."
+msgstr ""
+"Každé stvorenie začína ako myšlienka — tvarovaná temnotou a dotvorená "
+"predstavivosťou."

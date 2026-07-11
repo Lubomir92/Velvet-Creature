@@ -1,9 +1,13 @@
 from pathlib import Path
+from pathlib import Path
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-change-me'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = True
 
@@ -114,9 +118,9 @@ DATABASES = {
 # =========================================================
 
 USE_I18N = True
-USE_L10N = True
 
-LANGUAGE_CODE = "en"
+
+LANGUAGE_CODE = "fr"
 
 LANGUAGES = [
 
@@ -165,11 +169,11 @@ MEDIA_ROOT = BASE_DIR / "media"
 # STRIPE
 # =========================================================
 
-STRIPE_PUBLIC_KEY = "pk_test_51To46YRKljWp2kpVP7x9H293QXL0ynurZjdH13fwhVk60nxf1ykySSVv9KY9OjkyFjLnkccaDRbU8GaI6bxtXMLN00N5EGSMBU"
+STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY")
 
-STRIPE_SECRET_KEY = "sk_test_51To46YRKljWp2kpVcKbbIb7XwThCQYSDDLqgP0Dtn2Wz98jXjHCacrQCGBzw2spUF6jbPfoyHq465tcWoDZiUgz600NaCMglFE"
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
 
-STRIPE_WEBHOOK_SECRET = "whsec_013b34afc8aa6782df1fc00ab323a4a13955f763c4b4fd4b0b30e486793a5fa0"
+STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
 
 
 # =========================================================

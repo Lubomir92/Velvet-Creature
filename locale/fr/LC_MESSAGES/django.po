@@ -1,92 +1,312 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Velvet Creature\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-11 18:01+0200\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Home"
-msgstr "Accueil"
-
-msgid "Shop"
-msgstr "Boutique"
-
-msgid "About"
-msgstr "À propos"
-
-msgid "Payment Cancelled"
-msgstr "Paiement annulé"
-
-msgid "You can try again whenever you're ready."
-msgstr "Vous pouvez réessayer quand vous êtes prêt."
-
-msgid "Back to Checkout"
-msgstr "Retour au paiement"
-
-msgid "Luxury 3D Printed Collectibles"
-msgstr "Objets de collection imprimés en 3D de luxe"
-
-msgid "Enter a world where gothic elegance meets handcrafted 3D design. Each creation is sculpted with precision, darkness and imagination."
-msgstr "Entrez dans un monde où l’élégance gothique rencontre le design 3D artisanal. Chaque création est sculptée avec précision, obscurité et imagination."
-
-msgid "New Arrivals"
-msgstr "Nouveautés"
-
-msgid "Why Velvet Creature?"
-msgstr "Pourquoi Velvet Creature ?"
-
-msgid "3D Printed"
-msgstr "Imprimé en 3D"
-
-msgid "Precision-crafted models with high-end detail and texture."
-msgstr "Modèles fabriqués avec précision avec des détails et textures haut de gamme."
-
-msgid "Hand Finished"
-msgstr "Finition artisanale"
-
-msgid "Each piece is refined manually for premium quality."
-msgstr "Chaque pièce est raffinée manuellement pour une qualité premium."
-
-msgid "Dark Aesthetic"
-msgstr "Esthétique sombre"
-
-msgid "Inspired by gothic art, fantasy worlds and cinematic design."
-msgstr "Inspiré par l’art gothique, les mondes fantastiques et le design cinématographique."
-
-msgid "In Stock"
-msgstr "En stock"
-
-msgid "Sold Out"
-msgstr "Épuisé"
-
-msgid "Detail"
-msgstr "Détail"
-
-msgid "Add to cart"
-msgstr "Ajouter au panier"
-
-msgid "Every creature begins as an idea — shaped by darkness, refined by imagination."
-msgstr "Chaque créature commence comme une idée — façonnée par l’obscurité et raffinée par l’imagination."
-
-msgid "Custom Order"
-msgstr "Commande personnalisée"
-
+#: .\accounts\templates\accounts\profile.html:10
+#: .\accounts\templates\accounts\profile.html:25
+#: .\templates\includes\navbar.html:122
 msgid "My Account"
 msgstr "Mon compte"
 
+#: .\accounts\templates\accounts\profile.html:30
+msgid "Welcome back"
+msgstr "Bon retour"
+
+#: .\accounts\templates\accounts\profile.html:50
+msgid "Account"
+msgstr "Compte"
+
+#: .\accounts\templates\accounts\profile.html:58
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: .\accounts\templates\accounts\profile.html:73
+msgid "Email"
+msgstr "E-mail"
+
+#: .\accounts\templates\accounts\profile.html:88
+msgid "Member since"
+msgstr "Membre depuis"
+
+#: .\accounts\templates\accounts\profile.html:113
+msgid "Customer Information"
+msgstr "Informations client"
+
+#: .\accounts\templates\accounts\profile.html:122
+msgid "Full name"
+msgstr "Nom complet"
+
+#: .\accounts\templates\accounts\profile.html:150
+msgid "Country"
+msgstr "Pays"
+
+#: .\accounts\templates\accounts\profile.html:168
+msgid "Phone"
+msgstr "Téléphone"
+
+#: .\accounts\templates\accounts\profile.html:201
+#: .\templates\includes\navbar.html:136
 msgid "My Orders"
 msgstr "Mes commandes"
 
+#: .\accounts\templates\accounts\profile.html:223
+msgid "Order"
+msgstr "Commande"
+
+#: .\accounts\templates\accounts\profile.html:228
+#: .\accounts\templates\accounts\profile.html:348
+#: .\custom_orders\templates\custom_orders\detail.html:37
+msgid "Created"
+msgstr "Créé"
+
+#: .\accounts\templates\accounts\profile.html:267
+#: .\accounts\templates\accounts\profile.html:399
+msgid "Details"
+msgstr "Détails"
+
+#: .\accounts\templates\accounts\profile.html:292
+msgid "You have no orders yet."
+msgstr "Vous n'avez pas encore de commandes."
+
+#: .\accounts\templates\accounts\profile.html:310
+msgid "My Custom Projects"
+msgstr "Mes projets personnalisés"
+
+#: .\accounts\templates\accounts\profile.html:337
+#: .\custom_orders\templates\custom_orders\detail.html:8
+#: .\templates\includes\navbar.html:35
+msgid "Custom Order"
+msgstr "Commande personnalisée"
+
+#: .\accounts\templates\accounts\profile.html:358
+#: .\custom_orders\templates\custom_orders\detail.html:184
+msgid "Material"
+msgstr "Matériau"
+
+#: .\accounts\templates\accounts\profile.html:423
+msgid "Waiting for quote"
+msgstr "En attente du devis"
+
+#: .\accounts\templates\accounts\profile.html:458
+msgid "You have no custom projects yet."
+msgstr "Vous n'avez pas encore de projets personnalisés."
+
+#: .\custom_orders\templates\custom_orders\detail.html:29
+msgid "Custom Project"
+msgstr "Projet personnalisé"
+
+#: .\custom_orders\templates\custom_orders\detail.html:66
+msgid "Project Status"
+msgstr "Statut du projet"
+
+#: .\custom_orders\templates\custom_orders\detail.html:81
+msgid "Request sent"
+msgstr "Demande envoyée"
+
+#: .\custom_orders\templates\custom_orders\detail.html:98
+msgid "Review"
+msgstr "Vérification"
+
+#: .\custom_orders\templates\custom_orders\detail.html:115
+msgid "Quote sent"
+msgstr "Devis envoyé"
+
+#: .\custom_orders\templates\custom_orders\detail.html:132
+msgid "Finished"
+msgstr "Terminé"
+
+#: .\custom_orders\templates\custom_orders\detail.html:162
+msgid "Project Details"
+msgstr "Détails du projet"
+
+#: .\custom_orders\templates\custom_orders\detail.html:170
+msgid "Service"
+msgstr "Service"
+
+#: .\custom_orders\templates\custom_orders\detail.html:198
+msgid "Color"
+msgstr "Couleur"
+
+#: .\custom_orders\templates\custom_orders\detail.html:213
+msgid "Quantity"
+msgstr "Quantité"
+
+#: .\custom_orders\templates\custom_orders\detail.html:229
+msgid "Size"
+msgstr "Taille"
+
+#: .\custom_orders\templates\custom_orders\detail.html:250
+msgid "Description"
+msgstr "Description"
+
+#: .\custom_orders\templates\custom_orders\detail.html:266
+msgid "Engraving"
+msgstr "Gravure"
+
+#: .\custom_orders\templates\custom_orders\detail.html:274
+msgid "Enabled"
+msgstr "Activé"
+
+#: .\custom_orders\templates\custom_orders\detail.html:280
+msgid "Yes"
+msgstr "Oui"
+
+#: .\custom_orders\templates\custom_orders\detail.html:284
+msgid "No"
+msgstr "Non"
+
+#: .\custom_orders\templates\custom_orders\detail.html:302
+msgid "Engraving type"
+msgstr "Type de gravure"
+
+#: .\custom_orders\templates\custom_orders\detail.html:321
+msgid "Engraving text"
+msgstr "Texte de gravure"
+
+#: .\custom_orders\templates\custom_orders\detail.html:344
+msgid "Engraving image"
+msgstr "Image de gravure"
+
+#: .\custom_orders\templates\custom_orders\detail.html:382
+msgid "Files"
+msgstr "Fichiers"
+
+#: .\custom_orders\templates\custom_orders\detail.html:396
+msgid "Download 3D model"
+msgstr "Télécharger le modèle 3D"
+
+#: .\custom_orders\templates\custom_orders\detail.html:412
+msgid "Preview image"
+msgstr "Image d'aperçu"
+
+#: .\custom_orders\templates\custom_orders\detail.html:471
+msgid "Waiting for quote from our team."
+msgstr "En attente d'un devis de notre équipe."
+
+#: .\custom_orders\templates\custom_orders\detail.html:503
+msgid "Message from Velvet Creature"
+msgstr "Message de Velvet Creature"
+
+#: .\custom_orders\templates\custom_orders\detail.html:529
+msgid "Back to account"
+msgstr "Retour au compte"
+
+#: .\templates\includes\navbar.html:23
+msgid "Home"
+msgstr "Accueil"
+
+#: .\templates\includes\navbar.html:29 .\templates\products\home.html:28
+#: .\templates\products\shop.html:12
+msgid "Shop"
+msgstr "Boutique"
+
+#: .\templates\includes\navbar.html:41
+msgid "About"
+msgstr "À propos"
+
+#: .\templates\includes\navbar.html:150
 msgid "Wishlist"
 msgstr "Liste de souhaits"
 
+#: .\templates\includes\navbar.html:165
 msgid "Logout"
 msgstr "Déconnexion"
 
+#: .\templates\includes\navbar.html:184
 msgid "Login"
 msgstr "Connexion"
 
+#: .\templates\includes\navbar.html:197
 msgid "Register"
 msgstr "Créer un compte"
+
+#: .\templates\orders\payment_cancel.html:8
+msgid "Payment Cancelled"
+msgstr "Paiement annulé"
+
+#: .\templates\orders\payment_cancel.html:11
+msgid "You can try again whenever you're ready."
+msgstr "Vous pouvez réessayer quand vous serez prêt."
+
+#: .\templates\orders\payment_cancel.html:15
+msgid "Back to Checkout"
+msgstr "Retour au paiement"
+
+#: .\templates\products\home.html:16
+msgid "Luxury 3D Printed Collectibles"
+msgstr "Objets de collection 3D imprimés de luxe"
+
+#: .\templates\products\home.html:22
+msgid ""
+"Enter a world where gothic elegance meets handcrafted 3D design. Each "
+"creation is sculpted with precision, darkness and imagination."
+msgstr ""
+"Entrez dans un monde où l'élégance gothique rencontre le design 3D "
+"artisanal. Chaque création est sculptée avec précision, obscurité et "
+"imagination."
+
+#: .\templates\products\home.html:32 .\templates\products\home.html:73
+msgid "New Arrivals"
+msgstr "Nouveautés"
+
+#: .\templates\products\home.html:45
+msgid "Why Velvet Creature?"
+msgstr "Pourquoi Velvet Creature ?"
+
+#: .\templates\products\home.html:51
+msgid "3D Printed"
+msgstr "Imprimé en 3D"
+
+#: .\templates\products\home.html:52
+msgid "Precision-crafted models with high-end detail and texture."
+msgstr ""
+"Modèles fabriqués avec précision avec des détails et textures haut de gamme."
+
+#: .\templates\products\home.html:56
+msgid "Hand Finished"
+msgstr "Finition artisanale"
+
+#: .\templates\products\home.html:57
+msgid "Each piece is refined manually for premium quality."
+msgstr "Chaque pièce est finie manuellement pour une qualité premium."
+
+#: .\templates\products\home.html:61
+msgid "Dark Aesthetic"
+msgstr "Esthétique sombre"
+
+#: .\templates\products\home.html:62
+msgid "Inspired by gothic art, fantasy worlds and cinematic design."
+msgstr ""
+"Inspiré par l'art gothique, les mondes fantastiques et le design "
+"cinématographique."
+
+#: .\templates\products\home.html:89
+msgid "In Stock"
+msgstr "En stock"
+
+#: .\templates\products\home.html:91
+msgid "Sold Out"
+msgstr "Rupture de stock"
+
+#: .\templates\products\home.html:103
+msgid "Detail"
+msgstr "Détails"
+
+#: .\templates\products\home.html:111
+msgid "Add to cart"
+msgstr "Ajouter au panier"
+
+#: .\templates\products\home.html:131
+msgid ""
+"Every creature begins as an idea — shaped by darkness, refined by "
+"imagination."
+msgstr ""
+"Chaque créature commence comme une idée — façonnée par l'obscurité et "
+"raffinée par l'imagination."
