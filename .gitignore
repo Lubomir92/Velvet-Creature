@@ -1,21 +1,25 @@
-# Virtual environment
-venv/
+# Environment
 .env
+.env.*
 
-# Python cache
+# Python
 __pycache__/
 *.py[cod]
-
-# Database
-*.sqlite3
 
 # Django
 *.log
 staticfiles/
 
+# Database
+*.sqlite3
+
 # IDE
 .vscode/
 .idea/
 
-# Environment variables
-.env
+# Temporary
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
