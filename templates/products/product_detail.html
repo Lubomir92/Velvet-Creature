@@ -1,62 +1,736 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}{{ product.name }}{% endblock %}
+
+{% block title %}
+{{ product.name }}
+{% endblock %}
+
+
 
 {% block content %}
 
+
 <div class="product-page">
+
 
     <div class="product-container">
 
-        <!-- IMAGE (SAFE VERSION) -->
-        <div class="product-image">
 
-            {% if product.image %}
-                <img src="{{ product.image.url }}" alt="{{ product.name }}">
-            {% else %}
+
+        <!-- =========================
+             PRODUCT GALLERY
+        ========================== -->
+
+
+        <div class="product-gallery">
+
+
+
+            <div class="main-product-image">
+
+
+                {% if product.image %}
+
+
+                <img
+                    id="main-product-image"
+                    src="{{ product.image.url }}"
+                    alt="{{ product.name }}"
+                >
+
+
+                {% else %}
+
+
                 <div class="no-image">
                     No image available
                 </div>
-            {% endif %}
+
+
+                {% endif %}
+
+
+
+            </div>
+
+
+
+
+
+            <div class="thumbnail-row">
+
+
+
+                {% if product.image %}
+
+
+                <img
+                    class="thumbnail"
+                    src="{{ product.image.url }}"
+                    onclick="changeImage('{{ product.image.url }}')"
+                    alt="{{ product.name }}"
+                >
+
+
+                {% endif %}
+
+
+
+
+
+
+                {% for image in gallery %}
+
+
+                <img
+                    class="thumbnail"
+                    src="{{ image.image.url }}"
+                    onclick="changeImage('{{ image.image.url }}')"
+                    alt="{{ image.alt_text }}"
+                >
+
+
+                {% endfor %}
+
+
+
+            </div>
+
+
 
         </div>
 
-        <!-- INFO -->
+
+
+
+
+
+        <!-- =========================
+             PRODUCT INFORMATION
+        ========================== -->
+
+
         <div class="product-info">
+
+
 
             <span class="product-subtitle">
                 Velvet Creature Collection
             </span>
 
-            <h1>{{ product.name }}</h1>
+
+
+
+            
+
+
+   <div class="product-title-row">
+
+
+    <h1>
+        {{ product.name }}
+    </h1>
+
+
+    {% if user.is_authenticated %}
+
+
+    <a href="#"
+       class="wishlist-btn product-wishlist"
+       onclick="toggleWishlist(event, {{ product.id }})">
+
+
+        <img src="{% static 'icons/pumpkin.svg' %}"
+             id="wishlist-icon-{{ product.id }}"
+             class="wishlist-icon">
+
+
+    </a>
+
+
+    {% endif %}
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
 
             <p class="price">
                 €{{ product.price }}
             </p>
+            {% if product.stock > 0 %}
+
+<div class="stock-status available">
+
+    🎃 Available
+
+</div>
+
+
+{% else %}
+
+
+<div class="stock-status sold">
+
+    Sold out
+
+</div>
+
+
+{% endif %}
+
+
+
+
 
             <p class="description">
                 {{ product.description }}
             </p>
 
-            <div class="product-actions">
 
-                <button
-    type="button"
-    class="btn-primary"
-    onclick="addToCart({{ product.id }}); return false;">
-                    Add to cart 🛒
-                </button>
 
-                <a href="{% url 'shop' %}" class="btn-secondary">
-                    ← Back to collection
-                </a>
+
+
+
+
+
+            <!-- DETAILS -->
+
+
+            <div class="product-details">
+
+
+                <h3>
+                    Product Details
+                </h3>
+
+
+
+
+                {% if product.material %}
+
+                <p>
+                    <strong>
+                        Material:
+                    </strong>
+
+                    {{ product.material }}
+
+                </p>
+
+                {% endif %}
+
+
+
+
+
+                {% if product.size %}
+
+                <p>
+
+                    <strong>
+                        Size:
+                    </strong>
+
+                    {{ product.size }}
+
+                </p>
+
+                {% endif %}
+
+
+
+
+
+                {% if product.weight %}
+
+                <p>
+
+                    <strong>
+                        Weight:
+                    </strong>
+
+                    {{ product.weight }} g
+
+                </p>
+
+                {% endif %}
+
+
+
+
+
+                {% if product.sku %}
+
+                <p>
+
+                    <strong>
+                        SKU:
+                    </strong>
+
+                    {{ product.sku }}
+
+                </p>
+
+                {% endif %}
+
+
 
             </div>
 
+
+
+
+
+
+
+            <!-- ACTIONS -->
+
+
+            <div class="product-actions">
+
+
+
+                <button
+                    type="button"
+                    class="btn-primary"
+                    onclick="addToCart({{ product.id }}); return false;"
+                >
+
+                    Add to cart 🛒
+
+                </button>
+
+
+
+
+                <a
+                    href="{% url 'shop' %}"
+                    class="btn-secondary"
+                >
+
+                    ← Back to collection
+
+                </a>
+
+
+
+            </div>
+
+
+
+
         </div>
+
+
+
 
     </div>
 
+
 </div>
 
+
+
+
+
+
+
+
+<!-- =========================
+     IMAGE SWITCH SCRIPT
+========================== -->
+
+
+<script>
+
+
+function changeImage(url){
+
+
+    document.getElementById(
+        "main-product-image"
+    ).src = url;
+
+
+}
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<!-- =========================
+     RELATED PRODUCTS
+========================== -->
+
+
+
+{% if related_products %}
+
+
+
+<section class="related-products">
+
+
+
+<h2>
+
+You may also like
+
+</h2>
+
+
+
+
+
+<div class="related-grid">
+
+
+
+
+
+{% for item in related_products %}
+
+
+
+
+
+<div class="related-card">
+
+
+
+
+
+{% if item.image %}
+
+
+<img
+src="{{ item.image.url }}"
+alt="{{ item.name }}"
+>
+
+
+
+{% endif %}
+
+
+
+
+
+
+<h3>
+
+{{ item.name }}
+
+</h3>
+
+
+
+
+
+<p class="price">
+
+€{{ item.price }}
+
+</p>
+
+
+
+
+
+<a
+href="{% url 'product_detail' item.slug %}"
+class="btn-secondary"
+>
+
+View
+
+</a>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+{% endfor %}
+
+
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+{% endif %}
+
+<!-- =========================
+     CUSTOMER REVIEWS
+========================== -->
+
+<!-- =========================
+     CUSTOMER REVIEWS
+========================== -->
+
+<section class="reviews-section">
+
+
+<h2>
+    Customer Reviews
+</h2>
+
+
+
+{% if average_rating %}
+
+
+<div class="average-rating">
+
+
+    <div class="rating-number">
+        {{ average_rating|floatformat:1 }}
+    </div>
+
+
+    <div class="rating-stars">
+
+        {% for i in "12345" %}
+
+            {% if forloop.counter <= average_rating %}
+
+                ⭐
+
+            {% else %}
+
+                ☆
+
+            {% endif %}
+
+        {% endfor %}
+
+
+    </div>
+
+
+    <p>
+        Based on {{ reviews.count }} reviews
+    </p>
+
+
+</div>
+
+
+{% endif %}
+
+
+
+
+
+
+<div class="reviews-list">
+
+
+
+{% for review in reviews %}
+
+
+
+<div class="review-card">
+
+
+<div class="review-header">
+
+
+<div class="review-user">
+
+
+👤 {{ review.user.username }}
+
+</div>
+
+
+
+
+<div class="review-stars">
+
+
+{% for i in "12345" %}
+
+
+{% if forloop.counter <= review.rating %}
+
+⭐
+
+{% else %}
+
+☆
+
+{% endif %}
+
+
+{% endfor %}
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<p class="review-text">
+
+{{ review.comment }}
+
+</p>
+
+
+
+
+
+
+<div class="review-date">
+
+{{ review.created|date:"d.m.Y" }}
+
+</div>
+
+
+
+</div>
+
+
+
+{% empty %}
+
+
+<div class="no-reviews">
+
+⭐ No reviews yet. Be the first one!
+
+</div>
+
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+
+
+
+{% if user.is_authenticated %}
+
+
+
+<div class="review-form">
+
+
+<h3>
+Write your review
+</h3>
+
+
+
+
+<form method="post">
+
+
+{% csrf_token %}
+
+
+
+<div class="rating-field">
+
+{{ review_form.rating.label }}
+
+{{ review_form.rating }}
+
+
+</div>
+
+
+
+
+<div class="comment-field">
+
+{{ review_form.comment.label }}
+
+{{ review_form.comment }}
+
+</div>
+
+
+
+
+
+<button class="btn-primary">
+
+⭐ Submit Review
+
+</button>
+
+
+
+</form>
+
+
+</div>
+
+
+
+{% else %}
+
+
+
+<div class="login-review">
+
+Login to write a review.
+
+</div>
+
+
+{% endif %}
+
+
+
+
+</section>
 {% endblock %}

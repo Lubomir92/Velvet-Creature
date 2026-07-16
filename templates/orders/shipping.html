@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Shipping order
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="card"
+style="max-width:600px;margin:40px auto;padding:30px;">
+
+
+<h1 style="color:#d4af37;">
+Ship Order {{ order.order_number }}
+</h1>
+
+
+<form method="post">
+
+{% csrf_token %}
+
+
+<p>
+Carrier:
+</p>
+
+{{ form.carrier }}
+
+
+
+<p>
+Tracking number:
+</p>
+
+{{ form.tracking_number }}
+
+
+
+<button class="btn" type="submit">
+
+Confirm shipment
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+{% endblock %}

@@ -9,11 +9,13 @@ class Category(models.Model):
         return self.name
 
 
+
 class Product(models.Model):
     # ==========================================
     # BASIC
     # ==========================================
     name = models.CharField(max_length=200)
+
     slug = models.SlugField(unique=True)
 
     description = models.TextField(blank=True)
@@ -23,6 +25,7 @@ class Product(models.Model):
         blank=True
     )
 
+
     # ==========================================
     # IMAGE
     # ==========================================
@@ -31,6 +34,7 @@ class Product(models.Model):
         blank=True,
         null=True
     )
+
 
     # ==========================================
     # PRODUCT INFO
@@ -56,6 +60,7 @@ class Product(models.Model):
         default=0
     )
 
+
     # ==========================================
     # PRICE
     # ==========================================
@@ -72,6 +77,7 @@ class Product(models.Model):
         default=False
     )
 
+
     # ==========================================
     # CATEGORY
     # ==========================================
@@ -82,6 +88,7 @@ class Product(models.Model):
         blank=True
     )
 
+
     # ==========================================
     # DATES
     # ==========================================
@@ -89,8 +96,45 @@ class Product(models.Model):
         auto_now_add=True
     )
 
+
     # ==========================================
     # STRING
     # ==========================================
     def __str__(self):
         return self.name
+
+
+
+
+
+# ==================================================
+# PRODUCT GALLERY IMAGES
+# ==================================================
+
+class ProductImage(models.Model):
+
+    product = models.ForeignKey(
+        Product,
+        related_name="images",
+        on_delete=models.CASCADE
+    )
+
+
+    image = models.ImageField(
+        upload_to="products/gallery/"
+    )
+
+
+    alt_text = models.CharField(
+        max_length=200,
+        blank=True
+    )
+
+
+    created = models.DateTimeField(
+        auto_now_add=True
+    )
+
+
+    def __str__(self):
+        return f"{self.product.name} image"

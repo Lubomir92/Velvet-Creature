@@ -99,9 +99,9 @@
 
             <div class="product-buttons">
 
-                <a href="{% url 'product_detail' product.id %}" class="btn">
-                    {% trans "Detail" %}
-                </a>
+                <a href="{% url 'product_detail' product.slug %}" class="btn">
+    {% trans "Detail" %}
+</a>
 
                 {% if product.stock > 0 %}
 <button

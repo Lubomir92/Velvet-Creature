@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Order Delivered</title>
+</head>
+
+<body style="background:#111;color:#eee;font-family:Arial;padding:30px;">
+
+<div style="
+max-width:600px;
+margin:auto;
+background:#1b1b1b;
+padding:30px;
+border-radius:12px;
+">
+
+<h1 style="color:#d4af37;">
+Velvet Creature
+</h1>
+
+<h2>
+🎉 Your order has been delivered
+</h2>
+
+<p>
+
+Hello {{ order.first_name }},
+
+</p>
+
+<p>
+
+Your order has been successfully delivered.
+
+</p>
+
+<p>
+
+We hope you enjoy your purchase!
+
+</p>
+
+<hr>
+
+<h3>
+Order Number
+</h3>
+
+<p>
+{{ order.order_number }}
+</p>
+
+<h3>
+Total
+</h3>
+
+<p>
+€{{ order.total_price }}
+</p>
+
+<p style="color:#888;margin-top:40px;">
+
+Thank you for supporting Velvet Creature.
+
+</p>
+
+</div>
+
+</body>
+</html>

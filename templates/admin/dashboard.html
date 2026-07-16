@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="container" style="max-width:1200px;margin:40px auto;">
+
+    <h1 style="
+        color:#d4af37;
+        margin-bottom:40px;
+        font-size:42px;
+    ">
+        Velvet Creature Dashboard
+    </h1>
+
+    <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+        gap:25px;
+    ">
+
+        <div class="card" style="padding:30px;text-align:center;">
+            <h2 style="color:#d4af37;">Products</h2>
+
+            <h1>{{ products_count }}</h1>
+        </div>
+
+        <div class="card" style="padding:30px;text-align:center;">
+            <h2 style="color:#d4af37;">Orders</h2>
+
+            <h1>{{ orders_count }}</h1>
+        </div>
+
+        <div class="card" style="padding:30px;text-align:center;">
+            <h2 style="color:#d4af37;">Custom Orders</h2>
+
+            <h1>{{ custom_orders_count }}</h1>
+        </div>
+
+    </div>
+    <div style="margin-top:40px;">
+
+<a
+href="{% url 'admin_products' %}"
+class="btn">
+
+Manage Products
+
+</a>
+
+</div>
+
+</div>
+
+{% endblock %}

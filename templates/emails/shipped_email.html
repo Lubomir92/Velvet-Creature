@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Order Shipped</title>
+</head>
+
+<body style="background:#111;color:#eee;font-family:Arial;padding:30px;">
+
+<div style="
+max-width:600px;
+margin:auto;
+background:#1b1b1b;
+padding:30px;
+border-radius:12px;
+">
+
+<h1 style="color:#d4af37;">
+Velvet Creature
+</h1>
+
+<h2>
+📦 Your order has been shipped
+</h2>
+
+<p>
+
+Hello {{ order.first_name }},
+
+</p>
+
+<p>
+
+Great news!
+
+</p>
+
+<p>
+
+Your order <strong>{{ order.order_number }}</strong> has been shipped and is on its way.
+
+</p>
+
+<hr>
+
+<h3>
+Shipping information
+</h3>
+
+
+<p>
+
+Carrier:
+
+<strong>
+{{ order.carrier }}
+</strong>
+
+</p>
+
+
+<p>
+
+Tracking number:
+
+<strong>
+{{ order.tracking_number }}
+</strong>
+
+</p>
+
+<hr>
+
+<h3>
+Order Number
+</h3>
+
+<p>
+{{ order.order_number }}
+</p>
+
+<h3>
+Total
+</h3>
+
+<p>
+€{{ order.total_price }}
+</p>
+
+<p style="color:#888;margin-top:40px;">
+
+Velvet Creature by Lubma3D
+
+</p>
+
+</div>
+
+</body>
+</html>

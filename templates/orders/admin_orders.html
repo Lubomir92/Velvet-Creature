@@ -2,72 +2,183 @@
 
 {% block title %}Admin Orders{% endblock %}
 
+
 {% block content %}
+
 
 <div class="container" style="max-width:1000px; margin:0 auto; padding:40px 20px;">
 
-    <h1 style="color:#d4af37; margin-bottom:30px;">
-        Orders Dashboard
-    </h1>
 
-    {% for order in orders %}
+<h1 style="color:#d4af37; margin-bottom:30px;">
+    Orders Dashboard
+</h1>
 
-        <div style="
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:15px;
-            margin-bottom:10px;
-            border:1px solid #222;
-            border-radius:10px;
-            background:rgba(255,255,255,0.02);
-        ">
 
-            <!-- LEFT -->
-            <div>
-                <a href="{% url 'order_detail' order.id %}" style="text-decoration:none;">
-                    <strong style="color:#fff;">
-                        Order #{{ order.id }}
-                    </strong>
-                </a>
 
-                <div style="color:#aaa; font-size:13px;">
-                    {{ order.created }} | {{ order.user.username }}
-                </div>
-            </div>
+{% for order in orders %}
 
-            <!-- MIDDLE -->
-            <div style="color:#d4af37; font-weight:bold;">
-                {{ order.total_price }} €
-            </div>
 
-            <!-- RIGHT -->
-            <div style="display:flex; gap:12px; align-items:center;">
 
-                <!-- STATUS -->
-                <span class="status {{ order.status }}">
-    {{ order.status }}
-                </span>
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+margin-bottom:10px;
+border:1px solid #222;
+border-radius:10px;
+background:rgba(255,255,255,0.02);
+">
 
-                <!-- ACTIONS -->
-                <a href="{% url 'mark_paid' order.id %}" style="color:#4caf50;">
-                    Paid
-                </a>
 
-                <a href="{% url 'mark_shipped' order.id %}" style="color:#ff9800;">
-                    Shipped
-                </a>
 
-            </div>
+<!-- LEFT -->
 
-        </div>
+<div>
 
-    {% empty %}
 
-        <p style="color:#aaa;">No orders yet.</p>
+<a href="{% url 'admin_order_detail' order.id %}" style="text-decoration:none;">
 
-    {% endfor %}
+<strong style="color:#fff;">
+
+{{ order.order_number }}
+
+</strong>
+
+</a>
+
+
+
+<div style="color:#aaa; font-size:13px;">
+
+{{ order.created }} |
+
+
+{% if order.user %}
+
+{{ order.user.username }}
+
+{% else %}
+
+Guest
+
+{% endif %}
+
 
 </div>
+
+
+</div>
+
+
+
+
+
+<!-- PRICE -->
+
+<div style="color:#d4af37; font-weight:bold;">
+
+{{ order.total_price }} €
+
+</div>
+
+
+
+
+
+<!-- STATUS + ACTIONS -->
+
+<div style="display:flex; gap:12px; align-items:center;">
+
+
+
+<span class="status {{ order.status }}">
+
+{{ order.get_status_display }}
+
+</span>
+
+
+
+
+
+{% if order.status == "pending" %}
+
+
+<a href="{% url 'mark_paid' order.id %}"
+style="color:#4caf50;">
+
+Mark Paid
+
+</a>
+
+
+
+{% elif order.status == "paid" %}
+
+
+<a href="{% url 'mark_processing' order.id %}"
+style="color:#d4af37;">
+
+Processing
+
+</a>
+
+
+
+
+{% elif order.status == "processing" %}
+
+
+<a href="{% url 'mark_shipped' order.id %}"
+style="color:#ff9800;">
+
+Shipped
+
+</a>
+
+
+
+
+
+{% elif order.status == "shipped" %}
+
+
+<a href="{% url 'mark_delivered' order.id %}"
+style="color:#4caf50;">
+
+Delivered
+
+</a>
+
+
+
+{% endif %}
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+{% empty %}
+
+
+<p style="color:#aaa;">
+No orders yet.
+</p>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
 
 {% endblock %}

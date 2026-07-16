@@ -1,19 +1,31 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block title %}
-Cart
+{% trans "Your Cart" %}
 {% endblock %}
 
 
 {% block content %}
 
 
-<div class="cart-page">
+<section class="cart-page">
 
 
-<h1 class="section-title">
-    Your Cart
+<div class="shop-header">
+
+<h1 class="shop-title">
+🛒 {% trans "Your Cart" %}
 </h1>
+
+
+<p class="shop-subtitle">
+Velvet Creature Collection
+</p>
+
+
+</div>
+
 
 
 
@@ -22,6 +34,8 @@ Cart
 
 
 <div class="cart-layout">
+
+
 
 
 
@@ -37,42 +51,64 @@ Cart
 
 
 
-<div class="cart-info">
+<div class="cart-product-image">
 
 
-<h3>
-{{ item.product.name }}
-</h3>
+{% if item.product.image %}
 
-
-<p class="muted">
-
-Unit price:
-€{{ item.product.price }}
-
-</p>
-<p class="muted">
-
-Available:
-{{ item.product.stock }} pcs
-
-</p>
-
-
-{% if item.quantity > item.product.stock %}
-
-<div class="stock-warning">
-
-⚠️ Not enough stock.
-Available only:
-{{ item.product.stock }}
-
-</div>
+<img src="{{ item.product.image.url }}"
+     alt="{{ item.product.name }}">
 
 {% endif %}
 
 
+
 </div>
+
+
+
+
+
+
+
+<div class="cart-info">
+
+
+<h3>
+
+{{ item.product.name }}
+
+</h3>
+
+
+
+<p class="muted">
+
+€{{ item.product.price }}
+
+</p>
+
+
+
+
+{% if item.quantity > item.product.stock %}
+
+
+<div class="stock-warning">
+
+⚠️ 
+{% trans "Not enough stock" %}
+
+</div>
+
+
+{% endif %}
+
+
+
+</div>
+
+
 
 
 
@@ -81,8 +117,7 @@ Available only:
 <div class="cart-controls">
 
 
-
-<button type="button"
+<button
 class="qty-btn"
 onclick="changeQty({{ item.product.id }}, 'decrease')">
 
@@ -103,7 +138,7 @@ onclick="changeQty({{ item.product.id }}, 'decrease')">
 
 
 
-<button type="button"
+<button
 class="qty-btn"
 onclick="changeQty({{ item.product.id }}, 'increase')"
 {% if item.quantity >= item.product.stock %}
@@ -123,9 +158,11 @@ disabled
 
 
 
-<div class="price">
+<div class="cart-price">
+
 
 €{{ item.total_price }}
+
 
 </div>
 
@@ -133,9 +170,7 @@ disabled
 
 
 
-
 <button
-type="button"
 class="remove-btn"
 onclick="removeItem({{ item.product.id }})">
 
@@ -151,12 +186,15 @@ onclick="removeItem({{ item.product.id }})">
 
 
 
+
 {% endfor %}
 
 
 
 
+
 </div>
+
 
 
 
@@ -168,23 +206,21 @@ onclick="removeItem({{ item.product.id }})">
 
 
 <h2>
-Summary
+{% trans "Summary" %}
 </h2>
+
 
 
 
 <div class="summary-row">
 
-
 <span>
-Total
+{% trans "Total" %}
 </span>
 
 
 <strong>
-
 €{{ cart_total }}
-
 </strong>
 
 
@@ -194,30 +230,26 @@ Total
 
 
 
-{% with stock_ok=True %}
-
-{% for item in cart_items %}
-
-{% if item.quantity > item.product.stock %}
-
-{% with stock_ok=False %}
-{% endwith %}
-
-{% endif %}
-
-{% endfor %}
-
-
 <a href="{% url 'checkout' %}"
 class="btn-primary full">
 
-Proceed to Checkout →
+
+{% trans "Proceed to Checkout" %} →
 
 </a>
 
 
-{% endwith %}
 
+
+
+<a href="{% url 'shop' %}"
+class="btn-secondary full">
+
+
+← {% trans "Continue Shopping" %}
+
+
+</a>
 
 
 
@@ -226,7 +258,11 @@ Proceed to Checkout →
 
 
 
+
+
 </div>
+
+
 
 
 
@@ -237,13 +273,30 @@ Proceed to Checkout →
 
 <div class="empty-cart">
 
+
 <h2>
-Your cart is empty
+🎃
 </h2>
 
+
+<h3>
+{% trans "Your cart is empty" %}
+</h3>
+
+
 <p>
-Add something to start shopping.
+{% trans "Add something beautiful to your collection." %}
 </p>
+
+
+
+<a href="{% url 'shop' %}"
+class="btn-primary">
+
+{% trans "Explore Collection" %}
+
+</a>
+
 
 
 </div>
@@ -254,7 +307,10 @@ Add something to start shopping.
 
 
 
-</div>
+
+
+</section>
+
 
 
 {% endblock %}

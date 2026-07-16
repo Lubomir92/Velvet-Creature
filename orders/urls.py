@@ -56,7 +56,11 @@ urlpatterns = [
         name="order_list"
     ),
 
-
+path(
+    "admin/<int:order_id>/",
+    views.admin_order_detail,
+    name="admin_order_detail"
+),
     path(
         "<int:order_id>/",
         views.order_detail,
@@ -82,7 +86,24 @@ urlpatterns = [
         name="mark_paid"
     ),
 
+    path(
+    "admin/<int:order_id>/processing/",
+    views.mark_processing,
+    name="mark_processing"
+),
 
+    path(
+    "admin/<int:order_id>/delivered/",
+    views.mark_delivered,
+    name="mark_delivered"
+),
+
+    path(
+    "admin/<int:order_id>/processing/",
+    views.mark_processing,
+    name="mark_processing"
+),
+   
     path(
         "admin/<int:order_id>/shipped/",
         views.mark_shipped,

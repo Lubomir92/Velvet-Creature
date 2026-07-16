@@ -10,12 +10,13 @@ class Order(models.Model):
 
     STATUS_CHOICES = [
 
-        ("pending", "Pending"),
-        ("paid", "Paid"),
-        ("shipped", "Shipped"),
-        ("delivered", "Delivered"),
+    ("pending", "Pending"),
+    ("paid", "Paid"),
+    ("processing", "Processing"),
+    ("shipped", "Shipped"),
+    ("delivered", "Delivered"),
 
-    ]
+]
 
 
 
@@ -84,6 +85,18 @@ class Order(models.Model):
         max_length=50,
         default="Stripe"
     )
+    carrier = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True
+    )
+
+
+    tracking_number = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True
+    )
 
 
 
@@ -96,10 +109,24 @@ class Order(models.Model):
 
 
     status = models.CharField(
-        max_length=20,
-        choices=STATUS_CHOICES,
-        default="pending"
-    )
+    max_length=20,
+    choices=STATUS_CHOICES,
+    default="pending"
+)
+    tracking_number = models.CharField(
+    max_length=100,
+    blank=True
+)
+
+    carrier = models.CharField(
+    max_length=100,
+    blank=True
+)
+
+
+    stock_updated = models.BooleanField(
+    default=False
+)
 
 
 

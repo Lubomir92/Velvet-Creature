@@ -1,0 +1,498 @@
+/* =================================
+   PROFILE PAGE
+================================= */
+
+
+.profile-page {
+
+    padding:120px 20px 80px;
+
+}
+
+
+
+
+
+/* =========================
+   PROFILE HEADER
+========================= */
+
+
+.profile-header {
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+
+
+.profile-header h1 {
+
+    font-family:'Playfair Display',serif;
+
+    font-size:52px;
+
+    color:#d4af37;
+
+}
+
+
+
+.profile-header p {
+
+    color:#aaa;
+
+    font-size:18px;
+
+}
+
+
+
+
+
+/* =========================
+   PROFILE GRID
+========================= */
+
+
+.profile-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+    max-width:1100px;
+
+    margin:auto;
+
+}
+
+
+
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+
+.profile-card {
+
+    background:rgba(255,255,255,.03);
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:30px;
+
+}
+
+
+
+.profile-card h2 {
+
+    color:#d4af37;
+
+    font-family:'Playfair Display',serif;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+/* =========================
+   CUSTOMER INFO
+========================= */
+
+
+.customer-info {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+
+.info-row {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+.info-row:last-child {
+
+    border-bottom:none;
+
+}
+
+
+
+.info-row span {
+
+    color:#aaa;
+
+    font-size:14px;
+
+}
+
+
+
+.info-row strong {
+
+    color:white;
+
+    font-weight:500;
+
+}
+
+
+
+
+
+/* =========================
+   INFO BOXES
+========================= */
+
+
+.info-box {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    background:rgba(255,255,255,.03);
+
+    border-radius:12px;
+
+    border:
+
+    1px solid rgba(255,255,255,.05);
+
+    transition:.3s;
+
+}
+
+
+
+.info-box:hover {
+
+    border-color:#d4af37;
+
+    transform:translateX(5px);
+
+}
+
+
+
+.info-icon {
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(212,175,55,.12);
+
+    font-size:20px;
+
+}
+
+
+
+
+
+/* =========================
+   ORDERS
+========================= */
+
+
+.profile-orders {
+
+    max-width:1100px;
+
+    margin:60px auto 0;
+
+}
+
+
+
+.profile-orders h2 {
+
+    color:#d4af37;
+
+    font-family:'Playfair Display',serif;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+.order-card {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:25px;
+
+    padding:24px;
+
+    margin-bottom:18px;
+
+    background:rgba(255,255,255,.03);
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    transition:.3s;
+
+}
+
+
+
+.order-card:hover {
+
+    transform:translateY(-4px);
+
+    border-color:#d4af37;
+
+}
+
+
+
+.order-left {
+
+    flex:1;
+
+}
+
+
+
+.order-left h3 {
+
+    margin-bottom:8px;
+
+    color:white;
+
+}
+
+
+
+.order-left p {
+
+    color:#999;
+
+}
+
+
+
+.order-center {
+
+    min-width:150px;
+
+    text-align:center;
+
+}
+
+
+
+.order-right {
+
+    text-align:right;
+
+}
+
+
+
+.order-right .price {
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#d4af37;
+
+}
+
+
+
+
+
+/* =========================
+   STATUS BADGES
+========================= */
+
+
+.status-badge {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    min-width:120px;
+
+    color:white;
+
+    text-transform:capitalize;
+
+}
+
+
+
+.status-new {
+
+    background:#6c757d;
+
+}
+
+
+
+.status-review {
+
+    background:#0d6efd;
+
+}
+
+
+
+.status-quote_sent {
+
+    background:#6f42c1;
+
+}
+
+
+
+.status-accepted {
+
+    background:#198754;
+
+}
+
+
+
+.status-printing {
+
+    background:#fd7e14;
+
+}
+
+
+
+.status-finished {
+
+    background:#20c997;
+
+}
+
+
+
+.status-shipped {
+
+    background:#198754;
+
+}
+
+
+
+.status-cancelled {
+
+    background:#dc3545;
+
+}
+
+
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:800px){
+
+
+.profile-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.order-card {
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+
+
+.order-right {
+
+    text-align:left;
+
+}
+
+
+}

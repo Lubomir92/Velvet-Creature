@@ -1,0 +1,218 @@
+/* =================================
+   GLOBAL RESPONSIVE
+================================= */
+
+
+/* =========================
+   TABLET
+========================= */
+
+
+@media(max-width:900px){
+
+
+.container {
+
+    width:100%;
+
+    padding-left:20px;
+
+    padding-right:20px;
+
+}
+
+
+
+
+/* general grids */
+
+
+.grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+}
+
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:768px){
+
+
+
+body {
+
+    overflow-x:hidden;
+
+}
+
+
+
+
+h1 {
+
+    font-size:32px;
+
+}
+
+
+
+h2 {
+
+    font-size:26px;
+
+}
+
+
+
+
+img {
+
+    max-width:100%;
+
+}
+
+
+
+
+/* buttons */
+
+
+.btn {
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+
+
+
+
+/* navbar */
+
+
+.navbar {
+
+    padding:0 20px;
+
+}
+
+
+
+.menu {
+
+    display:none;
+
+}
+
+
+
+.hamburger {
+
+    display:block;
+
+}
+
+
+
+
+
+/* product actions */
+
+
+.product-actions {
+
+    width:100%;
+
+}
+
+
+
+
+
+/* checkout */
+
+
+.checkout-layout {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+
+
+/* cards */
+
+
+.profile-grid,
+.shop-grid,
+.related-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+
+
+}
+
+
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+
+@media(max-width:480px){
+
+
+
+body {
+
+    font-size:14px;
+
+}
+
+
+
+.logo {
+
+    font-size:22px;
+
+}
+
+
+
+.product-info h1 {
+
+    font-size:28px;
+
+}
+
+
+
+.shop-card {
+
+    border-radius:14px;
+
+}
+
+
+
+}

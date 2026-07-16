@@ -270,6 +270,17 @@ def remove_from_cart(request, product_id):
 # ==================================================
 
 
+def checkout(request):
+
+    data = get_cart_data(request)
+
+
+    return render(
+        request,
+        "cart/checkout.html",
+        data
+    )
+
 
 
 

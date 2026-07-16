@@ -11,12 +11,19 @@
 
     </a>
 
+   <button class="hamburger"
+        onclick="toggleMenu()">
+
+    ☰
+
+</button>
+
 
 
 
     <!-- MENU -->
 
-    <div class="menu">
+    <div class="menu" id="mobileMenu">
 
 
         <a href="{% url 'home' %}">
@@ -41,6 +48,45 @@
             {% trans "About" %}
         </a>
 
+    <div class="mobile-language">
+
+<form action="{% url 'set_language' %}"
+      method="post">
+
+{% csrf_token %}
+
+<input type="hidden"
+       name="next"
+       value="{{ request.get_full_path }}">
+
+
+<select name="language"
+        onchange="this.form.submit()">
+
+<option value="en"
+{% if LANGUAGE_CODE == "en" %}selected{% endif %}>
+🇬🇧 English
+</option>
+
+
+<option value="fr"
+{% if LANGUAGE_CODE == "fr" %}selected{% endif %}>
+🇫🇷 Français
+</option>
+
+
+<option value="sk"
+{% if LANGUAGE_CODE == "sk" %}selected{% endif %}>
+🇸🇰 Slovenčina
+</option>
+
+
+</select>
+
+</form>
+
+</div>
+
 
 
     </div>
@@ -52,7 +98,7 @@
 
     <!-- RIGHT SIDE -->
 
-    <div class="icons">
+    <div class="navbar-right">
 
 
 

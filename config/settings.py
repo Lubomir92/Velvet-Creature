@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'custom_orders',
     'accounts',
     "wishlist",
+    "reviews",
 ]
 
 
@@ -182,19 +183,28 @@ STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
 
 
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+EMAIL_HOST = "smtp.gmail.com"
+
+EMAIL_PORT = 587
+
+EMAIL_USE_TLS = True
+
+
+EMAIL_HOST_USER = "szlovakl333@gmail.com"
+
+EMAIL_HOST_PASSWORD = "iqwcpohfvyhjeqvx"
 
 
 DEFAULT_FROM_EMAIL = (
-    "Velvet Creature <noreply@velvetcreature.com>"
+    "Velvet Creature <szlovakl333@gmail.com>"
 )
 
 
 DEFAULT_ADMIN_EMAIL = (
-    "tvoj_email@example.com"
+    "TVÔJ_GMAIL@gmail.com"
 )
-
-
 # =========================================================
 # DEFAULT
 # =========================================================

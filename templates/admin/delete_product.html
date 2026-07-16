@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Delete Product
+{% endblock %}
+
+
+{% block content %}
+
+
+<div style="
+max-width:600px;
+margin:80px auto;
+text-align:center;
+">
+
+
+<h1 style="
+color:#d4af37;
+">
+
+Delete Product
+
+</h1>
+
+
+<p style="
+font-size:20px;
+margin:40px;
+">
+
+Are you sure you want to delete:
+
+<br>
+
+<strong>
+{{ product.name }}
+</strong>
+
+?
+
+</p>
+
+
+
+<form method="POST">
+
+{% csrf_token %}
+
+
+<button
+type="submit"
+style="
+background:#ff4444;
+color:white;
+padding:12px 30px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+">
+
+Delete
+
+</button>
+
+
+<a
+href="{% url 'admin_products' %}"
+style="
+margin-left:20px;
+color:#aaa;
+">
+
+Cancel
+
+</a>
+
+
+</form>
+
+
+</div>
+
+
+{% endblock %}

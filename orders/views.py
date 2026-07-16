@@ -4,15 +4,16 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.urls import reverse
 from cart.views import get_cart_data
-
+from .email import send_order_email
+from .forms import ShippingForm
 import stripe
 
 from .models import Order, OrderItem
-from .invoice import generate_invoice
+from .invoice import generate_invoice, generate_invoice_bytes
 from products.models import Product
 
 
@@ -116,9 +117,12 @@ def checkout(request):
         session = stripe.checkout.Session.create(
 
 
-            payment_method_types=[
-                "card"
-            ],
+    customer_email=order.email,
+
+
+    payment_method_types=[
+        "card"
+    ],
 
 
             mode="payment",
@@ -291,34 +295,130 @@ def mark_paid(request, order_id):
     order.save()
 
 
+    send_order_email(
+        order,
+        "Your payment was received",
+        "emails/paid_email.html"
+    )
+
+
     return redirect("admin_orders")
 
 
+# ==================================================
+# MARK PROCESSING
+# ==================================================
 
+@staff_member_required
+def mark_processing(request, order_id):
+
+    order = get_object_or_404(
+        Order,
+        id=order_id
+    )
+
+    order.status = "processing"
+    order.save()
+    send_order_email(
+    order,
+    "Your order is being prepared",
+    "emails/processing_email.html"
+)
+
+    return redirect("admin_orders")
 
 
 @staff_member_required
 def mark_shipped(request, order_id):
 
     order = get_object_or_404(
-
         Order,
-
         id=order_id
-
     )
 
 
-    order.status = "shipped"
+    if request.method == "POST":
 
+        form = ShippingForm(
+            request.POST,
+            instance=order
+        )
+
+
+        if form.is_valid():
+
+            order = form.save()
+
+            order.status = "shipped"
+
+            order.save()
+
+
+            send_order_email(
+                order,
+                "Your order has been shipped",
+                "emails/shipped_email.html"
+            )
+
+
+            return redirect("admin_orders")
+
+
+    else:
+
+        form = ShippingForm(
+            instance=order
+        )
+
+
+    return render(
+        request,
+        "orders/shipping.html",
+        {
+            "form": form,
+            "order": order
+        }
+    )
+
+@staff_member_required
+def mark_delivered(request, order_id):
+
+    order = get_object_or_404(
+        Order,
+        id=order_id
+    )
+
+    order.status = "delivered"
     order.save()
-
+    send_order_email(
+    order,
+    "Your order has been delivered",
+    "emails/delivered_email.html"
+)
 
     return redirect("admin_orders")
 
 
+# ==================================================
+# ADMIN ORDER DETAIL
+# ==================================================
+
+@staff_member_required
+def admin_order_detail(request, order_id):
+
+    order = get_object_or_404(
+        Order,
+        id=order_id
+    )
 
 
+    return render(
+        request,
+        "orders/admin_order_detail.html",
+        {
+            "order": order
+        }
+    )
 
 
 # ==================================================
@@ -345,6 +445,25 @@ def payment_success(request):
             )
 
 
+            # UPDATE STOCK ONLY ONCE
+            if not order.stock_updated:
+
+
+                for item in order.items.all():
+
+                    item.product.stock -= item.quantity
+
+                    item.product.save()
+
+
+
+                order.stock_updated = True
+
+                order.status = "paid"
+
+                order.save()
+
+
 
             html_message = render_to_string(
 
@@ -358,35 +477,48 @@ def payment_success(request):
 
 
 
-            send_mail(
+            email = EmailMultiAlternatives(
 
                 subject=f"Velvet Creature - Order #{order.id}",
 
+                body=f"""
+            Thank you for your order {order.order_number}.
 
-                message=f"""
-Thank you for your order {order.order_number}.
+            Your invoice is attached.
 
-Total:
-€{order.total_price}
+            Velvet Creature by Lubma3D
+            """,
 
-Velvet Creature by Lubma3D
-""",
+                from_email=settings.DEFAULT_FROM_EMAIL,
 
-
-                from_email="shop@velvetcreature.com",
-
-
-                recipient_list=[
+                to=[
                     order.email
-                ],
-
-
-                html_message=html_message,
-
-
-                fail_silently=True
+                ]
 
             )
+
+
+            email.attach_alternative(
+
+                html_message,
+
+                "text/html"
+
+            )
+
+
+            email.attach(
+
+                f"invoice_{order.order_number}.pdf",
+
+                generate_invoice_bytes(order),
+
+                "application/pdf"
+
+            )
+
+
+            email.send()
 
 
 

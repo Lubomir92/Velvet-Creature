@@ -1,28 +1,75 @@
 {% extends "base.html" %}
-
+{% load i18n %}
+{% load static %}
 
 {% block title %}
-My Wishlist
+{% trans "My Wishlist" %}
 {% endblock %}
-
 
 
 {% block content %}
 
 
-<div class="wishlist-page">
+<section class="wishlist-page">
 
 
-<h1 style="color:#d4af37;">
-❤️ My Wishlist
+<div class="shop-header">
+
+<h1 class="shop-title">
+
+🎃 {% trans "My Wishlist" %}
+
 </h1>
 
+
+<p class="shop-subtitle">
+
+{% trans "Your saved Velvet Creature creations" %}
+
+</p>
+
+
+</div>
+
+
+
+
+<div class="shop-grid">
 
 
 {% for item in items %}
 
 
-<div class="card">
+<div class="shop-card wishlist-card"
+     id="wishlist-card-{{ item.product.id }}">
+
+
+
+<div class="shop-image">
+
+
+{% if item.product.image %}
+
+<img src="{{ item.product.image.url }}"
+     alt="{{ item.product.name }}">
+
+
+{% else %}
+
+<div class="no-image">
+{% trans "No image" %}
+</div>
+
+
+{% endif %}
+
+
+</div>
+
+
+
+
+<div class="shop-card-content">
 
 
 <h3>
@@ -30,21 +77,53 @@ My Wishlist
 </h3>
 
 
-<p>
+
+<div class="price">
 €{{ item.product.price }}
-</p>
+</div>
 
 
 
-<a href="{% url 'shop' %}">
-View Product
+
+
+<div class="shop-actions">
+
+
+<a href="{% url 'product_detail' item.product.slug %}"
+class="btn">
+
+{% trans "View Product" %}
+
 </a>
 
 
 
-<a href="{% url 'toggle_wishlist' item.product.id %}">
-Remove ❤️
-</a>
+<button
+    type="button"
+    class="btn secondary"
+    onclick="removeWishlistItem({{ item.product.id }})">
+
+    🎃 {% trans "Remove" %}
+
+</button>
+
+
+<button
+type="button"
+class="btn primary"
+onclick="addToCart({{ item.product.id }})">
+
+🛒 {% trans "Add to cart" %}
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
 
 
 </div>
@@ -54,9 +133,18 @@ Remove ❤️
 {% empty %}
 
 
+<div class="empty-wishlist">
+
+<h2>
+🎃
+</h2>
+
 <p>
-Your wishlist is empty.
+{% trans "Your wishlist is empty." %}
 </p>
+
+</div>
+
 
 
 {% endfor %}
@@ -64,6 +152,9 @@ Your wishlist is empty.
 
 
 </div>
+
+
+</section>
 
 
 {% endblock %}

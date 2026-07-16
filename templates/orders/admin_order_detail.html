@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Order {{ order.order_number }}
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="container" style="max-width:900px;margin:auto;padding:40px;">
+
+
+<h1 style="color:#d4af37;">
+{{ order.order_number }}
+</h1>
+
+
+
+<div class="card">
+
+<h3>
+Customer
+</h3>
+
+
+<p>
+{{ order.first_name }}
+{{ order.last_name }}
+</p>
+
+
+<p>
+{{ order.email }}
+</p>
+
+
+<p>
+{{ order.address }}
+</p>
+
+
+<p>
+{{ order.city }}
+{{ order.country }}
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+Products
+</h3>
+
+
+{% for item in order.items.all %}
+
+
+<p>
+
+<strong>
+{{ item.product.name }}
+</strong>
+
+<br>
+
+Quantity:
+{{ item.quantity }}
+
+<br>
+
+Price:
+{{ item.price }} €
+
+</p>
+
+
+<hr>
+
+
+{% endfor %}
+
+
+
+<h2 style="color:#d4af37;">
+
+Total:
+{{ order.total_price }} €
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+Status
+</h3>
+
+
+<p>
+{{ order.get_status_display }}
+</p>
+
+
+<a href="{% url 'mark_paid' order.id %}" class="btn">
+Mark Paid
+</a>
+
+
+<a href="{% url 'mark_shipped' order.id %}" class="btn">
+Mark Shipped
+</a>
+
+
+<a href="{% url 'invoice' order.id %}" class="btn">
+Download Invoice
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+{% endblock %}

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 
 {% block title %}
@@ -29,21 +30,21 @@ Order #{{ order.id }}
 </h3>
 
 
+<div class="progress-wrapper">
+
 
 <div class="order-progress">
 
 
+<div class="step {% if order.status in 'pending paid processing shipped delivered' %}active{% endif %}">
 
-<div class="step {% if order.status == 'pending' or order.status == 'paid' or order.status == 'shipped' or order.status == 'delivered' %}active{% endif %}">
+    <span>✓</span>
 
-    ✓
-
-    <span>
+    <small>
         Order created
-    </span>
+    </small>
 
 </div>
-
 
 
 
@@ -51,17 +52,15 @@ Order #{{ order.id }}
 
 
 
+<div class="step {% if order.status in 'paid processing shipped delivered' %}active{% endif %}">
 
-<div class="step {% if order.status == 'paid' or order.status == 'shipped' or order.status == 'delivered' %}active{% endif %}">
+    <span>✓</span>
 
-    ✓
-
-    <span>
+    <small>
         Paid
-    </span>
+    </small>
 
 </div>
-
 
 
 
@@ -69,43 +68,51 @@ Order #{{ order.id }}
 
 
 
+<div class="step {% if order.status in 'processing shipped delivered' %}active{% endif %}">
 
-<div class="step {% if order.status == 'shipped' or order.status == 'delivered' %}active{% endif %}">
+    <span>✓</span>
 
-    ✓
+    <small>
+        Processing
+    </small>
 
-    <span>
+</div>
+
+
+
+<div class="line"></div>
+
+
+
+<div class="step {% if order.status in 'shipped delivered' %}active{% endif %}">
+
+    <span>✓</span>
+
+    <small>
         Shipped
-    </span>
+    </small>
 
 </div>
 
 
 
-
 <div class="line"></div>
-
 
 
 
 <div class="step {% if order.status == 'delivered' %}active{% endif %}">
 
-    ✓
+    <span>✓</span>
 
-    <span>
+    <small>
         Delivered
-    </span>
-
-</div>
-
-
+    </small>
 
 </div>
 
 
 </div>
-
-
+</div>
 
 
 
@@ -153,7 +160,72 @@ Order #{{ order.id }}
 </div>
 
 
+<!-- SHIPPING INFORMATION -->
 
+{% if order.status == "shipped" or order.status == "delivered" %}
+
+<div class="card">
+
+<h3>
+Shipping information
+</h3>
+
+
+<p>
+Carrier:
+<strong>
+{{ order.carrier }}
+</strong>
+</p>
+
+
+<p>
+Tracking number:
+<strong>
+{{ order.tracking_number }}
+</strong>
+</p>
+
+
+{% if order.carrier == "Packeta" %}
+
+<a class="btn"
+href="https://tracking.packeta.com/"
+target="_blank">
+
+Track package
+
+</a>
+
+
+{% elif order.carrier == "GLS" %}
+
+<a class="btn"
+href="https://gls-group.com/"
+target="_blank">
+
+Track package
+
+</a>
+
+
+{% elif order.carrier == "DPD" %}
+
+<a class="btn"
+href="https://www.dpd.com/"
+target="_blank">
+
+Track package
+
+</a>
+
+
+{% endif %}
+
+
+</div>
+
+{% endif %}
 
 
 <!-- CUSTOMER -->
@@ -276,7 +348,7 @@ No items found.
 <a href="{% url 'invoice' order.id %}"
 class="btn">
 
-📄 Download Invoice
+{% trans "Download Invoice PDF" %}
 
 </a>
 

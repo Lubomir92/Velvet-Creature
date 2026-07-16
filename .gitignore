@@ -23,3 +23,20 @@ staticfiles/
 # OS
 .DS_Store
 Thumbs.db
+# Virtual environment
+venv/
+env/
+
+# Django media uploads
+media/
+
+# Static collected files
+staticfiles/
+
+# Django cache
+*.pyc
+__pycache__/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Gallery
+{% endblock %}
+
+
+{% block content %}
+
+
+<div style="
+max-width:900px;
+margin:40px auto;
+">
+
+
+<h1 style="color:#d4af37;">
+{{ product.name }} Gallery
+</h1>
+
+
+
+<form method="POST"
+enctype="multipart/form-data">
+
+{% csrf_token %}
+
+
+{{ form.as_p }}
+
+
+<button
+style="
+background:#d4af37;
+padding:12px 25px;
+border:none;
+border-radius:8px;
+">
+
+Add Image
+
+</button>
+
+
+</form>
+
+
+
+<hr style="margin:40px 0;">
+
+
+
+<h2>
+Images
+</h2>
+
+
+
+<div style="
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+">
+
+
+{% for image in images %}
+
+
+<div>
+
+<img
+src="{{ image.image.url }}"
+style="
+width:200px;
+border-radius:10px;
+">
+
+
+<p>
+{{ image.alt_text }}
+</p>
+
+
+</div>
+
+
+{% endfor %}
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}

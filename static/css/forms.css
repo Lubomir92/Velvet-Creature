@@ -1,0 +1,347 @@
+/* =================================
+   FORMS
+================================= */
+
+
+/* =========================
+   GENERAL FORM BOX
+========================= */
+
+
+.form-box {
+
+    background:rgba(255,255,255,.03);
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:35px;
+
+}
+
+
+
+
+
+/* =========================
+   INPUTS
+========================= */
+
+
+.form-box input,
+.form-box textarea,
+.form-box select {
+
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:15px;
+
+
+    background:#111;
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+
+    border-radius:10px;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+
+
+.form-box input:focus,
+.form-box textarea:focus,
+.form-box select:focus {
+
+    outline:none;
+
+    border-color:#d4af37;
+
+}
+
+
+
+
+
+/* =========================
+   LABELS
+========================= */
+
+
+.form-box label {
+
+    display:block;
+
+    color:#aaa;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+
+
+/* =========================
+   CHECKOUT
+========================= */
+
+
+.checkout-grid {
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+
+
+.checkout-field {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+
+
+.checkout-field.full {
+
+    grid-column:1 / -1;
+
+}
+
+
+
+.checkout-field label {
+
+    color:#aaa;
+
+    font-size:14px;
+
+}
+
+
+
+.checkout-field input {
+
+    background:#111;
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:10px;
+
+}
+
+
+
+.checkout-field input:focus {
+
+    outline:none;
+
+    border-color:#d4af37;
+
+}
+
+
+
+
+
+/* =========================
+   CHECKOUT SUMMARY
+========================= */
+
+
+.checkout-summary {
+
+    background:rgba(255,255,255,.04);
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:25px;
+
+}
+
+
+
+.checkout-product {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:15px 0;
+
+    border-bottom:
+
+    1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+.checkout-total {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:25px;
+
+    font-size:22px;
+
+}
+
+
+
+.checkout-total strong {
+
+    color:#d4af37;
+
+}
+
+
+
+
+
+/* =========================
+   REVIEWS FORM
+========================= */
+
+
+.review-form {
+
+    margin-top:50px;
+
+    padding:30px;
+
+    background:rgba(255,255,255,.04);
+
+    border-radius:20px;
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+.review-form h3 {
+
+    margin-bottom:25px;
+
+    color:#d4af37;
+
+}
+
+
+
+.rating-field select {
+
+    background:#111;
+
+    color:white;
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    padding:12px;
+
+    border-radius:10px;
+
+}
+
+
+
+.comment-field textarea {
+
+    width:100%;
+
+    min-height:120px;
+
+    background:#111;
+
+    color:white;
+
+    border:
+
+    1px solid rgba(255,255,255,.15);
+
+    border-radius:12px;
+
+    padding:15px;
+
+    resize:none;
+
+}
+
+
+
+.comment-field textarea:focus,
+.rating-field select:focus {
+
+    outline:none;
+
+    border-color:#d4af37;
+
+}
+
+
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:768px){
+
+
+.checkout-grid {
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.checkout-field.full {
+
+    grid-column:auto;
+
+}
+
+
+}

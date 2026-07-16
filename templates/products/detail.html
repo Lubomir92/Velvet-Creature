@@ -1,53 +1,279 @@
 {% extends "base.html" %}
 {% load i18n %}
 
+
 {% block content %}
 
-<section class="shop-page">
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+<section class="product-detail-page">
 
-        <div>
+
+    <div class="product-detail-container">
+
+
+
+        <!-- IMAGE -->
+
+        <div class="product-detail-image">
+
+
             {% if product.image %}
-                <img src="{{ product.image.url }}" style="width:100%;border-radius:12px;">
+
+                <img id="main-product-image"
+                     src="{{ product.image.url }}"
+                     alt="{{ product.name }}">
+
+
+            {% else %}
+
+                <div class="no-image">
+                    {% trans "No image" %}
+                </div>
+
             {% endif %}
+
+
+
+
+
+            <div class="product-gallery">
+
+
+                {% if product.image %}
+
+                    <img src="{{ product.image.url }}"
+                         class="gallery-thumb active"
+                         onclick="changeMainImage(this.src)">
+
+
+                {% endif %}
+
+
+
+
+
+                {% for image in product.images.all %}
+
+
+                    <img src="{{ image.image.url }}"
+                         class="gallery-thumb"
+                         onclick="changeMainImage(this.src)">
+
+
+                {% endfor %}
+
+
+            </div>
+
+
+
         </div>
 
-        <div>
 
-            <h1 style="color:#d4af37;">{{ product.name }}</h1>
 
-            <p style="margin:15px 0;">
+
+
+
+
+        <!-- INFO -->
+
+
+        <div class="product-detail-info">
+
+
+
+            <h1>
+                {{ product.name }}
+            </h1>
+
+
+
+
+
+            {% if product.short_description %}
+
+                <p class="short-description">
+                    {{ product.short_description }}
+                </p>
+
+            {% endif %}
+
+
+
+
+
+
+            <p>
                 {{ product.description }}
             </p>
 
-            <h2 style="color:#d4af37;">
-                {{ product.price }} €
+
+
+
+
+
+            <h2 class="product-price">
+
+                €{{ product.price }}
+
             </h2>
 
+
+
+
+
+
+            <div class="product-meta">
+
+
+                {% if product.material %}
+
+                <p>
+                    <strong>{% trans "Material" %}:</strong>
+                    {{ product.material }}
+                </p>
+
+                {% endif %}
+
+
+
+
+
+                {% if product.size %}
+
+                <p>
+                    <strong>{% trans "Size" %}:</strong>
+                    {{ product.size }}
+                </p>
+
+                {% endif %}
+
+
+
+
+
+                {% if product.weight %}
+
+                <p>
+                    <strong>{% trans "Weight" %}:</strong>
+                    {{ product.weight }} g
+                </p>
+
+                {% endif %}
+
+
+            </div>
+
+
+
+
+
+
+
             {% if product.stock > 0 %}
-                <p style="color:lightgreen;">In Stock</p>
+
+
+                <p class="stock-ok">
+
+                    ✓ {% trans "In Stock" %}
+
+                </p>
+
+
             {% else %}
-                <p style="color:red;">Sold Out</p>
+
+
+                <p class="stock-out">
+
+                    {% trans "Sold Out" %}
+
+                </p>
+
+
             {% endif %}
 
-            <br>
 
-            {% if product.stock > 0 %}
-           
-<button
-    type="button"
-    class="btn secondary"
-    onclick="addToCart({{ product.id }}); return false;">
-    Add to cart
-</button>
-{% endif %}
-            
+
+
+
+
+
+            <div class="product-buttons">
+
+
+
+                {% if product.stock > 0 %}
+
+
+                <button
+                    type="button"
+                    class="btn secondary"
+                    onclick="addToCart({{ product.id }}); return false;">
+
+
+                    🛒 {% trans "Add to cart" %}
+
+
+                </button>
+
+
+                {% endif %}
+
+
+
+
+
+                {% if user.is_authenticated %}
+
+
+                <a href="{% url 'toggle_wishlist' product.id %}"
+                   class="btn">
+
+
+                    🎃 {% trans "Wishlist" %}
+
+
+                </a>
+
+
+                {% endif %}
+
+
+
+
+
+            </div>
+
 
         </div>
 
+
+
     </div>
 
+
+
 </section>
+
+
+
+<script>
+
+function changeMainImage(src) {
+
+    const mainImage = document.getElementById(
+        "main-product-image"
+    );
+
+    if(mainImage){
+
+        mainImage.src = src;
+
+    }
+
+}
+
+</script>
+
 
 {% endblock %}

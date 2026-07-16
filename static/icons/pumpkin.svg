@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+
+    <!-- Stem -->
+    <path d="M32 10
+           C31 6 34 4 38 4
+           C34 8 36 13 38 16" fill="#2b2b2b"></path>
+
+    <!-- Pumpkin -->
+    <ellipse cx="32" cy="36" rx="20" ry="18" fill="#ff7a00"></ellipse>
+
+    <ellipse cx="22" cy="36" rx="8" ry="18" fill="#ff8d1a"></ellipse>
+
+    <ellipse cx="42" cy="36" rx="8" ry="18" fill="#ff8d1a"></ellipse>
+
+    <!-- Eyes -->
+    <polygon points="24,32 28,26 30,34" fill="#111"></polygon>
+
+    <polygon points="40,32 36,26 34,34" fill="#111"></polygon>
+
+    <!-- Nose -->
+    <polygon points="32,36 29,42 35,42" fill="#111"></polygon>
+
+    <!-- Mouth -->
+    <path d="M23 46
+           Q32 54 41 46" stroke="#111" stroke-width="2" fill="none"></path>
+
+</svg>

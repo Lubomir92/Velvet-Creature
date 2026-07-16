@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Velvet Creature\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-11 18:01+0200\n"
+"POT-Creation-Date: 2026-07-12 16:00+0200\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,6 +87,7 @@ msgstr "Commande personnalisée"
 
 #: .\accounts\templates\accounts\profile.html:358
 #: .\custom_orders\templates\custom_orders\detail.html:184
+#: .\templates\products\detail.html:111
 msgid "Material"
 msgstr "Matériau"
 
@@ -139,6 +140,7 @@ msgid "Quantity"
 msgstr "Quantité"
 
 #: .\custom_orders\templates\custom_orders\detail.html:229
+#: .\templates\products\detail.html:124
 msgid "Size"
 msgstr "Taille"
 
@@ -203,7 +205,7 @@ msgid "Home"
 msgstr "Accueil"
 
 #: .\templates\includes\navbar.html:29 .\templates\products\home.html:28
-#: .\templates\products\shop.html:12
+#: .\templates\products\shop.html:13
 msgid "Shop"
 msgstr "Boutique"
 
@@ -211,7 +213,9 @@ msgstr "Boutique"
 msgid "About"
 msgstr "À propos"
 
-#: .\templates\includes\navbar.html:150
+#: .\templates\includes\navbar.html:150 .\templates\products\detail.html:223
+#: .\templates\products\shop.html:198 .\templates\products\shop.html:204
+#: .\templates\products\shop.html:218 .\templates\products\shop.html:224
 msgid "Wishlist"
 msgstr "Liste de souhaits"
 
@@ -238,6 +242,30 @@ msgstr "Vous pouvez réessayer quand vous serez prêt."
 #: .\templates\orders\payment_cancel.html:15
 msgid "Back to Checkout"
 msgstr "Retour au paiement"
+
+#: .\templates\products\detail.html:33 .\templates\products\shop.html:122
+#: .\templates\wishlist\wishlist.html:84
+msgid "No image"
+msgstr "Pas d'image"
+
+#: .\templates\products\detail.html:137
+msgid "Weight"
+msgstr ""
+
+#: .\templates\products\detail.html:160 .\templates\products\home.html:89
+#: .\templates\products\shop.html:140
+msgid "In Stock"
+msgstr "En stock"
+
+#: .\templates\products\detail.html:170 .\templates\products\home.html:91
+#: .\templates\products\shop.html:152
+msgid "Sold Out"
+msgstr "Rupture de stock"
+
+#: .\templates\products\detail.html:200 .\templates\products\home.html:111
+#: .\templates\products\shop.html:290
+msgid "Add to cart"
+msgstr "Ajouter au panier"
 
 #: .\templates\products\home.html:16
 msgid "Luxury 3D Printed Collectibles"
@@ -287,21 +315,9 @@ msgstr ""
 "Inspiré par l'art gothique, les mondes fantastiques et le design "
 "cinématographique."
 
-#: .\templates\products\home.html:89
-msgid "In Stock"
-msgstr "En stock"
-
-#: .\templates\products\home.html:91
-msgid "Sold Out"
-msgstr "Rupture de stock"
-
 #: .\templates\products\home.html:103
 msgid "Detail"
 msgstr "Détails"
-
-#: .\templates\products\home.html:111
-msgid "Add to cart"
-msgstr "Ajouter au panier"
 
 #: .\templates\products\home.html:131
 msgid ""
@@ -310,3 +326,109 @@ msgid ""
 msgstr ""
 "Chaque créature commence comme une idée — façonnée par l'obscurité et "
 "raffinée par l'imagination."
+
+#: .\templates\products\shop.html:40
+msgid "Search products..."
+msgstr ""
+
+#: .\templates\products\shop.html:47
+msgid "Search"
+msgstr ""
+
+#: .\templates\products\shop.html:65
+msgid "All"
+msgstr ""
+
+#: .\templates\products\shop.html:270
+#, fuzzy
+#| msgid "Details"
+msgid "View details"
+msgstr "Détails"
+
+#: .\templates\products\shop.html:323
+msgid "No products found."
+msgstr ""
+
+#: .\templates\wishlist\wishlist.html:5 .\templates\wishlist\wishlist.html:21
+msgid "My Wishlist"
+msgstr "Liste de souhaits"
+
+#: .\templates\wishlist\wishlist.html:30
+msgid "Your saved Velvet Creature creations"
+msgstr "Vos créations Velvet Creature enregistrées"
+
+#: .\templates\wishlist\wishlist.html:149
+msgid "View Product"
+msgstr "Voir le produit"
+
+#: .\templates\wishlist\wishlist.html:167
+msgid "Remove"
+msgstr "Retirer"
+
+#: .\templates\wishlist\wishlist.html:207
+msgid "Your wishlist is empty."
+msgstr "Votre liste de souhaits est vide."
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
+msgid "Django Documentation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:227
+msgid "Get started with Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:235
+msgid "Django Community"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:8
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#~ msgid "Remove from Wishlist"
+#~ msgstr "Retirer de ma liste de souhaits"
+
+#, fuzzy
+#~| msgid "Description"
+#~ msgid "Duration"
+#~ msgstr "Description"
+
+#, fuzzy
+#~| msgid "Files"
+#~ msgid "File"
+#~ msgstr "Fichiers"

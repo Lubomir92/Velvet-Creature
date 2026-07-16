@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render, get_object_or_404
+from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 
 from products.models import Product
@@ -18,17 +19,16 @@ def toggle_wishlist(request, product_id):
         id=product_id
     )
 
-
     wishlist_item = Wishlist.objects.filter(
         user=request.user,
         product=product
     ).first()
 
-
-
     if wishlist_item:
 
         wishlist_item.delete()
+
+        added = False
 
     else:
 
@@ -37,11 +37,14 @@ def toggle_wishlist(request, product_id):
             product=product
         )
 
+        added = True
 
-    return redirect(request.META.get(
-        "HTTP_REFERER",
-        "shop"
-    ))
+    return JsonResponse({
+
+        "success": True,
+        "added": added,
+
+    })
 
 
 

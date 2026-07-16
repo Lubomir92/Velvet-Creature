@@ -1,0 +1,333 @@
+/* ==================================================
+   VELVET CREATURE
+   NAVBAR CSS
+================================================== */
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+
+.navbar {
+
+    height:85px;
+
+    padding:0 50px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    position:relative;
+
+    z-index:1000;
+
+}
+
+
+
+/* =========================
+   LOGO
+========================= */
+
+
+.logo {
+
+    font-family:'Playfair Display', serif;
+
+    font-size:26px;
+
+    letter-spacing:1px;
+
+    color:#d4af37;
+
+}
+
+
+
+/* =========================
+   DESKTOP MENU
+========================= */
+
+
+.menu {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+
+
+.menu a {
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+
+
+.menu a:hover {
+
+    color:#d4af37;
+
+}
+
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+
+.navbar-right {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+/* =========================
+   LANGUAGE SWITCH
+========================= */
+
+
+.lang-switch select {
+
+    background:#151515;
+
+    color:white;
+
+    border:1px solid #333;
+
+    padding:8px 12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+
+
+/* =========================
+   CART
+========================= */
+
+
+.cart-icon {
+
+    font-size:22px;
+
+}
+
+
+
+.cart-count {
+
+    min-width:20px;
+
+    height:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#d4af37;
+
+    color:#000;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+
+
+/* =========================
+   USER MENU
+========================= */
+
+
+.user-menu {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+
+.user-menu a {
+
+    color:#ddd;
+
+    font-size:14px;
+
+    transition:.3s;
+
+}
+
+
+
+.user-menu a:hover {
+
+    color:#d4af37;
+
+}
+
+
+
+/* =========================
+   HAMBURGER
+========================= */
+
+
+.hamburger {
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:#d4af37;
+
+    font-size:30px;
+
+}
+
+
+
+/* =========================
+   MOBILE MENU DRAWER
+========================= */
+
+
+#mobileMenu {
+
+    display:none;
+
+    position:absolute;
+
+    top:85px;
+
+    left:0;
+
+    width:100%;
+
+    background:#0d0d0d;
+
+    padding:25px;
+
+    flex-direction:column;
+
+    gap:20px;
+
+    border-top:
+
+    1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+#mobileMenu.open {
+
+    display:flex;
+
+}
+
+
+
+/* ==================================================
+   MOBILE NAVBAR
+================================================== */
+
+
+@media(max-width:768px){
+
+
+    .navbar {
+
+        padding:0 20px;
+
+    }
+
+
+
+    .menu {
+
+        display:none;
+
+    }
+
+
+
+    .hamburger {
+
+        display:block;
+
+    }
+
+
+
+    .navbar-right {
+
+        margin-left:auto;
+
+        gap:10px;
+
+    }
+
+
+
+    .lang-switch {
+
+        display:none;
+
+    }
+
+
+
+    .user-menu {
+
+        display:none;
+
+    }
+
+
+
+    .logo {
+
+        font-size:24px;
+
+    }
+
+
+}

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 
 {% block content %}
 
@@ -19,47 +20,143 @@
     </div>
 
 
+    <!-- SEARCH -->
+
+    <form method="get" class="search-box">
+
+
+        {% if request.GET.category %}
+
+            <input type="hidden"
+                   name="category"
+                   value="{{ request.GET.category }}">
+
+        {% endif %}
+
+
+
+        <input type="text"
+               name="search"
+               placeholder="{% trans 'Search products...' %}"
+               value="{{ search_query|default:'' }}">
+
+
+
+        <button type="submit">
+
+            {% trans "Search" %}
+
+        </button>
+
+
+    </form>
+
+
+
+
+    <!-- CATEGORY FILTER -->
+
+    <div class="category-filter">
+
+
+        <a href="{% url 'shop' %}"
+           class="{% if not request.GET.category %}active{% endif %}">
+
+            {% trans "All" %}
+
+        </a>
+
+
+
+        {% for category in categories %}
+
+
+            <a href="?category={{ category.slug }}"
+               class="{% if request.GET.category == category.slug %}active{% endif %}">
+
+
+                {{ category.name }}
+
+
+            </a>
+
+
+        {% endfor %}
+
+
+    </div>
+
+
+
+
+
 
     <div class="shop-grid">
+
 
 
         {% for product in products %}
 
 
+
         <div class="shop-card">
+
 
 
             <div class="shop-image">
 
 
+
                 {% if product.image %}
+
 
                     <img src="{{ product.image.url }}"
                          alt="{{ product.name }}">
 
+
                 {% else %}
 
+
                     <div class="no-image">
-                        No image
+
+                        {% trans "No image" %}
+
                     </div>
 
+
                 {% endif %}
+
+
+
 
 
 
                 {% if product.stock > 0 %}
 
+
+
                     <span class="shop-badge">
-                        In Stock
+
+                        {% trans "In Stock" %}
+
                     </span>
+
+
 
                 {% else %}
 
+
+
                     <span class="shop-badge sold">
-                        Sold Out
+
+                        {% trans "Sold Out" %}
+
                     </span>
 
+
+
                 {% endif %}
+
 
 
             </div>
@@ -68,91 +165,72 @@
 
 
 
+
+
+
             <div class="shop-card-content">
 
 
+
                 <h3>
+
                     {{ product.name }}
+
                 </h3>
+
+
 
 
 
                 <!-- WISHLIST -->
 
-               <div class="wishlist-area">
 
-
-    {% if user.is_authenticated %}
-
-
-        <a href="{% url 'toggle_wishlist' product.id %}"
-           class="wishlist-btn">
-
-
-            {% if product.id in wishlist_products %}
-
-                ❤️
-
-            {% else %}
-
-                ♡
-
-            {% endif %}
-
-
-        </a>
-
-
-    {% else %}
-
-
-        <a href="{% url 'login' %}"
-           class="wishlist-btn">
-
-            ♡
-
-        </a>
-
-
-    {% endif %}
-
-
-</div>
+                <div class="wishlist-area">
 
 
 
-
-                <div class="price">
-
-                    €{{ product.price }}
-
-                </div>
+                    {% if user.is_authenticated %}
 
 
 
-
-                <div class="shop-actions">
-
-
-                    <a href="{% url 'product_detail' product.id %}"
-                       class="btn">
-
-                        View details
-
-                    </a>
+                        <a href="#"
+   class="wishlist-btn"
+   data-product="{{ product.id }}"
+   onclick="toggleWishlist(event, {{ product.id }})"
+   title="{% trans 'Wishlist' %}">
 
 
 
+    <img src="{% static 'icons/pumpkin.svg' %}"
+     id="wishlist-icon-{{ product.id }}"
+     class="wishlist-icon {% if product.id in wishlist_products %}active{% endif %}"
+     alt="{% trans 'Wishlist' %}">
 
-                    {% if product.stock > 0 %}
 
-                    <button type="button"
-                            class="btn secondary"
-                            onclick="addToCart({{ product.id }}); return false;">
 
-                        Add to cart
+                        </a>
 
-                    </button>
+
+
+                    {% else %}
+
+
+
+                        <a href="{% url 'login' %}"
+                           class="wishlist-btn"
+                           title="{% trans 'Wishlist' %}">
+
+
+
+                            <img src="{% static 'icons/pumpkin.svg' %}"
+                                 class="wishlist-icon"
+                                 alt="{% trans 'Wishlist' %}">
+
+
+
+                        </a>
+
+
 
                     {% endif %}
 
@@ -162,19 +240,105 @@
 
 
 
+
+
+
+
+
+                <div class="price">
+
+
+                    €{{ product.price }}
+
+
+                </div>
+
+
+
+
+
+
+
+
+                <div class="shop-actions">
+
+
+
+
+
+                    <a href="{% url 'product_detail' product.slug %}"
+                       class="btn">
+
+
+                        {% trans "View details" %}
+
+
+                    </a>
+
+
+
+
+
+
+                    {% if product.stock > 0 %}
+
+
+
+                    <button type="button"
+                            class="btn secondary"
+                            onclick="addToCart({{ product.id }}); return false;">
+
+
+
+                        {% trans "Add to cart" %}
+
+
+
+                    </button>
+
+
+
+                    {% endif %}
+
+
+
+
+                </div>
+
+
+
+
             </div>
+
+
 
 
         </div>
 
 
+
+
+        {% empty %}
+
+
+            <p>
+
+                {% trans "No products found." %}
+
+            </p>
+
+
         {% endfor %}
+
+
 
 
     </div>
 
 
+
 </section>
+
 
 
 {% endblock %}

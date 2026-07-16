@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Add Product
+{% endblock %}
+
+
+{% block content %}
+
+
+<div style="
+max-width:800px;
+margin:40px auto;
+">
+
+
+<h1 style="
+color:#d4af37;
+margin-bottom:30px;
+">
+
+Add New Product
+
+</h1>
+
+
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+
+{{ form.as_p }}
+
+
+<button
+type="submit"
+style="
+background:#d4af37;
+padding:12px 30px;
+border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+">
+
+Create Product
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+{% endblock %}

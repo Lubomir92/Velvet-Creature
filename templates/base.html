@@ -21,11 +21,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet"
           href="{% static 'css/style.css' %}">
+          <link rel="stylesheet" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+<link rel="stylesheet" href="{% static 'css/hero.css' %}">
+<link rel="stylesheet" href="{% static 'css/shop.css' %}">
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+<link rel="stylesheet" href="{% static 'css/wishlist.css' %}">
+<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 
 </head>
 
 
 <body>
+<div id="toast-message"
+     class="toast-message">
+</div>
 
 
 {% include "includes/navbar.html" %}
@@ -374,7 +389,168 @@ document
 
 
 
+// =========================
+// MOBILE MENU
+// =========================
 
+function toggleMenu(){
+
+    document
+    .getElementById("mobileMenu")
+    .classList.toggle("open");
+
+}
+
+// =========================
+// WISHLIST
+// =========================
+
+window.toggleWishlist = function(event, productId){
+
+    event.preventDefault();
+
+
+    fetch(
+        `/wishlist/toggle/${productId}/`
+    )
+
+
+    .then(response => response.json())
+
+
+    .then(data => {
+
+
+        if(!data.success)
+            return;
+
+
+
+        const icon = document.getElementById(
+            `wishlist-icon-${productId}`
+        );
+
+
+
+        if(data.added){
+
+
+            icon.classList.add("active");
+
+
+            showToast(
+                "🎃 Added to Wishlist"
+            );
+
+
+        }
+        else{
+
+
+            icon.classList.remove("active");
+
+
+            showToast(
+                "🎃 Removed from Wishlist"
+            );
+
+
+        }
+
+
+
+    })
+
+    .catch(error => {
+
+        console.error(
+            "Wishlist error:",
+            error
+        );
+
+    });
+
+
+}
+
+window.removeWishlistItem = function(productId){
+
+
+fetch(
+    `/wishlist/toggle/${productId}/`
+)
+
+
+.then(response => response.json())
+
+
+.then(data => {
+
+
+    if(data.success && !data.added){
+
+
+        const card = document.getElementById(
+            `wishlist-card-${productId}`
+        );
+
+
+        if(card){
+
+            card.remove();
+
+        }
+
+
+        showToast(
+            "🎃 Removed from Wishlist"
+        );
+
+
+    }
+
+
+});
+
+
+}
+
+
+// =========================
+// TOAST MESSAGE
+// =========================
+
+
+window.showToast = function(message){
+
+
+    let toast = document.getElementById(
+        "toast-message"
+    );
+
+
+    if(!toast)
+        return;
+
+
+
+    toast.innerHTML = message;
+
+
+    toast.classList.add("show");
+
+
+
+    setTimeout(()=>{
+
+
+        toast.classList.remove("show");
+
+
+    },2500);
+
+
+}
 </script>
 
 

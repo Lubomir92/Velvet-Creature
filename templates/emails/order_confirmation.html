@@ -10,77 +10,196 @@
 </head>
 
 
-<body style="background:#111;color:#eee;font-family:Arial;padding:30px;">
-
-
-<div style="
-max-width:600px;
-margin:auto;
-background:#1b1b1b;
+<body style="
+background:#0d0d0f;
+color:#eeeeee;
+font-family:Arial, Helvetica, sans-serif;
 padding:30px;
-border-radius:10px;
 ">
 
 
-<h1 style="color:#d4af37;">
+<div style="
+max-width:650px;
+margin:auto;
+background:#17171c;
+padding:35px;
+border-radius:16px;
+border:1px solid rgba(212,175,55,0.2);
+">
+
+
+<h1 style="
+color:#d4af37;
+text-align:center;
+font-size:32px;
+">
+
 Velvet Creature
+
 </h1>
 
 
+<p style="
+text-align:center;
+color:#aaa;
+">
+
+by Lubma3D
+
+</p>
+
+
+
+<hr style="
+border-color:#333;
+">
+
+
+
 <h2>
-Thank you for your order!
+Thank you for your order 🖤
 </h2>
 
 
 <p>
-Your payment was successfully processed.
+Your payment has been successfully processed.
 </p>
 
 
 
-<hr>
+
+<div style="
+background:#111;
+padding:20px;
+border-radius:10px;
+margin-top:25px;
+">
+
+
+<h3 style="color:#d4af37;">
+
+Order number:
+
+</h3>
+
+
+<p style="
+font-size:22px;
+font-weight:bold;
+">
+
+{{ order.order_number }}
+
+</p>
+
+
+<p>
+
+Status:
+<strong>
+{{ order.status }}
+</strong>
+
+</p>
+
+
+</div>
 
 
 
-<h3>
-Order #{{ order.id }}
+
+
+
+<h3 style="
+margin-top:30px;
+color:#d4af37;
+">
+
+Products
+
 </h3>
 
 
 
-<h3>
-Products:
-</h3>
+
+<table style="
+width:100%;
+border-collapse:collapse;
+">
+
+
+<tr style="
+border-bottom:1px solid #333;
+">
+
+
+<th align="left">
+Product
+</th>
+
+
+<th>
+Qty
+</th>
+
+
+<th>
+Price
+</th>
+
+
+</tr>
+
+
 
 
 {% for item in order.items.all %}
 
-<p>
+
+<tr style="
+border-bottom:1px solid #333;
+">
+
+
+<td style="padding:12px 0;">
 
 {{ item.product.name }}
 
-<br>
+</td>
 
-Quantity:
+
+<td align="center">
+
 {{ item.quantity }}
 
-<br>
+</td>
 
-Price:
+
+<td align="right">
+
 €{{ item.price }}
 
-</p>
+</td>
 
 
-<hr>
+</tr>
 
 
 {% endfor %}
 
 
 
+</table>
 
-<h2 style="color:#d4af37;">
+
+
+
+
+
+<h2 style="
+color:#d4af37;
+margin-top:30px;
+">
 
 Total:
 €{{ order.total_price }}
@@ -90,8 +209,14 @@ Total:
 
 
 
-<h3>
-Shipping information:
+
+
+<h3 style="
+color:#d4af37;
+">
+
+Shipping information
+
 </h3>
 
 
@@ -117,11 +242,30 @@ Shipping information:
 
 
 
-<p style="color:#888;">
+
+
+<hr style="
+border-color:#333;
+margin-top:30px;
+">
+
+
+
+
+
+<p style="
+color:#888;
+text-align:center;
+">
+
+Thank you for supporting independent creation.
+
+<br><br>
 
 Velvet Creature by Lubma3D
 
 </p>
+
 
 
 </div>
