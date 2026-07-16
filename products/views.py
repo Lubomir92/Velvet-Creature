@@ -1,22 +1,20 @@
-from django.shortcuts import render, get_object_or_404
-from django.db.models import Q
+from django.shortcuts import render, get_object_or_404, redirect
+from django.db.models import Q, Avg
 
-from .models import Product, Category
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
+
+from .models import Product, Category, ProductImage
+from .forms import ProductForm, ProductImageForm
 
 from wishlist.models import Wishlist
-from django.contrib.admin.views.decorators import staff_member_required
-from django.shortcuts import render
-from .models import Product
+
 from orders.models import Order
 from custom_orders.models import CustomOrder
-from .forms import ProductForm, ProductImageForm
-from .models import ProductImage
-from django.shortcuts import render, get_object_or_404, redirect
-from django.db.models import Avg
+
 from reviews.models import Review
 from reviews.forms import ReviewForm
-from django.contrib import messages
-
 
 
 def shop(request):
@@ -248,14 +246,14 @@ def edit_product(request, product_id):
 
             product = form.save(
             commit=False
-        )
+            )
 
-        product.save()
+            product.save()
 
 
-        return redirect(
-            "admin_products"
-        )
+            return redirect(
+                "admin_products"
+            )
 
 
     else:
@@ -289,20 +287,20 @@ def add_product(request):
 
             product = form.save(
             commit=False
-        )
+            )
 
-        from django.utils.text import slugify
+            from django.utils.text import slugify
 
-        product.slug = slugify(
-            product.name
-        )
+            product.slug = slugify(
+                product.name
+            )
 
-        product.save()
+            product.save()
 
 
-        return redirect(
-            "admin_products"
-        )
+            return redirect(
+                "admin_products"
+            )
 
 
     else:
@@ -395,4 +393,3 @@ def product_gallery(request, product_id):
             "form": form
         }
     )
-

@@ -33,6 +33,7 @@ urlpatterns += i18n_patterns(
     "wishlist/",
     include("wishlist.urls")
 ),
+    
 
 )
 

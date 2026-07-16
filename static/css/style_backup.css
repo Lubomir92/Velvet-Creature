@@ -1753,13 +1753,55 @@ section {
     opacity:0.9;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: #0d0d0d;
+  color: white;
+}
 
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+select {
+  background: #1a1a1a;
+  color: white;
+  border: 1px solid #333;
+  padding: 5px;
+}
 .right {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
+.drawer-count{
+    position:static;
+    background:none;
+    color:#d4af37;
+    width:auto;
+    height:auto;
+    font-size:16px;
+}
 
 /* ===================================
    PREMIUM CART DRAWER
