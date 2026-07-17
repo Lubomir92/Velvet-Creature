@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from orders.models import Order
 from custom_orders.models import CustomOrder
+from wishlist.models import Wishlist
+from reviews.models import Review
 
 
 
@@ -94,15 +96,47 @@ def profile(request):
     ).order_by("-created")
 
 
+
+    # ==========================
+    # PROFILE STATISTICS
+    # ==========================
+
+
+    orders_count = orders.count()
+
+
+
+    wishlist_count = Wishlist.objects.filter(
+        user=request.user
+    ).count()
+
+
+
+    reviews_count = Review.objects.filter(
+        user=request.user
+    ).count()
+
+
+
     return render(
         request,
         "accounts/profile.html",
         {
             "orders": orders,
+
             "custom_orders": custom_orders,
+
+
+            # PROFILE STATS
+
+            "orders_count": orders_count,
+
+            "wishlist_count": wishlist_count,
+
+            "reviews_count": reviews_count,
+
         }
     )
-
 
 # LOGOUT
 

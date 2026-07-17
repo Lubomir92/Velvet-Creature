@@ -1,0 +1,180 @@
+/* =================================
+   ABOUT PAGE
+================================= */
+
+
+.about-page{
+
+    padding:80px 20px 100px;
+
+}
+
+
+
+.about-hero{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+
+
+.about-hero h1{
+
+    font-size:70px;
+
+    color:var(--gold);
+
+}
+
+
+
+.about-hero p{
+
+    color:#aaa;
+
+    font-size:20px;
+
+}
+
+
+
+
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+
+
+
+
+.about-card{
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+
+
+.about-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--gold);
+
+}
+
+
+
+
+
+.about-card h2{
+
+    color:var(--gold);
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+
+.about-process{
+
+    margin-top:80px;
+
+    text-align:center;
+
+}
+
+
+
+.process-line{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+}
+
+
+
+.process-line span{
+
+    padding:20px 30px;
+
+    background:#151515;
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+}
+
+
+
+
+
+.about-action{
+
+    margin-top:80px;
+
+    text-align:center;
+
+}
+
+
+
+.about-action .btn{
+
+    margin:10px;
+
+}
+
+
+
+
+
+@media(max-width:900px){
+
+.about-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.about-hero h1{
+
+    font-size:45px;
+
+}
+
+}

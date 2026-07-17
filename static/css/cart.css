@@ -1,5 +1,5 @@
 /* =====================================
-   PREMIUM CART DRAWER
+   PREMIUM CART
 ===================================== */
 
 
@@ -10,7 +10,7 @@
 
 .cart-drawer {
 
-    background:#0f0f12;
+    background:var(--dark-soft);
 
     color:white;
 
@@ -49,8 +49,6 @@
 
 
 
-
-
 /* =========================
    HEADER
 ========================= */
@@ -66,9 +64,7 @@
 
     padding:25px;
 
-    border-bottom:
-
-    1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid var(--border);
 
 }
 
@@ -80,7 +76,7 @@
 
     font-family:'Playfair Display',serif;
 
-    color:#d4af37;
+    color:var(--gold);
 
 }
 
@@ -96,11 +92,7 @@
 
     font-size:22px;
 
-    cursor:pointer;
-
 }
-
-
 
 
 
@@ -121,10 +113,8 @@
 
 
 
-
-
 /* =========================
-   CART ITEM
+   ITEM
 ========================= */
 
 
@@ -138,7 +128,9 @@
 
     margin-bottom:15px;
 
-    background:#17171c;
+    background:rgba(255,255,255,.03);
+
+    border:1px solid var(--border);
 
     border-radius:14px;
 
@@ -156,8 +148,6 @@
 
 
 
-
-
 .drawer-image {
 
     width:80px;
@@ -172,8 +162,6 @@
 
 
 
-
-
 .drawer-info {
 
     flex:1;
@@ -184,19 +172,7 @@
 
 .drawer-info h4 {
 
-    margin:0 0 8px;
-
-    font-size:15px;
-
-}
-
-
-
-.drawer-info h4 a {
-
-    color:white;
-
-    text-decoration:none;
+    margin-bottom:8px;
 
 }
 
@@ -204,7 +180,7 @@
 
 .drawer-info h4 a:hover {
 
-    color:#d4af37;
+    color:var(--gold);
 
 }
 
@@ -212,15 +188,11 @@
 
 .drawer-price {
 
-    color:#d4af37;
+    color:var(--gold);
 
     font-weight:600;
 
-    margin:5px 0;
-
 }
-
-
 
 
 
@@ -247,13 +219,11 @@
 
 .drawer-quantity strong {
 
-    color:#d4af37;
+    color:var(--gold);
 
     font-size:18px;
 
 }
-
-
 
 
 
@@ -265,8 +235,6 @@
 .drawer-controls {
 
     display:flex;
-
-    align-items:center;
 
     gap:8px;
 
@@ -284,13 +252,11 @@
 
     border:none;
 
-    cursor:pointer;
-
     background:#222;
 
     color:white;
 
-    transition:.25s;
+    cursor:pointer;
 
 }
 
@@ -298,7 +264,7 @@
 
 .drawer-controls button:hover {
 
-    background:#d4af37;
+    background:var(--gold);
 
     color:#111;
 
@@ -310,11 +276,7 @@
 
     background:#b33!important;
 
-    color:white!important;
-
 }
-
-
 
 
 
@@ -327,9 +289,7 @@
 
     padding:25px;
 
-    border-top:
-
-    1px solid rgba(255,255,255,.08);
+    border-top:1px solid var(--border);
 
     background:#0b0b0d;
 
@@ -353,7 +313,7 @@
 
 .drawer-total strong {
 
-    color:#d4af37;
+    color:var(--gold);
 
     font-size:24px;
 
@@ -361,10 +321,8 @@
 
 
 
-
-
 /* =========================
-   DRAWER BUTTONS
+   BUTTONS
 ========================= */
 
 
@@ -384,8 +342,6 @@
 
     color:white;
 
-    text-decoration:none;
-
     transition:.3s;
 
 }
@@ -402,7 +358,7 @@
 
 .drawer-btn.gold {
 
-    background:#d4af37;
+    background:var(--gold);
 
     color:#111;
 
@@ -412,10 +368,8 @@
 
 
 
-
-
 /* =========================
-   CART PAGE ELEMENTS
+   CART PAGE
 ========================= */
 
 
@@ -447,7 +401,7 @@
 
 .cart-price {
 
-    color:#d4af37;
+    color:var(--gold);
 
     font-size:18px;
 
@@ -455,6 +409,11 @@
 
 }
 
+
+
+/* =========================
+   MOBILE
+========================= */
 
 
 @media(max-width:768px){

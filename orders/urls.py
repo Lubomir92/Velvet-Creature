@@ -98,11 +98,7 @@ path(
     name="mark_delivered"
 ),
 
-    path(
-    "admin/<int:order_id>/processing/",
-    views.mark_processing,
-    name="mark_processing"
-),
+    
    
     path(
         "admin/<int:order_id>/shipped/",

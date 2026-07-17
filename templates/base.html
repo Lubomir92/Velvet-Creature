@@ -18,29 +18,73 @@
         {% endblock %}
     </title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =========================
+         CSS
+    ========================== -->
+
+    <link rel="stylesheet"
+          href="{% static 'css/base.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/buttons.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/navbar.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/hero.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/shop.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/product.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/cart.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/wishlist.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/forms.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/profile.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/footer.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+    <link rel="stylesheet"
+          href="{% static 'css/responsive.css' %}">
+
+    <!-- FINAL OVERRIDES -->
     <link rel="stylesheet"
           href="{% static 'css/style.css' %}">
-          <link rel="stylesheet" href="{% static 'css/base.css' %}">
-<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
-<link rel="stylesheet" href="{% static 'css/hero.css' %}">
-<link rel="stylesheet" href="{% static 'css/shop.css' %}">
-<link rel="stylesheet" href="{% static 'css/product.css' %}">
-<link rel="stylesheet" href="{% static 'css/wishlist.css' %}">
-<link rel="stylesheet" href="{% static 'css/cart.css' %}">
-<link rel="stylesheet" href="{% static 'css/profile.css' %}">
-<link rel="stylesheet" href="{% static 'css/forms.css' %}">
-<link rel="stylesheet" href="{% static 'css/footer.css' %}">
-<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
 
 </head>
 
 
+
 <body>
+
+
 <div id="toast-message"
      class="toast-message">
 </div>
+
 
 
 {% include "includes/navbar.html" %}
@@ -48,11 +92,14 @@
 
 
 
+
 <main class="container">
+
 
     {% block content %}
 
     {% endblock %}
+
 
 </main>
 
@@ -60,7 +107,11 @@
 
 
 
-<!-- ================= CART DRAWER ================= -->
+
+
+<!-- =========================
+     CART OVERLAY
+========================= -->
 
 
 <div id="drawer-overlay"
@@ -69,6 +120,14 @@
 </div>
 
 
+
+
+
+
+
+<!-- =========================
+     CART DRAWER
+========================= -->
 
 
 <div id="cart-drawer"
@@ -86,13 +145,16 @@
 
 
 
-<!-- ================= JAVASCRIPT ================= -->
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 
 <script>
 
 
-console.log("CART SYSTEM LOADED");
+console.log("VELVET CREATURE SYSTEM LOADED");
 
 
 
@@ -111,13 +173,13 @@ window.openCart = function(){
     .classList.add("open");
 
 
-
     document
     .getElementById("drawer-overlay")
     .classList.add("active");
 
 
 }
+
 
 
 
@@ -138,14 +200,12 @@ window.closeCart = function(){
     .classList.remove("open");
 
 
-
     document
     .getElementById("drawer-overlay")
     .classList.remove("active");
 
 
 }
-
 
 
 
@@ -197,9 +257,6 @@ fetch(`/cart/add/${id}/`)
 
 
 
-
-
-
 // =========================
 // CHANGE QUANTITY
 // =========================
@@ -217,7 +274,6 @@ fetch(`/cart/${action}/${id}/`)
 .then(data => {
 
 
-
     if(!data.success){
 
         alert(data.message);
@@ -227,16 +283,13 @@ fetch(`/cart/${action}/${id}/`)
     }
 
 
-
     updateBadge(data.cart_count);
-
 
 
     refreshDrawer();
 
 
 
-    // ak sme na Your Cart stránke
     if(document.querySelector(".cart-page")){
 
         location.reload();
@@ -244,13 +297,10 @@ fetch(`/cart/${action}/${id}/`)
     }
 
 
-
 });
 
 
 }
-
-
 
 
 
@@ -267,7 +317,6 @@ fetch(`/cart/${action}/${id}/`)
 window.removeItem = function(id){
 
 
-
 fetch(`/cart/remove/${id}/`)
 
 
@@ -277,22 +326,16 @@ fetch(`/cart/remove/${id}/`)
 .then(data => {
 
 
-
     if(!data.success)
         return;
-
 
 
     updateBadge(data.cart_count);
 
 
-
     refreshDrawer();
 
 
-
-
-    // ak sme na Your Cart stránke
 
     if(document.querySelector(".cart-page")){
 
@@ -301,16 +344,10 @@ fetch(`/cart/remove/${id}/`)
     }
 
 
-
 });
 
 
-
 }
-
-
-
-
 
 
 
@@ -327,7 +364,6 @@ fetch(`/cart/remove/${id}/`)
 function updateBadge(count){
 
 
-
 document
 .querySelectorAll(
     ".cart-count, .drawer-count"
@@ -342,12 +378,7 @@ document
 });
 
 
-
 }
-
-
-
-
 
 
 
@@ -364,7 +395,6 @@ document
 function refreshDrawer(){
 
 
-
 fetch("/cart/drawer/")
 
 
@@ -374,18 +404,19 @@ fetch("/cart/drawer/")
 .then(html => {
 
 
-
 document
 .getElementById("cart-drawer")
 .innerHTML = html;
 
 
-
 });
 
 
-
 }
+
+
+
+
 
 
 
@@ -393,85 +424,106 @@ document
 // MOBILE MENU
 // =========================
 
-function toggleMenu(){
 
-    document
-    .getElementById("mobileMenu")
-    .classList.toggle("open");
+window.toggleMenu = function(){
+
+
+document
+.getElementById("mobileMenu")
+.classList.toggle("open");
+
 
 }
+
+
+
+
+
+
+
 
 // =========================
 // WISHLIST
 // =========================
 
+
 window.toggleWishlist = function(event, productId){
 
-    event.preventDefault();
 
-
-    fetch(
-        `/wishlist/toggle/${productId}/`
-    )
-
-
-    .then(response => response.json())
-
-
-    .then(data => {
-
-
-        if(!data.success)
-            return;
+event.preventDefault();
 
 
 
-        const icon = document.getElementById(
-            `wishlist-icon-${productId}`
+fetch(
+    `/wishlist/toggle/${productId}/`
+)
+
+
+
+.then(response => response.json())
+
+
+.then(data => {
+
+
+    if(!data.success)
+        return;
+
+
+
+const icon = document.getElementById(
+    `wishlist-icon-${productId}`
+);
+
+
+
+if(icon){
+
+
+    if(data.added){
+
+        icon.classList.add("active");
+
+
+        showToast(
+            "🎃 Added to Wishlist"
         );
 
 
-
-        if(data.added){
-
-
-            icon.classList.add("active");
+    }
+    else{
 
 
-            showToast(
-                "🎃 Added to Wishlist"
-            );
+        icon.classList.remove("active");
 
 
-        }
-        else{
-
-
-            icon.classList.remove("active");
-
-
-            showToast(
-                "🎃 Removed from Wishlist"
-            );
-
-
-        }
-
-
-
-    })
-
-    .catch(error => {
-
-        console.error(
-            "Wishlist error:",
-            error
+        showToast(
+            "🎃 Removed from Wishlist"
         );
 
-    });
+
+    }
+
+}
+
+
+
+});
 
 
 }
+
+
+
+
+
+
+
+
+// =========================
+// REMOVE WISHLIST ITEM
+// =========================
+
 
 window.removeWishlistItem = function(productId){
 
@@ -516,41 +568,51 @@ fetch(
 }
 
 
+
+
+
+
+
+
 // =========================
-// TOAST MESSAGE
+// TOAST
 // =========================
 
 
 window.showToast = function(message){
 
 
-    let toast = document.getElementById(
-        "toast-message"
-    );
-
-
-    if(!toast)
-        return;
+let toast = document.getElementById(
+    "toast-message"
+);
 
 
 
-    toast.innerHTML = message;
-
-
-    toast.classList.add("show");
+if(!toast)
+    return;
 
 
 
-    setTimeout(()=>{
+toast.innerHTML = message;
 
 
-        toast.classList.remove("show");
+toast.classList.add("show");
 
 
-    },2500);
+
+setTimeout(()=>{
+
+
+    toast.classList.remove("show");
+
+
+},2500);
 
 
 }
+
+
+
 </script>
 
 

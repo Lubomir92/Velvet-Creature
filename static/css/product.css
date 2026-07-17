@@ -4,7 +4,7 @@
 
 
 /* =========================
-   MAIN PRODUCT LAYOUT
+   MAIN LAYOUT
 ========================= */
 
 
@@ -28,16 +28,12 @@
 
     gap:60px;
 
-    align-items:start;
-
 }
 
 
 
-
-
 /* =========================
-   PRODUCT GALLERY
+   GALLERY
 ========================= */
 
 
@@ -51,7 +47,7 @@
 
 .main-product-image {
 
-    background:#151515;
+    background:var(--dark-soft);
 
     border-radius:18px;
 
@@ -69,8 +65,6 @@
 
     object-fit:cover;
 
-    display:block;
-
     transition:.5s ease;
 
 }
@@ -82,8 +76,6 @@
     transform:scale(1.05);
 
 }
-
-
 
 
 
@@ -115,7 +107,7 @@
 
     opacity:.75;
 
-    border:1px solid #333;
+    border:1px solid var(--border);
 
     transition:.3s;
 
@@ -133,33 +125,14 @@
 
 
 
-
-
 /* =========================
    PRODUCT INFO
 ========================= */
 
 
-.product-info h1 {
-
-    font-family:
-
-    'Playfair Display',
-    serif;
-
-    font-size:42px;
-
-    color:white;
-
-    margin-bottom:20px;
-
-}
-
-
-
 .product-subtitle {
 
-    color:#d4af37;
+    color:var(--gold);
 
     letter-spacing:2px;
 
@@ -169,21 +142,43 @@
 
 
 
+.product-title-row {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+
+
+.product-title-row h1 {
+
+    margin:0;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:42px;
+
+    color:white;
+
+}
+
 
 
 .product-info .price {
 
     font-size:32px;
 
-    color:#d4af37;
+    color:var(--gold);
 
     font-weight:700;
 
     margin:20px 0;
 
 }
-
-
 
 
 
@@ -199,10 +194,8 @@
 
 
 
-
-
 /* =========================
-   STOCK STATUS
+   STOCK
 ========================= */
 
 
@@ -215,8 +208,6 @@
     border-radius:20px;
 
     font-size:13px;
-
-    margin-top:15px;
 
 }
 
@@ -242,10 +233,8 @@
 
 
 
-
-
 /* =========================
-   PRODUCT DETAILS BOX
+   DETAILS
 ========================= */
 
 
@@ -255,13 +244,11 @@
 
     padding:25px;
 
-    background:#151515;
+    background:var(--dark-soft);
 
     border-radius:15px;
 
-    border:
-
-    1px solid rgba(255,255,255,.08);
+    border:1px solid var(--border);
 
 }
 
@@ -269,7 +256,7 @@
 
 .product-details h3 {
 
-    color:#d4af37;
+    color:var(--gold);
 
     margin-bottom:15px;
 
@@ -295,10 +282,8 @@
 
 
 
-
-
 /* =========================
-   ACTION BUTTONS
+   ACTIONS
 ========================= */
 
 
@@ -314,35 +299,9 @@
 
 
 
-.product-actions button,
-.product-actions a {
-
-    cursor:pointer;
-
-}
-
-
-
-
-
-.product-title-row {
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-}
-
-
-
-.product-title-row h1 {
-
-    margin:0;
-
-}
-
+/* =========================
+   WISHLIST
+========================= */
 
 
 .product-wishlist {
@@ -352,8 +311,6 @@
     height:42px;
 
 }
-
-
 
 
 
@@ -376,7 +333,7 @@
 
 .related-products h2 {
 
-    color:#d4af37;
+    color:var(--gold);
 
     margin-bottom:35px;
 
@@ -386,14 +343,11 @@
 
 
 
-
-
 .related-grid {
 
     display:grid;
 
     grid-template-columns:
-
     repeat(3,1fr);
 
     gap:25px;
@@ -404,7 +358,7 @@
 
 .related-card {
 
-    background:#151515;
+    background:var(--dark-soft);
 
     padding:20px;
 
@@ -419,6 +373,8 @@
 .related-card:hover {
 
     transform:translateY(-5px);
+
+    border:1px solid var(--gold);
 
 }
 
@@ -438,25 +394,13 @@
 
 
 
-.related-card h3 {
-
-    margin-top:15px;
-
-}
-
-
-
 .related-card .price {
 
-    color:#d4af37;
+    color:var(--gold);
 
     font-size:20px;
 
-    margin:10px 0;
-
 }
-
-
 
 
 
@@ -478,7 +422,7 @@
 
 
 
-.product-info h1 {
+.product-title-row h1 {
 
     font-size:32px;
 
@@ -494,8 +438,8 @@
 
 
 
-.product-actions .btn-primary,
-.product-actions .btn-secondary {
+.product-actions a,
+.product-actions button {
 
     width:100%;
 
@@ -511,27 +455,9 @@
 
 
 
-.thumbnail {
-
-    width:70px;
-
-    height:70px;
-
-}
-
-
-
 .related-grid {
 
     grid-template-columns:1fr;
-
-}
-
-
-
-.related-products h2 {
-
-    font-size:25px;
 
 }
 

@@ -3,26 +3,9 @@
 ================================= */
 
 
-.btn {
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:14px 25px;
-
-    border-radius:10px;
-
-    border:none;
-
-    cursor:pointer;
-
-    transition:.3s ease;
-
-}
-
+/* =========================
+   PRIMARY BUTTON
+========================= */
 
 
 .btn-primary {
@@ -46,6 +29,11 @@
 
 }
 
+
+
+/* =========================
+   SECONDARY BUTTON
+========================= */
 
 
 .btn-secondary {
@@ -74,6 +62,11 @@
 
 }
 
+
+
+/* =========================
+   FULL WIDTH BUTTON
+========================= */
 
 
 .btn-secondary.full {

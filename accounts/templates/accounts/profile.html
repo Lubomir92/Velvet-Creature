@@ -1,9 +1,5 @@
 {% extends "base.html" %}
 {% load i18n %}
-<!-- PROFILE FROM APP -->
-<p style="color:red;">
-LANGUAGE = {{ LANGUAGE_CODE }}
-</p>
 
 
 {% block title %}
@@ -19,167 +15,194 @@ LANGUAGE = {{ LANGUAGE_CODE }}
 
 
 
+<!-- =========================
+     PROFILE HEADER
+========================= -->
+
+
 <div class="profile-header">
 
+
+    <div class="profile-avatar">
+
+        {{ user.username|first|upper }}
+
+    </div>
+
+
+
     <h1>
-        {% trans "My Account" %}
+
+        {{ user.username }}
+
     </h1>
 
 
+
     <p>
-        {% trans "Welcome back" %}, {{ user.username }}
+
+        ✨ {% trans "Premium Member" %}
+
     </p>
+
+
+
+    <small>
+
+        {% trans "Member since" %}
+        {{ user.date_joined|date:"Y" }}
+
+    </small>
+
+
 
 </div>
 
 
 
+
+
+
+<!-- =========================
+     PROFILE STATS
+========================= -->
+
+
+<div class="profile-stats">
+
+
+    <div class="profile-stat">
+
+        <span>
+            {{ orders_count }}
+        </span>
+
+        <small>
+            📦 {% trans "Orders" %}
+        </small>
+
+    </div>
+
+
+
+
+    <a href="{% url 'wishlist' %}"
+       class="profile-stat">
+
+
+        <span>
+            {{ wishlist_count }}
+        </span>
+
+
+        <small>
+            ❤️ {% trans "Wishlist" %}
+        </small>
+
+
+    </a>
+
+
+
+
+
+    <div class="profile-stat">
+
+
+        <span>
+            {{ reviews_count }}
+        </span>
+
+
+        <small>
+            ⭐ {% trans "Reviews" %}
+        </small>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- =========================
+     ACCOUNT GRID
+========================= -->
 
 
 <div class="profile-grid">
 
 
 
-    <!-- ACCOUNT INFO -->
 
 
-    <div class="profile-card">
+<!-- ACCOUNT -->
 
+<div class="profile-card">
 
-        <h2>
-            {% trans "Account" %}
-        </h2>
 
+<h2>
+{% trans "Account" %}
+</h2>
 
 
-        <div class="info-row">
 
-            <span>
-                👤 {% trans "Username" %}
-            </span>
+<div class="info-row">
 
-            <strong>
-                {{ user.username }}
-            </strong>
+<span>
+👤 {% trans "Username" %}
+</span>
 
-        </div>
 
+<strong>
+{{ user.username }}
+</strong>
 
 
+</div>
 
-        <div class="info-row">
 
-            <span>
-                ✉ {% trans "Email" %}
-            </span>
 
-            <strong>
-                {{ user.email }}
-            </strong>
 
-        </div>
 
+<div class="info-row">
 
+<span>
+✉ {% trans "Email" %}
+</span>
 
 
-        <div class="info-row">
+<strong>
+{{ user.email }}
+</strong>
 
-            <span>
-                📅 {% trans "Member since" %}
-            </span>
 
-            <strong>
-                {{ user.date_joined|date:"d M Y" }}
-            </strong>
+</div>
 
-        </div>
 
 
 
-    </div>
 
+<div class="info-row">
 
+<span>
+📅 {% trans "Joined" %}
+</span>
 
 
+<strong>
+{{ user.date_joined|date:"d M Y" }}
+</strong>
 
 
-    <!-- CUSTOMER INFORMATION -->
-
-
-    <div class="profile-card customer-info">
-
-
-        <h2>
-            {% trans "Customer Information" %}
-        </h2>
-
-
-
-
-        <div class="info-row">
-
-            <span>
-                👤 {% trans "Full name" %}
-            </span>
-
-
-            <strong>
-
-            {% if user.first_name or user.last_name %}
-
-                {{ user.first_name }} {{ user.last_name }}
-
-            {% else %}
-
-                -
-
-            {% endif %}
-
-            </strong>
-
-
-        </div>
-
-
-
-
-
-        <div class="info-row">
-
-            <span>
-                🌍 {% trans "Country" %}
-            </span>
-
-
-            <strong>
-                -
-            </strong>
-
-
-        </div>
-
-
-
-
-
-        <div class="info-row">
-
-            <span>
-                📞 {% trans "Phone" %}
-            </span>
-
-
-            <strong>
-                -
-            </strong>
-
-
-        </div>
-
-
-
-    </div>
-
+</div>
 
 
 
@@ -191,16 +214,116 @@ LANGUAGE = {{ LANGUAGE_CODE }}
 
 
 
-<!-- ORDERS -->
+<!-- CUSTOMER -->
+
+
+<div class="profile-card">
+
+
+<h2>
+{% trans "Customer Information" %}
+</h2>
+
+
+
+
+
+<div class="info-row">
+
+<span>
+👤 {% trans "Full name" %}
+</span>
+
+
+<strong>
+
+
+{% if user.first_name or user.last_name %}
+
+{{ user.first_name }}
+{{ user.last_name }}
+
+{% else %}
+
+-
+
+{% endif %}
+
+
+</strong>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="info-row">
+
+<span>
+🌍 {% trans "Country" %}
+</span>
+
+
+<strong>
+-
+</strong>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="info-row">
+
+<span>
+📞 {% trans "Phone" %}
+</span>
+
+
+<strong>
+-
+</strong>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- =========================
+     ORDERS
+========================= -->
 
 
 <div class="profile-orders">
 
 
 <h2>
-    {% trans "My Orders" %}
+📦 {% trans "My Orders" %}
 </h2>
-
 
 
 
@@ -209,71 +332,88 @@ LANGUAGE = {{ LANGUAGE_CODE }}
 
 
 
+
 {% for order in orders %}
+
 
 
 
 <div class="order-card">
 
 
-    <div class="order-left">
+
+<div class="order-left">
 
 
-        <h3>
-            📦 {% trans "Order" %} #{{ order.id }}
-        </h3>
+<h3>
+
+{% trans "Order" %}
+#{{ order.id }}
+
+</h3>
 
 
-        <p>
-            {% trans "Created" %}:
-            {{ order.created|date:"d M Y" }}
-        </p>
+<p>
 
+{{ order.created|date:"d M Y" }}
 
-    </div>
-
-
-
-
-    <div class="order-center">
-
-
-        <span class="status-badge status-{{ order.status }}">
-
-            {{ order.get_status_display }}
-
-        </span>
-
-
-    </div>
-
-
-
-
-    <div class="order-right">
-
-
-        <div class="price">
-
-            €{{ order.total_price }}
-
-        </div>
-
-
-
-        <a href="{% url 'order_detail' order.id %}"
-   class="btn">
-
-    {% trans "Details" %}
-
-</a>
-
-
-    </div>
+</p>
 
 
 
 </div>
+
+
+
+
+
+<div class="order-center">
+
+
+<span class="status-badge status-{{ order.status }}">
+
+{{ order.get_status_display }}
+
+</span>
+
+
+
+</div>
+
+
+
+
+
+<div class="order-right">
+
+
+<div class="price">
+
+€{{ order.total_price }}
+
+</div>
+
+
+
+<a href="{% url 'order_detail' order.id %}"
+class="btn btn-secondary">
+
+
+{% trans "Details" %}
+
+
+</a>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
 
 
 
@@ -282,14 +422,13 @@ LANGUAGE = {{ LANGUAGE_CODE }}
 
 
 
-
 {% else %}
-
 
 
 <div class="empty-cart">
 
 {% trans "You have no orders yet." %}
+
 
 </div>
 
@@ -299,16 +438,31 @@ LANGUAGE = {{ LANGUAGE_CODE }}
 
 
 
+
 </div>
-<!-- CUSTOM ORDERS -->
+
+
+
+
+
+
+
+
+
+<!-- =========================
+     CUSTOM ORDERS
+========================= -->
 
 
 <div class="profile-orders">
 
 
 <h2>
-    {% trans "My Custom Projects" %}
+
+🖨 {% trans "My Custom Projects" %}
+
 </h2>
+
 
 
 
@@ -317,7 +471,9 @@ LANGUAGE = {{ LANGUAGE_CODE }}
 
 
 
+
 {% for custom in custom_orders %}
+
 
 
 
@@ -326,117 +482,133 @@ LANGUAGE = {{ LANGUAGE_CODE }}
 
 
 
-    <div class="order-left">
+
+
+<div class="order-left">
 
 
 
-        <h3>
+<h3>
+
 
 <a href="{% url 'custom_order_detail' custom.id %}">
 
-🖨 {% trans "Custom Order" %} #{{ custom.id }}
+
+{% trans "Custom Order" %}
+#{{ custom.id }}
+
 
 </a>
+
 
 </h3>
 
 
 
 
-        <p>
+<p>
 
-            {% trans "Created" %}:
-            {{ custom.created|date:"d M Y" }}
+{{ custom.created|date:"d M Y" }}
 
-        </p>
-
+</p>
 
 
 
-        <p>
+<p>
 
-            {% trans "Material" %}:
+{% trans "Material" %}:
 
-            <strong>
-                {{ custom.material }}
-            </strong>
+<strong>
 
-        </p>
+{{ custom.material }}
 
-
-
-    </div>
+</strong>
 
 
-
-
-
-
-    <div class="order-center">
-
-
-
-        <span class="status-badge status-{{ custom.status }}">
-
-            {{ custom.get_status_display }}
-
-        </span>
-
-
-
-    </div>
-
-
-
-
-
-
-    <div class="order-right">
-
-    <a href="{% url 'custom_order_detail' custom.id %}"
-   class="btn">
-
-    {% trans "Details" %}
-
-</a>
-
-
-
-        {% if custom.estimated_price %}
-
-
-
-        <div class="price">
-
-            €{{ custom.estimated_price }}
-
-        </div>
-
-
-
-        {% else %}
-
-
-
-        <div class="muted">
-
-            {% trans "Waiting for quote" %}
-
-        </div>
-
-
-
-        {% endif %}
-
-
-
-    </div>
-
+</p>
 
 
 
 </div>
 
+
+
+
+
+
+<div class="order-center">
+
+
+
+<span class="status-badge status-{{ custom.status }}">
+
+
+{{ custom.get_status_display }}
+
+
+</span>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="order-right">
+
+
+
+{% if custom.estimated_price %}
+
+
+<div class="price">
+
+€{{ custom.estimated_price }}
+
+</div>
+
+
+
+{% else %}
+
+
+
+<div class="muted">
+
+{% trans "Waiting for quote" %}
+
+</div>
+
+
+
+{% endif %}
+
+
+
+
+
+
+<a href="{% url 'custom_order_detail' custom.id %}"
+class="btn btn-secondary">
+
+
+{% trans "Details" %}
+
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+</div>
 
 
 
@@ -451,9 +623,7 @@ LANGUAGE = {{ LANGUAGE_CODE }}
 
 
 
-
 <div class="empty-cart">
-
 
 {% trans "You have no custom projects yet." %}
 
@@ -462,10 +632,7 @@ LANGUAGE = {{ LANGUAGE_CODE }}
 
 
 
-
 {% endif %}
-
-
 
 
 

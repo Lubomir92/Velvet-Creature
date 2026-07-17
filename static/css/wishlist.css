@@ -3,6 +3,11 @@
 ===================================== */
 
 
+/* =========================
+   PAGE
+========================= */
+
+
 .wishlist-page {
 
     padding:40px 20px 100px;
@@ -11,9 +16,8 @@
 
 
 
-
 /* =========================
-   WISHLIST CARD
+   CARD
 ========================= */
 
 
@@ -40,8 +44,6 @@
 
 
 
-
-
 .wishlist-card .shop-image img {
 
     width:100%;
@@ -54,10 +56,8 @@
 
 
 
-
-
 /* =========================
-   EMPTY WISHLIST
+   EMPTY STATE
 ========================= */
 
 
@@ -82,85 +82,6 @@
     margin-bottom:20px;
 
 }
-
-
-
-
-
-/* =========================
-   WISHLIST BUTTON
-========================= */
-
-
-.product-wishlist {
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-
-.wishlist-btn {
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:42px;
-
-    height:42px;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-}
-
-
-
-.wishlist-icon {
-
-    width:32px;
-
-    height:32px;
-
-    object-fit:contain;
-
-    display:block;
-
-    transition:
-
-    transform .25s ease,
-    filter .25s ease;
-
-}
-
-
-
-.wishlist-btn:hover .wishlist-icon {
-
-    transform:scale(1.15);
-
-}
-
-
-
-.wishlist-icon.active {
-
-    transform:scale(1.1);
-
-    filter:
-    drop-shadow(0 0 8px #d4af37);
-
-}
-
-
 
 
 

@@ -4,17 +4,15 @@
 
 
 /* =========================
-   GENERAL FORM BOX
+   FORM BOX
 ========================= */
 
 
 .form-box {
 
-    background:rgba(255,255,255,.03);
+    background:var(--card-bg);
 
-    border:
-
-    1px solid rgba(255,255,255,.08);
+    border:1px solid var(--border);
 
     border-radius:18px;
 
@@ -24,10 +22,8 @@
 
 
 
-
-
 /* =========================
-   INPUTS
+   FORM INPUTS
 ========================= */
 
 
@@ -35,42 +31,11 @@
 .form-box textarea,
 .form-box select {
 
-
     width:100%;
-
-    padding:14px;
 
     margin-bottom:15px;
 
-
-    background:#111;
-
-    border:
-
-    1px solid rgba(255,255,255,.15);
-
-
-    border-radius:10px;
-
-    color:white;
-
-    font-size:15px;
-
 }
-
-
-
-.form-box input:focus,
-.form-box textarea:focus,
-.form-box select:focus {
-
-    outline:none;
-
-    border-color:#d4af37;
-
-}
-
-
 
 
 
@@ -83,15 +48,13 @@
 
     display:block;
 
-    color:#aaa;
+    color:var(--muted);
 
     font-size:14px;
 
     margin-bottom:8px;
 
 }
-
-
 
 
 
@@ -134,41 +97,11 @@
 
 .checkout-field label {
 
-    color:#aaa;
+    color:var(--muted);
 
     font-size:14px;
 
 }
-
-
-
-.checkout-field input {
-
-    background:#111;
-
-    border:
-
-    1px solid rgba(255,255,255,.15);
-
-    color:white;
-
-    padding:14px;
-
-    border-radius:10px;
-
-}
-
-
-
-.checkout-field input:focus {
-
-    outline:none;
-
-    border-color:#d4af37;
-
-}
-
-
 
 
 
@@ -179,11 +112,9 @@
 
 .checkout-summary {
 
-    background:rgba(255,255,255,.04);
+    background:var(--card-bg);
 
-    border:
-
-    1px solid rgba(255,255,255,.08);
+    border:1px solid var(--border);
 
     border-radius:18px;
 
@@ -201,9 +132,7 @@
 
     padding:15px 0;
 
-    border-bottom:
-
-    1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid var(--border);
 
 }
 
@@ -225,16 +154,14 @@
 
 .checkout-total strong {
 
-    color:#d4af37;
+    color:var(--gold);
 
 }
 
 
 
-
-
 /* =========================
-   REVIEWS FORM
+   REVIEWS
 ========================= */
 
 
@@ -244,13 +171,11 @@
 
     padding:30px;
 
-    background:rgba(255,255,255,.04);
+    background:var(--card-bg);
 
     border-radius:20px;
 
-    border:
-
-    1px solid rgba(255,255,255,.08);
+    border:1px solid var(--border);
 
 }
 
@@ -260,7 +185,7 @@
 
     margin-bottom:25px;
 
-    color:#d4af37;
+    color:var(--gold);
 
 }
 
@@ -268,17 +193,7 @@
 
 .rating-field select {
 
-    background:#111;
-
-    color:white;
-
-    border:
-
-    1px solid rgba(255,255,255,.15);
-
-    padding:12px;
-
-    border-radius:10px;
+    width:auto;
 
 }
 
@@ -290,34 +205,9 @@
 
     min-height:120px;
 
-    background:#111;
-
-    color:white;
-
-    border:
-
-    1px solid rgba(255,255,255,.15);
-
-    border-radius:12px;
-
-    padding:15px;
-
     resize:none;
 
 }
-
-
-
-.comment-field textarea:focus,
-.rating-field select:focus {
-
-    outline:none;
-
-    border-color:#d4af37;
-
-}
-
-
 
 
 

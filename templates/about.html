@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+
+{% block title %}
+
+{% trans "About Velvet Creature" %}
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<section class="about-page">
+
+
+
+<div class="about-hero">
+
+
+<h1>
+
+Velvet Creature
+
+</h1>
+
+
+<p>
+
+{% trans "Unique 3D printed creatures made with passion and precision." %}
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="about-grid">
+
+
+
+<div class="about-card">
+
+
+<h2>
+
+🎨 {% trans "Our Mission" %}
+
+</h2>
+
+
+<p>
+
+{% trans "We create premium collectible creatures combining modern technology with artistic design." %}
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="about-card">
+
+
+<h2>
+
+🛡 {% trans "Quality" %}
+
+</h2>
+
+
+<p>
+
+{% trans "Every product is carefully designed, printed and prepared before reaching you." %}
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="about-card">
+
+
+<h2>
+
+🚀 {% trans "Custom Creations" %}
+
+</h2>
+
+
+<p>
+
+{% trans "Have your own idea? We can transform your vision into a unique model." %}
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="about-process">
+
+
+<h2>
+
+{% trans "Our Process" %}
+
+</h2>
+
+
+
+<div class="process-line">
+
+
+<span>
+💡 Idea
+</span>
+
+
+<span>
+🖥 Design
+</span>
+
+
+<span>
+🖨 Printing
+</span>
+
+
+<span>
+🎨 Finishing
+</span>
+
+
+<span>
+📦 Delivery
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="about-action">
+
+
+<h2>
+
+{% trans "Create your own creature" %}
+
+</h2>
+
+
+
+<a href="{% url 'custom_order_create' %}"
+class="btn btn-primary">
+
+{% trans "Custom Order" %}
+
+</a>
+
+
+
+<a href="{% url 'shop' %}"
+class="btn btn-secondary">
+
+{% trans "Visit Shop" %}
+
+</a>
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+{% endblock %}

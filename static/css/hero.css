@@ -19,21 +19,63 @@
 
     position:relative;
 
+    overflow:hidden;
+
+    background:
+    radial-gradient(
+        circle at top,
+        #1b1b22,
+        #0a0a0f 70%
+    );
+
 }
 
+
+
+/* GOLD GLOW */
+
+.hero::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(212,175,55,.12),
+        transparent 60%
+    );
+
+
+    filter:blur(30px);
+
+}
+
+
+
+/* CONTENT */
 
 
 .hero-content {
 
     max-width:900px;
 
+    position:relative;
+
+    z-index:2;
+
 }
 
 
 
-.hero h1 {
+/* TITLE */
 
-    font-family:'Playfair Display', serif;
+
+.hero h1 {
 
     font-size:64px;
 
@@ -41,8 +83,14 @@
 
     margin-bottom:25px;
 
+    text-shadow:
+    0 0 25px rgba(212,175,55,.15);
+
 }
 
+
+
+/* DESCRIPTION */
 
 
 .hero p {
@@ -61,6 +109,9 @@
 
 
 
+/* BUTTON AREA */
+
+
 .hero-actions {
 
     margin-top:35px;
@@ -71,8 +122,15 @@
 
     gap:20px;
 
+    flex-wrap:wrap;
+
 }
 
+
+
+/* =========================
+   MOBILE
+========================= */
 
 
 @media(max-width:768px){
@@ -107,5 +165,6 @@
         flex-direction:column;
 
     }
+
 
 }

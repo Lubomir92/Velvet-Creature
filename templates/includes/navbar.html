@@ -1,4 +1,6 @@
 {% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{{ LANGUAGE_CODE }}
 
 <nav class="navbar" id="navbar">
 
@@ -6,86 +8,217 @@
     <!-- LOGO -->
 
     <a href="{% url 'home' %}" class="logo">
-
         Velvet Creature
-
     </a>
 
-   <button class="hamburger"
-        onclick="toggleMenu()">
-
-    ☰
-
-</button>
 
 
 
+    <!-- MOBILE BUTTON -->
 
-    <!-- MENU -->
+    <button class="hamburger"
+            onclick="toggleMenu()">
+
+        ☰
+
+    </button>
+
+
+
+
+
+    <!-- MOBILE / MAIN MENU -->
 
     <div class="menu" id="mobileMenu">
 
 
-        <a href="{% url 'home' %}">
+        <a href="{% url 'home' %}"
+           onclick="toggleMenu()">
+
             {% trans "Home" %}
+
         </a>
 
 
 
-        <a href="{% url 'shop' %}">
+        <a href="{% url 'shop' %}"
+           onclick="toggleMenu()">
+
             {% trans "Shop" %}
+
         </a>
 
 
 
-        <a href="{% url 'custom_order_create' %}">
+
+        <a href="{% url 'custom_order_create' %}"
+           onclick="toggleMenu()">
+
             {% trans "Custom Order" %}
+
         </a>
 
 
 
-        <a href="#">
+
+        <a href="{% url 'about' %}"
+           onclick="toggleMenu()">
+
             {% trans "About" %}
+
         </a>
 
-    <div class="mobile-language">
-
-<form action="{% url 'set_language' %}"
-      method="post">
-
-{% csrf_token %}
-
-<input type="hidden"
-       name="next"
-       value="{{ request.get_full_path }}">
 
 
-<select name="language"
-        onchange="this.form.submit()">
-
-<option value="en"
-{% if LANGUAGE_CODE == "en" %}selected{% endif %}>
-🇬🇧 English
-</option>
 
 
-<option value="fr"
-{% if LANGUAGE_CODE == "fr" %}selected{% endif %}>
-🇫🇷 Français
-</option>
+        {% if user.is_authenticated %}
+
+        <div class="mobile-user-menu">
+
+            <hr>
 
 
-<option value="sk"
-{% if LANGUAGE_CODE == "sk" %}selected{% endif %}>
-🇸🇰 Slovenčina
-</option>
+            <a href="{% url 'profile' %}"
+               onclick="toggleMenu()">
+
+                👤 {% trans "My Account" %}
+
+            </a>
 
 
-</select>
 
-</form>
 
-</div>
+            <a href="{% url 'order_list' %}"
+               onclick="toggleMenu()">
+
+                📦 {% trans "My Orders" %}
+
+            </a>
+
+
+
+
+            <a href="{% url 'wishlist' %}"
+               onclick="toggleMenu()">
+
+                ❤️ {% trans "Wishlist" %}
+
+            </a>
+
+
+
+
+            <a href="{% url 'logout' %}">
+
+                🚪 {% trans "Logout" %}
+
+            </a>
+
+
+        </div>
+
+
+
+        {% else %}
+
+
+
+        <div class="mobile-user-menu">
+
+
+            <hr>
+
+
+
+            <a href="{% url 'login' %}">
+
+                🔑 {% trans "Login" %}
+
+            </a>
+
+
+
+
+            <a href="{% url 'register' %}">
+
+                📝 {% trans "Register" %}
+
+            </a>
+
+
+
+        </div>
+
+
+
+        {% endif %}
+
+
+
+
+
+
+        <!-- MOBILE LANGUAGE -->
+
+
+        <div class="mobile-language">
+
+
+            <form action="{% url 'set_language' %}"
+                  method="post">
+
+
+                {% csrf_token %}
+
+
+                <input type="hidden"
+                       name="next"
+                       value="{{ request.path }}">
+
+
+
+                <select name="language"
+                        onchange="this.form.submit()">
+
+
+
+                    <option value="en"
+                    {% if LANGUAGE_CODE == "en" %}selected{% endif %}>
+
+                        🇬🇧 English
+
+                    </option>
+
+
+
+
+                    <option value="fr"
+                    {% if LANGUAGE_CODE == "fr" %}selected{% endif %}>
+
+                        🇫🇷 Français
+
+                    </option>
+
+
+
+
+                    <option value="sk"
+                    {% if LANGUAGE_CODE == "sk" %}selected{% endif %}>
+
+                        🇸🇰 Slovenčina
+
+                    </option>
+
+
+
+                </select>
+
+
+            </form>
+
+
+        </div>
 
 
 
@@ -96,15 +229,14 @@
 
 
 
-    <!-- RIGHT SIDE -->
+
+
+    <!-- RIGHT SIDE DESKTOP -->
+
 
     <div class="navbar-right">
 
 
-
-
-
-        <!-- CART -->
 
         <div class="mini-cart">
 
@@ -128,7 +260,6 @@
             </span>
 
 
-
         </div>
 
 
@@ -136,13 +267,7 @@
 
 
 
-
-
-        <!-- USER -->
-
-
         <div class="user-menu">
-
 
 
         {% if user.is_authenticated %}
@@ -152,9 +277,7 @@
 
             <span class="welcome-user">
 
-
                 👋 {{ user.username }}
-
 
             </span>
 
@@ -164,13 +287,9 @@
 
             <a href="{% url 'profile' %}">
 
-
                 👤 {% trans "My Account" %}
 
-
             </a>
-
-
 
 
 
@@ -178,13 +297,9 @@
 
             <a href="{% url 'order_list' %}">
 
-
                 📦 {% trans "My Orders" %}
 
-
             </a>
-
-
 
 
 
@@ -192,14 +307,9 @@
 
             <a href="{% url 'wishlist' %}">
 
-
                 ❤️ {% trans "Wishlist" %}
 
-
             </a>
-
-
-
 
 
 
@@ -207,13 +317,9 @@
 
             <a href="{% url 'logout' %}">
 
-
                 🚪 {% trans "Logout" %}
 
-
             </a>
-
-
 
 
 
@@ -223,35 +329,25 @@
 
 
 
-
             <a href="{% url 'login' %}">
-
 
                 {% trans "Login" %}
 
-
             </a>
-
-
 
 
 
 
             <a href="{% url 'register' %}">
 
-
                 {% trans "Register" %}
-
 
             </a>
 
 
 
 
-
         {% endif %}
-
-
 
 
 
@@ -264,92 +360,60 @@
 
 
 
-
-        <!-- LANGUAGE -->
-
+        <!-- DESKTOP LANGUAGE -->
 
 
         <form action="{% url 'set_language' %}"
-
               method="post"
-
               class="lang-switch">
-
 
 
             {% csrf_token %}
 
 
-
             <input type="hidden"
-
                    name="next"
-
-                   value="{{ request.get_full_path }}">
-
+                   value="{{ request.path }}">
 
 
 
 
 
             <select name="language"
-
                     onchange="this.form.submit()">
 
 
 
-
-
                 <option value="en"
-
-                    {% if LANGUAGE_CODE == "en" %}selected{% endif %}>
-
+                {% if LANGUAGE_CODE == "en" %}selected{% endif %}>
 
                     🇬🇧 English
 
-
                 </option>
-
-
-
 
 
 
 
                 <option value="fr"
-
-                    {% if LANGUAGE_CODE == "fr" %}selected{% endif %}>
-
+                {% if LANGUAGE_CODE == "fr" %}selected{% endif %}>
 
                     🇫🇷 Français
 
-
                 </option>
-
-
-
 
 
 
 
                 <option value="sk"
-
-                    {% if LANGUAGE_CODE == "sk" %}selected{% endif %}>
-
+                {% if LANGUAGE_CODE == "sk" %}selected{% endif %}>
 
                     🇸🇰 Slovenčina
-
 
                 </option>
 
 
 
-
-
             </select>
-
-
-
 
 
         </form>
@@ -358,10 +422,7 @@
 
 
 
-
     </div>
-
-
 
 
 

@@ -7,44 +7,97 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
+
+# ==========================================
+# NON LANGUAGE URLS
+# ==========================================
+
 urlpatterns = [
 
-    path("i18n/", include("django.conf.urls.i18n")),
+    # Language switch
+    path(
+        "i18n/",
+        include("django.conf.urls.i18n")
+    ),
 
-    path("admin/", admin.site.urls),
+
+    # Django admin
+    path(
+        "admin/",
+        admin.site.urls
+    ),
 
 ]
 
 
+
+# ==========================================
+# MAIN WEBSITE URLS
+# ==========================================
+
 urlpatterns += i18n_patterns(
 
-    path("", include("core.urls")),
 
-    path("shop/", include("products.urls")),
-
-    path("cart/", include("cart.urls")),
-
-    path("orders/", include("orders.urls")),
-
-    path("accounts/", include("accounts.urls")),
-
-    path("custom/", include("custom_orders.urls")),
+    # HOME
     path(
-    "wishlist/",
-    include("wishlist.urls")
-),
-    
+        "",
+        include("core.urls")
+    ),
+
+
+    # SHOP
+    path(
+        "shop/",
+        include("products.urls")
+    ),
+
+
+    # CART
+    path(
+        "cart/",
+        include("cart.urls")
+    ),
+
+
+    # ORDERS
+    path(
+        "orders/",
+        include("orders.urls")
+    ),
+
+
+    # ACCOUNTS
+    path(
+        "accounts/",
+        include("accounts.urls")
+    ),
+
+
+    # CUSTOM ORDERS
+    path(
+        "custom/",
+        include("custom_orders.urls")
+    ),
+
+
+    # WISHLIST
+    path(
+        "wishlist/",
+        include("wishlist.urls")
+    ),
+
 
 )
 
 
+
 # ==========================================
-# MEDIA (development)
+# MEDIA FILES
 # ==========================================
 
 if settings.DEBUG:
 
     urlpatterns += static(
         settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT,
+        document_root=settings.MEDIA_ROOT
     )

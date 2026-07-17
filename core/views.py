@@ -16,3 +16,10 @@ def home(request):
             "featured_products": featured_products,
         }
     )
+
+def about(request):
+
+    return render(
+        request,
+        "about.html"
+    )

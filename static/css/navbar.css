@@ -21,11 +21,25 @@
 
     justify-content:space-between;
 
-    position:relative;
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    right:0;
 
     z-index:1000;
 
+    background:rgba(10,10,15,.85);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
 }
+
+
 
 
 
@@ -36,15 +50,18 @@
 
 .logo {
 
-    font-family:'Playfair Display', serif;
+    font-family:'Playfair Display',serif;
 
     font-size:26px;
 
     letter-spacing:1px;
 
-    color:#d4af37;
+    color:var(--gold);
 
 }
+
+
+
 
 
 
@@ -67,9 +84,9 @@
 
 .menu a {
 
-    color:#ddd;
+    position:relative;
 
-    text-decoration:none;
+    color:#ddd;
 
     font-size:15px;
 
@@ -81,9 +98,41 @@
 
 .menu a:hover {
 
-    color:#d4af37;
+    color:var(--gold);
 
 }
+
+
+
+.menu a::after {
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--gold);
+
+    transition:.3s;
+
+}
+
+
+
+.menu a:hover::after {
+
+    width:100%;
+
+}
+
+
 
 
 
@@ -104,32 +153,24 @@
 
 
 
-/* =========================
-   LANGUAGE SWITCH
-========================= */
-
-
-.lang-switch select {
-
-    background:#151515;
-
-    color:white;
-
-    border:1px solid #333;
-
-    padding:8px 12px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-}
 
 
 
 /* =========================
    CART
 ========================= */
+
+
+.mini-cart {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+}
+
 
 
 .cart-icon {
@@ -154,7 +195,7 @@
 
     border-radius:50%;
 
-    background:#d4af37;
+    background:var(--gold);
 
     color:#000;
 
@@ -163,6 +204,8 @@
     font-weight:700;
 
 }
+
+
 
 
 
@@ -197,9 +240,48 @@
 
 .user-menu a:hover {
 
-    color:#d4af37;
+    color:var(--gold);
 
 }
+
+
+
+.welcome-user {
+
+    color:#aaa;
+
+    font-size:14px;
+
+}
+
+
+
+
+
+
+/* =========================
+   LANGUAGE
+========================= */
+
+
+.lang-switch select,
+.mobile-language select {
+
+    background:#151515;
+
+    color:white;
+
+    border:1px solid #333;
+
+    padding:8px 12px;
+
+    border-radius:10px;
+
+}
+
+
+
+
 
 
 
@@ -216,7 +298,7 @@
 
     border:none;
 
-    color:#d4af37;
+    color:var(--gold);
 
     font-size:30px;
 
@@ -224,8 +306,37 @@
 
 
 
+
+
+
+
 /* =========================
-   MOBILE MENU DRAWER
+   MOBILE USER
+========================= */
+
+
+.mobile-user-menu {
+
+    display:none;
+
+}
+
+
+
+.mobile-language {
+
+    display:none;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   MOBILE DRAWER
 ========================= */
 
 
@@ -247,13 +358,13 @@
 
     flex-direction:column;
 
-    gap:20px;
+    gap:18px;
 
-    border-top:
-
-    1px solid rgba(255,255,255,.08);
+    border-top:1px solid rgba(255,255,255,.08);
 
 }
+
+
 
 
 
@@ -265,69 +376,157 @@
 
 
 
-/* ==================================================
-   MOBILE NAVBAR
-================================================== */
+
+
+#mobileMenu hr {
+
+    width:100%;
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+    margin:10px 0;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   MOBILE
+========================= */
 
 
 @media(max-width:768px){
 
 
-    .navbar {
 
-        padding:0 20px;
+.navbar {
 
-    }
+    padding:0 20px;
 
-
-
-    .menu {
-
-        display:none;
-
-    }
+}
 
 
 
-    .hamburger {
 
-        display:block;
+.hamburger {
 
-    }
+    display:block;
 
+    order:3;
 
-
-    .navbar-right {
-
-        margin-left:auto;
-
-        gap:10px;
-
-    }
+}
 
 
 
-    .lang-switch {
-
-        display:none;
-
-    }
 
 
+.menu {
 
-    .user-menu {
+    display:none;
 
-        display:none;
-
-    }
+}
 
 
 
-    .logo {
 
-        font-size:24px;
 
-    }
+.navbar-right {
+
+    margin-left:auto;
+
+    gap:10px;
+
+}
+
+
+
+
+.user-menu {
+
+    display:none;
+
+}
+
+
+
+
+
+.lang-switch {
+
+    display:none;
+
+}
+
+
+
+
+
+.logo {
+
+    font-size:24px;
+
+}
+
+
+
+
+
+.mobile-user-menu {
+
+    display:flex;
+
+    flex-direction:column;
+
+    width:100%;
+
+    gap:15px;
+
+}
+
+
+
+
+
+.mobile-user-menu a {
+
+    color:#ddd;
+
+    font-size:16px;
+
+    padding:8px 0;
+
+}
+
+
+
+
+
+.mobile-language {
+
+    display:block;
+
+    margin-top:10px;
+
+}
+
+
+
+
+
+#mobileMenu a {
+
+    font-size:16px;
+
+    padding:8px 0;
+
+}
+
 
 
 }

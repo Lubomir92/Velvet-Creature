@@ -1,18 +1,27 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Velvet Creature\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-17 22:03+0200\n"
-"Language: fr\n"
+"POT-Creation-Date: 2026-07-17 20:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\accounts\templates\accounts\profile.html:6
-#: .\templates\includes\navbar.html:84 .\templates\includes\navbar.html:289
+#: .\templates\includes\navbar.html:89 .\templates\includes\navbar.html:305
 msgid "My Account"
-msgstr "Mon compte"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:44
 msgid "Premium Member"
@@ -20,40 +29,36 @@ msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:52
 msgid "Member since"
-msgstr "Membre depuis"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:81
-#, fuzzy
-#| msgid "Order"
 msgid "Orders"
-msgstr "Commande"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:99
-#: .\templates\includes\navbar.html:104 .\templates\includes\navbar.html:309
+#: .\templates\includes\navbar.html:109 .\templates\includes\navbar.html:325
 #: .\templates\products\detail.html:233 .\templates\products\shop.html:200
 #: .\templates\products\shop.html:207 .\templates\products\shop.html:221
 #: .\templates\products\shop.html:227
 msgid "Wishlist"
-msgstr "Liste de souhaits"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:118
-#, fuzzy
-#| msgid "Review"
 msgid "Reviews"
-msgstr "Vérification"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:152
 msgid "Account"
-msgstr "Compte"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:160
 msgid "Username"
-msgstr "Nom d'utilisateur"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:178
 #: .\templates\orders\checkout.html:95
 msgid "Email"
-msgstr "E-mail"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:196
 msgid "Joined"
@@ -62,178 +67,176 @@ msgstr ""
 #: .\accounts\templates\accounts\profile.html:224
 #: .\templates\orders\checkout.html:40
 msgid "Customer Information"
-msgstr "Informations client"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:234
 msgid "Full name"
-msgstr "Nom complet"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:267
 #: .\templates\orders\checkout.html:113
 msgid "Country"
-msgstr "Pays"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:287
 msgid "Phone"
-msgstr "Téléphone"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:325
-#: .\templates\includes\navbar.html:94 .\templates\includes\navbar.html:299
+#: .\templates\includes\navbar.html:99 .\templates\includes\navbar.html:315
 msgid "My Orders"
-msgstr "Mes commandes"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:350
 #: .\venv\Lib\site-packages\django\forms\formsets.py:484
 #: .\venv\Lib\site-packages\django\forms\formsets.py:491
 msgid "Order"
-msgstr "Commande"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:402
 #: .\accounts\templates\accounts\profile.html:598
 msgid "Details"
-msgstr "Détails"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:430
 msgid "You have no orders yet."
-msgstr "Vous n'avez pas encore de commandes."
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:462
 msgid "My Custom Projects"
-msgstr "Mes projets personnalisés"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:497
 #: .\custom_orders\templates\custom_orders\detail.html:8
-#: .\templates\about.html:186 .\templates\includes\navbar.html:56
+#: .\templates\about.html:186 .\templates\includes\navbar.html:55
 msgid "Custom Order"
-msgstr "Commande personnalisée"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:519
 #: .\custom_orders\templates\custom_orders\detail.html:184
 #: .\templates\products\detail.html:132
 msgid "Material"
-msgstr "Matériau"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:581
 msgid "Waiting for quote"
-msgstr "En attente du devis"
+msgstr ""
 
 #: .\accounts\templates\accounts\profile.html:628
 msgid "You have no custom projects yet."
-msgstr "Vous n'avez pas encore de projets personnalisés."
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:29
 msgid "Custom Project"
-msgstr "Projet personnalisé"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:37
 msgid "Created"
-msgstr "Créé"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:66
 msgid "Project Status"
-msgstr "Statut du projet"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:81
 msgid "Request sent"
-msgstr "Demande envoyée"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:98
 msgid "Review"
-msgstr "Vérification"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:115
 msgid "Quote sent"
-msgstr "Devis envoyé"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:132
 msgid "Finished"
-msgstr "Terminé"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:162
 msgid "Project Details"
-msgstr "Détails du projet"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:170
 msgid "Service"
-msgstr "Service"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:198
 msgid "Color"
-msgstr "Couleur"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:213
 #: .\templates\cart\cart_drawer.html:64
 msgid "Quantity"
-msgstr "Quantité"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:229
 #: .\templates\products\detail.html:145
 msgid "Size"
-msgstr "Taille"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:250
 msgid "Description"
-msgstr "Description"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:266
 msgid "Engraving"
-msgstr "Gravure"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:274
 msgid "Enabled"
-msgstr "Activé"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:280
 #: .\venv\Lib\site-packages\django\forms\widgets.py:870
 msgid "Yes"
-msgstr "Oui"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:284
 #: .\venv\Lib\site-packages\django\forms\widgets.py:871
 msgid "No"
-msgstr "Non"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:302
 msgid "Engraving type"
-msgstr "Type de gravure"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:321
 msgid "Engraving text"
-msgstr "Texte de gravure"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:344
 msgid "Engraving image"
-msgstr "Image de gravure"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:382
 msgid "Files"
-msgstr "Fichiers"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:396
 msgid "Download 3D model"
-msgstr "Télécharger le modèle 3D"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:412
 msgid "Preview image"
-msgstr "Image d'aperçu"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:471
 msgid "Waiting for quote from our team."
-msgstr "En attente d'un devis de notre équipe."
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:503
 msgid "Message from Velvet Creature"
-msgstr "Message de Velvet Creature"
+msgstr ""
 
 #: .\custom_orders\templates\custom_orders\detail.html:529
 msgid "Back to account"
-msgstr "Retour au compte"
+msgstr ""
 
 #: .\templates\about.html:8
-#, fuzzy
-#| msgid "Why Velvet Creature?"
 msgid "About Velvet Creature"
-msgstr "Pourquoi Velvet Creature ?"
+msgstr ""
 
 #: .\templates\about.html:33
 msgid "Unique 3D printed creatures made with passion and precision."
@@ -260,10 +263,8 @@ msgid ""
 msgstr ""
 
 #: .\templates\about.html:99
-#, fuzzy
-#| msgid "Customer Information"
 msgid "Custom Creations"
-msgstr "Informations client"
+msgstr ""
 
 #: .\templates\about.html:106
 msgid "Have your own idea? We can transform your vision into a unique model."
@@ -300,20 +301,16 @@ msgid "Total"
 msgstr ""
 
 #: .\templates\cart\cart_detail.html:237
-#, fuzzy
-#| msgid "Back to Checkout"
 msgid "Proceed to Checkout"
-msgstr "Retour au paiement"
+msgstr ""
 
 #: .\templates\cart\cart_detail.html:249
 msgid "Continue Shopping"
 msgstr ""
 
 #: .\templates\cart\cart_detail.html:283 .\templates\cart\cart_drawer.html:124
-#, fuzzy
-#| msgid "Your wishlist is empty."
 msgid "Your cart is empty"
-msgstr "Votre liste de souhaits est vide."
+msgstr ""
 
 #: .\templates\cart\cart_detail.html:288
 msgid "Add something beautiful to your collection."
@@ -324,53 +321,45 @@ msgid "Explore Collection"
 msgstr ""
 
 #: .\templates\cart\cart_drawer.html:157
-#, fuzzy
-#| msgid "View Product"
 msgid "View Cart"
-msgstr "Voir le produit"
+msgstr ""
 
 #: .\templates\cart\cart_drawer.html:167
-#, fuzzy
-#| msgid "Back to Checkout"
 msgid "Checkout"
-msgstr "Retour au paiement"
+msgstr ""
 
-#: .\templates\includes\navbar.html:37
+#: .\templates\includes\navbar.html:36
 msgid "Home"
-msgstr "Accueil"
+msgstr ""
 
-#: .\templates\includes\navbar.html:46 .\templates\products\home.html:28
+#: .\templates\includes\navbar.html:45 .\templates\products\home.html:28
 #: .\templates\products\shop.html:13
 msgid "Shop"
-msgstr "Boutique"
+msgstr ""
 
-#: .\templates\includes\navbar.html:66
+#: .\templates\includes\navbar.html:65
 msgid "About"
-msgstr "À propos"
+msgstr ""
 
-#: .\templates\includes\navbar.html:113 .\templates\includes\navbar.html:319
+#: .\templates\includes\navbar.html:118 .\templates\includes\navbar.html:335
 msgid "Logout"
-msgstr "Déconnexion"
+msgstr ""
 
-#: .\templates\includes\navbar.html:135 .\templates\includes\navbar.html:333
+#: .\templates\includes\navbar.html:141 .\templates\includes\navbar.html:349
 msgid "Login"
-msgstr "Connexion"
+msgstr ""
 
-#: .\templates\includes\navbar.html:144 .\templates\includes\navbar.html:342
+#: .\templates\includes\navbar.html:150 .\templates\includes\navbar.html:358
 msgid "Register"
-msgstr "Créer un compte"
+msgstr ""
 
 #: .\templates\orders\checkout.html:6 .\templates\orders\checkout.html:20
-#, fuzzy
-#| msgid "Back to Checkout"
 msgid "Secure Checkout"
-msgstr "Retour au paiement"
+msgstr ""
 
 #: .\templates\orders\checkout.html:59
-#, fuzzy
-#| msgid "Full name"
 msgid "First name"
-msgstr "Nom complet"
+msgstr ""
 
 #: .\templates\orders\checkout.html:77
 msgid "Last name"
@@ -389,10 +378,8 @@ msgid "Pay securely with card"
 msgstr ""
 
 #: .\templates\orders\checkout.html:197
-#, fuzzy
-#| msgid "Order"
 msgid "Your Order"
-msgstr "Commande"
+msgstr ""
 
 #: .\templates\orders\checkout.html:272
 msgid "Secure Stripe payment"
@@ -412,139 +399,131 @@ msgstr ""
 
 #: .\templates\orders\payment_cancel.html:8
 msgid "Payment Cancelled"
-msgstr "Paiement annulé"
+msgstr ""
 
 #: .\templates\orders\payment_cancel.html:11
 msgid "You can try again whenever you're ready."
-msgstr "Vous pouvez réessayer quand vous serez prêt."
+msgstr ""
 
 #: .\templates\orders\payment_cancel.html:15
 msgid "Back to Checkout"
-msgstr "Retour au paiement"
+msgstr ""
 
 #: .\templates\products\detail.html:30 .\templates\products\shop.html:122
 #: .\templates\wishlist\wishlist.html:60
 msgid "No image"
-msgstr "Pas d'image"
+msgstr ""
 
 #: .\templates\products\detail.html:158
 msgid "Weight"
-msgstr "Poids"
+msgstr ""
 
 #: .\templates\products\detail.html:178 .\templates\products\home.html:89
 #: .\templates\products\shop.html:140
 msgid "In Stock"
-msgstr "En stock"
+msgstr ""
 
 #: .\templates\products\detail.html:188 .\templates\products\home.html:91
 #: .\templates\products\shop.html:152
 msgid "Sold Out"
-msgstr "Rupture de stock"
+msgstr ""
 
 #: .\templates\products\detail.html:214 .\templates\products\home.html:111
 #: .\templates\products\shop.html:293 .\templates\wishlist\wishlist.html:116
 msgid "Add to cart"
-msgstr "Ajouter au panier"
+msgstr ""
 
 #: .\templates\products\home.html:16
 msgid "Luxury 3D Printed Collectibles"
-msgstr "Objets de collection 3D imprimés de luxe"
+msgstr ""
 
 #: .\templates\products\home.html:22
 msgid ""
 "Enter a world where gothic elegance meets handcrafted 3D design. Each "
 "creation is sculpted with precision, darkness and imagination."
 msgstr ""
-"Entrez dans un monde où l'élégance gothique rencontre le design 3D "
-"artisanal. Chaque création est sculptée avec précision, obscurité et "
-"imagination."
 
 #: .\templates\products\home.html:32 .\templates\products\home.html:73
 msgid "New Arrivals"
-msgstr "Nouveautés"
+msgstr ""
 
 #: .\templates\products\home.html:45
 msgid "Why Velvet Creature?"
-msgstr "Pourquoi Velvet Creature ?"
+msgstr ""
 
 #: .\templates\products\home.html:51
 msgid "3D Printed"
-msgstr "Imprimé en 3D"
+msgstr ""
 
 #: .\templates\products\home.html:52
 msgid "Precision-crafted models with high-end detail and texture."
 msgstr ""
-"Modèles fabriqués avec précision, avec des détails et textures haut de gamme."
 
 #: .\templates\products\home.html:56
 msgid "Hand Finished"
-msgstr "Finition artisanale"
+msgstr ""
 
 #: .\templates\products\home.html:57
 msgid "Each piece is refined manually for premium quality."
-msgstr "Chaque pièce est finie manuellement pour une qualité premium."
+msgstr ""
 
 #: .\templates\products\home.html:61
 msgid "Dark Aesthetic"
-msgstr "Esthétique sombre"
+msgstr ""
 
 #: .\templates\products\home.html:62
 msgid "Inspired by gothic art, fantasy worlds and cinematic design."
 msgstr ""
-"Inspiré par l'art gothique, les mondes fantastiques et le design "
-"cinématographique."
 
 #: .\templates\products\home.html:103
 msgid "Detail"
-msgstr "Détails"
+msgstr ""
 
 #: .\templates\products\home.html:131
 msgid ""
 "Every creature begins as an idea — shaped by darkness, refined by "
 "imagination."
 msgstr ""
-"Chaque créature commence comme une idée — façonnée par l'obscurité et "
-"raffinée par l'imagination."
 
 #: .\templates\products\shop.html:40
 msgid "Search products..."
-msgstr "Rechercher des produits..."
+msgstr ""
 
 #: .\templates\products\shop.html:47
 msgid "Search"
-msgstr "Rechercher"
+msgstr ""
 
 #: .\templates\products\shop.html:65
 msgid "All"
-msgstr "Tous"
+msgstr ""
 
 #: .\templates\products\shop.html:273
 msgid "View details"
-msgstr "Voir les détails"
+msgstr ""
 
 #: .\templates\products\shop.html:326
 msgid "No products found."
-msgstr "Aucun produit trouvé."
+msgstr ""
 
 #: .\templates\wishlist\wishlist.html:6 .\templates\wishlist\wishlist.html:20
 msgid "My Wishlist"
-msgstr "Ma liste de souhaits"
+msgstr ""
 
 #: .\templates\wishlist\wishlist.html:27
 msgid "Your saved Velvet Creature creations"
-msgstr "Vos créations Velvet Creature enregistrées"
+msgstr ""
 
 #: .\templates\wishlist\wishlist.html:95
 msgid "View Product"
-msgstr "Voir le produit"
+msgstr ""
 
 #: .\templates\wishlist\wishlist.html:106
 msgid "Remove"
-msgstr "Retirer"
+msgstr ""
 
 #: .\templates\wishlist\wishlist.html:143
 msgid "Your wishlist is empty."
-msgstr "Votre liste de souhaits est vide."
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"
@@ -855,17 +834,15 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1868
 msgid "Duration"
-msgstr "Durée"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1920
 msgid "Email address"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1945
-#, fuzzy
-#| msgid "File"
 msgid "File path"
-msgstr "Fichier"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2023
 #, python-format
@@ -969,13 +946,11 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\files.py:244
 msgid "File"
-msgstr "Fichier"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
-#, fuzzy
-#| msgid "No image"
 msgid "Image"
-msgstr "Pas d'image"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\json.py:24
 msgid "A JSON object"
@@ -1344,10 +1319,8 @@ msgid "February"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:27
-#, fuzzy
-#| msgid "Search"
 msgid "March"
-msgstr "Rechercher"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:28
 msgid "April"
@@ -1444,11 +1417,9 @@ msgid "Feb."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:55
-#, fuzzy
-#| msgid "Search"
 msgctxt "abbrev. month"
 msgid "March"
-msgstr "Rechercher"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:56
 msgctxt "abbrev. month"
@@ -1506,11 +1477,9 @@ msgid "February"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:69
-#, fuzzy
-#| msgid "Search"
 msgctxt "alt. month"
 msgid "March"
-msgstr "Rechercher"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:70
 msgctxt "alt. month"
@@ -1741,12 +1710,12 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\directory_index.html:11
 #, python-format
 msgid "Index of %(directory)s"
-msgstr "Index de %(directory)s"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:204
 msgid "The install worked successfully! Congratulations!"
-msgstr "L'installation a réussi ! Félicitations !"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
 #, python-format
@@ -1754,9 +1723,6 @@ msgid ""
 "View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
 "target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
 msgstr ""
-"Consultez les <a href=\"https://docs.djangoproject.com/fr/%(version)s/"
-"releases/\" target=\"_blank\" rel=\"noopener\">notes de version</a> de "
-"Django %(version)s"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:208
 #, python-format
@@ -1766,37 +1732,27 @@ msgid ""
 "rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
 "configured any URLs."
 msgstr ""
-"Vous voyez cette page car <a href=\"https://docs.djangoproject.com/fr/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" "
-"rel=\"noopener\">DEBUG=True</a> est activé dans votre fichier de paramètres "
-"et aucune URL n'est configurée."
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
 msgid "Django Documentation"
-msgstr "Documentation Django"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
 msgid "Topics, references, &amp; how-to’s"
-msgstr "Sujets, références et guides pratiques"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:226
 msgid "Tutorial: A Polling App"
-msgstr "Tutoriel : une application de sondage"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:227
 msgid "Get started with Django"
-msgstr "Commencer avec Django"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:235
 msgid "Django Community"
-msgstr "Communauté Django"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
 msgid "Connect, get help, or contribute"
-msgstr "Se connecter, obtenir de l'aide ou contribuer"
-
-#~ msgid "Welcome back"
-#~ msgstr "Bon retour"
-
-#~ msgid "Remove from Wishlist"
-#~ msgstr "Retirer de ma liste de souhaits"
+msgstr ""
