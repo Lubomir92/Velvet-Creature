@@ -14,8 +14,8 @@ Order #{{ order.id }}
 <div class="order-detail-page">
 
 
-<h1 style="color:#d4af37;">
-    Order {{ order.order_number }}
+<h1 class="order-title">
+    📋 {% trans "Order" %} {{ order.order_number }}
 </h1>
 
 
@@ -26,7 +26,7 @@ Order #{{ order.id }}
 
 
 <h3>
-    Order progress
+    📊 {% if LANGUAGE_CODE == 'fr' %}Progression de la commande{% elif LANGUAGE_CODE == 'sk' %}Priebeh objednávky{% else %}Order progress{% endif %}
 </h3>
 
 
@@ -37,331 +37,375 @@ Order #{{ order.id }}
 
 
 <div class="step {% if order.status in 'pending paid processing shipped delivered' %}active{% endif %}">
-
-    <span>✓</span>
-
-    <small>
-        Order created
-    </small>
-
+    <span>📝</span>
+    <small>{% if LANGUAGE_CODE == 'fr' %}Créé{% elif LANGUAGE_CODE == 'sk' %}Vytvorené{% else %}Created{% endif %}</small>
 </div>
 
-
-
-<div class="line"></div>
-
-
+<div class="line {% if order.status in 'paid processing shipped delivered' %}active{% endif %}"></div>
 
 <div class="step {% if order.status in 'paid processing shipped delivered' %}active{% endif %}">
-
-    <span>✓</span>
-
-    <small>
-        Paid
-    </small>
-
+    <span>💰</span>
+    <small>{% if LANGUAGE_CODE == 'fr' %}Payé{% elif LANGUAGE_CODE == 'sk' %}Zaplatené{% else %}Paid{% endif %}</small>
 </div>
 
-
-
-<div class="line"></div>
-
-
+<div class="line {% if order.status in 'processing shipped delivered' %}active{% endif %}"></div>
 
 <div class="step {% if order.status in 'processing shipped delivered' %}active{% endif %}">
-
-    <span>✓</span>
-
-    <small>
-        Processing
-    </small>
-
+    <span>⚙️</span>
+    <small>{% if LANGUAGE_CODE == 'fr' %}En traitement{% elif LANGUAGE_CODE == 'sk' %}Spracúva sa{% else %}Processing{% endif %}</small>
 </div>
 
-
-
-<div class="line"></div>
-
-
+<div class="line {% if order.status in 'shipped delivered' %}active{% endif %}"></div>
 
 <div class="step {% if order.status in 'shipped delivered' %}active{% endif %}">
-
-    <span>✓</span>
-
-    <small>
-        Shipped
-    </small>
-
+    <span>📦</span>
+    <small>{% if LANGUAGE_CODE == 'fr' %}Expédié{% elif LANGUAGE_CODE == 'sk' %}Odoslané{% else %}Shipped{% endif %}</small>
 </div>
 
-
-
-<div class="line"></div>
-
-
+<div class="line {% if order.status == 'delivered' %}active{% endif %}"></div>
 
 <div class="step {% if order.status == 'delivered' %}active{% endif %}">
-
-    <span>✓</span>
-
-    <small>
-        Delivered
-    </small>
-
+    <span>✅</span>
+    <small>{% if LANGUAGE_CODE == 'fr' %}Livré{% elif LANGUAGE_CODE == 'sk' %}Doručené{% else %}Delivered{% endif %}</small>
 </div>
 
 
 </div>
 </div>
 
+</div>
 
+
+<div class="order-grid">
+
+<!-- LEFT COLUMN -->
+
+<div>
 
 <!-- ORDER INFORMATION -->
-
-
 <div class="card">
-
-
-<h3>
-    Order information
-</h3>
-
-
-
-<p>
-    Current status:
-
-    <strong>
-        {{ order.get_status_display }}
-    </strong>
-
-</p>
-
-
-
-<p>
-    Total:
-
-    <strong>
-        €{{ order.total_price }}
-    </strong>
-
-</p>
-
-
-
-<p>
-    Date:
-    {{ order.created }}
-</p>
-
-
-
+    <h3>ℹ️ {% if LANGUAGE_CODE == 'fr' %}Informations de commande{% elif LANGUAGE_CODE == 'sk' %}Informácie o objednávke{% else %}Order information{% endif %}</h3>
+    
+    <div class="info-row">
+        <span>{% if LANGUAGE_CODE == 'fr' %}Statut{% elif LANGUAGE_CODE == 'sk' %}Stav{% else %}Status{% endif %}:</span>
+        <strong class="status-{{ order.status }}">{{ order.get_status_display }}</strong>
+    </div>
+    
+    <div class="info-row">
+        <span>{% trans "Total" %}:</span>
+        <strong class="price">€{{ order.total_price }}</strong>
+    </div>
+    
+    <div class="info-row">
+        <span>{% if LANGUAGE_CODE == 'fr' %}Date{% elif LANGUAGE_CODE == 'sk' %}Dátum{% else %}Date{% endif %}:</span>
+        <span>{{ order.created|date:"d.m.Y H:i" }}</span>
+    </div>
+    
+    <div class="info-row">
+        <span>{% trans "Payment" %}:</span>
+        <span>{{ order.payment_method }}</span>
+    </div>
+    
+    {% if order.shipping_method %}
+    <div class="info-row">
+        <span>{% trans "Shipping" %}:</span>
+        <span>{{ order.shipping_method.logo }} {{ order.shipping_method.name }} (€{{ order.shipping_price }})</span>
+    </div>
+    {% endif %}
 </div>
-
-
-<!-- SHIPPING INFORMATION -->
-
-{% if order.status == "shipped" or order.status == "delivered" %}
-
-<div class="card">
-
-<h3>
-Shipping information
-</h3>
-
-
-<p>
-Carrier:
-<strong>
-{{ order.carrier }}
-</strong>
-</p>
-
-
-<p>
-Tracking number:
-<strong>
-{{ order.tracking_number }}
-</strong>
-</p>
-
-
-{% if order.carrier == "Packeta" %}
-
-<a class="btn"
-href="https://tracking.packeta.com/"
-target="_blank">
-
-Track package
-
-</a>
-
-
-{% elif order.carrier == "GLS" %}
-
-<a class="btn"
-href="https://gls-group.com/"
-target="_blank">
-
-Track package
-
-</a>
-
-
-{% elif order.carrier == "DPD" %}
-
-<a class="btn"
-href="https://www.dpd.com/"
-target="_blank">
-
-Track package
-
-</a>
-
-
-{% endif %}
-
-
-</div>
-
-{% endif %}
-
-
-<!-- CUSTOMER -->
-
-
-<div class="card">
-
-
-<h3>
-    Customer details
-</h3>
-
-
-<p>
-    {{ order.first_name }}
-    {{ order.last_name }}
-</p>
-
-
-<p>
-    {{ order.email }}
-</p>
-
-
-<p>
-    {{ order.address }}
-</p>
-
-
-<p>
-    {{ order.city }}
-    {{ order.country }}
-</p>
-
-
-
-</div>
-
-
-
-
 
 <!-- ITEMS -->
-
-
 <div class="card">
-
-
-<h3>
-    Items
-</h3>
-
-
-
-{% for item in order.items.all %}
-
-
-
-<div style="margin-bottom:15px;">
-
-
-<strong>
-{{ item.product.name }}
-</strong>
-
-
-<br>
-
-
-Quantity:
-{{ item.quantity }}
-
-
-<br>
-
-
-Price:
-€{{ item.price }}
-
-
-<br>
-
-
-Total:
-€{{ item.get_total }}
-
-
+    <h3>📦 {% trans "Items" %}</h3>
+    
+    {% for item in order.items.all %}
+    <div class="item-row">
+        <div>
+            <strong>{{ item.product.name }}</strong>
+            <p class="muted">{{ item.quantity }} × €{{ item.price }}</p>
+        </div>
+        <strong class="price">€{{ item.get_total }}</strong>
+    </div>
+    {% empty %}
+    <p class="muted">{% trans "No items found." %}</p>
+    {% endfor %}
+</div>
 
 </div>
 
+<!-- RIGHT COLUMN -->
 
+<div>
 
-{% empty %}
-
-
-<p>
-No items found.
-</p>
-
-
-{% endfor %}
-
-
-
+<!-- CUSTOMER -->
+<div class="card">
+    <h3>👤 {% if LANGUAGE_CODE == 'fr' %}Détails du client{% elif LANGUAGE_CODE == 'sk' %}Údaje o zákazníkovi{% else %}Customer details{% endif %}</h3>
+    
+    <div class="info-row">
+        <span>{% trans "Name" %}:</span>
+        <strong>{{ order.first_name }} {{ order.last_name }}</strong>
+    </div>
+    
+    <div class="info-row">
+        <span>{% trans "Email" %}:</span>
+        <span>{{ order.email }}</span>
+    </div>
+    
+    <div class="info-row">
+        <span>{% trans "Address" %}:</span>
+        <span>{{ order.address }}</span>
+    </div>
+    
+    <div class="info-row">
+        <span>{% trans "City" %}:</span>
+        <span>{{ order.city }}</span>
+    </div>
+    
+    <div class="info-row">
+        <span>{% trans "Country" %}:</span>
+        <span>{{ order.country }}</span>
+    </div>
 </div>
 
+<!-- SHIPPING INFO -->
+{% if order.status == "shipped" or order.status == "delivered" %}
+<div class="card">
+    <h3>🚚 {% if LANGUAGE_CODE == 'fr' %}Informations de livraison{% elif LANGUAGE_CODE == 'sk' %}Informácie o doprave{% else %}Shipping information{% endif %}</h3>
+    
+    <div class="info-row">
+        <span>{% trans "Carrier" %}:</span>
+        <strong>{{ order.carrier }}</strong>
+    </div>
+    
+    <div class="info-row">
+        <span>{% trans "Tracking" %}:</span>
+        <strong>{{ order.tracking_number }}</strong>
+    </div>
+    
+    {% if order.carrier == "Packeta" %}
+    <a class="btn btn-gold" href="https://tracking.packeta.com/" target="_blank">📦 {% trans "Track package" %}</a>
+    {% elif order.carrier == "GLS" %}
+    <a class="btn btn-gold" href="https://gls-group.com/" target="_blank">📦 {% trans "Track package" %}</a>
+    {% elif order.carrier == "DPD" %}
+    <a class="btn btn-gold" href="https://www.dpd.com/" target="_blank">📦 {% trans "Track package" %}</a>
+    {% endif %}
+</div>
+{% endif %}
 
-
-
-
-
-
-<!-- BUTTONS -->
-
-
-<div style="margin-top:30px;">
-
-
-
-<a href="{% url 'invoice' order.id %}"
-class="btn">
-
-{% trans "Download Invoice PDF" %}
-
+<!-- DOWNLOAD INVOICE -->
+<a href="{% url 'invoice' order.id %}" class="btn btn-gold full-width">
+    📄 {% trans "Download Invoice PDF" %}
 </a>
 
-
+</div>
 
 </div>
 
 
 
-
-
 </div>
 
 
+<style>
+<!-- ORDER INFORMATION -->
+<div class="card">
+    <h3>ℹ️ {% if LANGUAGE_CODE == 'fr' %}Informations de commande{% elif LANGUAGE_CODE == 'sk' %}Informácie o objednávke{% else %}Order information{% endif %}</h3>
+    
+    <div class="info-row">
+        <span>{% if LANGUAGE_CODE == 'fr' %}Statut{% elif LANGUAGE_CODE == 'sk' %}Stav{% else %}Status{% endif %}:</span>
+        <strong class="status-{{ order.status }}">{{ order.get_status_display }}</strong>
+    </div>
+    
+    <div class="info-row">
+        <span>{% trans "Subtotal" %}:</span>
+        <span>{{ order.total_price|add:order.shipping_price|floatformat:2 }} €</span>
+    </div>
+    
+    {% if order.shipping_price > 0 %}
+    <div class="info-row">
+        <span>{% trans "Shipping" %}:</span>
+        <span>{{ order.shipping_price }} €</span>
+    </div>
+    {% endif %}
+    
+    <div class="info-row">
+        <span>{% trans "Total" %}:</span>
+        <strong class="price">€{{ order.total_price }}</strong>
+    </div>
+    
+    <div class="info-row">
+        <span>{% if LANGUAGE_CODE == 'fr' %}Date{% elif LANGUAGE_CODE == 'sk' %}Dátum{% else %}Date{% endif %}:</span>
+        <span>{{ order.created|date:"d.m.Y H:i" }}</span>
+    </div>
+    
+    <div class="info-row">
+        <span>{% trans "Payment" %}:</span>
+        <span>{{ order.payment_method }}</span>
+    </div>
+    
+    {% if order.shipping_method %}
+    <div class="info-row">
+        <span>{% trans "Shipping method" %}:</span>
+        <span>{{ order.shipping_method.logo }} {{ order.shipping_method.name }}</span>
+    </div>
+    {% endif %}
+</div>
+/* PROGRESS TRACKER */
+.progress-wrapper {
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.order-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 500px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.step span {
+    font-size: 20px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.03);
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.step.active span {
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.step small {
+    color: #8a8a7a;
+    font-size: 9px;
+    text-align: center;
+    max-width: 55px;
+    word-wrap: break-word;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.line {
+    flex: 1;
+    height: 2px;
+    background: rgba(255,255,255,0.05);
+    margin: 0 3px;
+    margin-bottom: 18px;
+}
+
+.line.active {
+    background: #d4af37;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+/* INFO ROWS */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: #b0a080;
+    font-size: 14px;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row strong {
+    color: #e0d7c0;
+}
+
+.price {
+    color: #d4af37 !important;
+    font-size: 18px;
+}
+
+/* STATUS COLORS */
+.status-pending { color: #ffa500; }
+.status-paid { color: #4285f4; }
+.status-processing { color: #b482ff; }
+.status-shipped { color: #4caf50; }
+.status-delivered { color: #00c000; }
+
+/* ITEMS */
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+.item-row strong {
+    color: #e0d7c0;
+}
+
+.muted {
+    color: #8a8a7a;
+    font-size: 13px;
+    margin-top: 3px;
+}
+
+/* BUTTONS */
+.btn-gold {
+    display: inline-block;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #8b6914, #d4af37);
+    color: #0a0a0a;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.full-width {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .order-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 
 {% endblock %}

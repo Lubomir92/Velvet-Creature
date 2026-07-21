@@ -1,24 +1,50 @@
 {% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}
+{% trans "Secure Checkout" %}
+{% endblock %}
 
 {% block content %}
+<h1 style="color: red !important; background: black !important; padding: 30px !important; font-size: 40px !important; text-align: center !important;">
+    🔴 TESTOVACÍ NADPIS 🔴
+</h1>
+</div>
 
 <div class="checkout-page">
 
-    <h1 class="section-title">Secure Checkout</h1>
+    <h1 class="section-title">🔒 {% trans "Secure Checkout" %}</h1>
 
     <div class="checkout-layout">
 
         <!-- LEFT -->
         <div class="checkout-box">
 
-            <h2>Order summary</h2>
+            <h2>📋 {% trans "Order summary" %}</h2>
 
             <p class="big-total">€{{ total }}</p>
 
-            <div style="margin-top:20px;color:#888;">
-                <p>✔ Secure Stripe payment</p>
-                <p>✔ Instant order confirmation</p>
-                <p>✔ Encrypted checkout</p>
+            <div class="secure-info">
+                <div class="secure-item">
+                    <span class="secure-icon">🔐</span>
+                    <span>{% trans "Secure Stripe payment" %}</span>
+                </div>
+                <div class="secure-item">
+                    <span class="secure-icon">📧</span>
+                    <span>{% trans "Instant order confirmation" %}</span>
+                </div>
+                <div class="secure-item">
+                    <span class="secure-icon">🛡️</span>
+                    <span>{% trans "Encrypted checkout" %}</span>
+                </div>
+            </div>
+
+            <!-- IKONY PLATIEB -->
+            <div class="card-icons">
+                <span class="card-icon">💳 {% trans "Credit Card" %}</span>
+                <span class="card-icon">🏦 {% trans "Bank Transfer" %}</span>
+                <span class="card-icon">🔒 SSL {% trans "Encrypted" %}</span>
+                <span class="card-icon">🛡️ 3D Secure</span>
             </div>
 
         </div>
@@ -26,19 +52,22 @@
         <!-- RIGHT -->
         <div class="checkout-payment">
 
-            <h2>Payment</h2>
+            <h2>💳 {% trans "Payment" %}</h2>
 
             <form method="post">
                 {% csrf_token %}
 
-                <button class="btn-primary full">
-                    Pay securely with card
+                <button type="submit" class="btn-primary full payment-btn">
+                    <span class="payment-btn-content">
+                        <span>💳 {% trans "Pay securely with card" %}</span>
+                        <span class="payment-lock">🔒</span>
+                    </span>
                 </button>
 
             </form>
 
-            <p style="margin-top:15px;color:#777;font-size:13px;">
-                You will be redirected to Stripe secure payment page.
+            <p class="payment-notice">
+                🔒 {% trans "You will be redirected to Stripe secure payment page." %}
             </p>
 
         </div>
@@ -46,5 +75,185 @@
     </div>
 
 </div>
+
+
+<style>
+/* ========== CHECKOUT - GOLD & BLACK ========== */
+
+.checkout-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.checkout-page .section-title {
+    text-align: center;
+    color: #d4af37 !important;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.checkout-box, .checkout-payment {
+    background: rgba(10, 5, 5, 0.95) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 18px;
+    padding: 35px;
+    backdrop-filter: blur(15px);
+}
+
+.checkout-box h2, .checkout-payment h2 {
+    color: #d4af37 !important;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+.big-total {
+    font-size: 48px;
+    font-weight: 700;
+    color: #d4af37 !important;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin: 20px 0;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* BEZPEČNOSTNÉ INFO */
+.secure-info {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-radius: 14px;
+    border: 1px solid rgba(212, 175, 55, 0.15) !important;
+}
+
+.secure-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    color: #b0a080 !important;
+    font-size: 14px;
+}
+
+.secure-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+}
+
+/* IKONY PLATIEB */
+.card-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2) !important;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-icon {
+    padding: 8px 15px;
+    background: rgba(212, 175, 55, 0.08) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #b0a080 !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+}
+
+.card-icon:hover {
+    background: rgba(212, 175, 55, 0.15) !important;
+    border-color: rgba(212, 175, 55, 0.4) !important;
+}
+
+.card-icon:last-child {
+    color: #6fcf97 !important;
+    border-color: rgba(111, 207, 151, 0.3) !important;
+}
+
+/* PLATOBNÉ TLAČIDLO */
+.payment-btn {
+    width: 100% !important;
+    padding: 18px 30px !important;
+    background: linear-gradient(135deg, #8b6914, #d4af37) !important;
+    border: none !important;
+    border-radius: 14px !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    color: #0a0a0a !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3) !important;
+}
+
+.payment-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 35px rgba(212, 175, 55, 0.5) !important;
+    background: linear-gradient(135deg, #a07818, #e0c050) !important;
+}
+
+.payment-btn:active {
+    transform: translateY(0) !important;
+}
+
+.payment-btn-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+
+.payment-lock {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.payment-notice {
+    margin-top: 15px;
+    color: #8a8a7a !important;
+    font-size: 13px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .big-total {
+        font-size: 36px;
+    }
+    
+    .card-icons {
+        gap: 6px;
+    }
+    
+    .card-icon {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+}
+</style>
 
 {% endblock %}

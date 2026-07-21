@@ -23,10 +23,8 @@
          GOOGLE FONTS
     ========================== -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+            <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
           rel="stylesheet">
-
-
     <!-- =========================
          CSS
     ========================== -->
@@ -80,6 +78,71 @@
 
 <body>
 
+
+<!-- PAVUČINY V ROHOCH -->
+<div style="position: fixed; top: 0; left: 0; font-size: 120px; opacity: 0.08; pointer-events: none; z-index: 0; transform: rotate(180deg);">🕸️</div>
+<div style="position: fixed; top: 0; right: 0; font-size: 120px; opacity: 0.08; pointer-events: none; z-index: 0; transform: rotate(270deg);">🕸️</div>
+<div style="position: fixed; bottom: 0; left: 0; font-size: 100px; opacity: 0.06; pointer-events: none; z-index: 0; transform: rotate(90deg);">🕸️</div>
+<div style="position: fixed; bottom: 0; right: 0; font-size: 100px; opacity: 0.06; pointer-events: none; z-index: 0;">🕸️</div>
+
+<!-- LIETAJÚCE NETOPIERE -->
+<div id="batsContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden;"></div>
+
+<!-- LOADING OVERLAY -->
+<div id="loadingOverlay" style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 0, 15, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+">
+    <div style="font-size: 60px; animation: spin 1s linear infinite;">🎃</div>
+    <div style="color: #b482ff; font-family: 'Playfair Display', serif; font-size: 18px; letter-spacing: 2px; animation: pulse 1.5s ease-in-out infinite;">
+        {% trans "Loading..." %}
+    </div>
+</div>
+
+<style>
+    /* EB Garamond - viktoriánske písmo */
+    body {
+        font-family: "EB Garamond", "Playfair Display", serif !important;
+        font-size: 18px !important;
+        letter-spacing: 0.3px !important;
+        line-height: 1.7 !important;
+    }
+    
+    h1, h2, h3, h4 {
+        font-family: "EB Garamond", "Playfair Display", serif !important;
+        letter-spacing: 0.5px !important;
+    }
+    
+    h1 {
+        font-size: 2.2rem !important;
+        font-weight: 700 !important;
+    }
+    
+    h2 {
+        font-size: 1.6rem !important;
+        font-weight: 600 !important;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes pulse {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+    }
+</style>
 
 <div id="toast-message"
      class="toast-message">
@@ -613,11 +676,148 @@ setTimeout(()=>{
 
 
 
+
+
 </script>
 
 
 
 
+<script>
+function toggleLangDropdown() {
+    var dropdown = document.getElementById('langDropdown');
+    dropdown.classList.toggle('show');
+}
+
+// Loading pri zmene jazyka - zachová aktuálnu stránku
+document.addEventListener('click', function(e) {
+    var langLink = e.target.closest('.lang-flag-link, .lang-item, .mobile-language a');
+    if (langLink && langLink.getAttribute('href') && langLink.getAttribute('href').startsWith('/')) {
+        e.preventDefault();
+        var overlay = document.getElementById('loadingOverlay');
+        overlay.style.display = 'flex';
+        
+        // Získaj aktuálnu cestu BEZ jazykového prefixu
+        var currentPath = window.location.pathname;
+        // Odstráň prefix (/fr/, /en/, /sk/)
+        var pathParts = currentPath.split('/').filter(Boolean);
+        if (pathParts[0] === 'fr' || pathParts[0] === 'en' || pathParts[0] === 'sk') {
+            pathParts.shift(); // Odstráň prvý (jazyk)
+        }
+        var restOfPath = '/' + pathParts.join('/');
+        
+        setTimeout(function() {
+            window.location.href = langLink.getAttribute('href') + restOfPath.replace(/^\//, '');
+        }, 600);
+    }
+});
+
+// Zatvor dropdown keď klikneš mimo
+document.addEventListener('click', function(event) {
+    var dropdown = document.getElementById('langDropdown');
+    var button = event.target.closest('.lang-current');
+    
+    if (!button && dropdown && dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+    }
+});
+</script>
+
+<script>
+// Vytvor lietajúce netopiere
+(function() {
+    const container = document.getElementById('batsContainer');
+    if (!container) return;
+    
+    // Pridaj keyframes animácie
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes flyBat {
+            0% { transform: translate(0, 0) rotate(0deg) scale(0.8); }
+            25% { transform: translate(120px, -60px) rotate(12deg) scale(1.1); }
+            50% { transform: translate(250px, 40px) rotate(-8deg) scale(0.9); }
+            75% { transform: translate(80px, -35px) rotate(6deg) scale(1.05); }
+            100% { transform: translate(-30px, 10px) rotate(0deg) scale(0.8); }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Vytvor netopiere
+    for (let i = 0; i < 6; i++) {
+        const bat = document.createElement('span');
+        bat.textContent = '🦇';
+        bat.style.cssText = `
+            position: absolute;
+            left: ${Math.random() * 90}%;
+            top: ${Math.random() * 80}%;
+            font-size: ${22 + Math.random() * 28}px;
+            opacity: 0.2;
+            animation: flyBat ${8 + Math.random() * 12}s linear infinite;
+            animation-delay: ${Math.random() * 8}s;
+            filter: drop-shadow(0 0 6px rgba(180, 130, 255, 0.3));
+            pointer-events: none;
+        `;
+        container.appendChild(bat);
+    }
+})();
+</script>
+
+<!-- CUSTOM CURSOR - PAVÚK -->
+<div id="customCursor" style="
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease-out;
+    filter: drop-shadow(0 0 8px rgba(180, 130, 255, 0.6));
+    display: none;
+">🕷️</div>
+
+<script>
+(function() {
+    const cursor = document.getElementById('customCursor');
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    
+    // Skry pôvodný kurzor
+    document.body.style.cursor = 'none';
+    
+    // Ukáž custom cursor
+    cursor.style.display = 'block';
+    
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+    
+    // Animácia - jemné oneskorenie
+    function animate() {
+        cursorX += (mouseX - cursorX) * 0.15;
+        cursorY += (mouseY - cursorY) * 0.15;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        requestAnimationFrame(animate);
+    }
+    
+    animate();
+    
+    // Zvýraznenie pri hover na odkazy/tlačidlá
+    document.addEventListener('mouseover', function(e) {
+        if (e.target.closest('a, button, .btn, input[type="submit"], .cart-icon, .lang-flag-link')) {
+            cursor.style.fontSize = '30px';
+            cursor.style.filter = 'drop-shadow(0 0 12px rgba(255, 100, 100, 0.8))';
+        }
+    });
+    
+    document.addEventListener('mouseout', function(e) {
+        if (e.target.closest('a, button, .btn, input[type="submit"], .cart-icon, .lang-flag-link')) {
+            cursor.style.fontSize = '24px';
+            cursor.style.filter = 'drop-shadow(0 0 8px rgba(180, 130, 255, 0.6))';
+        }
+    });
+})();
+</script>
 
 </body>
 

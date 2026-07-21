@@ -84,7 +84,7 @@ class CustomOrder(models.Model):
 
         ("TPU", "TPU"),
 
-        ("RESIN", "Resin"),
+       
 
     ]
 

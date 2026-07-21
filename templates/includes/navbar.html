@@ -1,429 +1,404 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
-{{ LANGUAGE_CODE }}
 
 <nav class="navbar" id="navbar">
 
-
     <!-- LOGO -->
-
     <a href="{% url 'home' %}" class="logo">
         Velvet Creature
     </a>
 
+    <!-- DESKTOP NAV LINKS -->
+    <div class="desktop-nav-links">
+        <a href="{% url 'home' %}">{% trans "Home" %}</a>
+        <a href="{% url 'shop' %}">{% trans "Shop" %}</a>
+        <a href="{% url 'custom_order_create' %}">{% trans "Custom Order" %}</a>
+        <a href="{% url 'about' %}">{% trans "About" %}</a>
+    </div>
 
+    <!-- DESKTOP RIGHT SIDE -->
+    <div class="navbar-right">
+        
+        <!-- Language -->
+        <div class="lang-switch">
+            <a href="/fr/" class="lang-flag-link {% if LANGUAGE_CODE == 'fr' %}active{% endif %}" title="Français">🇫🇷</a>
+            <a href="/en/" class="lang-flag-link {% if LANGUAGE_CODE == 'en' %}active{% endif %}" title="English">🇬🇧</a>
+            <a href="/sk/" class="lang-flag-link {% if LANGUAGE_CODE == 'sk' %}active{% endif %}" title="Slovenčina">🇸🇰</a>
+        </div>
 
+        <!-- Wishlist -->
+        <a href="{% url 'wishlist' %}" class="icon-link" title="{% trans 'Wishlist' %}">🎃</a>
+
+        <!-- Cart -->
+        <div class="mini-cart">
+            <a href="#" class="cart-icon" onclick="openCart(); return false;">🛒</a>
+            <span class="cart-count">{{ cart_count }}</span>
+        </div>
+
+        <!-- User Menu -->
+        <div class="user-menu-desktop">
+            {% if user.is_authenticated %}
+                <span class="welcome-user">👋 {{ user.username }}</span>
+                <div class="user-dropdown">
+                    <a href="{% url 'profile' %}">👤 {% trans "My Account" %}</a>
+                    <a href="{% url 'order_list' %}">📦 {% trans "My Orders" %}</a>
+                    <a href="{% url 'logout' %}">🚪 {% trans "Logout" %}</a>
+                </div>
+            {% else %}
+                <a href="{% url 'login' %}" class="nav-btn">{% trans "Login" %}</a>
+                <a href="{% url 'register' %}" class="nav-btn nav-btn-gold">{% trans "Register" %}</a>
+            {% endif %}
+        </div>
+    </div>
 
     <!-- MOBILE BUTTON -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
 
-    <button class="hamburger"
-            onclick="toggleMenu()">
-
-        ☰
-
-    </button>
-
-
-
-
-
-    <!-- MOBILE / MAIN MENU -->
-
+    <!-- MOBILE MENU -->
     <div class="menu" id="mobileMenu">
+        <a href="{% url 'home' %}" onclick="toggleMenu()">{% trans "Home" %}</a>
+        <a href="{% url 'shop' %}" onclick="toggleMenu()">{% trans "Shop" %}</a>
+        <a href="{% url 'custom_order_create' %}" onclick="toggleMenu()">{% trans "Custom Order" %}</a>
+        <a href="{% url 'about' %}" onclick="toggleMenu()">{% trans "About" %}</a>
 
+        <hr>
 
-        <a href="{% url 'home' %}"
-           onclick="toggleMenu()">
-
-            {% trans "Home" %}
-
-        </a>
-
-
-
-        <a href="{% url 'shop' %}"
-           onclick="toggleMenu()">
-
-            {% trans "Shop" %}
-
-        </a>
-
-
-
-
-        <a href="{% url 'custom_order_create' %}"
-           onclick="toggleMenu()">
-
-            {% trans "Custom Order" %}
-
-        </a>
-
-
-
-
-        <a href="{% url 'about' %}"
-           onclick="toggleMenu()">
-
-            {% trans "About" %}
-
-        </a>
-
-
-
-
+        <a href="{% url 'wishlist' %}" onclick="toggleMenu()">🎃 {% trans "Wishlist" %}</a>
 
         {% if user.is_authenticated %}
-
-        <div class="mobile-user-menu">
-
-            <hr>
-
-
-            <a href="{% url 'profile' %}"
-               onclick="toggleMenu()">
-
-                👤 {% trans "My Account" %}
-
-            </a>
-
-
-
-
-            <a href="{% url 'order_list' %}"
-               onclick="toggleMenu()">
-
-                📦 {% trans "My Orders" %}
-
-            </a>
-
-
-
-
-            <a href="{% url 'wishlist' %}"
-               onclick="toggleMenu()">
-
-                ❤️ {% trans "Wishlist" %}
-
-            </a>
-
-
-
-
-            <a href="{% url 'logout' %}">
-
-                🚪 {% trans "Logout" %}
-
-            </a>
-
-
-        </div>
-
-
-
+            <a href="{% url 'profile' %}" onclick="toggleMenu()">👤 {% trans "My Account" %}</a>
+            <a href="{% url 'order_list' %}" onclick="toggleMenu()">📦 {% trans "My Orders" %}</a>
+            <a href="{% url 'logout' %}">🚪 {% trans "Logout" %}</a>
         {% else %}
-
-
-
-        <div class="mobile-user-menu">
-
-
-            <hr>
-
-
-
-            <a href="{% url 'login' %}">
-
-                🔑 {% trans "Login" %}
-
-            </a>
-
-
-
-
-            <a href="{% url 'register' %}">
-
-                📝 {% trans "Register" %}
-
-            </a>
-
-
-
-        </div>
-
-
-
+            <a href="{% url 'login' %}">🔑 {% trans "Login" %}</a>
+            <a href="{% url 'register' %}">📝 {% trans "Register" %}</a>
         {% endif %}
 
-
-
-
-
-
-        <!-- MOBILE LANGUAGE -->
-
+        <hr>
 
         <div class="mobile-language">
-
-
-            <form action="{% url 'set_language' %}"
-                  method="post">
-
-
-                {% csrf_token %}
-
-
-                <input type="hidden"
-                       name="next"
-                       value="{{ request.path }}">
-
-
-
-                <select name="language"
-                        onchange="this.form.submit()">
-
-
-
-                    <option value="en"
-                    {% if LANGUAGE_CODE == "en" %}selected{% endif %}>
-
-                        🇬🇧 English
-
-                    </option>
-
-
-
-
-                    <option value="fr"
-                    {% if LANGUAGE_CODE == "fr" %}selected{% endif %}>
-
-                        🇫🇷 Français
-
-                    </option>
-
-
-
-
-                    <option value="sk"
-                    {% if LANGUAGE_CODE == "sk" %}selected{% endif %}>
-
-                        🇸🇰 Slovenčina
-
-                    </option>
-
-
-
-                </select>
-
-
-            </form>
-
-
+            <a href="/fr/" onclick="toggleMenu()" class="{% if LANGUAGE_CODE == 'fr' %}active{% endif %}">🇫🇷</a>
+            <a href="/en/" onclick="toggleMenu()" class="{% if LANGUAGE_CODE == 'en' %}active{% endif %}">🇬🇧</a>
+            <a href="/sk/" onclick="toggleMenu()" class="{% if LANGUAGE_CODE == 'sk' %}active{% endif %}">🇸🇰</a>
         </div>
-
-
-
     </div>
-
-
-
-
-
-
-
-
-    <!-- RIGHT SIDE DESKTOP -->
-
-
-    <div class="navbar-right">
-
-
-
-        <div class="mini-cart">
-
-
-            <a href="#"
-               class="cart-icon"
-               onclick="openCart(); return false;">
-
-
-                🛒
-
-
-            </a>
-
-
-
-            <span class="cart-count">
-
-                {{ cart_count }}
-
-            </span>
-
-
-        </div>
-
-
-
-
-
-
-        <div class="user-menu">
-
-
-        {% if user.is_authenticated %}
-
-
-
-
-            <span class="welcome-user">
-
-                👋 {{ user.username }}
-
-            </span>
-
-
-
-
-
-            <a href="{% url 'profile' %}">
-
-                👤 {% trans "My Account" %}
-
-            </a>
-
-
-
-
-
-            <a href="{% url 'order_list' %}">
-
-                📦 {% trans "My Orders" %}
-
-            </a>
-
-
-
-
-
-            <a href="{% url 'wishlist' %}">
-
-                ❤️ {% trans "Wishlist" %}
-
-            </a>
-
-
-
-
-
-            <a href="{% url 'logout' %}">
-
-                🚪 {% trans "Logout" %}
-
-            </a>
-
-
-
-
-        {% else %}
-
-
-
-
-            <a href="{% url 'login' %}">
-
-                {% trans "Login" %}
-
-            </a>
-
-
-
-
-            <a href="{% url 'register' %}">
-
-                {% trans "Register" %}
-
-            </a>
-
-
-
-
-        {% endif %}
-
-
-
-        </div>
-
-
-
-
-
-
-
-
-        <!-- DESKTOP LANGUAGE -->
-
-
-        <form action="{% url 'set_language' %}"
-              method="post"
-              class="lang-switch">
-
-
-            {% csrf_token %}
-
-
-            <input type="hidden"
-                   name="next"
-                   value="{{ request.path }}">
-
-
-
-
-
-            <select name="language"
-                    onchange="this.form.submit()">
-
-
-
-                <option value="en"
-                {% if LANGUAGE_CODE == "en" %}selected{% endif %}>
-
-                    🇬🇧 English
-
-                </option>
-
-
-
-
-                <option value="fr"
-                {% if LANGUAGE_CODE == "fr" %}selected{% endif %}>
-
-                    🇫🇷 Français
-
-                </option>
-
-
-
-
-                <option value="sk"
-                {% if LANGUAGE_CODE == "sk" %}selected{% endif %}>
-
-                    🇸🇰 Slovenčina
-
-                </option>
-
-
-
-            </select>
-
-
-        </form>
-
-
-
-
-
-    </div>
-
-
 
 </nav>
+
+
+<style>
+/* ========== NAVBAR - GOLD & BLACK ELEGANT ========== */
+
+.navbar {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: rgba(8, 3, 3, 0.95);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #d4af37;
+    text-decoration: none;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    order: 0 !important;
+}
+
+/* DESKTOP LINKS */
+.desktop-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.desktop-nav-links a {
+    color: #b0a080;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+    position: relative;
+}
+
+.desktop-nav-links a:hover {
+    color: #d4af37;
+}
+
+.desktop-nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #d4af37;
+    transition: width 0.3s;
+}
+
+.desktop-nav-links a:hover::after {
+    width: 100%;
+}
+
+/* RIGHT SIDE */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* LANGUAGE */
+.lang-switch {
+    display: flex;
+    gap: 8px;
+}
+
+.lang-flag-link {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid transparent;
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+
+.lang-flag-link:hover {
+    opacity: 1;
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: scale(1.1);
+}
+
+.lang-flag-link.active {
+    opacity: 1;
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* ICON LINKS */
+.icon-link {
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.icon-link:hover {
+    transform: scale(1.2);
+}
+
+/* CART */
+.mini-cart {
+    position: relative;
+}
+
+.cart-icon {
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #d4af37;
+    color: #0a0a0a;
+    font-size: 11px;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* USER */
+.user-menu-desktop {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcome-user {
+    color: #8a8a7a;
+    font-size: 13px;
+}
+
+.user-dropdown a, .user-menu-desktop > a {
+    color: #b0a080;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.user-dropdown a:hover, .user-menu-desktop > a:hover {
+    color: #d4af37;
+}
+
+.nav-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+    background: transparent;
+}
+
+.nav-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.nav-btn-gold {
+    background: #d4af37;
+    color: #0a0a0a;
+    border: none;
+    font-weight: 600;
+}
+
+.nav-btn-gold:hover {
+    background: #e0c050;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #d4af37;
+    font-size: 24px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 2001;
+    position: relative;
+}
+
+/* MOBILE MENU */
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    background: rgba(3, 1, 1, 0.99);
+    z-index: 2000;
+    padding: 100px 30px 40px;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    
+    /* Animácia */
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu.open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu a {
+    color: #c0b090;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 14px 10px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    display: block;
+    
+    /* Animácia pre odkazy */
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.2s;
+}
+
+.menu.open a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Postupné zobrazovanie odkazov */
+.menu.open a:nth-child(1) { transition-delay: 0.1s; }
+.menu.open a:nth-child(2) { transition-delay: 0.15s; }
+.menu.open a:nth-child(3) { transition-delay: 0.2s; }
+.menu.open a:nth-child(4) { transition-delay: 0.25s; }
+.menu.open a:nth-child(6) { transition-delay: 0.35s; }
+.menu.open a:nth-child(7) { transition-delay: 0.4s; }
+.menu.open a:nth-child(8) { transition-delay: 0.45s; }
+.menu.open a:nth-child(9) { transition-delay: 0.5s; }
+.menu.open a:nth-child(11) { transition-delay: 0.6s; }
+.menu.open a:nth-child(12) { transition-delay: 0.65s; }
+.menu.open a:nth-child(13) { transition-delay: 0.7s; }
+
+.menu hr {
+    border: none;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    margin: 10px 0;
+}
+
+/* MOBILE LANGUAGE - KRUHOVÉ VLADKY */
+.mobile-language {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.mobile-language a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid transparent;
+    opacity: 0.5;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0 !important;
+}
+
+.mobile-language a:hover,
+.mobile-language a.active {
+    opacity: 1;
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .desktop-nav-links,
+    .user-menu-desktop,
+    .lang-switch {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+</style>

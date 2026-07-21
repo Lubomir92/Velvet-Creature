@@ -2,31 +2,38 @@ from django.db import models
 from django.contrib.auth.models import User
 from products.models import Product
 import uuid
+from decimal import Decimal
 
+
+class ShippingMethod(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    description = models.CharField(max_length=200, blank=True)
+    website = models.URLField(blank=True)
+    logo = models.CharField(max_length=10, blank=True, help_text="Emoji logo")
+    is_active = models.BooleanField(default=True)
+    sort_order = models.IntegerField(default=0);
+
+    class Meta:
+        ordering = ["sort_order"]
+        verbose_name = "Shipping Method"
+        verbose_name_plural = "Shipping Methods"
+
+    def __str__(self):
+        return f"{self.logo} {self.name} - €{self.price}"
 
 
 class Order(models.Model):
 
-
     STATUS_CHOICES = [
+        ("pending", "Pending"),
+        ("paid", "Paid"),
+        ("processing", "Processing"),
+        ("shipped", "Shipped"),
+        ("delivered", "Delivered"),
+    ]
 
-    ("pending", "Pending"),
-    ("paid", "Paid"),
-    ("processing", "Processing"),
-    ("shipped", "Shipped"),
-    ("delivered", "Delivered"),
-
-]
-
-
-
-    order_number = models.CharField(
-        max_length=20,
-        blank=True,
-        null=True
-)
-
-
+    order_number = models.CharField(max_length=20, blank=True, null=True)
 
     user = models.ForeignKey(
         User,
@@ -36,133 +43,44 @@ class Order(models.Model):
         related_name="orders"
     )
 
+    email = models.EmailField(blank=True, null=True)
+    first_name = models.CharField(max_length=100, blank=True)
+    last_name = models.CharField(max_length=100, blank=True)
+    address = models.CharField(max_length=255, blank=True)
+    city = models.CharField(max_length=100, blank=True)
+    country = models.CharField(max_length=100, blank=True)
+    note = models.TextField(blank=True)
 
-
-    email = models.EmailField(
-        blank=True,
-        null=True
-    )
-
-
-    first_name = models.CharField(
-        max_length=100,
+    payment_method = models.CharField(max_length=50, default="Stripe")
+    
+    # Doprava
+    shipping_method = models.ForeignKey(
+        "ShippingMethod",
+        on_delete=models.SET_NULL,
+        null=True,
         blank=True
     )
+    shipping_price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
+    carrier = models.CharField(max_length=100, blank=True, null=True)
+    tracking_number = models.CharField(max_length=200, blank=True, null=True)
 
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")
+    stock_updated = models.BooleanField(default=False)
 
-    last_name = models.CharField(
-        max_length=100,
-        blank=True
-    )
-
-
-    address = models.CharField(
-        max_length=255,
-        blank=True
-    )
-
-
-    city = models.CharField(
-        max_length=100,
-        blank=True
-    )
-
-
-    country = models.CharField(
-        max_length=100,
-        blank=True
-    )
-
-
-
-    note = models.TextField(
-        blank=True
-    )
-
-
-
-    payment_method = models.CharField(
-        max_length=50,
-        default="Stripe"
-    )
-    carrier = models.CharField(
-        max_length=100,
-        blank=True,
-        null=True
-    )
-
-
-    tracking_number = models.CharField(
-        max_length=200,
-        blank=True,
-        null=True
-    )
-
-
-
-    total_price = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        default=0
-    )
-
-
-
-    status = models.CharField(
-    max_length=20,
-    choices=STATUS_CHOICES,
-    default="pending"
-)
-    tracking_number = models.CharField(
-    max_length=100,
-    blank=True
-)
-
-    carrier = models.CharField(
-    max_length=100,
-    blank=True
-)
-
-
-    stock_updated = models.BooleanField(
-    default=False
-)
-
-
-
-    created = models.DateTimeField(
-        auto_now_add=True
-    )
-
-
-    updated = models.DateTimeField(
-        auto_now=True
-    )
-
-
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def save(self, *args, **kwargs):
-
         if not self.order_number:
-
-            self.order_number = (
-                "VC-" +
-                uuid.uuid4().hex[:8].upper()
-            )
-
+            self.order_number = "VC-" + uuid.uuid4().hex[:8].upper()
         super().save(*args, **kwargs)
 
-
-
     def __str__(self):
-
         return self.order_number
 
 
-
-
 class OrderItem(models.Model):
-
 
     order = models.ForeignKey(
         Order,
@@ -170,28 +88,13 @@ class OrderItem(models.Model):
         related_name="items"
     )
 
-
-
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE
     )
 
-
-
-    quantity = models.PositiveIntegerField(
-        default=1
-    )
-
-
-
-    price = models.DecimalField(
-        max_digits=10,
-        decimal_places=2
-    )
-
-
+    quantity = models.PositiveIntegerField(default=1)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def get_total(self):
-
         return self.quantity * self.price

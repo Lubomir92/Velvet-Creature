@@ -1,39 +1,37 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}My Orders{% endblock %}
+{% block title %}{% trans "My Orders" %}{% endblock %}
 
 {% block content %}
 
 <div class="orders-page">
 
-    <h1 style="color:#d4af37; text-align:center;">My Orders</h1>
+    <h1 class="orders-title">📋 {% trans "My Orders" %}</h1>
 
     {% if orders %}
 
-        <div class="orders-container">
+        <div class="orders-list">
 
             {% for order in orders %}
 
-            <div class="order-card">
+            <a href="{% url 'order_detail' order.id %}" class="order-list-card">
 
-                <h3>Order #{{ order.id }}</h3>
+                <div class="order-list-left">
+                    <span class="order-number">{{ order.order_number }}</span>
+                    <span class="order-date">📅 {{ order.created|date:"d.m.Y" }}</span>
+                </div>
 
-                <p>Date: {{ order.created }}</p>
+                <div class="order-list-center">
+                    <span class="order-status status-{{ order.status }}">{{ order.get_status_display }}</span>
+                </div>
 
-                <p>Total: <strong>{{ order.total_price }} €</strong></p>
+                <div class="order-list-right">
+                    <span class="order-total">€{{ order.total_price }}</span>
+                    <span class="order-arrow">→</span>
+                </div>
 
-                <hr>
-
-                <h4>Items:</h4>
-
-                {% for item in order.items.all %}
-                    <p>
-                        {{ item.product.name }} × {{ item.quantity }} 
-                        ({{ item.price }} €)
-                    </p>
-                {% endfor %}
-
-            </div>
+            </a>
 
             {% endfor %}
 
@@ -41,12 +39,166 @@
 
     {% else %}
 
-        <p style="text-align:center; color:#aaa;">
-            You have no orders yet.
-        </p>
+        <div class="orders-empty">
+            <div class="empty-icon">📦</div>
+            <p>{% trans "You have no orders yet." %}</p>
+            <a href="{% url 'shop' %}" class="btn-shop">{% trans "Start Shopping" %}</a>
+        </div>
 
     {% endif %}
 
 </div>
+
+
+<style>
+/* ========== ORDER LIST - GOLD & BLACK ========== */
+
+.orders-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.orders-title {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.order-list-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    background: rgba(10, 5, 5, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.3s;
+    gap: 20px;
+}
+
+.order-list-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    background: rgba(15, 8, 8, 0.9);
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.order-list-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.order-number {
+    color: #d4af37;
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'EB Garamond', serif;
+}
+
+.order-date {
+    color: #8a8a7a;
+    font-size: 13px;
+}
+
+.order-list-center {
+    flex: 1;
+    text-align: center;
+}
+
+.order-status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-pending { background: rgba(255,165,0,0.15); color: #ffa500; }
+.status-paid { background: rgba(66,133,244,0.15); color: #4285f4; }
+.status-processing { background: rgba(180,130,255,0.15); color: #b482ff; }
+.status-shipped { background: rgba(76,175,80,0.15); color: #4caf50; }
+.status-delivered { background: rgba(0,150,0,0.15); color: #00c000; }
+
+.order-list-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-total {
+    color: #d4af37;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.order-arrow {
+    color: #d4af37;
+    font-size: 20px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.order-list-card:hover .order-arrow {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* EMPTY */
+.orders-empty {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.empty-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.orders-empty p {
+    color: #8a8a7a;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.btn-shop {
+    display: inline-block;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #8b6914, #d4af37);
+    color: #0a0a0a;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.btn-shop:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+@media (max-width: 600px) {
+    .order-list-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+    
+    .order-arrow {
+        display: none;
+    }
+}
+</style>
 
 {% endblock %}

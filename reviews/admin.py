@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import Review
 
 
-
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
 
@@ -10,5 +9,20 @@ class ReviewAdmin(admin.ModelAdmin):
         "product",
         "user",
         "rating",
+        "created",
+    )
+    
+    list_filter = (
+        "rating",
+        "created",
+    )
+    
+    search_fields = (
+        "product__name",
+        "user__username",
+        "comment",
+    )
+    
+    readonly_fields = (
         "created",
     )

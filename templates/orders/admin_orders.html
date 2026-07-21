@@ -1,177 +1,170 @@
 {% extends "base.html" %}
 
-{% block title %}Admin Orders{% endblock %}
+{% block title %}Admin Dashboard{% endblock %}
 
 
 {% block content %}
 
 
-<div class="container" style="max-width:1000px; margin:0 auto; padding:40px 20px;">
+<div class="container" style="max-width:1100px; margin:0 auto; padding:40px 20px;">
 
 
-<h1 style="color:#d4af37; margin-bottom:30px;">
-    Orders Dashboard
+<!-- ========== HEADER ========== -->
+<h1 style="color:#d4af37; margin-bottom:10px; font-family: 'Playfair Display', serif;">
+    🛠️ Admin Dashboard
 </h1>
+<p style="color:#8a8a7a; margin-bottom:30px;">Vitaj, {{ user.username }} | <a href="/admin/" style="color:#d4af37;">Django Admin</a> | <a href="{% url 'home' %}" style="color:#d4af37;">E-shop</a></p>
 
 
 
+<!-- ========== RÝCHLE ODKAZY ========== -->
+<div style="display:flex; gap:15px; flex-wrap:wrap; margin-bottom:30px;">
+
+    <a href="{% url 'admin_orders' %}" 
+       style="background:rgba(212,175,55,0.15); border:1px solid rgba(212,175,55,0.3); color:#d4af37; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:600;">
+        📋 Objednávky
+    </a>
+
+    <a href="/admin/products/product/" 
+       style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.15); color:#c0b090; padding:12px 20px; border-radius:10px; text-decoration:none;">
+        📦 Produkty
+    </a>
+
+    <a href="/admin/products/category/" 
+       style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.15); color:#c0b090; padding:12px 20px; border-radius:10px; text-decoration:none;">
+        📁 Kategórie
+    </a>
+
+    <a href="/admin/custom_orders/customorder/" 
+       style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.15); color:#c0b090; padding:12px 20px; border-radius:10px; text-decoration:none;">
+        🛠️ Zákazkové
+    </a>
+
+    <a href="/admin/reviews/review/" 
+       style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.15); color:#c0b090; padding:12px 20px; border-radius:10px; text-decoration:none;">
+        ⭐ Recenzie
+    </a>
+
+    <a href="/admin/wishlist/wishlist/" 
+       style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.15); color:#c0b090; padding:12px 20px; border-radius:10px; text-decoration:none;">
+        🎃 Wishlist
+    </a>
+
+    <a href="/admin/auth/user/" 
+       style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.15); color:#c0b090; padding:12px 20px; border-radius:10px; text-decoration:none;">
+        👤 Používatelia
+    </a>
+
+</div>
+
+
+
+<!-- ========== NADPIS OBJEDNÁVOK ========== -->
+<h2 style="color:#d4af37; margin-bottom:20px; font-family: 'Playfair Display', serif;">
+    📋 Objednávky
+</h2>
+
+
+
+<!-- ========== ZOZNAM OBJEDNÁVOK ========== -->
 {% for order in orders %}
-
-
 
 <div style="
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px;
+padding:15px 20px;
 margin-bottom:10px;
-border:1px solid #222;
+border:1px solid rgba(212,175,55,0.15);
 border-radius:10px;
-background:rgba(255,255,255,0.02);
-">
-
-
+background:rgba(10,5,5,0.5);
+transition: all 0.2s ease;
+"
+onmouseover="this.style.borderColor='rgba(212,175,55,0.4)'"
+onmouseout="this.style.borderColor='rgba(212,175,55,0.15)'"
+>
 
 <!-- LEFT -->
-
 <div>
-
-
 <a href="{% url 'admin_order_detail' order.id %}" style="text-decoration:none;">
-
-<strong style="color:#fff;">
-
-{{ order.order_number }}
-
+<strong style="color:#fff; font-size:16px;">
+#{{ order.order_number }}
 </strong>
-
 </a>
 
-
-
-<div style="color:#aaa; font-size:13px;">
-
-{{ order.created }} |
-
-
+<div style="color:#8a8a7a; font-size:13px; margin-top:4px;">
+{{ order.created|date:"d.m.Y H:i" }} | 
 {% if order.user %}
-
-{{ order.user.username }}
-
+👤 {{ order.user.username }}
 {% else %}
-
-Guest
-
+🛒 Hosť
 {% endif %}
-
-
+| 📧 {{ order.email }}
 </div>
-
-
 </div>
-
-
-
-
 
 <!-- PRICE -->
-
-<div style="color:#d4af37; font-weight:bold;">
-
-{{ order.total_price }} €
-
+<div style="color:#d4af37; font-weight:bold; font-size:18px;">
+€{{ order.total_price }}
 </div>
-
-
-
-
 
 <!-- STATUS + ACTIONS -->
-
 <div style="display:flex; gap:12px; align-items:center;">
 
-
-
-<span class="status {{ order.status }}">
-
+<span style="
+padding:5px 14px;
+border-radius:20px;
+font-size:12px;
+font-weight:600;
+{% if order.status == 'pending' %}
+background:rgba(255,165,0,0.15); color:#ffa500;
+{% elif order.status == 'paid' %}
+background:rgba(66,133,244,0.15); color:#4285f4;
+{% elif order.status == 'processing' %}
+background:rgba(180,130,255,0.15); color:#b482ff;
+{% elif order.status == 'shipped' %}
+background:rgba(76,175,80,0.15); color:#4caf50;
+{% elif order.status == 'delivered' %}
+background:rgba(0,100,0,0.15); color:#00c000;
+{% else %}
+background:rgba(255,255,255,0.05); color:#aaa;
+{% endif %}
+">
 {{ order.get_status_display }}
-
 </span>
 
-
-
-
-
 {% if order.status == "pending" %}
-
-
 <a href="{% url 'mark_paid' order.id %}"
-style="color:#4caf50;">
-
-Mark Paid
-
+style="color:#4caf50; font-size:13px; text-decoration:none;">
+✅ Paid
 </a>
-
-
-
 {% elif order.status == "paid" %}
-
-
 <a href="{% url 'mark_processing' order.id %}"
-style="color:#d4af37;">
-
-Processing
-
+style="color:#d4af37; font-size:13px; text-decoration:none;">
+⚙️ Process
 </a>
-
-
-
-
 {% elif order.status == "processing" %}
-
-
 <a href="{% url 'mark_shipped' order.id %}"
-style="color:#ff9800;">
-
-Shipped
-
+style="color:#ff9800; font-size:13px; text-decoration:none;">
+📦 Ship
 </a>
-
-
-
-
-
 {% elif order.status == "shipped" %}
-
-
 <a href="{% url 'mark_delivered' order.id %}"
-style="color:#4caf50;">
-
-Delivered
-
+style="color:#4caf50; font-size:13px; text-decoration:none;">
+🏠 Deliver
 </a>
-
-
-
 {% endif %}
 
-
-
 </div>
 
-
-
 </div>
-
-
 
 {% empty %}
 
-
-<p style="color:#aaa;">
-No orders yet.
-</p>
-
+<div style="text-align:center; padding:60px 20px;">
+    <div style="font-size:50px; margin-bottom:15px;">📋</div>
+    <p style="color:#8a8a7a; font-size:16px;">Zatiaľ žiadne objednávky.</p>
+</div>
 
 {% endfor %}
 
@@ -179,6 +172,15 @@ No orders yet.
 
 </div>
 
+
+<style>
+.status {
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+</style>
 
 
 {% endblock %}

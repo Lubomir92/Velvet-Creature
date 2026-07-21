@@ -14,6 +14,8 @@
 {% block content %}
 
 
+
+
 <section class="about-page">
 
 
@@ -73,7 +75,7 @@ Velvet Creature
 
 <h2>
 
-🛡 {% trans "Quality" %}
+🛡️ {% trans "Quality" %}
 
 </h2>
 
@@ -94,11 +96,7 @@ Velvet Creature
 <div class="about-card">
 
 
-<h2>
-
-🚀 {% trans "Custom Creations" %}
-
-</h2>
+<h2>{% trans "Custom Creations" %}</h2>
 
 
 <p>
@@ -133,29 +131,29 @@ Velvet Creature
 <div class="process-line">
 
 
-<span>
-💡 Idea
-</span>
 
 
 <span>
-🖥 Design
+💡 {% trans "Idea" %}
 </span>
-
 
 <span>
-🖨 Printing
+🖥 {% trans "Design" %}
 </span>
-
 
 <span>
-🎨 Finishing
+🖨 {% trans "Printing" %}
 </span>
-
 
 <span>
-📦 Delivery
+🎨 {% trans "Finishing" %}
 </span>
+
+<span>
+📦 {% trans "Delivery" %}
+</span>
+
+</div>
 
 
 </div>
@@ -205,5 +203,172 @@ class="btn btn-secondary">
 
 </section>
 
+
+<style>
+/* ========== ABOUT - GOLD & BLACK ========== */
+
+.about-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.about-hero {
+    text-align: center;
+    padding: 50px 20px 40px;
+}
+
+.about-hero h1 {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.about-hero p {
+    color: #8a8a7a;
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.about-card {
+    background: rgba(10, 5, 5, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 16px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.about-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-card h2 {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: #8a8a7a;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* PROCES */
+.about-process {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.about-process h2 {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.process-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.process-line span {
+    background: rgba(10, 5, 5, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: #d4af37;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.process-line span:hover {
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+    transform: scale(1.05);
+}
+
+/* AKČNÁ SEKCIA */
+.about-action {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 20px;
+    background: rgba(10, 5, 5, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 20px;
+}
+
+.about-action h2 {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.about-action .btn {
+    margin: 8px;
+    font-size: 16px;
+    padding: 14px 30px;
+}
+
+.about-action .btn-primary {
+    background: linear-gradient(135deg, #8b6914, #d4af37);
+    color: #0a0a0a;
+    border: none;
+    font-weight: 700;
+}
+
+.about-action .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+.about-action .btn-secondary {
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+}
+
+.about-action .btn-secondary:hover {
+    background: rgba(212, 175, 55, 0.15);
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-hero h1 {
+        font-size: 32px;
+    }
+    
+    .process-line {
+        gap: 10px;
+    }
+    
+    .process-line span {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}
+</style>
 
 {% endblock %}

@@ -1,304 +1,564 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-
 {% block title %}
 {% trans "Secure Checkout" %}
 {% endblock %}
 
-
-
 {% block content %}
-
 
 <section class="checkout-page">
 
-
-
 <h1 class="section-title">
-
-{% trans "Secure Checkout" %}
-
+🔒 {% trans "Secure Checkout" %}
 </h1>
 
-
-
-
 <div class="checkout-layout">
-
-
 
 <!-- ==========================
  CUSTOMER DETAILS
 =========================== -->
 
-
 <div class="checkout-box">
 
-
 <h2>
-{% trans "Customer Information" %}
+👤 {% trans "Customer Information" %}
 </h2>
 
-
-
 <form method="post">
-
-
 {% csrf_token %}
-
-
 
 <div class="checkout-grid">
 
-
-
 <div class="checkout-field">
-
-<label>
-{% trans "First name" %}
-</label>
-
-
-<input 
-type="text"
-name="first_name"
-required>
-
+<label>{% trans "First name" %}</label>
+<input type="text" name="first_name" required>
 </div>
 
-
-
-
-
 <div class="checkout-field">
-
-<label>
-{% trans "Last name" %}
-</label>
-
-
-<input 
-type="text"
-name="last_name"
-required>
-
+<label>{% trans "Last name" %}</label>
+<input type="text" name="last_name" required>
 </div>
 
-
-
-
-
 <div class="checkout-field">
-
-<label>
-{% trans "Email" %}
-</label>
-
-
-<input 
-type="email"
-name="email"
-required>
-
+<label>{% trans "Email" %}</label>
+<input type="email" name="email" required>
 </div>
 
-
-
-
-
 <div class="checkout-field">
-
-<label>
-{% trans "Country" %}
-</label>
-
-
-<input 
-type="text"
-name="country"
-required>
-
+<label>{% trans "Country" %}</label>
+<input type="text" name="country" required>
 </div>
-
-
-
-
 
 <div class="checkout-field full">
-
-<label>
-{% trans "Address" %}
-</label>
-
-
-<input 
-type="text"
-name="address"
-required>
-
+<label>{% trans "Address" %}</label>
+<input type="text" name="address" required>
 </div>
-
-
-
-
 
 <div class="checkout-field">
-
-<label>
-{% trans "City" %}
-</label>
-
-
-<input 
-type="text"
-name="city"
-required>
+<label>{% trans "City" %}</label>
+<input type="text" name="city" required>
+</div>
 
 </div>
 
-
-
+<!-- ========== VÝBER DOPRAVY ========== -->
+{% if shipping_methods %}
+<div class="shipping-section">
+    <h3>🚚 {% trans "Shipping Method" %}</h3>
+    
+    <div class="shipping-options">
+        {% for method in shipping_methods %}
+        <label class="shipping-option {% if method.id|stringformat:"s" == selected_shipping %}selected{% endif %}">
+            <input type="radio" name="shipping_method" value="{{ method.id }}" 
+                   {% if method.id|stringformat:"s" == selected_shipping %}checked{% endif %}
+                   onchange="updateTotal(this)">
+            <span class="shipping-logo">{{ method.logo }}</span>
+            <span class="shipping-name">{{ method.name }}</span>
+            {% if method.description %}
+            <span class="shipping-desc">{{ method.description }}</span>
+            {% endif %}
+            <span class="shipping-price">+ €{{ method.price }}</span>
+        </label>
+        {% endfor %}
+    </div>
 </div>
+{% endif %}
 
+<!-- SKRYTÉ POLE PRE VÝBER PLATBY -->
+<input type="hidden" name="payment_method" id="paymentMethod" value="card">
 
-
-
-<button class="btn-primary full">
-
-💳 {% trans "Pay securely with card" %}
-
+<!-- TLAČIDLÁ PLATBY -->
+<button type="submit" class="payment-btn" onclick="document.getElementById('paymentMethod').value='card'">
+    <span class="payment-btn-content">
+        <span>💳 {% trans "Pay securely with card" %}</span>
+        <span class="payment-lock">🔒</span>
+    </span>
 </button>
 
-
+<button type="submit" class="payment-btn bank-btn" onclick="document.getElementById('paymentMethod').value='bank_transfer'" style="margin-top:10px; background: linear-gradient(135deg, #4a4a4a, #6a6a6a) !important;">
+    <span class="payment-btn-content">
+        <span>🏦 {% trans "Pay by bank transfer" %}</span>
+        <span>📋</span>
+    </span>
+</button>
 
 </form>
 
-
 </div>
-
-
-
-
-
-
-
 
 <!-- ==========================
  ORDER SUMMARY
 =========================== -->
 
-
 <div class="checkout-summary">
 
-
-<h2>
-
-{% trans "Your Order" %}
-
-</h2>
-
-
+<h2>📋 {% trans "Your Order" %}</h2>
 
 {% for item in items %}
 
-
-
 <div class="checkout-product">
-
-
 <div>
-
-
-<h4>
-
-{{ item.product.name }}
-
-</h4>
-
-
-<p>
-{{ item.qty }} × €{{ item.product.price }}
-</p>
-
-
+<h4>{{ item.product.name }}</h4>
+<p>{{ item.qty }} × €{{ item.product.price }}</p>
 </div>
-
-
-
-
-<strong>
-
-€{% widthratio item.product.price 1 item.qty %}
-
-</strong>
-
-
-
+<strong>€{% widthratio item.product.price 1 item.qty %}</strong>
 </div>
-
-
 
 {% endfor %}
 
+<div class="summary-subtotal">
+    <span>{% trans "Subtotal" %}</span>
+    <span id="subtotalAmount">€{{ subtotal }}</span>
+</div>
 
-
+<div class="summary-shipping">
+    <span>{% trans "Shipping" %}</span>
+    <span id="shippingAmount">€{{ shipping_price }}</span>
+</div>
 
 <div class="checkout-total">
-
-
-<span>
-{% trans "Total" %}
-</span>
-
-
-<strong>
-
-€{{ total }}
-
-</strong>
-
-
+<span>{% trans "Total" %}</span>
+<strong id="totalAmount">€{{ total }}</strong>
 </div>
-
-
-
-
 
 <div class="secure-info">
+<div class="secure-item">
+<span class="secure-icon">🔐</span>
+<span>{% trans "Secure Stripe payment" %}</span>
+</div>
+<div class="secure-item">
+<span class="secure-icon">🛡️</span>
+<span>{% trans "Encrypted checkout" %}</span>
+</div>
+<div class="secure-item">
+<span class="secure-icon">📧</span>
+<span>{% trans "Order confirmation email" %}</span>
+</div>
+</div>
 
+<!-- IKONY PLATIEB -->
+<div class="card-icons">
+<span class="card-icon">💳 {% trans "Credit Card" %}</span>
+<span class="card-icon">🏦 {% trans "Bank Transfer" %}</span>
+<span class="card-icon">🔒 SSL {% trans "Encrypted" %}</span>
+<span class="card-icon">🛡️ 3D Secure</span>
+</div>
 
-<p>
-✔ {% trans "Secure Stripe payment" %}
-</p>
-
-
-<p>
-✔ {% trans "Encrypted checkout" %}
-</p>
-
-
-<p>
-✔ {% trans "Order confirmation email" %}
-</p>
-
+<!-- INFO O BANKOVOM PREVODE -->
+<div class="bank-info">
+    <div class="bank-info-header">
+        <span class="bank-icon">🏦</span>
+        <strong>{% trans "Bank Transfer Details" %}</strong>
+    </div>
+    
+    <div class="bank-details">
+        <div class="bank-row">
+            <span class="bank-label">{% trans "Account Name" %}:</span>
+            <span class="bank-value">Velvet Creature</span>
+        </div>
+        <div class="bank-row">
+            <span class="bank-label">{% trans "IBAN" %}:</span>
+            <span class="bank-value">FR76 2823 3000 0172 7796 9396 528</span>
+        </div>
+        <div class="bank-row">
+            <span class="bank-label">{% trans "BIC/SWIFT" %}:</span>
+            <span class="bank-value">REVOFRP2</span>
+        </div>
+        <div class="bank-row">
+            <span class="bank-label">{% trans "Bank" %}:</span>
+            <span class="bank-value">REVOLUT</span>
+        </div>
+        <div class="bank-row">
+            <span class="bank-label">{% trans "Reference" %}:</span>
+            <span class="bank-value">{% trans "Your order number" %}</span>
+        </div>
+    </div>
+    
+    <div class="bank-notice">
+        ⚠️ {% trans "Please use your order number as the payment reference. Your order will be processed once payment is received." %}
+    </div>
+</div>
 
 </div>
 
-
-
 </div>
-
-
-
-
-</div>
-
-
-
 
 </section>
 
 
+<script>
+// Aktualizácia cien pri výbere dopravy
+const shippingPrices = {
+    {% for method in shipping_methods %}
+    "{{ method.id }}": {{ method.price }},
+    {% endfor %}
+};
+
+function updateTotal(radio) {
+    const shippingPrice = shippingPrices[radio.value] || 0;
+    const subtotal = {{ subtotal }};
+    const total = subtotal + shippingPrice;
+    
+    document.getElementById('shippingAmount').textContent = '€' + shippingPrice.toFixed(2);
+    document.getElementById('totalAmount').textContent = '€' + total.toFixed(2);
+}
+</script>
+
+
+<style>
+/* ========== CHECKOUT - GOLD & BLACK ========== */
+
+.checkout-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.checkout-page .section-title {
+    color: #d4af37 !important;
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.checkout-box, .checkout-summary {
+    background: rgba(10, 5, 5, 0.9) !important;
+    border: 1px solid rgba(212, 175, 55, 0.25) !important;
+    border-radius: 18px;
+    padding: 35px;
+}
+
+.checkout-box h2, .checkout-summary h2 {
+    color: #d4af37 !important;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
+}
+
+/* ========== SHIPPING SECTION ========== */
+.shipping-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 14px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.shipping-section h3 {
+    color: #d4af37 !important;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+.shipping-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.shipping-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.shipping-option:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.shipping-option input[type="radio"] {
+    accent-color: #d4af37;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.shipping-logo {
+    font-size: 22px;
+    width: 30px;
+    text-align: center;
+}
+
+.shipping-name {
+    color: #e0d7c0;
+    font-weight: 600;
+    font-size: 14px;
+    flex: 1;
+}
+
+.shipping-desc {
+    color: #6a6a5a;
+    font-size: 12px;
+}
+
+.shipping-price {
+    color: #d4af37;
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+/* ========== SUMMARY ========== */
+.summary-subtotal, .summary-shipping {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    color: #8a8a7a;
+    font-size: 14px;
+}
+
+.summary-subtotal span:last-child, .summary-shipping span:last-child {
+    color: #b0a080;
+    font-weight: 600;
+}
+
+.checkout-field label {
+    display: block;
+    color: #b0a080 !important;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.checkout-field input {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    border-radius: 12px;
+    color: #ffffff !important;
+    font-size: 15px;
+}
+
+.checkout-field input:focus {
+    border-color: rgba(212, 175, 55, 0.6) !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.15) !important;
+    outline: none;
+}
+
+.checkout-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.checkout-product h4 {
+    color: #e0d7c0 !important;
+    margin-bottom: 5px;
+}
+
+.checkout-product p {
+    color: #8a8a7a !important;
+    font-size: 14px;
+}
+
+.checkout-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 10px;
+    border-top: 2px solid rgba(212, 175, 55, 0.35) !important;
+    font-size: 20px;
+    color: #ffffff !important;
+}
+
+/* TLAČIDLO */
+.payment-btn {
+    margin-top: 25px;
+    width: 100%;
+    padding: 18px 30px !important;
+    background: linear-gradient(135deg, #8b6914, #d4af37) !important;
+    border: none !important;
+    border-radius: 14px !important;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    color: #0a0a0a !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+}
+
+.payment-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 35px rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, #a07818, #e0c050) !important;
+}
+
+.payment-btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.payment-lock {
+    font-size: 18px;
+}
+
+.secure-info {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border-radius: 14px;
+    border: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.secure-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    color: #b0a080 !important;
+    font-size: 14px;
+}
+
+.secure-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+}
+
+.card-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-icon {
+    padding: 8px 15px;
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 8px;
+    font-size: 12px;
+    color: #b0a080 !important;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-icon:hover {
+    background: rgba(212, 175, 55, 0.12);
+}
+
+.bank-info {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 14px;
+}
+
+.bank-info-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.bank-icon {
+    font-size: 24px;
+}
+
+.bank-info-header strong {
+    color: #d4af37;
+    font-size: 16px;
+}
+
+.bank-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bank-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.bank-label {
+    color: #8a8a7a;
+    font-size: 13px;
+}
+
+.bank-value {
+    color: #e0d7c0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.bank-notice {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    color: #8a8a7a;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .bank-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+    
+    .shipping-option {
+        flex-wrap: wrap;
+    }
+}
+</style>
 
 {% endblock %}

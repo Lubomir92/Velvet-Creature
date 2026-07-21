@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Velvet Creature\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-17 22:03+0200\n"
+"POT-Creation-Date: 2026-07-21 22:39+0200\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -10,26 +10,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: .\accounts\templates\accounts\profile.html:6
-#: .\templates\includes\navbar.html:84 .\templates\includes\navbar.html:289
+#: .\templates\includes\navbar.html:43 .\templates\includes\navbar.html:69
 msgid "My Account"
 msgstr "Mon compte"
 
 #: .\accounts\templates\accounts\profile.html:44
 msgid "Premium Member"
-msgstr ""
+msgstr "Membre Premium"
 
 #: .\accounts\templates\accounts\profile.html:52
 msgid "Member since"
 msgstr "Membre depuis"
 
 #: .\accounts\templates\accounts\profile.html:81
-#, fuzzy
-#| msgid "Order"
 msgid "Orders"
-msgstr "Commande"
+msgstr "Commandes"
 
 #: .\accounts\templates\accounts\profile.html:99
-#: .\templates\includes\navbar.html:104 .\templates\includes\navbar.html:309
+#: .\templates\includes\navbar.html:30 .\templates\includes\navbar.html:66
 #: .\templates\products\detail.html:233 .\templates\products\shop.html:200
 #: .\templates\products\shop.html:207 .\templates\products\shop.html:221
 #: .\templates\products\shop.html:227
@@ -37,87 +35,102 @@ msgid "Wishlist"
 msgstr "Liste de souhaits"
 
 #: .\accounts\templates\accounts\profile.html:118
-#, fuzzy
-#| msgid "Review"
 msgid "Reviews"
-msgstr "Vérification"
+msgstr "Avis"
 
 #: .\accounts\templates\accounts\profile.html:152
-msgid "Account"
-msgstr "Compte"
+#, fuzzy
+#| msgid "Customer Information"
+msgid "Personal Information"
+msgstr "Informations client"
 
-#: .\accounts\templates\accounts\profile.html:160
+#: .\accounts\templates\accounts\profile.html:167
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-#: .\accounts\templates\accounts\profile.html:178
-#: .\templates\orders\checkout.html:95
+#: .\accounts\templates\accounts\profile.html:172
+#: .\templates\custom_orders\create.html:158
+#: .\templates\orders\checkout.html:44 .\templates\orders\order_detail.html:150
 msgid "Email"
 msgstr "E-mail"
 
-#: .\accounts\templates\accounts\profile.html:196
-msgid "Joined"
-msgstr ""
+#: .\accounts\templates\accounts\profile.html:177
+#: .\templates\orders\checkout.html:34
+msgid "First name"
+msgstr "Prénom"
 
-#: .\accounts\templates\accounts\profile.html:224
-#: .\templates\orders\checkout.html:40
-msgid "Customer Information"
-msgstr "Informations client"
+#: .\accounts\templates\accounts\profile.html:182
+#: .\templates\orders\checkout.html:39
+msgid "Last name"
+msgstr "Nom"
 
-#: .\accounts\templates\accounts\profile.html:234
-msgid "Full name"
-msgstr "Nom complet"
-
-#: .\accounts\templates\accounts\profile.html:267
-#: .\templates\orders\checkout.html:113
+#: .\accounts\templates\accounts\profile.html:189
+#: .\templates\orders\checkout.html:49 .\templates\orders\order_detail.html:165
 msgid "Country"
 msgstr "Pays"
 
-#: .\accounts\templates\accounts\profile.html:287
+#: .\accounts\templates\accounts\profile.html:194
+#: .\templates\custom_orders\create.html:171
 msgid "Phone"
 msgstr "Téléphone"
 
-#: .\accounts\templates\accounts\profile.html:325
-#: .\templates\includes\navbar.html:94 .\templates\includes\navbar.html:299
+#: .\accounts\templates\accounts\profile.html:199
+msgid "Joined"
+msgstr "Inscrit depuis"
+
+#: .\accounts\templates\accounts\profile.html:203
+#, fuzzy
+#| msgid "Change"
+msgid "Save Changes"
+msgstr "Modifier"
+
+#: .\accounts\templates\accounts\profile.html:231
+#: .\templates\includes\navbar.html:44 .\templates\includes\navbar.html:70
+#: .\templates\orders\order_list.html:4 .\templates\orders\order_list.html:10
 msgid "My Orders"
 msgstr "Mes commandes"
 
-#: .\accounts\templates\accounts\profile.html:350
+#: .\accounts\templates\accounts\profile.html:256
+#: .\templates\orders\order_detail.html:18
+#: .\templates\orders\order_list.html:20
 #: .\venv\Lib\site-packages\django\forms\formsets.py:484
 #: .\venv\Lib\site-packages\django\forms\formsets.py:491
 msgid "Order"
 msgstr "Commande"
 
-#: .\accounts\templates\accounts\profile.html:402
-#: .\accounts\templates\accounts\profile.html:598
+#: .\accounts\templates\accounts\profile.html:308
+#: .\accounts\templates\accounts\profile.html:504
 msgid "Details"
 msgstr "Détails"
 
-#: .\accounts\templates\accounts\profile.html:430
+#: .\accounts\templates\accounts\profile.html:336
+#: .\templates\orders\order_list.html:46
 msgid "You have no orders yet."
 msgstr "Vous n'avez pas encore de commandes."
 
-#: .\accounts\templates\accounts\profile.html:462
+#: .\accounts\templates\accounts\profile.html:368
 msgid "My Custom Projects"
 msgstr "Mes projets personnalisés"
 
-#: .\accounts\templates\accounts\profile.html:497
+#: .\accounts\templates\accounts\profile.html:403
 #: .\custom_orders\templates\custom_orders\detail.html:8
-#: .\templates\about.html:186 .\templates\includes\navbar.html:56
+#: .\templates\about.html:184 .\templates\custom_orders\create.html:5
+#: .\templates\includes\navbar.html:15 .\templates\includes\navbar.html:61
 msgid "Custom Order"
 msgstr "Commande personnalisée"
 
-#: .\accounts\templates\accounts\profile.html:519
+#: .\accounts\templates\accounts\profile.html:425
 #: .\custom_orders\templates\custom_orders\detail.html:184
+#: .\templates\custom_orders\create.html:215
 #: .\templates\products\detail.html:132
 msgid "Material"
 msgstr "Matériau"
 
-#: .\accounts\templates\accounts\profile.html:581
+#: .\accounts\templates\accounts\profile.html:487
 msgid "Waiting for quote"
 msgstr "En attente du devis"
 
-#: .\accounts\templates\accounts\profile.html:628
+#: .\accounts\templates\accounts\profile.html:534
 msgid "You have no custom projects yet."
 msgstr "Vous n'avez pas encore de projets personnalisés."
 
@@ -139,7 +152,7 @@ msgstr "Demande envoyée"
 
 #: .\custom_orders\templates\custom_orders\detail.html:98
 msgid "Review"
-msgstr "Vérification"
+msgstr "En révision"
 
 #: .\custom_orders\templates\custom_orders\detail.html:115
 msgid "Quote sent"
@@ -154,15 +167,18 @@ msgid "Project Details"
 msgstr "Détails du projet"
 
 #: .\custom_orders\templates\custom_orders\detail.html:170
+#: .\templates\custom_orders\create.html:202
 msgid "Service"
 msgstr "Service"
 
 #: .\custom_orders\templates\custom_orders\detail.html:198
+#: .\templates\custom_orders\create.html:355
 msgid "Color"
 msgstr "Couleur"
 
 #: .\custom_orders\templates\custom_orders\detail.html:213
-#: .\templates\cart\cart_drawer.html:64
+#: .\templates\cart\cart_drawer.html:74
+#: .\templates\custom_orders\create.html:368
 msgid "Quantity"
 msgstr "Quantité"
 
@@ -172,10 +188,12 @@ msgid "Size"
 msgstr "Taille"
 
 #: .\custom_orders\templates\custom_orders\detail.html:250
+#: .\templates\custom_orders\create.html:237
 msgid "Description"
 msgstr "Description"
 
 #: .\custom_orders\templates\custom_orders\detail.html:266
+#: .\templates\custom_orders\create.html:262
 msgid "Engraving"
 msgstr "Gravure"
 
@@ -194,10 +212,12 @@ msgid "No"
 msgstr "Non"
 
 #: .\custom_orders\templates\custom_orders\detail.html:302
+#: .\templates\custom_orders\create.html:290
 msgid "Engraving type"
 msgstr "Type de gravure"
 
 #: .\custom_orders\templates\custom_orders\detail.html:321
+#: .\templates\custom_orders\create.html:302
 msgid "Engraving text"
 msgstr "Texte de gravure"
 
@@ -206,6 +226,7 @@ msgid "Engraving image"
 msgstr "Image de gravure"
 
 #: .\custom_orders\templates\custom_orders\detail.html:382
+#: .\templates\custom_orders\create.html:440
 msgid "Files"
 msgstr "Fichiers"
 
@@ -230,185 +251,439 @@ msgid "Back to account"
 msgstr "Retour au compte"
 
 #: .\templates\about.html:8
-#, fuzzy
-#| msgid "Why Velvet Creature?"
 msgid "About Velvet Creature"
-msgstr "Pourquoi Velvet Creature ?"
+msgstr "À propos de Velvet Creature"
 
-#: .\templates\about.html:33
+#: .\templates\about.html:35
 msgid "Unique 3D printed creatures made with passion and precision."
-msgstr ""
+msgstr "Des créatures 3D uniques imprimées avec passion et précision."
 
-#: .\templates\about.html:53
+#: .\templates\about.html:55
 msgid "Our Mission"
-msgstr ""
+msgstr "Notre Mission"
 
-#: .\templates\about.html:60
+#: .\templates\about.html:62
 msgid ""
 "We create premium collectible creatures combining modern technology with "
 "artistic design."
 msgstr ""
+"Nous créons des créatures de collection haut de gamme alliant technologie "
+"moderne et design artistique."
 
-#: .\templates\about.html:76
+#: .\templates\about.html:78
 msgid "Quality"
-msgstr ""
+msgstr "Qualité"
 
-#: .\templates\about.html:83
+#: .\templates\about.html:85
 msgid ""
 "Every product is carefully designed, printed and prepared before reaching "
 "you."
 msgstr ""
+"Chaque produit est soigneusement conçu, imprimé et préparé avant de vous "
+"parvenir."
 
 #: .\templates\about.html:99
-#, fuzzy
-#| msgid "Customer Information"
 msgid "Custom Creations"
-msgstr "Informations client"
+msgstr "Créations Personnalisées"
 
-#: .\templates\about.html:106
+#: .\templates\about.html:104
 msgid "Have your own idea? We can transform your vision into a unique model."
 msgstr ""
+"Vous avez votre propre idée ? Nous pouvons transformer votre vision en un "
+"modèle unique."
 
-#: .\templates\about.html:127
+#: .\templates\about.html:125
 msgid "Our Process"
-msgstr ""
+msgstr "Notre Processus"
 
-#: .\templates\about.html:177
+#: .\templates\about.html:137
+msgid "Idea"
+msgstr "Idée"
+
+#: .\templates\about.html:141
+msgid "Design"
+msgstr "Design"
+
+#: .\templates\about.html:145
+msgid "Printing"
+msgstr "Impression"
+
+#: .\templates\about.html:149
+msgid "Finishing"
+msgstr "Finition"
+
+#: .\templates\about.html:153
+msgid "Delivery"
+msgstr "Livraison"
+
+#: .\templates\about.html:175
 msgid "Create your own creature"
-msgstr ""
+msgstr "Créez votre propre créature"
 
-#: .\templates\about.html:195
+#: .\templates\about.html:193
 msgid "Visit Shop"
-msgstr ""
+msgstr "Visiter la Boutique"
+
+#: .\templates\base.html:108
+msgid "Loading..."
+msgstr "Chargement..."
 
 #: .\templates\cart\cart_detail.html:5 .\templates\cart\cart_detail.html:18
 #: .\templates\cart\cart_drawer.html:6
 msgid "Your Cart"
-msgstr ""
+msgstr "Votre Panier"
 
-#: .\templates\cart\cart_detail.html:100
+#: .\templates\cart\cart_detail.html:104
 msgid "Not enough stock"
-msgstr ""
+msgstr "Stock insuffisant"
 
-#: .\templates\cart\cart_detail.html:209
+#: .\templates\cart\cart_detail.html:213
 msgid "Summary"
-msgstr ""
+msgstr "Récapitulatif"
 
-#: .\templates\cart\cart_detail.html:218 .\templates\cart\cart_drawer.html:141
-#: .\templates\orders\checkout.html:251
+#: .\templates\cart\cart_detail.html:222 .\templates\cart\cart_drawer.html:155
+#: .\templates\orders\checkout.html:141 .\templates\orders\order_detail.html:95
+#: .\templates\orders\order_detail.html:232
+#: .\templates\orders\order_list.html:24
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
-#: .\templates\cart\cart_detail.html:237
-#, fuzzy
-#| msgid "Back to Checkout"
+#: .\templates\cart\cart_detail.html:241
 msgid "Proceed to Checkout"
-msgstr "Retour au paiement"
+msgstr "Passer au Paiement"
 
-#: .\templates\cart\cart_detail.html:249
+#: .\templates\cart\cart_detail.html:253
+#: .\templates\orders\payment_success.html:57
 msgid "Continue Shopping"
-msgstr ""
+msgstr "Continuer les Achats"
 
-#: .\templates\cart\cart_detail.html:283 .\templates\cart\cart_drawer.html:124
-#, fuzzy
-#| msgid "Your wishlist is empty."
+#: .\templates\cart\cart_detail.html:287 .\templates\cart\cart_drawer.html:137
 msgid "Your cart is empty"
-msgstr "Votre liste de souhaits est vide."
+msgstr "Votre panier est vide"
 
-#: .\templates\cart\cart_detail.html:288
+#: .\templates\cart\cart_detail.html:292
 msgid "Add something beautiful to your collection."
-msgstr ""
+msgstr "Ajoutez quelque chose de magnifique à votre collection."
 
-#: .\templates\cart\cart_detail.html:296
+#: .\templates\cart\cart_detail.html:300
 msgid "Explore Collection"
-msgstr ""
+msgstr "Explorer la Collection"
 
-#: .\templates\cart\cart_drawer.html:157
+#: .\templates\cart\cart_drawer.html:138
+#, fuzzy
+#| msgid "Add something beautiful to your collection."
+msgid "Add some dark creatures to your collection"
+msgstr "Ajoutez quelque chose de magnifique à votre collection."
+
+#: .\templates\cart\cart_drawer.html:171
+msgid "View Cart"
+msgstr "Voir le Panier"
+
+#: .\templates\cart\cart_drawer.html:181
+msgid "Checkout"
+msgstr "Paiement"
+
+#: .\templates\cart\checkout.html:5 .\templates\cart\checkout.html:16
+#: .\templates\orders\checkout.html:5 .\templates\orders\checkout.html:13
+msgid "Secure Checkout"
+msgstr "Paiement Sécurisé"
+
+#: .\templates\cart\checkout.html:23
+#, fuzzy
+#| msgid "Orders"
+msgid "Order summary"
+msgstr "Commandes"
+
+#: .\templates\cart\checkout.html:30 .\templates\orders\checkout.html:148
+msgid "Secure Stripe payment"
+msgstr "Paiement sécurisé par Stripe"
+
+#: .\templates\cart\checkout.html:34
+#, fuzzy
+#| msgid "Order confirmation email"
+msgid "Instant order confirmation"
+msgstr "E-mail de confirmation de commande"
+
+#: .\templates\cart\checkout.html:38 .\templates\orders\checkout.html:152
+msgid "Encrypted checkout"
+msgstr "Paiement chiffré"
+
+#: .\templates\cart\checkout.html:44 .\templates\orders\checkout.html:162
+msgid "Credit Card"
+msgstr "Carte bancaire"
+
+#: .\templates\cart\checkout.html:45 .\templates\orders\checkout.html:163
+msgid "Bank Transfer"
+msgstr "Virement bancaire"
+
+#: .\templates\cart\checkout.html:46 .\templates\orders\checkout.html:164
+#, fuzzy
+#| msgid "Encrypted checkout"
+msgid "Encrypted"
+msgstr "Paiement chiffré"
+
+#: .\templates\cart\checkout.html:55 .\templates\orders\order_detail.html:105
+#: .\templates\orders\order_detail.html:242
+msgid "Payment"
+msgstr "Paiement"
+
+#: .\templates\cart\checkout.html:62 .\templates\orders\checkout.html:94
+msgid "Pay securely with card"
+msgstr "Payer en toute sécurité par carte"
+
+#: .\templates\cart\checkout.html:70
+msgid "You will be redirected to Stripe secure payment page."
+msgstr "Vous serez redirigé vers la page de paiement sécurisé Stripe."
+
+#: .\templates\custom_orders\create.html:16
+msgid "How it works"
+msgstr "Comment ça marche"
+
+#: .\templates\custom_orders\create.html:27
+msgid "Send your idea"
+msgstr "Envoyez votre idée"
+
+#: .\templates\custom_orders\create.html:31
+msgid "Describe your project and upload your 3D model or reference image."
+msgstr "Décrivez votre projet et téléchargez votre modèle 3D ou image de référence."
+
+#: .\templates\custom_orders\create.html:41
+
+msgid "Project review"
+msgstr "Révision du projet"
+
+#: .\templates\custom_orders\create.html:45
+msgid "We check your requirements, material and possibilities."
+msgstr "Nous vérifions vos exigences, le matériau et les possibilités."
+
+#: .\templates\custom_orders\create.html:55
+
+msgid "Price estimation"
+msgstr "Estimation du prix"
+
+#: .\templates\custom_orders\create.html:59
+#, fuzzy
+#| msgid "You have no custom projects yet."
+msgid "You receive a custom quote."
+msgstr "Vous recevez un devis personnalisé."
+
+
 #, fuzzy
 #| msgid "View Product"
-msgid "View Cart"
-msgstr "Voir le produit"
+msgid "Production"
+msgstr "Production"
 
-#: .\templates\cart\cart_drawer.html:167
+
+msgid "Your creation goes into production."
+msgstr "Votre création passe en production."
+
+#: .\templates\custom_orders\create.html:91
 #, fuzzy
-#| msgid "Back to Checkout"
-msgid "Checkout"
-msgstr "Retour au paiement"
+msgid "Custom 3D Print"
+msgstr "Impression 3D personnalisée"
 
-#: .\templates\includes\navbar.html:37
+
+msgid "Bring your idea to life with custom 3D printing and engraving."
+msgstr "	Donnez vie à votre idée avec l'impression 3D et la gravure personnalisées"
+
+#: .\templates\custom_orders\create.html:135
+#: .\templates\orders\checkout.html:25
+msgid "Customer Information"
+msgstr "Informations client"
+
+#: .\templates\custom_orders\create.html:145
+#: .\templates\orders\order_detail.html:145
+msgid "Name"
+msgstr "Nom"
+
+#: .\templates\custom_orders\create.html:192
+#, fuzzy
+msgid "Project Type"
+msgstr "Type de projet"
+
+
+#, fuzzy
+#| msgid "Engraving"
+msgid "Enable engraving"
+msgstr "Gravure"
+
+#: .\templates\custom_orders\create.html:321
+#, fuzzy
+#| msgid "Engraving image"
+msgid "Engraving image / logo"
+msgstr "Image de gravure"
+
+#: .\templates\custom_orders\create.html:387
+msgid "Dimensions (mm)"
+msgstr ""
+
+#: .\templates\custom_orders\create.html:398
+msgid "Width"
+msgstr ""
+
+#: .\templates\custom_orders\create.html:410
+#, fuzzy
+#| msgid "Weight"
+msgid "Height"
+msgstr "Poids"
+
+#: .\templates\custom_orders\create.html:422
+msgid "Depth"
+msgstr ""
+
+#: .\templates\custom_orders\create.html:449
+msgid "3D Model"
+msgstr ""
+
+#: .\templates\custom_orders\create.html:462
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
+msgid "Image"
+msgstr "Image"
+
+#: .\templates\custom_orders\create.html:482
+msgid "Send Request"
+msgstr "Envoyer la demande"
+
+#: .\templates\includes\navbar.html:13 .\templates\includes\navbar.html:59
 msgid "Home"
 msgstr "Accueil"
 
-#: .\templates\includes\navbar.html:46 .\templates\products\home.html:28
-#: .\templates\products\shop.html:13
+#: .\templates\includes\navbar.html:14 .\templates\includes\navbar.html:60
+#: .\templates\products\home.html:32 .\templates\products\shop.html:13
 msgid "Shop"
 msgstr "Boutique"
 
-#: .\templates\includes\navbar.html:66
+#: .\templates\includes\navbar.html:16 .\templates\includes\navbar.html:62
 msgid "About"
 msgstr "À propos"
 
-#: .\templates\includes\navbar.html:113 .\templates\includes\navbar.html:319
+#: .\templates\includes\navbar.html:45 .\templates\includes\navbar.html:71
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: .\templates\includes\navbar.html:135 .\templates\includes\navbar.html:333
+#: .\templates\includes\navbar.html:48 .\templates\includes\navbar.html:73
 msgid "Login"
 msgstr "Connexion"
 
-#: .\templates\includes\navbar.html:144 .\templates\includes\navbar.html:342
+#: .\templates\includes\navbar.html:49 .\templates\includes\navbar.html:74
 msgid "Register"
-msgstr "Créer un compte"
+msgstr "S'inscrire"
 
-#: .\templates\orders\checkout.html:6 .\templates\orders\checkout.html:20
-#, fuzzy
-#| msgid "Back to Checkout"
-msgid "Secure Checkout"
-msgstr "Retour au paiement"
+#: .\templates\orders\checkout.html:54 .\templates\orders\order_detail.html:155
+msgid "Address"
+msgstr "Adresse"
 
-#: .\templates\orders\checkout.html:59
-#, fuzzy
-#| msgid "Full name"
-msgid "First name"
-msgstr "Nom complet"
+#: .\templates\orders\checkout.html:59 .\templates\orders\order_detail.html:160
+msgid "City"
+msgstr "Ville"
 
-#: .\templates\orders\checkout.html:77
-msgid "Last name"
-msgstr ""
+#: .\templates\orders\checkout.html:68
+msgid "Shipping Method"
+msgstr "Mode de livraison"
+
+#: .\templates\orders\checkout.html:101
+msgid "Pay by bank transfer"
+msgstr "Payer par virement bancaire"
+
+#: .\templates\orders\checkout.html:116
+msgid "Your Order"
+msgstr "Votre Commande"
 
 #: .\templates\orders\checkout.html:131
-msgid "Address"
-msgstr ""
-
-#: .\templates\orders\checkout.html:149
-msgid "City"
-msgstr ""
-
-#: .\templates\orders\checkout.html:169
-msgid "Pay securely with card"
-msgstr ""
-
-#: .\templates\orders\checkout.html:197
+#: .\templates\orders\order_detail.html:220
 #, fuzzy
-#| msgid "Order"
-msgid "Your Order"
-msgstr "Commande"
+#| msgid "Total"
+msgid "Subtotal"
+msgstr "Sous-total"
 
-#: .\templates\orders\checkout.html:272
-msgid "Secure Stripe payment"
-msgstr ""
+#: .\templates\orders\checkout.html:136
+#: .\templates\orders\order_detail.html:111
+#: .\templates\orders\order_detail.html:226
+msgid "Shipping"
+msgstr "Livraison"
 
-#: .\templates\orders\checkout.html:277
-msgid "Encrypted checkout"
-msgstr ""
-
-#: .\templates\orders\checkout.html:282
+#: .\templates\orders\checkout.html:156
 msgid "Order confirmation email"
-msgstr ""
+msgstr "E-mail de confirmation de commande"
 
-#: .\templates\orders\order_detail.html:351
-msgid "Download Invoice PDF"
+#: .\templates\orders\checkout.html:172
+msgid "Bank Transfer Details"
+msgstr "Détails du virement bancaire"
+
+#: .\templates\orders\checkout.html:177
+#, fuzzy
+#| msgid "Account"
+msgid "Account Name"
+msgstr "Compte"
+
+#: .\templates\orders\checkout.html:181
+msgid "IBAN"
+msgstr "IBAN"
+
+#: .\templates\orders\checkout.html:185
+msgid "BIC/SWIFT"
+msgstr "BIC/SWIFT"
+
+#: .\templates\orders\checkout.html:189
+msgid "Bank"
+msgstr "Banque"
+
+#: .\templates\orders\checkout.html:193
+msgid "Reference"
+msgstr "Référence"
+
+#: .\templates\orders\checkout.html:194
+#, fuzzy
+#| msgid "Your Order"
+msgid "Your order number"
+msgstr "Votre numéro de commande"
+
+#: .\templates\orders\checkout.html:199
+msgid ""
+"Please use your order number as the payment reference. Your order will be "
+"processed once payment is received."
 msgstr ""
+"Veuillez utiliser votre numéro de commande comme référence de paiement. "
+"Votre commande sera traitée une fois le paiement reçu."
+
+#: .\templates\orders\order_detail.html:119
+#: .\templates\orders\order_list.html:28
+msgid "Items"
+msgstr "Articles"
+
+#: .\templates\orders\order_detail.html:130
+#, fuzzy
+#| msgid "No products found."
+msgid "No items found."
+msgstr "Aucun produit trouvé."
+
+#: .\templates\orders\order_detail.html:176
+msgid "Carrier"
+msgstr "Transporteur"
+
+#: .\templates\orders\order_detail.html:181
+msgid "Tracking"
+msgstr "Suivi"
+
+#: .\templates\orders\order_detail.html:186
+#: .\templates\orders\order_detail.html:188
+#: .\templates\orders\order_detail.html:190
+msgid "Track package"
+msgstr "Suivre le colis"
+
+#: .\templates\orders\order_detail.html:197
+msgid "Download Invoice PDF"
+msgstr "Télécharger la Facture PDF"
+
+#: .\templates\orders\order_detail.html:248
+#, fuzzy
+#| msgid "Shipping Method"
+msgid "Shipping method"
+msgstr "Mode de livraison"
+
+#: .\templates\orders\order_list.html:22
+msgid "Date"
+msgstr "Date"
 
 #: .\templates\orders\payment_cancel.html:8
 msgid "Payment Cancelled"
@@ -422,6 +697,30 @@ msgstr "Vous pouvez réessayer quand vous serez prêt."
 msgid "Back to Checkout"
 msgstr "Retour au paiement"
 
+#: .\templates\orders\payment_success.html:5
+msgid "Thank You"
+msgstr ""
+
+#: .\templates\orders\payment_success.html:19
+msgid "Thank you for your order"
+msgstr "Merci pour votre commande"
+
+#: .\templates\orders\payment_success.html:23
+msgid "Your payment has been successfully processed."
+msgstr "Votre paiement a été traité avec succès."
+
+#: .\templates\orders\payment_success.html:31
+msgid "Order number:"
+msgstr "Numéro de commande :"
+
+#: .\templates\orders\payment_success.html:43
+msgid "Velvet Creature by Lubma3D"
+msgstr "Velvet Creature par Lubma3D"
+
+#: .\templates\orders\payment_success.html:50
+msgid "View Order"
+msgstr "Voir la commande"
+
 #: .\templates\products\detail.html:30 .\templates\products\shop.html:122
 #: .\templates\wishlist\wishlist.html:60
 msgid "No image"
@@ -431,26 +730,26 @@ msgstr "Pas d'image"
 msgid "Weight"
 msgstr "Poids"
 
-#: .\templates\products\detail.html:178 .\templates\products\home.html:89
+#: .\templates\products\detail.html:178 .\templates\products\home.html:93
 #: .\templates\products\shop.html:140
 msgid "In Stock"
 msgstr "En stock"
 
-#: .\templates\products\detail.html:188 .\templates\products\home.html:91
+#: .\templates\products\detail.html:188 .\templates\products\home.html:95
 #: .\templates\products\shop.html:152
 msgid "Sold Out"
-msgstr "Rupture de stock"
+msgstr "Épuisé"
 
-#: .\templates\products\detail.html:214 .\templates\products\home.html:111
+#: .\templates\products\detail.html:214 .\templates\products\home.html:115
 #: .\templates\products\shop.html:293 .\templates\wishlist\wishlist.html:116
 msgid "Add to cart"
 msgstr "Ajouter au panier"
 
-#: .\templates\products\home.html:16
+#: .\templates\products\home.html:20
 msgid "Luxury 3D Printed Collectibles"
-msgstr "Objets de collection 3D imprimés de luxe"
+msgstr "Objets de Collection 3D de Luxe"
 
-#: .\templates\products\home.html:22
+#: .\templates\products\home.html:26
 msgid ""
 "Enter a world where gothic elegance meets handcrafted 3D design. Each "
 "creation is sculpted with precision, darkness and imagination."
@@ -459,52 +758,52 @@ msgstr ""
 "artisanal. Chaque création est sculptée avec précision, obscurité et "
 "imagination."
 
-#: .\templates\products\home.html:32 .\templates\products\home.html:73
+#: .\templates\products\home.html:36 .\templates\products\home.html:77
 msgid "New Arrivals"
 msgstr "Nouveautés"
 
-#: .\templates\products\home.html:45
+#: .\templates\products\home.html:49
 msgid "Why Velvet Creature?"
 msgstr "Pourquoi Velvet Creature ?"
 
-#: .\templates\products\home.html:51
+#: .\templates\products\home.html:55
 msgid "3D Printed"
 msgstr "Imprimé en 3D"
 
-#: .\templates\products\home.html:52
-msgid "Precision-crafted models with high-end detail and texture."
-msgstr ""
-"Modèles fabriqués avec précision, avec des détails et textures haut de gamme."
-
 #: .\templates\products\home.html:56
-msgid "Hand Finished"
-msgstr "Finition artisanale"
+msgid "Precision-crafted models with high-end detail and texture."
+msgstr "Modèles fabriqués avec précision, détails et textures haut de gamme."
 
-#: .\templates\products\home.html:57
+#: .\templates\products\home.html:60
+msgid "Hand Finished"
+msgstr "Fini à la Main"
+
+#: .\templates\products\home.html:61
 msgid "Each piece is refined manually for premium quality."
 msgstr "Chaque pièce est finie manuellement pour une qualité premium."
 
-#: .\templates\products\home.html:61
+#: .\templates\products\home.html:65
 msgid "Dark Aesthetic"
-msgstr "Esthétique sombre"
+msgstr "Esthétique Sombre"
 
-#: .\templates\products\home.html:62
+#: .\templates\products\home.html:66
 msgid "Inspired by gothic art, fantasy worlds and cinematic design."
 msgstr ""
 "Inspiré par l'art gothique, les mondes fantastiques et le design "
-"cinématographique."
+"cinématographique.Inspiré par l'art gothique, les mondes fantastiques et le "
+"design cinématographique."
 
-#: .\templates\products\home.html:103
+#: .\templates\products\home.html:107
 msgid "Detail"
 msgstr "Détails"
 
-#: .\templates\products\home.html:131
+#: .\templates\products\home.html:135
 msgid ""
 "Every creature begins as an idea — shaped by darkness, refined by "
 "imagination."
 msgstr ""
-"Chaque créature commence comme une idée — façonnée par l'obscurité et "
-"raffinée par l'imagination."
+"Chaque créature commence par une idée — façonnée par l'obscurité, raffinée "
+"par l'imagination."
 
 #: .\templates\products\shop.html:40
 msgid "Search products..."
@@ -528,15 +827,15 @@ msgstr "Aucun produit trouvé."
 
 #: .\templates\wishlist\wishlist.html:6 .\templates\wishlist\wishlist.html:20
 msgid "My Wishlist"
-msgstr "Ma liste de souhaits"
+msgstr "Ma Liste de Souhaits"
 
 #: .\templates\wishlist\wishlist.html:27
 msgid "Your saved Velvet Creature creations"
-msgstr "Vos créations Velvet Creature enregistrées"
+msgstr "Vos créations Velvet Creature sauvegardées"
 
 #: .\templates\wishlist\wishlist.html:95
 msgid "View Product"
-msgstr "Voir le produit"
+msgstr "Voir le Produit"
 
 #: .\templates\wishlist\wishlist.html:106
 msgid "Remove"
@@ -548,70 +847,74 @@ msgstr "Votre liste de souhaits est vide."
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"
-msgstr ""
+msgstr "Messages"
 
 #: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
 msgid "Site Maps"
-msgstr ""
+msgstr "Plans du site"
 
 #: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
 msgid "Static Files"
-msgstr ""
+msgstr "Fichiers statiques"
 
 #: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
 msgid "Syndication"
-msgstr ""
+msgstr "Syndication"
 
 #. Translators: String used to replace omitted page numbers in elided page
 #. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
 #: .\venv\Lib\site-packages\django\core\paginator.py:33
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #: .\venv\Lib\site-packages\django\core\paginator.py:35
 msgid "That page number is not an integer"
-msgstr ""
+msgstr "Ce numéro de page n'est pas un nombre entier"
 
 #: .\venv\Lib\site-packages\django\core\paginator.py:36
 msgid "That page number is less than 1"
-msgstr ""
+msgstr "Ce numéro de page est inférieur à 1"
 
 #: .\venv\Lib\site-packages\django\core\paginator.py:37
 msgid "That page contains no results"
-msgstr ""
+msgstr "Cette page ne contient aucun résultat"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:22
 msgid "Enter a valid value."
-msgstr ""
+msgstr "Entrez une valeur valide."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:70
 msgid "Enter a valid domain name."
-msgstr ""
+msgstr "Entrez un nom de domaine valide."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:153
 #: .\venv\Lib\site-packages\django\forms\fields.py:773
 msgid "Enter a valid URL."
-msgstr ""
+msgstr "Entrez une URL valide."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:200
 msgid "Enter a valid integer."
-msgstr ""
+msgstr "Entrez un nombre entier valide."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:211
 msgid "Enter a valid email address."
-msgstr ""
+msgstr "Entrez une adresse e-mail valide."
 
 #. Translators: "letters" means latin letters: a-z and A-Z.
 #: .\venv\Lib\site-packages\django\core\validators.py:289
 msgid ""
 "Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
 msgstr ""
+"Entrez un \"slug\" valide composé de lettres, chiffres, underscores ou "
+"tirets."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:297
 msgid ""
 "Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
 "hyphens."
 msgstr ""
+"Entrez un \"slug\" valide composé de lettres Unicode, chiffres, underscores "
+"ou tirets."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:309
 #: .\venv\Lib\site-packages\django\core\validators.py:318
@@ -619,44 +922,47 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2220
 #, python-format
 msgid "Enter a valid %(protocol)s address."
-msgstr ""
+msgstr "Entrez une adresse %(protocol)s valide."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:311
 msgid "IPv4"
-msgstr ""
+msgstr "IPv4"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:320
 #: .\venv\Lib\site-packages\django\utils\ipv6.py:43
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:334
 msgid "IPv4 or IPv6"
-msgstr ""
+msgstr "IPv4 ou IPv6"
 
 #: .\venv\Lib\site-packages\django\core\validators.py:375
 msgid "Enter only digits separated by commas."
-msgstr ""
+msgstr "Entrez uniquement des chiffres séparés par des virgules."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:381
 #, python-format
 msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
 msgstr ""
+"Assurez-vous que cette valeur est %(limit_value)s (elle est %(show_value)s)."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:416
 #, python-format
 msgid "Ensure this value is less than or equal to %(limit_value)s."
 msgstr ""
+"Assurez-vous que cette valeur est inférieure ou égale à %(limit_value)s."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:425
 #, python-format
 msgid "Ensure this value is greater than or equal to %(limit_value)s."
 msgstr ""
+"Assurez-vous que cette valeur est supérieure ou égale à %(limit_value)s."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:434
 #, python-format
 msgid "Ensure this value is a multiple of step size %(limit_value)s."
-msgstr ""
+msgstr "Assurez-vous que cette valeur est un multiple du pas %(limit_value)s."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:441
 #, python-format
@@ -664,6 +970,9 @@ msgid ""
 "Ensure this value is a multiple of step size %(limit_value)s, starting from "
 "%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
 msgstr ""
+"Assurez-vous que cette valeur est un multiple du pas %(limit_value)s, à "
+"partir de %(offset)s, ex : %(offset)s, %(valid_value1)s, %(valid_value2)s, "
+"etc."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:473
 #, python-format
@@ -674,7 +983,11 @@ msgid_plural ""
 "Ensure this value has at least %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
+"Assurez-vous que cette valeur contient au moins %(limit_value)d caractère "
+"(elle en a %(show_value)d)."
 msgstr[1] ""
+"Assurez-vous que cette valeur contient au moins %(limit_value)d caractères "
+"(elle en a %(show_value)d)."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:491
 #, python-format
@@ -685,27 +998,31 @@ msgid_plural ""
 "Ensure this value has at most %(limit_value)d characters (it has "
 "%(show_value)d)."
 msgstr[0] ""
+"Assurez-vous que cette valeur contient au plus %(limit_value)d caractère "
+"(elle en a %(show_value)d)."
 msgstr[1] ""
+"Assurez-vous que cette valeur contient au plus %(limit_value)d caractères "
+"(elle en a %(show_value)d)."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:514
 #: .\venv\Lib\site-packages\django\forms\fields.py:364
 #: .\venv\Lib\site-packages\django\forms\fields.py:403
 msgid "Enter a number."
-msgstr ""
+msgstr "Entrez un nombre."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:516
 #, python-format
 msgid "Ensure that there are no more than %(max)s digit in total."
 msgid_plural "Ensure that there are no more than %(max)s digits in total."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Assurez-vous qu'il n'y a pas plus d'%(max)s chiffre au total."
+msgstr[1] "Assurez-vous qu'il n'y a pas plus de %(max)s chiffres au total."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:521
 #, python-format
 msgid "Ensure that there are no more than %(max)s decimal place."
 msgid_plural "Ensure that there are no more than %(max)s decimal places."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Assurez-vous qu'il n'y a pas plus d'%(max)s décimale."
+msgstr[1] "Assurez-vous qu'il n'y a pas plus de %(max)s décimales."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:526
 #, python-format
@@ -714,7 +1031,9 @@ msgid ""
 msgid_plural ""
 "Ensure that there are no more than %(max)s digits before the decimal point."
 msgstr[0] ""
+"Assurez-vous qu'il n'y a pas plus d'%(max)s chiffre avant la virgule."
 msgstr[1] ""
+"Assurez-vous qu'il n'y a pas plus de %(max)s chiffres avant la virgule."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:597
 #, python-format
@@ -722,43 +1041,45 @@ msgid ""
 "File extension “%(extension)s” is not allowed. Allowed extensions are: "
 "%(allowed_extensions)s."
 msgstr ""
+"L'extension de fichier \"%(extension)s\" n'est pas autorisée. Les extensions "
+"autorisées sont : %(allowed_extensions)s."
 
 #: .\venv\Lib\site-packages\django\core\validators.py:659
 msgid "Null characters are not allowed."
-msgstr ""
+msgstr "Les caractères nuls ne sont pas autorisés."
 
 #: .\venv\Lib\site-packages\django\db\models\base.py:1633
 #: .\venv\Lib\site-packages\django\forms\models.py:932
 msgid "and"
-msgstr ""
+msgstr "et"
 
 #: .\venv\Lib\site-packages\django\db\models\base.py:1635
 #, python-format
 msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
+msgstr "%(model_name)s avec ce %(field_labels)s existe déjà."
 
 #: .\venv\Lib\site-packages\django\db\models\constraints.py:20
 #, python-format
 msgid "Constraint “%(name)s” is violated."
-msgstr ""
+msgstr "La contrainte \"%(name)s\" est violée."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:134
 #, python-format
 msgid "Value %(value)r is not a valid choice."
-msgstr ""
+msgstr "La valeur %(value)r n'est pas un choix valide."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:135
 msgid "This field cannot be null."
-msgstr ""
+msgstr "Ce champ ne peut pas être nul."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:136
 msgid "This field cannot be blank."
-msgstr ""
+msgstr "Ce champ ne peut pas être vide."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:137
 #, python-format
 msgid "%(model_name)s with this %(field_label)s already exists."
-msgstr ""
+msgstr "%(model_name)s avec ce %(field_label)s existe déjà."
 
 #. Translators: The 'lookup_type' is one of 'date', 'year' or
 #. 'month'. Eg: "Title must be unique for pub_date year"
@@ -767,38 +1088,39 @@ msgstr ""
 msgid ""
 "%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
 msgstr ""
+"%(field_label)s doit être unique pour %(date_field_label)s %(lookup_type)s."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:180
 #, python-format
 msgid "Field of type: %(field_type)s"
-msgstr ""
+msgstr "Champ de type : %(field_type)s"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1161
 #, python-format
 msgid "“%(value)s” value must be either True or False."
-msgstr ""
+msgstr "La valeur \"%(value)s\" doit être True ou False."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1162
 #, python-format
 msgid "“%(value)s” value must be either True, False, or None."
-msgstr ""
+msgstr "La valeur \"%(value)s\" doit être True, False ou None."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1164
 msgid "Boolean (Either True or False)"
-msgstr ""
+msgstr "Booléen (True ou False)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1214
 #, python-format
 msgid "String (up to %(max_length)s)"
-msgstr ""
+msgstr "Chaîne (jusqu'à %(max_length)s)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1216
 msgid "String (unlimited)"
-msgstr ""
+msgstr "Chaîne (illimitée)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1325
 msgid "Comma-separated integers"
-msgstr ""
+msgstr "Entiers séparés par des virgules"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1426
 #, python-format
@@ -806,6 +1128,8 @@ msgid ""
 "“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
 "format."
 msgstr ""
+"La valeur \"%(value)s\" a un format de date invalide. Elle doit être au "
+"format AAAA-MM-JJ."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1430
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1565
@@ -814,10 +1138,12 @@ msgid ""
 "“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
 "date."
 msgstr ""
+"La valeur \"%(value)s\" a le bon format (AAAA-MM-JJ) mais c'est une date "
+"invalide."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1434
 msgid "Date (without time)"
-msgstr ""
+msgstr "Date (sans heure)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1561
 #, python-format
@@ -825,6 +1151,8 @@ msgid ""
 "“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
 "HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
+"La valeur \"%(value)s\" a un format invalide. Elle doit être au format AAAA-"
+"MM-JJ HH:MM[:ss[.uuuuuu]][TZ]."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1569
 #, python-format
@@ -832,19 +1160,21 @@ msgid ""
 "“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
 "[TZ]) but it is an invalid date/time."
 msgstr ""
+"La valeur \"%(value)s\" a le bon format (AAAA-MM-JJ HH:MM[:ss[.uuuuuu]][TZ]) "
+"mais c'est une date/heure invalide."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1574
 msgid "Date (with time)"
-msgstr ""
+msgstr "Date (avec heure)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1701
 #, python-format
 msgid "“%(value)s” value must be a decimal number."
-msgstr ""
+msgstr "La valeur \"%(value)s\" doit être un nombre décimal."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1703
 msgid "Decimal number"
-msgstr ""
+msgstr "Nombre décimal"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1864
 #, python-format
@@ -852,6 +1182,8 @@ msgid ""
 "“%(value)s” value has an invalid format. It must be in [DD] "
 "[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
+"La valeur \"%(value)s\" a un format invalide. Elle doit être au format [JJ] "
+"[[HH:]MM:]ss[.uuuuuu]."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1868
 msgid "Duration"
@@ -859,78 +1191,76 @@ msgstr "Durée"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1920
 msgid "Email address"
-msgstr ""
+msgstr "Adresse e-mail"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1945
-#, fuzzy
-#| msgid "File"
 msgid "File path"
-msgstr "Fichier"
+msgstr "Chemin du fichier"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2023
 #, python-format
 msgid "“%(value)s” value must be a float."
-msgstr ""
+msgstr "La valeur \"%(value)s\" doit être un nombre à virgule flottante."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2025
 msgid "Floating point number"
-msgstr ""
+msgstr "Nombre à virgule flottante"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2065
 #, python-format
 msgid "“%(value)s” value must be an integer."
-msgstr ""
+msgstr "La valeur \"%(value)s\" doit être un nombre entier."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2067
 msgid "Integer"
-msgstr ""
+msgstr "Entier"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2163
 msgid "Big (8 byte) integer"
-msgstr ""
+msgstr "Grand entier (8 octets)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2180
 msgid "Small integer"
-msgstr ""
+msgstr "Petit entier"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2188
 msgid "IPv4 address"
-msgstr ""
+msgstr "Adresse IPv4"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2219
 msgid "IP address"
-msgstr ""
+msgstr "Adresse IP"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2310
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2311
 #, python-format
 msgid "“%(value)s” value must be either None, True or False."
-msgstr ""
+msgstr "La valeur \"%(value)s\" doit être None, True ou False."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2313
 msgid "Boolean (Either True, False or None)"
-msgstr ""
+msgstr "Booléen (True, False ou None)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2364
 msgid "Positive big integer"
-msgstr ""
+msgstr "Grand entier positif"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2379
 msgid "Positive integer"
-msgstr ""
+msgstr "Entier positif"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2394
 msgid "Positive small integer"
-msgstr ""
+msgstr "Petit entier positif"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2410
 #, python-format
 msgid "Slug (up to %(max_length)s)"
-msgstr ""
+msgstr "Slug (jusqu'à %(max_length)s)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2446
 msgid "Text"
-msgstr ""
+msgstr "Texte"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2526
 #, python-format
@@ -938,6 +1268,8 @@ msgid ""
 "“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
 "format."
 msgstr ""
+"La valeur \"%(value)s\" a un format invalide. Elle doit être au format "
+"HH:MM[:ss[.uuuuuu]]."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2530
 #, python-format
@@ -945,122 +1277,120 @@ msgid ""
 "“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
 "invalid time."
 msgstr ""
+"La valeur \"%(value)s\" a le bon format (HH:MM[:ss[.uuuuuu]]) mais c'est une "
+"heure invalide."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2534
 msgid "Time"
-msgstr ""
+msgstr "Heure"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2642
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2666
 msgid "Raw binary data"
-msgstr ""
+msgstr "Données binaires brutes"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2731
 #, python-format
 msgid "“%(value)s” is not a valid UUID."
-msgstr ""
+msgstr "\"%(value)s\" n'est pas un UUID valide."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2733
 msgid "Universally unique identifier"
-msgstr ""
+msgstr "Identifiant universel unique"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\files.py:244
 msgid "File"
 msgstr "Fichier"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
-#, fuzzy
-#| msgid "No image"
-msgid "Image"
-msgstr "Pas d'image"
-
 #: .\venv\Lib\site-packages\django\db\models\fields\json.py:24
 msgid "A JSON object"
-msgstr ""
+msgstr "Un objet JSON"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\json.py:26
 msgid "Value must be valid JSON."
-msgstr ""
+msgstr "La valeur doit être un JSON valide."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:974
 #, python-format
 msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
 msgstr ""
+"L'instance %(model)s avec %(field)s %(value)r n'est pas un choix valide."
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:977
 msgid "Foreign Key (type determined by related field)"
-msgstr ""
+msgstr "Clé étrangère (type déterminé par le champ lié)"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:1271
 msgid "One-to-one relationship"
-msgstr ""
+msgstr "Relation un-à-un"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:1328
 #, python-format
 msgid "%(from)s-%(to)s relationship"
-msgstr ""
+msgstr "Relation %(from)s-%(to)s"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:1330
 #, python-format
 msgid "%(from)s-%(to)s relationships"
-msgstr ""
+msgstr "Relations %(from)s-%(to)s"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\related.py:1378
 msgid "Many-to-many relationship"
-msgstr ""
+msgstr "Relation plusieurs-à-plusieurs"
 
 #. Translators: If found as last label character, these punctuation
 #. characters will prevent the default label_suffix to be appended to
 #. the label
 #: .\venv\Lib\site-packages\django\forms\boundfield.py:188
 msgid ":?.!"
-msgstr ""
+msgstr ":?.!"
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:91
 msgid "This field is required."
-msgstr ""
+msgstr "Ce champ est obligatoire."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:313
 msgid "Enter a whole number."
-msgstr ""
+msgstr "Entrez un nombre entier."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:484
 #: .\venv\Lib\site-packages\django\forms\fields.py:1241
 msgid "Enter a valid date."
-msgstr ""
+msgstr "Entrez une date valide."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:507
 #: .\venv\Lib\site-packages\django\forms\fields.py:1242
 msgid "Enter a valid time."
-msgstr ""
+msgstr "Entrez une heure valide."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:534
 msgid "Enter a valid date/time."
-msgstr ""
+msgstr "Entrez une date/heure valide."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:568
 msgid "Enter a valid duration."
-msgstr ""
+msgstr "Entrez une durée valide."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:569
 #, python-brace-format
 msgid "The number of days must be between {min_days} and {max_days}."
-msgstr ""
+msgstr "Le nombre de jours doit être entre {min_days} et {max_days}."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:638
 msgid "No file was submitted. Check the encoding type on the form."
 msgstr ""
+"Aucun fichier n'a été soumis. Vérifiez le type d'encodage du formulaire."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:639
 msgid "No file was submitted."
-msgstr ""
+msgstr "Aucun fichier n'a été soumis."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:640
 msgid "The submitted file is empty."
-msgstr ""
+msgstr "Le fichier soumis est vide."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:642
 #, python-format
@@ -1068,17 +1398,24 @@ msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
+"Assurez-vous que ce nom de fichier a au plus %(max)d caractère (il en a "
+"%(length)d)."
 msgstr[1] ""
+"Assurez-vous que ce nom de fichier a au plus %(max)d caractères (il en a "
+"%(length)d)."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:647
 msgid "Please either submit a file or check the clear checkbox, not both."
 msgstr ""
+"Veuillez soumettre un fichier ou cocher la case d'effacement, pas les deux."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:715
 msgid ""
 "Upload a valid image. The file you uploaded was either not an image or a "
 "corrupted image."
 msgstr ""
+"Téléchargez une image valide. Le fichier téléchargé n'était pas une image ou "
+"était corrompu."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:862
 #: .\venv\Lib\site-packages\django\forms\fields.py:949
@@ -1086,34 +1423,35 @@ msgstr ""
 #, python-format
 msgid "Select a valid choice. %(value)s is not one of the available choices."
 msgstr ""
+"Sélectionnez un choix valide. %(value)s n'est pas l'un des choix disponibles."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:951
 #: .\venv\Lib\site-packages\django\forms\fields.py:1070
 #: .\venv\Lib\site-packages\django\forms\models.py:1619
 msgid "Enter a list of values."
-msgstr ""
+msgstr "Entrez une liste de valeurs."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:1071
 msgid "Enter a complete value."
-msgstr ""
+msgstr "Entrez une valeur complète."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:1313
 msgid "Enter a valid UUID."
-msgstr ""
+msgstr "Entrez un UUID valide."
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:1343
 msgid "Enter a valid JSON."
-msgstr ""
+msgstr "Entrez un JSON valide."
 
 #. Translators: This is the default suffix added to form field labels
 #: .\venv\Lib\site-packages\django\forms\forms.py:97
 msgid ":"
-msgstr ""
+msgstr " :"
 
 #: .\venv\Lib\site-packages\django\forms\forms.py:239
 #, python-format
 msgid "(Hidden field %(name)s) %(error)s"
-msgstr ""
+msgstr "(Champ caché %(name)s) %(error)s"
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:61
 #, python-format
@@ -1121,34 +1459,38 @@ msgid ""
 "ManagementForm data is missing or has been tampered with. Missing fields: "
 "%(field_names)s. You may need to file a bug report if the issue persists."
 msgstr ""
+"Les données ManagementForm sont manquantes ou ont été altérées. Champs "
+"manquants : %(field_names)s. Vous devrez peut-être signaler un bug si le "
+"problème persiste."
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:65
 #, python-format
 msgid "Please submit at most %(num)d form."
 msgid_plural "Please submit at most %(num)d forms."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Veuillez soumettre au plus %(num)d formulaire."
+msgstr[1] "Veuillez soumettre au plus %(num)d formulaires."
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:70
 #, python-format
 msgid "Please submit at least %(num)d form."
 msgid_plural "Please submit at least %(num)d forms."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Veuillez soumettre au moins %(num)d formulaire."
+msgstr[1] "Veuillez soumettre au moins %(num)d formulaires."
 
 #: .\venv\Lib\site-packages\django\forms\formsets.py:499
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: .\venv\Lib\site-packages\django\forms\models.py:925
 #, python-format
 msgid "Please correct the duplicate data for %(field)s."
-msgstr ""
+msgstr "Veuillez corriger les données en double pour %(field)s."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:930
 #, python-format
 msgid "Please correct the duplicate data for %(field)s, which must be unique."
 msgstr ""
+"Veuillez corriger les données en double pour %(field)s, qui doit être unique."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:937
 #, python-format
@@ -1156,23 +1498,27 @@ msgid ""
 "Please correct the duplicate data for %(field_name)s which must be unique "
 "for the %(lookup)s in %(date_field)s."
 msgstr ""
+"Veuillez corriger les données en double pour %(field_name)s qui doit être "
+"unique pour le %(lookup)s dans %(date_field)s."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:946
 msgid "Please correct the duplicate values below."
-msgstr ""
+msgstr "Veuillez corriger les valeurs en double ci-dessous."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1383
 msgid "The inline value did not match the parent instance."
-msgstr ""
+msgstr "La valeur inline ne correspond pas à l'instance parente."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1474
 msgid "Select a valid choice. That choice is not one of the available choices."
 msgstr ""
+"Sélectionnez un choix valide. Ce choix ne fait pas partie des choix "
+"disponibles."
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1623
 #, python-format
 msgid "“%(pk)s” is not a valid value."
-msgstr ""
+msgstr "\"%(pk)s\" n'est pas une valeur valide."
 
 #: .\venv\Lib\site-packages\django\forms\utils.py:229
 #, python-format
@@ -1180,469 +1526,490 @@ msgid ""
 "%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
 "may be ambiguous or it may not exist."
 msgstr ""
+"%(datetime)s n'a pas pu être interprété dans le fuseau horaire "
+"%(current_timezone)s ; il peut être ambigu ou ne pas exister."
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:528
 msgid "Clear"
-msgstr ""
+msgstr "Effacer"
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:529
 msgid "Currently"
-msgstr ""
+msgstr "Actuellement"
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:530
 msgid "Change"
-msgstr ""
+msgstr "Modifier"
 
 #: .\venv\Lib\site-packages\django\forms\widgets.py:869
 msgid "Unknown"
-msgstr ""
+msgstr "Inconnu"
 
 #: .\venv\Lib\site-packages\django\tasks\base.py:34
 msgctxt "Task"
 msgid "Ready"
-msgstr ""
+msgstr "Prêt"
 
 #: .\venv\Lib\site-packages\django\tasks\base.py:36
 msgctxt "Task"
 msgid "Running"
-msgstr ""
+msgstr "En cours"
 
 #: .\venv\Lib\site-packages\django\tasks\base.py:38
 msgctxt "Task"
 msgid "Failed"
-msgstr ""
+msgstr "Échoué"
 
 #: .\venv\Lib\site-packages\django\tasks\base.py:40
 msgctxt "Task"
 msgid "Successful"
-msgstr ""
+msgstr "Réussi"
 
 #. Translators: Please do not add spaces around commas.
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:878
 msgid "yes,no,maybe"
-msgstr ""
+msgstr "oui,non,peut-être"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:908
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:925
 #, python-format
 msgid "%(size)d byte"
 msgid_plural "%(size)d bytes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(size)d octet"
+msgstr[1] "%(size)d octets"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:927
 #, python-format
 msgid "%s KB"
-msgstr ""
+msgstr "%s Ko"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:929
 #, python-format
 msgid "%s MB"
-msgstr ""
+msgstr "%s Mo"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:931
 #, python-format
 msgid "%s GB"
-msgstr ""
+msgstr "%s Go"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:933
 #, python-format
 msgid "%s TB"
-msgstr ""
+msgstr "%s To"
 
 #: .\venv\Lib\site-packages\django\template\defaultfilters.py:935
 #, python-format
 msgid "%s PB"
-msgstr ""
+msgstr "%s Po"
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:74
 msgid "p.m."
-msgstr ""
+msgstr "p.m."
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:75
 msgid "a.m."
-msgstr ""
+msgstr "a.m."
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:80
 msgid "PM"
-msgstr ""
+msgstr "PM"
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:81
 msgid "AM"
-msgstr ""
+msgstr "AM"
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:153
 msgid "midnight"
-msgstr ""
+msgstr "minuit"
 
 #: .\venv\Lib\site-packages\django\utils\dateformat.py:155
 msgid "noon"
-msgstr ""
+msgstr "midi"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:7
 msgid "Monday"
-msgstr ""
+msgstr "Lundi"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:8
 msgid "Tuesday"
-msgstr ""
+msgstr "Mardi"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:9
 msgid "Wednesday"
-msgstr ""
+msgstr "Mercredi"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:10
 msgid "Thursday"
-msgstr ""
+msgstr "Jeudi"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:11
 msgid "Friday"
-msgstr ""
+msgstr "Vendredi"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:12
 msgid "Saturday"
-msgstr ""
+msgstr "Samedi"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:13
 msgid "Sunday"
-msgstr ""
+msgstr "Dimanche"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:16
 msgid "Mon"
-msgstr ""
+msgstr "Lun"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:17
 msgid "Tue"
-msgstr ""
+msgstr "Mar"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:18
 msgid "Wed"
-msgstr ""
+msgstr "Mer"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:19
 msgid "Thu"
-msgstr ""
+msgstr "Jeu"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:20
 msgid "Fri"
-msgstr ""
+msgstr "Ven"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:21
 msgid "Sat"
-msgstr ""
+msgstr "Sam"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:22
 msgid "Sun"
-msgstr ""
+msgstr "Dim"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:25
 msgid "January"
-msgstr ""
+msgstr "Janvier"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:26
 msgid "February"
-msgstr ""
+msgstr "Février"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:27
-#, fuzzy
-#| msgid "Search"
 msgid "March"
-msgstr "Rechercher"
+msgstr "Mars"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:28
 msgid "April"
-msgstr ""
+msgstr "Avril"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:29
 msgid "May"
-msgstr ""
+msgstr "Mai"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:30
 msgid "June"
-msgstr ""
+msgstr "Juin"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:31
 msgid "July"
-msgstr ""
+msgstr "Juillet"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:32
 msgid "August"
-msgstr ""
+msgstr "Août"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:33
 msgid "September"
-msgstr ""
+msgstr "Septembre"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:34
 msgid "October"
-msgstr ""
+msgstr "Octobre"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:35
 msgid "November"
-msgstr ""
+msgstr "Novembre"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:36
 msgid "December"
-msgstr ""
+msgstr "Décembre"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:39
 msgid "jan"
-msgstr ""
+msgstr "jan"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:40
 msgid "feb"
-msgstr ""
+msgstr "fév"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:41
 msgid "mar"
-msgstr ""
+msgstr "mar"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:42
 msgid "apr"
-msgstr ""
+msgstr "avr"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:43
 msgid "may"
-msgstr ""
+msgstr "mai"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:44
 msgid "jun"
-msgstr ""
+msgstr "jun"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:45
 msgid "jul"
-msgstr ""
+msgstr "jul"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:46
 msgid "aug"
-msgstr ""
+msgstr "aoû"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:47
 msgid "sep"
-msgstr ""
+msgstr "sep"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:48
 msgid "oct"
-msgstr ""
+msgstr "oct"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:49
 msgid "nov"
-msgstr ""
+msgstr "nov"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:50
 msgid "dec"
-msgstr ""
+msgstr "déc"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:53
 msgctxt "abbrev. month"
 msgid "Jan."
-msgstr ""
+msgstr "Janv."
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:54
 msgctxt "abbrev. month"
 msgid "Feb."
-msgstr ""
+msgstr "Févr."
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:55
-#, fuzzy
-#| msgid "Search"
 msgctxt "abbrev. month"
 msgid "March"
-msgstr "Rechercher"
+msgstr "Mars"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:56
 msgctxt "abbrev. month"
 msgid "April"
-msgstr ""
+msgstr "Avril"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:57
 msgctxt "abbrev. month"
 msgid "May"
-msgstr ""
+msgstr "Mai"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:58
 msgctxt "abbrev. month"
 msgid "June"
-msgstr ""
+msgstr "Juin"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:59
 msgctxt "abbrev. month"
 msgid "July"
-msgstr ""
+msgstr "Juil."
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:60
 msgctxt "abbrev. month"
 msgid "Aug."
-msgstr ""
+msgstr "Août"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:61
 msgctxt "abbrev. month"
 msgid "Sept."
-msgstr ""
+msgstr "Sept."
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:62
 msgctxt "abbrev. month"
 msgid "Oct."
-msgstr ""
+msgstr "Oct."
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:63
 msgctxt "abbrev. month"
 msgid "Nov."
-msgstr ""
+msgstr "Nov."
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:64
 msgctxt "abbrev. month"
 msgid "Dec."
-msgstr ""
+msgstr "Déc."
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:67
 msgctxt "alt. month"
 msgid "January"
-msgstr ""
+msgstr "Janvier"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:68
 msgctxt "alt. month"
 msgid "February"
-msgstr ""
+msgstr "Février"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:69
-#, fuzzy
-#| msgid "Search"
 msgctxt "alt. month"
 msgid "March"
-msgstr "Rechercher"
+msgstr "Mars"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:70
 msgctxt "alt. month"
 msgid "April"
-msgstr ""
+msgstr "Avril"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:71
 msgctxt "alt. month"
 msgid "May"
-msgstr ""
+msgstr "Mai"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:72
 msgctxt "alt. month"
 msgid "June"
-msgstr ""
+msgstr "Juin"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:73
 msgctxt "alt. month"
 msgid "July"
-msgstr ""
+msgstr "Juillet"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:74
 msgctxt "alt. month"
 msgid "August"
-msgstr ""
+msgstr "Août"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:75
 msgctxt "alt. month"
 msgid "September"
-msgstr ""
+msgstr "Septembre"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:76
 msgctxt "alt. month"
 msgid "October"
-msgstr ""
+msgstr "Octobre"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:77
 msgctxt "alt. month"
 msgid "November"
-msgstr ""
+msgstr "Novembre"
 
 #: .\venv\Lib\site-packages\django\utils\dates.py:78
 msgctxt "alt. month"
 msgid "December"
-msgstr ""
+msgstr "Décembre"
 
 #: .\venv\Lib\site-packages\django\utils\ipv6.py:20
 msgid "This is not a valid IPv6 address."
-msgstr ""
+msgstr "Ce n'est pas une adresse IPv6 valide."
 
 #: .\venv\Lib\site-packages\django\utils\text.py:76
 #, python-format
 msgctxt "String to return when truncating text"
 msgid "%(truncated_text)s…"
-msgstr ""
+msgstr "%(truncated_text)s…"
 
 #: .\venv\Lib\site-packages\django\utils\text.py:282
 msgid "or"
-msgstr ""
+msgstr "ou"
 
 #. Translators: This string is used as a separator between list elements
 #: .\venv\Lib\site-packages\django\utils\text.py:301
 #: .\venv\Lib\site-packages\django\utils\timesince.py:135
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:8
 #, python-format
 msgid "%(num)d year"
 msgid_plural "%(num)d years"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d an"
+msgstr[1] "%(num)d ans"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:9
 #, python-format
 msgid "%(num)d month"
 msgid_plural "%(num)d months"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d mois"
+msgstr[1] "%(num)d mois"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:10
 #, python-format
 msgid "%(num)d week"
 msgid_plural "%(num)d weeks"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d semaine"
+msgstr[1] "%(num)d semaines"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:11
 #, python-format
 msgid "%(num)d day"
 msgid_plural "%(num)d days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d jour"
+msgstr[1] "%(num)d jours"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:12
 #, python-format
 msgid "%(num)d hour"
 msgid_plural "%(num)d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d heure"
+msgstr[1] "%(num)d heures"
 
 #: .\venv\Lib\site-packages\django\utils\timesince.py:13
 #, python-format
 msgid "%(num)d minute"
 msgid_plural "%(num)d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(num)d minute"
+msgstr[1] "%(num)d minutes"
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:29
 msgid "Forbidden"
-msgstr ""
+msgstr "Interdit"
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:30
 msgid "CSRF verification failed. Request aborted."
-msgstr ""
+msgstr "Échec de vérification CSRF. Requête annulée."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:34
+#, fuzzy
+#| msgid ""
+#| "You are seeing this message because this HTTPS site requires a \"Referer "
+#| "header\" to be sent by your web browser, but none was sent. This header "
+#| "is required for security reasons, to ensure that your browser is not "
+#| "being hijacked by third parties."
 msgid ""
 "You are seeing this message because this HTTPS site requires a “Referer "
 "header” to be sent by your web browser, but none was sent. This header is "
 "required for security reasons, to ensure that your browser is not being "
 "hijacked by third parties."
 msgstr ""
+"Vous voyez ce message car ce site HTTPS nécessite un \"en-tête Referer\" "
+"envoyé par votre navigateur, mais aucun n'a été envoyé. Cet en-tête est "
+"requis pour des raisons de sécurité, afin de garantir que votre navigateur "
+"n'est pas détourné par des tiers."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:40
+#, fuzzy
+#| msgid ""
+#| "If you have configured your browser to disable \"Referer\" headers, "
+#| "please re-enable them, at least for this site, or for HTTPS connections, "
+#| "or for \"same-origin\" requests."
 msgid ""
 "If you have configured your browser to disable “Referer” headers, please re-"
 "enable them, at least for this site, or for HTTPS connections, or for “same-"
 "origin” requests."
 msgstr ""
+"Si vous avez configuré votre navigateur pour désactiver les en-têtes "
+"\"Referer\", veuillez les réactiver, au moins pour ce site, ou pour les "
+"connexions HTTPS, ou pour les requêtes \"same-origin\"."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:45
+#, fuzzy
+#| msgid ""
+#| "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag "
+#| "or including the \"Referrer-Policy: no-referrer\" header, please remove "
+#| "them. The CSRF protection requires the \"Referer\" header to do strict "
+#| "referer checking. If you're concerned about privacy, use alternatives "
+#| "like <a rel=\"noreferrer\" …> for links to third-party sites."
 msgid ""
 "If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
 "including the “Referrer-Policy: no-referrer” header, please remove them. The "
@@ -1650,6 +2017,12 @@ msgid ""
 "If you’re concerned about privacy, use alternatives like <a "
 "rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
+"Si vous utilisez la balise <meta name=\"referrer\" content=\"no-referrer\"> "
+"ou incluez l'en-tête \"Referrer-Policy: no-referrer\", veuillez les "
+"supprimer. La protection CSRF nécessite l'en-tête \"Referer\" pour effectuer "
+"une vérification stricte du référent. Si vous êtes préoccupé par la "
+"confidentialité, utilisez des alternatives comme <a rel=\"noreferrer\" …> "
+"pour les liens vers des sites tiers."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:54
 msgid ""
@@ -1657,44 +2030,55 @@ msgid ""
 "submitting forms. This cookie is required for security reasons, to ensure "
 "that your browser is not being hijacked by third parties."
 msgstr ""
+"Vous voyez ce message car ce site nécessite un cookie CSRF lors de la "
+"soumission de formulaires. Ce cookie est requis pour des raisons de "
+"sécurité, afin de garantir que votre navigateur n'est pas détourné par des "
+"tiers."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:60
+#, fuzzy
+#| msgid ""
+#| "If you have configured your browser to disable cookies, please re-enable "
+#| "them, at least for this site, or for \"same-origin\" requests."
 msgid ""
 "If you have configured your browser to disable cookies, please re-enable "
 "them, at least for this site, or for “same-origin” requests."
 msgstr ""
+"Si vous avez configuré votre navigateur pour désactiver les cookies, "
+"veuillez les réactiver, au moins pour ce site, ou pour les requêtes \"same-"
+"origin\"."
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:66
 msgid "More information is available with DEBUG=True."
-msgstr ""
+msgstr "Plus d'informations sont disponibles avec DEBUG=True."
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:44
 msgid "No year specified"
-msgstr ""
+msgstr "Aucune année spécifiée"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:64
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:115
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:214
 msgid "Date out of range"
-msgstr ""
+msgstr "Date hors plage"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:94
 msgid "No month specified"
-msgstr ""
+msgstr "Aucun mois spécifié"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:147
 msgid "No day specified"
-msgstr ""
+msgstr "Aucun jour spécifié"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:194
 msgid "No week specified"
-msgstr ""
+msgstr "Aucune semaine spécifiée"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:353
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:384
 #, python-format
 msgid "No %(verbose_name_plural)s available"
-msgstr ""
+msgstr "Aucun %(verbose_name_plural)s disponible"
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:680
 #, python-format
@@ -1702,39 +2086,46 @@ msgid ""
 "Future %(verbose_name_plural)s not available because "
 "%(class_name)s.allow_future is False."
 msgstr ""
+"%(verbose_name_plural)s futurs non disponibles car "
+"%(class_name)s.allow_future est False."
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:720
-#, python-format
+#, fuzzy, python-format
+#| msgid "Invalid date string \"%(datestr)s\" given format \"%(format)s\""
 msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
-msgstr ""
+msgstr "Chaîne de date invalide \"%(datestr)s\" pour le format \"%(format)s\""
 
 #: .\venv\Lib\site-packages\django\views\generic\detail.py:56
 #, python-format
 msgid "No %(verbose_name)s found matching the query"
-msgstr ""
+msgstr "Aucun %(verbose_name)s trouvé correspondant à la requête"
 
 #: .\venv\Lib\site-packages\django\views\generic\list.py:70
+#, fuzzy
+#| msgid "Page is not \"last\", nor can it be converted to an int."
 msgid "Page is not “last”, nor can it be converted to an int."
-msgstr ""
+msgstr "La page n'est pas \"last\", et ne peut pas être convertie en entier."
 
 #: .\venv\Lib\site-packages\django\views\generic\list.py:77
 #, python-format
 msgid "Invalid page (%(page_number)s): %(message)s"
-msgstr ""
+msgstr "Page invalide (%(page_number)s) : %(message)s"
 
 #: .\venv\Lib\site-packages\django\views\generic\list.py:173
-#, python-format
+#, fuzzy, python-format
+#| msgid "Empty list and \"%(class_name)s.allow_empty\" is False."
 msgid "Empty list and “%(class_name)s.allow_empty” is False."
-msgstr ""
+msgstr "Liste vide et \"%(class_name)s.allow_empty\" est False."
 
 #: .\venv\Lib\site-packages\django\views\static.py:49
 msgid "Directory indexes are not allowed here."
-msgstr ""
+msgstr "Les index de répertoires ne sont pas autorisés ici."
 
 #: .\venv\Lib\site-packages\django\views\static.py:51
-#, python-format
+#, fuzzy, python-format
+#| msgid "\"%(path)s\" does not exist"
 msgid "“%(path)s” does not exist"
-msgstr ""
+msgstr "\"%(path)s\" n'existe pas"
 
 #: .\venv\Lib\site-packages\django\views\static.py:68
 #: .\venv\Lib\site-packages\django\views\templates\directory_index.html:8
@@ -1776,6 +2167,8 @@ msgid "Django Documentation"
 msgstr "Documentation Django"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
+#, fuzzy
+#| msgid "Topics, references, &amp; how-to's"
 msgid "Topics, references, &amp; how-to’s"
 msgstr "Sujets, références et guides pratiques"
 
@@ -1795,8 +2188,117 @@ msgstr "Communauté Django"
 msgid "Connect, get help, or contribute"
 msgstr "Se connecter, obtenir de l'aide ou contribuer"
 
-#~ msgid "Welcome back"
-#~ msgstr "Bon retour"
+#, fuzzy
+#~| msgid "Orders"
+#~ msgid "Order progress"
+#~ msgstr "Progression de la commande"
 
-#~ msgid "Remove from Wishlist"
-#~ msgstr "Retirer de ma liste de souhaits"
+#~ msgid "Paid"
+#~ msgstr "Payé"
+
+#, fuzzy
+#~| msgid "Our Process"
+#~ msgid "Processing"
+#~ msgstr "En traitement"
+
+#, fuzzy
+#~| msgid "Shipping"
+#~ msgid "Shipped"
+#~ msgstr "Expédié"
+
+#, fuzzy
+#~| msgid "Delivery"
+#~ msgid "Delivered"
+#~ msgstr "Livré"
+
+#, fuzzy
+#~| msgid "Project Status"
+#~ msgid "Status"
+#~ msgstr "Statut"
+
+#, fuzzy
+#~| msgid "Custom Creations"
+#~ msgid "Customer details"
+#~ msgstr "Détails du client"
+
+#, fuzzy
+#~| msgid "Shipping Method"
+#~ msgid "Shipping information"
+#~ msgstr "Informations de livraison"
+
+#~ msgid "Account"
+#~ msgstr "Compte"
+
+#~ msgid "Full name"
+#~ msgstr "Nom complet"
+
+#~ msgid "Your Bank Name"
+#~ msgstr "Votre banque"
+
+#~ msgid "Miniatures"
+#~ msgstr "Miniatures"
+
+#~ msgid "Accessories"
+#~ msgstr "Accessoires"
+
+#~ msgid "Order date"
+#~ msgstr "Date"
+
+
+
+msgid "Join the Darkness"
+msgstr "Rejoignez les Ténèbres"
+
+msgid "Create your Velvet Creature account"
+msgstr "Créez votre compte Velvet Creature"
+
+msgid "Choose your username"
+msgstr "Choisissez votre nom d'utilisateur"
+
+msgid "optional"
+msgstr "optionnel"
+
+msgid "Min. 8 characters"
+msgstr "Min. 8 caractères"
+
+msgid "Confirm Password"
+msgstr "Confirmer le mot de passe"
+
+msgid "Repeat your password"
+msgstr "Répétez votre mot de passe"
+
+msgid "Create Account"
+msgstr "Créer un compte"
+
+msgid "Already have an account?"
+msgstr "Vous avez déjà un compte ?"
+
+msgid "Login here"
+msgstr "Connectez-vous ici"
+
+msgid "Username already exists"
+msgstr "Ce nom d'utilisateur existe déjà"
+
+msgid "Username must be at least 3 characters"
+msgstr "Le nom d'utilisateur doit contenir au moins 3 caractères"
+
+msgid "Passwords do not match"
+msgstr "Les mots de passe ne correspondent pas"
+
+msgid "Password must be at least 8 characters"
+msgstr "Le mot de passe doit contenir au moins 8 caractères"
+
+msgid "Password must contain at least one uppercase letter"
+msgstr "Le mot de passe doit contenir au moins une lettre majuscule"
+
+msgid "Password must contain at least one number"
+msgstr "Le mot de passe doit contenir au moins un chiffre"
+
+msgid "Account created successfully!"
+msgstr "Compte créé avec succès !"
+
+msgid "Invalid username or password"
+msgstr "Nom d'utilisateur ou mot de passe incorrect"
+
+msgid "Profile updated successfully!"
+msgstr "Profil mis à jour avec succès !"

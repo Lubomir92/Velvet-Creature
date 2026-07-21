@@ -12,6 +12,10 @@
 
     <div class="hero-content">
 
+        <div class="hero-logo">
+            <img src="/static/images/logo.png" alt="Velvet Creature" class="hero-logo-img">
+        </div>
+
         <span class="hero-subtitle">
             {% trans "Luxury 3D Printed Collectibles" %}
         </span>
@@ -24,11 +28,11 @@
 
         <div class="hero-buttons">
 
-            <a href="{% url 'shop' %}" class="btn">
+            <a href="{% url 'shop' %}" class="btn btn-hero-primary">
                 {% trans "Shop" %}
             </a>
 
-            <a href="#new" class="btn secondary">
+            <a href="#new" class="btn btn-hero-secondary">
                 {% trans "New Arrivals" %}
             </a>
 
@@ -48,16 +52,19 @@
     <div class="why-grid">
 
         <div class="why-card">
+            <div class="why-icon">🖨️</div>
             <h3>{% trans "3D Printed" %}</h3>
             <p>{% trans "Precision-crafted models with high-end detail and texture." %}</p>
         </div>
 
         <div class="why-card">
+            <div class="why-icon">✨</div>
             <h3>{% trans "Hand Finished" %}</h3>
             <p>{% trans "Each piece is refined manually for premium quality." %}</p>
         </div>
 
         <div class="why-card">
+            <div class="why-icon">🌙</div>
             <h3>{% trans "Dark Aesthetic" %}</h3>
             <p>{% trans "Inspired by gothic art, fantasy worlds and cinematic design." %}</p>
         </div>
@@ -83,6 +90,8 @@
 
                 {% if product.image %}
                     <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                    <div class="no-image">🦇</div>
                 {% endif %}
 
                 {% if product.stock > 0 %}
@@ -93,25 +102,20 @@
 
             </div>
 
-            <h3>{{ product.name }}</h3>
+            <div class="featured-info">
+                <h3>{{ product.name }}</h3>
+                <p class="price">€{{ product.price }}</p>
 
-            <p class="price">{{ product.price }} €</p>
-
-            <div class="product-buttons">
-
-                <a href="{% url 'product_detail' product.slug %}" class="btn">
-    {% trans "Detail" %}
-</a>
-
-                {% if product.stock > 0 %}
-<button
-    type="button"
-    class="btn secondary"
-    onclick="addToCart({{ product.id }}); return false;">
-    {% trans "Add to cart" %}
-</button>
-{% endif %}
-
+                <div class="product-buttons">
+                    <a href="{% url 'product_detail' product.slug %}" class="btn btn-detail">
+                        {% trans "Detail" %}
+                    </a>
+                    {% if product.stock > 0 %}
+                    <button type="button" class="btn btn-cart" onclick="addToCart({{ product.id }}); return false;">
+                        {% trans "Add to cart" %}
+                    </button>
+                    {% endif %}
+                </div>
             </div>
 
         </div>
@@ -134,5 +138,337 @@
     </div>
 
 </section>
+
+
+<style>
+/* ========== HOMEPAGE - GOLD & BLACK ========== */
+
+/* HERO */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 60px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(10,5,5,0.3) 0%, rgba(5,2,2,0.9) 70%);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.hero-logo {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-logo-img {
+    width: 140px;
+    height: auto;
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.6));
+    animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+    0%, 100% { filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4)); transform: scale(1); }
+    50% { filter: drop-shadow(0 0 45px rgba(212, 175, 55, 0.9)); transform: scale(1.04); }
+}
+
+.hero-subtitle {
+    display: block;
+    color: #d4af37;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+.hero p {
+    color: #8a8a7a;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 550px;
+    margin: 0 auto 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+    padding: 16px 35px;
+    background: linear-gradient(135deg, #8b6914, #d4af37);
+    color: #0a0a0a;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+}
+
+.btn-hero-secondary {
+    padding: 16px 35px;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+    border-radius: 12px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: #d4af37;
+}
+
+/* WHY */
+.why {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 34px;
+    margin-bottom: 50px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.why-card {
+    background: rgba(10, 5, 5, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 18px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.why-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.why-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.why-card h3 {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.why-card p {
+    color: #8a8a7a;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* FEATURED */
+#new {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.featured-card {
+    background: rgba(10, 5, 5, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.featured-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.product-image-wrapper {
+    position: relative;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: #4a4a3a;
+}
+
+.stock-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 5px 14px;
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    color: #4caf50;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.stock-badge.sold {
+    background: rgba(255, 80, 80, 0.2);
+    border-color: rgba(255, 80, 80, 0.4);
+    color: #ff6b6b;
+}
+
+.featured-info {
+    padding: 20px;
+}
+
+.featured-info h3 {
+    color: #e0d7c0;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.price {
+    color: #d4af37;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 8px 0 15px;
+}
+
+.product-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-detail {
+    padding: 10px 18px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+    border-radius: 8px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-detail:hover {
+    background: rgba(212, 175, 55, 0.2);
+}
+
+.btn-cart {
+    padding: 10px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #c0b090;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-cart:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* QUOTE */
+.quote {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.quote-box {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(10, 5, 5, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 20px;
+}
+
+.quote-box p {
+    color: #b0a080;
+    font-size: 20px;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+    
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-logo-img {
+        width: 100px;
+    }
+}
+</style>
 
 {% endblock %}

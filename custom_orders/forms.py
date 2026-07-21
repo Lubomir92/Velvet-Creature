@@ -73,7 +73,7 @@ class CustomOrderForm(forms.ModelForm):
 
                     "class": "custom-input",
 
-                    "placeholder": "Your name"
+                    "placeholder": "Votre nom"
 
                 }
 
@@ -88,7 +88,7 @@ class CustomOrderForm(forms.ModelForm):
 
                     "class": "custom-input",
 
-                    "placeholder": "your@email.com"
+                    "placeholder": "votre@email.com"
 
                 }
 
@@ -136,7 +136,7 @@ class CustomOrderForm(forms.ModelForm):
                     "rows": 6,
 
                     "placeholder":
-                    "Describe your project, size, purpose and special requirements..."
+                    "Décrivez votre projet, taille, usage et besoins spécifiques..."
 
                 }
 
@@ -180,7 +180,7 @@ class CustomOrderForm(forms.ModelForm):
                     "class": "custom-input",
 
                     "placeholder":
-                    "Example: Lubma3D, name, logo text..."
+                    "Exemple : Nom, texte du logo..."
 
                 }
 
@@ -225,7 +225,7 @@ class CustomOrderForm(forms.ModelForm):
                     "class": "custom-input",
 
                     "placeholder":
-                    "Example: Black, Gold, Red..."
+                    "Exemple : Noir, Or, Rouge..."
 
                 }
 

@@ -96,7 +96,7 @@
 
 
         <small>
-            ❤️ {% trans "Wishlist" %}
+            🎃 {% trans "Wishlist" %}
         </small>
 
 
@@ -143,160 +143,66 @@
 
 
 
-<!-- ACCOUNT -->
+<!-- ACCOUNT + CUSTOMER INFO - SPOJENÉ DO JEDNÉHO FORMULÁRA -->
 
 <div class="profile-card">
 
 
 <h2>
-{% trans "Account" %}
+👤 {% trans "Personal Information" %}
 </h2>
 
-
-
-<div class="info-row">
-
-<span>
-👤 {% trans "Username" %}
-</span>
-
-
-<strong>
-{{ user.username }}
-</strong>
-
-
-</div>
-
-
-
-
-
-<div class="info-row">
-
-<span>
-✉ {% trans "Email" %}
-</span>
-
-
-<strong>
-{{ user.email }}
-</strong>
-
-
-</div>
-
-
-
-
-
-<div class="info-row">
-
-<span>
-📅 {% trans "Joined" %}
-</span>
-
-
-<strong>
-{{ user.date_joined|date:"d M Y" }}
-</strong>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-<!-- CUSTOMER -->
-
-
-<div class="profile-card">
-
-
-<h2>
-{% trans "Customer Information" %}
-</h2>
-
-
-
-
-
-<div class="info-row">
-
-<span>
-👤 {% trans "Full name" %}
-</span>
-
-
-<strong>
-
-
-{% if user.first_name or user.last_name %}
-
-{{ user.first_name }}
-{{ user.last_name }}
-
-{% else %}
-
--
-
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
 {% endif %}
 
-
-</strong>
-
-
-</div>
-
-
-
-
-
-
+<form method="post" action="{% url 'update_profile' %}">
+{% csrf_token %}
 
 <div class="info-row">
-
-<span>
-🌍 {% trans "Country" %}
-</span>
-
-
-<strong>
--
-</strong>
-
-
+    <span>👤 {% trans "Username" %}</span>
+    <strong>{{ user.username }}</strong>
 </div>
-
-
-
-
-
-
 
 <div class="info-row">
-
-<span>
-📞 {% trans "Phone" %}
-</span>
-
-
-<strong>
--
-</strong>
-
-
+    <span>✉ {% trans "Email" %}</span>
+    <input type="email" name="email" value="{{ user.email }}" class="profile-input">
 </div>
 
+<div class="info-row">
+    <span>👤 {% trans "First name" %}</span>
+    <input type="text" name="first_name" value="{{ user.first_name }}" class="profile-input">
+</div>
 
+<div class="info-row">
+    <span>👤 {% trans "Last name" %}</span>
+    <input type="text" name="last_name" value="{{ user.last_name }}" class="profile-input">
+</div>
 
+<hr class="profile-divider">
+
+<div class="info-row">
+    <span>🌍 {% trans "Country" %}</span>
+    <input type="text" name="country" value="{{ user.profile.country|default:'' }}" class="profile-input" placeholder="France">
+</div>
+
+<div class="info-row">
+    <span>📞 {% trans "Phone" %}</span>
+    <input type="text" name="phone" value="{{ user.profile.phone|default:'' }}" class="profile-input" placeholder="+33 ...">
+</div>
+
+<div class="info-row">
+    <span>📅 {% trans "Joined" %}</span>
+    <strong>{{ user.date_joined|date:"d M Y" }}</strong>
+</div>
+
+<button type="submit" class="btn-save">💾 {% trans "Save Changes" %}</button>
+
+</form>
 
 </div>
 
@@ -347,8 +253,7 @@
 
 <h3>
 
-{% trans "Order" %}
-#{{ order.id }}
+{% trans "Order" %} {{ order.order_number }}
 
 </h3>
 
@@ -396,7 +301,7 @@
 
 
 <a href="{% url 'order_detail' order.id %}"
-class="btn btn-secondary">
+class="btn btn-detail">
 
 
 {% trans "Details" %}
@@ -425,7 +330,7 @@ class="btn btn-secondary">
 {% else %}
 
 
-<div class="empty-cart">
+<div class="empty-state">
 
 {% trans "You have no orders yet." %}
 
@@ -592,7 +497,7 @@ class="btn btn-secondary">
 
 
 <a href="{% url 'custom_order_detail' custom.id %}"
-class="btn btn-secondary">
+class="btn btn-detail">
 
 
 {% trans "Details" %}
@@ -623,7 +528,7 @@ class="btn btn-secondary">
 
 
 
-<div class="empty-cart">
+<div class="empty-state">
 
 {% trans "You have no custom projects yet." %}
 
@@ -646,5 +551,303 @@ class="btn btn-secondary">
 </section>
 
 
+<style>
+/* ========== PROFILE - GOLD & BLACK ========== */
+
+.profile-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* HEADER */
+.profile-header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.15);
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    font-size: 32px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.profile-header h1 {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.profile-header p {
+    color: #d4af37;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.profile-header small {
+    color: #8a8a7a;
+    font-size: 13px;
+}
+
+/* STATS */
+.profile-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.profile-stat {
+    background: rgba(10, 5, 5, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 14px;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s;
+    min-width: 100px;
+}
+
+.profile-stat:hover {
+    border-color: #d4af37;
+    transform: translateY(-3px);
+}
+
+.profile-stat span {
+    display: block;
+    color: #d4af37;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.profile-stat small {
+    color: #8a8a7a;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* GRID */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.profile-card {
+    background: rgba(10, 5, 5, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.profile-card h2 {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    color: #b0a080;
+    font-size: 14px;
+}
+
+.info-row strong {
+    color: #e0d7c0;
+}
+
+.profile-divider {
+    border: none;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    margin: 15px 0;
+}
+
+/* INPUTS */
+.profile-input {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #e0d7c0;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 220px;
+    transition: all 0.3s;
+    font-family: 'EB Garamond', serif;
+}
+
+.profile-input:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    outline: none;
+}
+
+.profile-input::placeholder {
+    color: #6a6a5a;
+}
+
+.btn-save {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #8b6914, #d4af37);
+    color: #0a0a0a;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'EB Garamond', serif;
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* ALERT */
+.alert-success {
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid #4caf50;
+    color: #4caf50;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ORDERS */
+.profile-orders {
+    margin-bottom: 40px;
+}
+
+.profile-orders h2 {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.order-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    background: rgba(10, 5, 5, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+    gap: 15px;
+}
+
+.order-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    background: rgba(15, 8, 8, 0.9);
+}
+
+.order-left h3 {
+    color: #e0d7c0;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.order-left h3 a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.order-left p {
+    color: #8a8a7a;
+    font-size: 13px;
+}
+
+.price {
+    color: #d4af37;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.muted {
+    color: #8a8a7a;
+    font-size: 14px;
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.status-new { background: rgba(255,165,0,0.15); color: #ffa500; }
+.status-review { background: rgba(180,130,255,0.15); color: #b482ff; }
+.status-quote_sent { background: rgba(66,133,244,0.15); color: #4285f4; }
+.status-accepted { background: rgba(76,175,80,0.15); color: #4caf50; }
+.status-printing { background: rgba(255,165,0,0.15); color: #ffa500; }
+.status-finished { background: rgba(0,150,0,0.15); color: #00c000; }
+.status-shipped { background: rgba(76,175,80,0.15); color: #4caf50; }
+.status-cancelled { background: rgba(255,80,80,0.15); color: #ff6b6b; }
+
+.status-pending { background: rgba(255,165,0,0.15); color: #ffa500; }
+.status-paid { background: rgba(66,133,244,0.15); color: #4285f4; }
+.status-processing { background: rgba(180,130,255,0.15); color: #b482ff; }
+.status-delivered { background: rgba(0,150,0,0.15); color: #00c000; }
+
+.btn-detail {
+    padding: 8px 16px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #d4af37;
+    border-radius: 8px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-detail:hover {
+    background: rgba(212, 175, 55, 0.2);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #8a8a7a;
+    font-size: 15px;
+}
+
+@media (max-width: 768px) {
+    .order-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-stats {
+        gap: 15px;
+    }
+    
+    .profile-input {
+        width: 100%;
+    }
+}
+</style>
 
 {% endblock %}

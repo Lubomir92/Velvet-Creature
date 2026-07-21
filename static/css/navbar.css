@@ -530,3 +530,103 @@
 
 
 }
+/* ========== LANGUAGE SWITCHER ========== */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 15px;
+}
+
+.lang-flag-link {
+    font-size: 20px;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: all 0.2s ease;
+    padding: 4px;
+}
+
+.lang-flag-link:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.lang-flag-link.active {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+/* ========== LANGUAGE FLAGS ========== */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.lang-flag-link {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid transparent;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+}
+
+.lang-flag-link:hover {
+    opacity: 1;
+    transform: scale(1.15);
+    border-color: rgba(180, 130, 255, 0.4);
+    box-shadow: 0 0 12px rgba(180, 130, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.lang-flag-link.active {
+    opacity: 1;
+    border-color: rgba(180, 130, 255, 0.7);
+    box-shadow: 0 0 15px rgba(180, 130, 255, 0.5);
+    background: rgba(180, 130, 255, 0.15);
+    transform: scale(1.1);
+}
+
+/* Mobile flags */
+.mobile-language {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.mobile-language a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    border: 2px solid transparent;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.mobile-language a:hover {
+    opacity: 1;
+    border-color: rgba(180, 130, 255, 0.4);
+}
+
+.mobile-language a.active {
+    opacity: 1;
+    border-color: rgba(180, 130, 255, 0.7);
+    box-shadow: 0 0 12px rgba(180, 130, 255, 0.4);
+    background: rgba(180, 130, 255, 0.15);
+}

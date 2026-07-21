@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-12 16:00+0200\n"
+"POT-Creation-Date: 2026-07-21 22:39+0200\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -10,243 +10,689 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n "
 ">= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2 : 3);\n"
 
-#: .\accounts\templates\accounts\profile.html:10
-#: .\accounts\templates\accounts\profile.html:25
-#: .\templates\includes\navbar.html:122
+#: .\accounts\templates\accounts\profile.html:6
+#: .\templates\includes\navbar.html:43 .\templates\includes\navbar.html:69
 msgid "My Account"
 msgstr "Môj účet"
 
-#: .\accounts\templates\accounts\profile.html:30
-msgid "Welcome back"
+#: .\accounts\templates\accounts\profile.html:44
+msgid "Premium Member"
 msgstr ""
 
-#: .\accounts\templates\accounts\profile.html:50
-#, fuzzy
-#| msgid "My Account"
-msgid "Account"
-msgstr "Môj účet"
-
-#: .\accounts\templates\accounts\profile.html:58
-msgid "Username"
-msgstr ""
-
-#: .\accounts\templates\accounts\profile.html:73
-msgid "Email"
-msgstr ""
-
-#: .\accounts\templates\accounts\profile.html:88
+#: .\accounts\templates\accounts\profile.html:52
 msgid "Member since"
+msgstr "Členom od"
+
+#: .\accounts\templates\accounts\profile.html:81
+#, fuzzy
+#| msgid "Order"
+msgid "Orders"
+msgstr "Objednávka"
+
+#: .\accounts\templates\accounts\profile.html:99
+#: .\templates\includes\navbar.html:30 .\templates\includes\navbar.html:66
+#: .\templates\products\detail.html:233 .\templates\products\shop.html:200
+#: .\templates\products\shop.html:207 .\templates\products\shop.html:221
+#: .\templates\products\shop.html:227
+msgid "Wishlist"
+msgstr "Zoznam želaní"
+
+#: .\accounts\templates\accounts\profile.html:118
+#, fuzzy
+#| msgid "Review"
+msgid "Reviews"
+msgstr "Kontrola"
+
+#: .\accounts\templates\accounts\profile.html:152
+#, fuzzy
+#| msgid "Customer Information"
+msgid "Personal Information"
+msgstr "Informácie o zákazníkovi"
+
+#: .\accounts\templates\accounts\profile.html:167
+msgid "Username"
+msgstr "Používateľské meno"
+
+#: .\accounts\templates\accounts\profile.html:172
+#: .\templates\custom_orders\create.html:158
+#: .\templates\orders\checkout.html:44 .\templates\orders\order_detail.html:150
+msgid "Email"
+msgstr "E-mail"
+
+#: .\accounts\templates\accounts\profile.html:177
+#: .\templates\orders\checkout.html:34
+#, fuzzy
+#| msgid "Full name"
+msgid "First name"
+msgstr "Celé meno"
+
+#: .\accounts\templates\accounts\profile.html:182
+#: .\templates\orders\checkout.html:39
+msgid "Last name"
 msgstr ""
 
-#: .\accounts\templates\accounts\profile.html:113
-msgid "Customer Information"
-msgstr ""
-
-#: .\accounts\templates\accounts\profile.html:122
-msgid "Full name"
-msgstr ""
-
-#: .\accounts\templates\accounts\profile.html:150
+#: .\accounts\templates\accounts\profile.html:189
+#: .\templates\orders\checkout.html:49 .\templates\orders\order_detail.html:165
 msgid "Country"
-msgstr ""
+msgstr "Krajina"
 
-#: .\accounts\templates\accounts\profile.html:168
+#: .\accounts\templates\accounts\profile.html:194
+#: .\templates\custom_orders\create.html:171
 msgid "Phone"
+msgstr "Telefón"
+
+#: .\accounts\templates\accounts\profile.html:199
+msgid "Joined"
 msgstr ""
 
-#: .\accounts\templates\accounts\profile.html:201
-#: .\templates\includes\navbar.html:136
+#: .\accounts\templates\accounts\profile.html:203
+msgid "Save Changes"
+msgstr ""
+
+#: .\accounts\templates\accounts\profile.html:231
+#: .\templates\includes\navbar.html:44 .\templates\includes\navbar.html:70
+#: .\templates\orders\order_list.html:4 .\templates\orders\order_list.html:10
 msgid "My Orders"
 msgstr "Moje objednávky"
 
-#: .\accounts\templates\accounts\profile.html:223
-#, fuzzy
-#| msgid "My Orders"
+#: .\accounts\templates\accounts\profile.html:256
+#: .\templates\orders\order_detail.html:18
+#: .\templates\orders\order_list.html:20
+#: .\venv\Lib\site-packages\django\forms\formsets.py:484
+#: .\venv\Lib\site-packages\django\forms\formsets.py:491
 msgid "Order"
-msgstr "Moje objednávky"
+msgstr "Objednávka"
 
-#: .\accounts\templates\accounts\profile.html:228
-#: .\accounts\templates\accounts\profile.html:348
-#: .\custom_orders\templates\custom_orders\detail.html:37
-msgid "Created"
-msgstr ""
-
-#: .\accounts\templates\accounts\profile.html:267
-#: .\accounts\templates\accounts\profile.html:399
-#, fuzzy
-#| msgid "Detail"
+#: .\accounts\templates\accounts\profile.html:308
+#: .\accounts\templates\accounts\profile.html:504
 msgid "Details"
-msgstr "Detail"
+msgstr "Detaily"
 
-#: .\accounts\templates\accounts\profile.html:292
+#: .\accounts\templates\accounts\profile.html:336
+#: .\templates\orders\order_list.html:46
 msgid "You have no orders yet."
-msgstr ""
+msgstr "Zatiaľ nemáte žiadne objednávky."
 
-#: .\accounts\templates\accounts\profile.html:310
-#, fuzzy
-#| msgid "Custom Order"
+#: .\accounts\templates\accounts\profile.html:368
 msgid "My Custom Projects"
-msgstr "Zákazková tlač"
+msgstr "Moje zákazkové projekty"
 
-#: .\accounts\templates\accounts\profile.html:337
+#: .\accounts\templates\accounts\profile.html:403
 #: .\custom_orders\templates\custom_orders\detail.html:8
-#: .\templates\includes\navbar.html:35
+#: .\templates\about.html:184 .\templates\custom_orders\create.html:5
+#: .\templates\includes\navbar.html:15 .\templates\includes\navbar.html:61
 msgid "Custom Order"
 msgstr "Zákazková objednávka"
 
-#: .\accounts\templates\accounts\profile.html:358
+#: .\accounts\templates\accounts\profile.html:425
 #: .\custom_orders\templates\custom_orders\detail.html:184
-#: .\templates\products\detail.html:111
+#: .\templates\custom_orders\create.html:215
+#: .\templates\products\detail.html:132
 msgid "Material"
 msgstr "Materiál"
 
-#: .\accounts\templates\accounts\profile.html:423
+#: .\accounts\templates\accounts\profile.html:487
 msgid "Waiting for quote"
-msgstr ""
+msgstr "Čaká sa na cenovú ponuku"
 
-#: .\accounts\templates\accounts\profile.html:458
+#: .\accounts\templates\accounts\profile.html:534
 msgid "You have no custom projects yet."
-msgstr ""
+msgstr "Zatiaľ nemáte žiadne zákazkové projekty."
 
 #: .\custom_orders\templates\custom_orders\detail.html:29
-#, fuzzy
-#| msgid "Custom Order"
 msgid "Custom Project"
-msgstr "Zákazková tlač"
+msgstr "Zákazkový projekt"
+
+#: .\custom_orders\templates\custom_orders\detail.html:37
+msgid "Created"
+msgstr "Vytvorené"
 
 #: .\custom_orders\templates\custom_orders\detail.html:66
 msgid "Project Status"
-msgstr ""
+msgstr "Stav projektu"
 
 #: .\custom_orders\templates\custom_orders\detail.html:81
 msgid "Request sent"
-msgstr ""
+msgstr "Požiadavka odoslaná"
 
 #: .\custom_orders\templates\custom_orders\detail.html:98
 msgid "Review"
-msgstr ""
+msgstr "Kontrola"
 
 #: .\custom_orders\templates\custom_orders\detail.html:115
 msgid "Quote sent"
-msgstr ""
+msgstr "Cenová ponuka odoslaná"
 
 #: .\custom_orders\templates\custom_orders\detail.html:132
-#, fuzzy
-#| msgid "Hand Finished"
 msgid "Finished"
-msgstr "Ručne dokončené"
+msgstr "Dokončené"
 
 #: .\custom_orders\templates\custom_orders\detail.html:162
 msgid "Project Details"
-msgstr ""
+msgstr "Detaily projektu"
 
 #: .\custom_orders\templates\custom_orders\detail.html:170
+#: .\templates\custom_orders\create.html:202
 msgid "Service"
-msgstr ""
+msgstr "Služba"
 
 #: .\custom_orders\templates\custom_orders\detail.html:198
+#: .\templates\custom_orders\create.html:355
 msgid "Color"
-msgstr ""
+msgstr "Farba"
 
 #: .\custom_orders\templates\custom_orders\detail.html:213
+#: .\templates\cart\cart_drawer.html:74
+#: .\templates\custom_orders\create.html:368
 msgid "Quantity"
-msgstr ""
+msgstr "Množstvo"
 
 #: .\custom_orders\templates\custom_orders\detail.html:229
-#: .\templates\products\detail.html:124
+#: .\templates\products\detail.html:145
 msgid "Size"
 msgstr "Veľkosť"
 
 #: .\custom_orders\templates\custom_orders\detail.html:250
+#: .\templates\custom_orders\create.html:237
 msgid "Description"
-msgstr ""
+msgstr "Popis"
 
 #: .\custom_orders\templates\custom_orders\detail.html:266
+#: .\templates\custom_orders\create.html:262
 msgid "Engraving"
-msgstr ""
+msgstr "Gravírovanie"
 
 #: .\custom_orders\templates\custom_orders\detail.html:274
 msgid "Enabled"
-msgstr ""
+msgstr "Povolené"
 
 #: .\custom_orders\templates\custom_orders\detail.html:280
+#: .\venv\Lib\site-packages\django\forms\widgets.py:870
 msgid "Yes"
-msgstr ""
+msgstr "Áno"
 
 #: .\custom_orders\templates\custom_orders\detail.html:284
+#: .\venv\Lib\site-packages\django\forms\widgets.py:871
 msgid "No"
-msgstr ""
+msgstr "Nie"
 
 #: .\custom_orders\templates\custom_orders\detail.html:302
+#: .\templates\custom_orders\create.html:290
 msgid "Engraving type"
-msgstr ""
+msgstr "Typ gravírovania"
 
 #: .\custom_orders\templates\custom_orders\detail.html:321
+#: .\templates\custom_orders\create.html:302
 msgid "Engraving text"
-msgstr ""
+msgstr "Text gravírovania"
 
 #: .\custom_orders\templates\custom_orders\detail.html:344
 msgid "Engraving image"
-msgstr ""
+msgstr "Obrázok na gravírovanie"
 
 #: .\custom_orders\templates\custom_orders\detail.html:382
+#: .\templates\custom_orders\create.html:440
 msgid "Files"
-msgstr ""
+msgstr "Súbory"
 
 #: .\custom_orders\templates\custom_orders\detail.html:396
 msgid "Download 3D model"
-msgstr ""
+msgstr "Stiahnuť 3D model"
 
 #: .\custom_orders\templates\custom_orders\detail.html:412
 msgid "Preview image"
-msgstr ""
+msgstr "Náhľadový obrázok"
 
 #: .\custom_orders\templates\custom_orders\detail.html:471
 msgid "Waiting for quote from our team."
-msgstr ""
+msgstr "Čaká sa na cenovú ponuku od nášho tímu."
 
 #: .\custom_orders\templates\custom_orders\detail.html:503
-#, fuzzy
-#| msgid "Why Velvet Creature?"
 msgid "Message from Velvet Creature"
-msgstr "Prečo Velvet Creature?"
+msgstr "Správa od Velvet Creature"
 
 #: .\custom_orders\templates\custom_orders\detail.html:529
+msgid "Back to account"
+msgstr "Späť na účet"
+
+#: .\templates\about.html:8
+#, fuzzy
+#| msgid "Why Velvet Creature?"
+msgid "About Velvet Creature"
+msgstr "Prečo Velvet Creature?"
+
+#: .\templates\about.html:35
+msgid "Unique 3D printed creatures made with passion and precision."
+msgstr ""
+
+#: .\templates\about.html:55
+msgid "Our Mission"
+msgstr ""
+
+#: .\templates\about.html:62
+msgid ""
+"We create premium collectible creatures combining modern technology with "
+"artistic design."
+msgstr ""
+
+#: .\templates\about.html:78
+msgid "Quality"
+msgstr ""
+
+#: .\templates\about.html:85
+msgid ""
+"Every product is carefully designed, printed and prepared before reaching "
+"you."
+msgstr ""
+
+#: .\templates\about.html:99
+msgid "Custom Creations"
+msgstr "Zákazkové výtvory"
+
+#: .\templates\about.html:104
+msgid "Have your own idea? We can transform your vision into a unique model."
+msgstr ""
+
+#: .\templates\about.html:125
+msgid "Our Process"
+msgstr ""
+
+#: .\templates\about.html:137
+msgid "Idea"
+msgstr "Nápad"
+
+#: .\templates\about.html:141
+msgid "Design"
+msgstr "Dizajn"
+
+#: .\templates\about.html:145
+msgid "Printing"
+msgstr "Tlač"
+
+#: .\templates\about.html:149
+msgid "Finishing"
+msgstr "Dokončenie"
+
+#: .\templates\about.html:153
+msgid "Delivery"
+msgstr "Doručenie"
+
+#: .\templates\about.html:175
+msgid "Create your own creature"
+msgstr ""
+
+#: .\templates\about.html:193
+msgid "Visit Shop"
+msgstr ""
+
+#: .\templates\base.html:108
+msgid "Loading..."
+msgstr ""
+
+#: .\templates\cart\cart_detail.html:5 .\templates\cart\cart_detail.html:18
+#: .\templates\cart\cart_drawer.html:6
+msgid "Your Cart"
+msgstr ""
+
+#: .\templates\cart\cart_detail.html:104
+msgid "Not enough stock"
+msgstr ""
+
+#: .\templates\cart\cart_detail.html:213
+msgid "Summary"
+msgstr ""
+
+#: .\templates\cart\cart_detail.html:222 .\templates\cart\cart_drawer.html:155
+#: .\templates\orders\checkout.html:141 .\templates\orders\order_detail.html:95
+#: .\templates\orders\order_detail.html:232
+#: .\templates\orders\order_list.html:24
+msgid "Total"
+msgstr ""
+
+#: .\templates\cart\cart_detail.html:241
 #, fuzzy
 #| msgid "Back to Checkout"
-msgid "Back to account"
+msgid "Proceed to Checkout"
 msgstr "Späť k pokladni"
 
-#: .\templates\includes\navbar.html:23
+#: .\templates\cart\cart_detail.html:253
+#: .\templates\orders\payment_success.html:57
+msgid "Continue Shopping"
+msgstr ""
+
+#: .\templates\cart\cart_detail.html:287 .\templates\cart\cart_drawer.html:137
+#, fuzzy
+#| msgid "Your wishlist is empty."
+msgid "Your cart is empty"
+msgstr "Váš zoznam želaní je prázdny."
+
+#: .\templates\cart\cart_detail.html:292
+msgid "Add something beautiful to your collection."
+msgstr ""
+
+#: .\templates\cart\cart_detail.html:300
+msgid "Explore Collection"
+msgstr ""
+
+#: .\templates\cart\cart_drawer.html:138
+msgid "Add some dark creatures to your collection"
+msgstr ""
+
+#: .\templates\cart\cart_drawer.html:171
+#, fuzzy
+#| msgid "View Product"
+msgid "View Cart"
+msgstr "Zobraziť produkt"
+
+#: .\templates\cart\cart_drawer.html:181
+#, fuzzy
+#| msgid "Back to Checkout"
+msgid "Checkout"
+msgstr "Späť k pokladni"
+
+#: .\templates\cart\checkout.html:5 .\templates\cart\checkout.html:16
+#: .\templates\orders\checkout.html:5 .\templates\orders\checkout.html:13
+#, fuzzy
+#| msgid "Back to Checkout"
+msgid "Secure Checkout"
+msgstr "Späť k pokladni"
+
+#: .\templates\cart\checkout.html:23
+msgid "Order summary"
+msgstr ""
+
+#: .\templates\cart\checkout.html:30 .\templates\orders\checkout.html:148
+msgid "Secure Stripe payment"
+msgstr ""
+
+#: .\templates\cart\checkout.html:34
+#, fuzzy
+#| msgid "Customer Information"
+msgid "Instant order confirmation"
+msgstr "Informácie o zákazníkovi"
+
+#: .\templates\cart\checkout.html:38 .\templates\orders\checkout.html:152
+msgid "Encrypted checkout"
+msgstr ""
+
+#: .\templates\cart\checkout.html:44 .\templates\orders\checkout.html:162
+msgid "Credit Card"
+msgstr ""
+
+#: .\templates\cart\checkout.html:45 .\templates\orders\checkout.html:163
+msgid "Bank Transfer"
+msgstr ""
+
+#: .\templates\cart\checkout.html:46 .\templates\orders\checkout.html:164
+msgid "Encrypted"
+msgstr ""
+
+#: .\templates\cart\checkout.html:55 .\templates\orders\order_detail.html:105
+#: .\templates\orders\order_detail.html:242
+msgid "Payment"
+msgstr ""
+
+#: .\templates\cart\checkout.html:62 .\templates\orders\checkout.html:94
+msgid "Pay securely with card"
+msgstr ""
+
+#: .\templates\cart\checkout.html:70
+msgid "You will be redirected to Stripe secure payment page."
+msgstr ""
+
+#: .\templates\custom_orders\create.html:16
+msgid "How it works"
+msgstr "Ako to funguje"
+
+#: .\templates\custom_orders\create.html:27
+msgid "Send your idea"
+msgstr "Pošlite svoj nápad"
+
+#: .\templates\custom_orders\create.html:31
+msgid "Describe your project and upload your 3D model or reference image."
+msgstr ""
+
+#: .\templates\custom_orders\create.html:41
+#, fuzzy
+#| msgid "Project Details"
+msgid "Project review"
+msgstr "Detaily projektu"
+
+#: .\templates\custom_orders\create.html:45
+msgid "We check your requirements, material and possibilities."
+msgstr ""
+
+#: .\templates\custom_orders\create.html:55
+#, fuzzy
+#| msgid "Customer Information"
+msgid "Price estimation"
+msgstr "Odhad ceny"
+
+#: .\templates\custom_orders\create.html:59
+#, fuzzy
+#| msgid "You have no custom projects yet."
+msgid "You receive a custom quote."
+msgstr "Zatiaľ nemáte žiadne zákazkové projekty."
+
+#: .\templates\custom_orders\create.html:69
+#, fuzzy
+#| msgid "View Product"
+msgid "Production"
+msgstr "Zobraziť produkt"
+
+#: .\templates\custom_orders\create.html:73
+msgid "Your creation goes into production."
+msgstr ""
+
+#: .\templates\custom_orders\create.html:91
+#, fuzzy
+#| msgid "Custom Project"
+msgid "Custom 3D Print"
+msgstr "3D tlač na mieru"
+
+#: .\templates\custom_orders\create.html:96
+msgid "Bring your idea to life with custom 3D printing and engraving."
+msgstr "Oživte svoj nápad s 3D tlačou a gravírovaním na mieru."
+
+#: .\templates\custom_orders\create.html:135
+#: .\templates\orders\checkout.html:25
+msgid "Customer Information"
+msgstr "Informácie o zákazníkovi"
+
+#: .\templates\custom_orders\create.html:145
+#: .\templates\orders\order_detail.html:145
+msgid "Name"
+msgstr ""
+
+#: .\templates\custom_orders\create.html:192
+#, fuzzy
+#| msgid "Project Details"
+msgid "Project Type"
+msgstr "Detaily projektu"
+
+#: .\templates\custom_orders\create.html:271
+#, fuzzy
+#| msgid "Engraving"
+msgid "Enable engraving"
+msgstr "Gravírovanie"
+
+#: .\templates\custom_orders\create.html:321
+#, fuzzy
+#| msgid "Engraving image"
+msgid "Engraving image / logo"
+msgstr "Obrázok na gravírovanie"
+
+#: .\templates\custom_orders\create.html:387
+msgid "Dimensions (mm)"
+msgstr "Rozmery (mm)"
+
+#: .\templates\custom_orders\create.html:398
+msgid "Width"
+msgstr ""
+
+#: .\templates\custom_orders\create.html:410
+#, fuzzy
+#| msgid "Weight"
+msgid "Height"
+msgstr "Hmotnosť"
+
+#: .\templates\custom_orders\create.html:422
+msgid "Depth"
+msgstr ""
+
+#: .\templates\custom_orders\create.html:449
+msgid "3D Model"
+msgstr ""
+
+#: .\templates\custom_orders\create.html:462
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
+#, fuzzy
+#| msgid "No image"
+msgid "Image"
+msgstr "Bez obrázka"
+
+#: .\templates\custom_orders\create.html:482
+msgid "Send Request"
+msgstr "Odoslať požiadavku"
+
+#: .\templates\includes\navbar.html:13 .\templates\includes\navbar.html:59
 msgid "Home"
 msgstr "Domov"
 
-#: .\templates\includes\navbar.html:29 .\templates\products\home.html:28
-#: .\templates\products\shop.html:13
+#: .\templates\includes\navbar.html:14 .\templates\includes\navbar.html:60
+#: .\templates\products\home.html:32 .\templates\products\shop.html:13
 msgid "Shop"
-msgstr "Kolekcia"
+msgstr "Obchod"
 
-#: .\templates\includes\navbar.html:41
+#: .\templates\includes\navbar.html:16 .\templates\includes\navbar.html:62
 msgid "About"
 msgstr "O nás"
 
-#: .\templates\includes\navbar.html:150 .\templates\products\detail.html:223
-#: .\templates\products\shop.html:198 .\templates\products\shop.html:204
-#: .\templates\products\shop.html:218 .\templates\products\shop.html:224
-msgid "Wishlist"
-msgstr "Zoznam želaní"
-
-#: .\templates\includes\navbar.html:165
+#: .\templates\includes\navbar.html:45 .\templates\includes\navbar.html:71
 msgid "Logout"
 msgstr "Odhlásiť sa"
 
-#: .\templates\includes\navbar.html:184
+#: .\templates\includes\navbar.html:48 .\templates\includes\navbar.html:73
 msgid "Login"
 msgstr "Prihlásenie"
 
-#: .\templates\includes\navbar.html:197
+#: .\templates\includes\navbar.html:49 .\templates\includes\navbar.html:74
 msgid "Register"
 msgstr "Registrácia"
+
+#: .\templates\orders\checkout.html:54 .\templates\orders\order_detail.html:155
+msgid "Address"
+msgstr ""
+
+#: .\templates\orders\checkout.html:59 .\templates\orders\order_detail.html:160
+msgid "City"
+msgstr ""
+
+#: .\templates\orders\checkout.html:68
+msgid "Shipping Method"
+msgstr "Spôsob dopravy"
+
+#: .\templates\orders\checkout.html:101
+msgid "Pay by bank transfer"
+msgstr "Zaplatiť bankovým prevodom"
+
+#: .\templates\orders\checkout.html:116
+#, fuzzy
+#| msgid "Order"
+msgid "Your Order"
+msgstr "Objednávka"
+
+#: .\templates\orders\checkout.html:131
+#: .\templates\orders\order_detail.html:220
+msgid "Subtotal"
+msgstr "Medzisúčet"
+
+#: .\templates\orders\checkout.html:136
+#: .\templates\orders\order_detail.html:111
+#: .\templates\orders\order_detail.html:226
+msgid "Shipping"
+msgstr "Doprava"
+
+#: .\templates\orders\checkout.html:156
+msgid "Order confirmation email"
+msgstr ""
+
+#: .\templates\orders\checkout.html:172
+msgid "Bank Transfer Details"
+msgstr ""
+
+#: .\templates\orders\checkout.html:177
+#, fuzzy
+#| msgid "Account"
+msgid "Account Name"
+msgstr "Účet"
+
+#: .\templates\orders\checkout.html:181
+msgid "IBAN"
+msgstr ""
+
+#: .\templates\orders\checkout.html:185
+msgid "BIC/SWIFT"
+msgstr ""
+
+#: .\templates\orders\checkout.html:189
+msgid "Bank"
+msgstr ""
+
+#: .\templates\orders\checkout.html:193
+msgid "Reference"
+msgstr ""
+
+#: .\templates\orders\checkout.html:194
+#, fuzzy
+#| msgid "Order"
+msgid "Your order number"
+msgstr "Objednávka"
+
+#: .\templates\orders\checkout.html:199
+msgid ""
+"Please use your order number as the payment reference. Your order will be "
+"processed once payment is received."
+msgstr ""
+
+#: .\templates\orders\order_detail.html:119
+#: .\templates\orders\order_list.html:28
+msgid "Items"
+msgstr ""
+
+#: .\templates\orders\order_detail.html:130
+#, fuzzy
+#| msgid "No products found."
+msgid "No items found."
+msgstr "Nenašli sa žiadne produkty."
+
+#: .\templates\orders\order_detail.html:176
+msgid "Carrier"
+msgstr ""
+
+#: .\templates\orders\order_detail.html:181
+msgid "Tracking"
+msgstr ""
+
+#: .\templates\orders\order_detail.html:186
+#: .\templates\orders\order_detail.html:188
+#: .\templates\orders\order_detail.html:190
+msgid "Track package"
+msgstr ""
+
+#: .\templates\orders\order_detail.html:197
+msgid "Download Invoice PDF"
+msgstr ""
+
+#: .\templates\orders\order_detail.html:248
+#, fuzzy
+#| msgid "Shipping Method"
+msgid "Shipping method"
+msgstr "Spôsob dopravy"
+
+#: .\templates\orders\order_list.html:22
+msgid "Date"
+msgstr ""
 
 #: .\templates\orders\payment_cancel.html:8
 msgid "Payment Cancelled"
@@ -254,41 +700,65 @@ msgstr "Platba zrušená"
 
 #: .\templates\orders\payment_cancel.html:11
 msgid "You can try again whenever you're ready."
-msgstr "Môžeš to skúsiť znova kedykoľvek budeš pripravený."
+msgstr "Môžeš to skúsiť znova, keď budeš pripravený."
 
 #: .\templates\orders\payment_cancel.html:15
 msgid "Back to Checkout"
 msgstr "Späť k pokladni"
 
-#: .\templates\products\detail.html:33 .\templates\products\shop.html:122
-#: .\templates\wishlist\wishlist.html:84
+#: .\templates\orders\payment_success.html:5
+msgid "Thank You"
+msgstr ""
+
+#: .\templates\orders\payment_success.html:19
+msgid "Thank you for your order"
+msgstr "Ďakujeme za vašu objednávku"
+
+#: .\templates\orders\payment_success.html:23
+msgid "Your payment has been successfully processed."
+msgstr "Vaša platba bola úspešne spracovaná."
+
+#: .\templates\orders\payment_success.html:31
+msgid "Order number:"
+msgstr "Číslo objednávky:"
+
+#: .\templates\orders\payment_success.html:43
+msgid "Velvet Creature by Lubma3D"
+msgstr "Velvet Creature by Lubma3D"
+
+#: .\templates\orders\payment_success.html:50
+msgid "View Order"
+msgstr "Zobraziť objednávku"
+
+#: .\templates\products\detail.html:30 .\templates\products\shop.html:122
+#: .\templates\wishlist\wishlist.html:60
 msgid "No image"
 msgstr "Bez obrázka"
 
-#: .\templates\products\detail.html:137
+#: .\templates\products\detail.html:158
 msgid "Weight"
-msgstr ""
+msgstr "Hmotnosť"
 
-#: .\templates\products\detail.html:160 .\templates\products\home.html:89
+#: .\templates\products\detail.html:178 .\templates\products\home.html:93
 #: .\templates\products\shop.html:140
 msgid "In Stock"
 msgstr "Na sklade"
 
-#: .\templates\products\detail.html:170 .\templates\products\home.html:91
+#: .\templates\products\detail.html:188 .\templates\products\home.html:95
 #: .\templates\products\shop.html:152
 msgid "Sold Out"
 msgstr "Vypredané"
 
-#: .\templates\products\detail.html:200 .\templates\products\home.html:111
-#: .\templates\products\shop.html:290
+#: .\templates\products\detail.html:214 .\templates\products\home.html:115
+#: .\templates\products\shop.html:293 .\templates\wishlist\wishlist.html:116
 msgid "Add to cart"
 msgstr "Pridať do košíka"
 
-#: .\templates\products\home.html:16
+#: .\templates\products\home.html:20
 msgid "Luxury 3D Printed Collectibles"
 msgstr "Luxusné 3D tlačené zberateľské predmety"
 
-#: .\templates\products\home.html:22
+#: .\templates\products\home.html:26
 msgid ""
 "Enter a world where gothic elegance meets handcrafted 3D design. Each "
 "creation is sculpted with precision, darkness and imagination."
@@ -296,43 +766,43 @@ msgstr ""
 "Vstúp do sveta, kde sa gotická elegancia stretáva s ručne navrhnutým 3D "
 "dizajnom. Každý výtvor je tvarovaný presnosťou, temnotou a fantáziou."
 
-#: .\templates\products\home.html:32 .\templates\products\home.html:73
+#: .\templates\products\home.html:36 .\templates\products\home.html:77
 msgid "New Arrivals"
 msgstr "Novinky"
 
-#: .\templates\products\home.html:45
+#: .\templates\products\home.html:49
 msgid "Why Velvet Creature?"
 msgstr "Prečo Velvet Creature?"
 
-#: .\templates\products\home.html:51
+#: .\templates\products\home.html:55
 msgid "3D Printed"
 msgstr "3D tlač"
 
-#: .\templates\products\home.html:52
+#: .\templates\products\home.html:56
 msgid "Precision-crafted models with high-end detail and texture."
 msgstr "Precízne vytvorené modely s vysokou úrovňou detailov a textúr."
 
-#: .\templates\products\home.html:56
+#: .\templates\products\home.html:60
 msgid "Hand Finished"
 msgstr "Ručne dokončené"
 
-#: .\templates\products\home.html:57
+#: .\templates\products\home.html:61
 msgid "Each piece is refined manually for premium quality."
 msgstr "Každý kus je ručne upravený pre prémiovú kvalitu."
 
-#: .\templates\products\home.html:61
+#: .\templates\products\home.html:65
 msgid "Dark Aesthetic"
 msgstr "Temná estetika"
 
-#: .\templates\products\home.html:62
+#: .\templates\products\home.html:66
 msgid "Inspired by gothic art, fantasy worlds and cinematic design."
 msgstr "Inšpirované gotickým umením, fantasy svetmi a filmovým dizajnom."
 
-#: .\templates\products\home.html:103
+#: .\templates\products\home.html:107
 msgid "Detail"
 msgstr "Detail"
 
-#: .\templates\products\home.html:131
+#: .\templates\products\home.html:135
 msgid ""
 "Every creature begins as an idea — shaped by darkness, refined by "
 "imagination."
@@ -342,52 +812,1271 @@ msgstr ""
 
 #: .\templates\products\shop.html:40
 msgid "Search products..."
-msgstr ""
+msgstr "Hľadať produkty..."
 
 #: .\templates\products\shop.html:47
 msgid "Search"
-msgstr ""
+msgstr "Hľadať"
 
 #: .\templates\products\shop.html:65
 msgid "All"
-msgstr ""
+msgstr "Všetky"
 
-#: .\templates\products\shop.html:270
-#, fuzzy
-#| msgid "Detail"
+#: .\templates\products\shop.html:273
 msgid "View details"
-msgstr "Detail"
+msgstr "Zobraziť detaily"
 
-#: .\templates\products\shop.html:323
+#: .\templates\products\shop.html:326
 msgid "No products found."
-msgstr ""
+msgstr "Nenašli sa žiadne produkty."
 
-#: .\templates\wishlist\wishlist.html:5 .\templates\wishlist\wishlist.html:21
-#, fuzzy
-#| msgid "Wishlist"
+#: .\templates\wishlist\wishlist.html:6 .\templates\wishlist\wishlist.html:20
 msgid "My Wishlist"
-msgstr "Moje obľúbené"
+msgstr "Môj zoznam želaní"
 
-#: .\templates\wishlist\wishlist.html:30
+#: .\templates\wishlist\wishlist.html:27
 msgid "Your saved Velvet Creature creations"
 msgstr "Vaše uložené výtvory Velvet Creature"
 
-#: .\templates\wishlist\wishlist.html:149
+#: .\templates\wishlist\wishlist.html:95
 msgid "View Product"
-msgstr ""
+msgstr "Zobraziť produkt"
 
-#: .\templates\wishlist\wishlist.html:167
+#: .\templates\wishlist\wishlist.html:106
 msgid "Remove"
 msgstr "Odstrániť"
 
-#: .\templates\wishlist\wishlist.html:207
+#: .\templates\wishlist\wishlist.html:143
 msgid "Your wishlist is empty."
+msgstr "Váš zoznam želaní je prázdny."
+
+#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
+msgid "Messages"
 msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: .\venv\Lib\site-packages\django\core\paginator.py:33
+msgid "…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:35
+msgid "That page number is not an integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:36
+msgid "That page number is less than 1"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:37
+msgid "That page contains no results"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:70
+msgid "Enter a valid domain name."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:153
+#: .\venv\Lib\site-packages\django\forms\fields.py:773
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:200
+msgid "Enter a valid integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:211
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: .\venv\Lib\site-packages\django\core\validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:309
+#: .\venv\Lib\site-packages\django\core\validators.py:318
+#: .\venv\Lib\site-packages\django\core\validators.py:332
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:311
+msgid "IPv4"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:320
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:43
+msgid "IPv6"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:334
+msgid "IPv4 or IPv6"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:514
+#: .\venv\Lib\site-packages\django\forms\fields.py:364
+#: .\venv\Lib\site-packages\django\forms\fields.py:403
+msgid "Enter a number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:659
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1633
+#: .\venv\Lib\site-packages\django\forms\models.py:932
+msgid "and"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1635
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\constraints.py:20
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:135
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:136
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1161
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1164
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1214
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1216
+msgid "String (unlimited)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1325
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1426
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1430
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1565
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1434
+msgid "Date (without time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1561
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1569
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1574
+msgid "Date (with time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1701
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1703
+msgid "Decimal number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1868
+#, fuzzy
+#| msgid "Description"
+msgid "Duration"
+msgstr "Popis"
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1920
+msgid "Email address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1945
+msgid "File path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2025
+msgid "Floating point number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2067
+msgid "Integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2180
+msgid "Small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2188
+msgid "IPv4 address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2219
+msgid "IP address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2310
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2364
+msgid "Positive big integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2379
+msgid "Positive integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2394
+msgid "Positive small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2446
+msgid "Text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2534
+msgid "Time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2642
+msgid "URL"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2666
+msgid "Raw binary data"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2733
+msgid "Universally unique identifier"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:244
+#, fuzzy
+#| msgid "Files"
+msgid "File"
+msgstr "Súbory"
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:24
+msgid "A JSON object"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:26
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:974
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:977
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1271
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1328
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1330
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1378
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to
+#. the label
+#: .\venv\Lib\site-packages\django\forms\boundfield.py:188
+msgid ":?.!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:313
+msgid "Enter a whole number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:484
+#: .\venv\Lib\site-packages\django\forms\fields.py:1241
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:507
+#: .\venv\Lib\site-packages\django\forms\fields.py:1242
+msgid "Enter a valid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:534
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:568
+msgid "Enter a valid duration."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:569
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:638
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:639
+msgid "No file was submitted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:640
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:642
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:647
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:715
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:862
+#: .\venv\Lib\site-packages\django\forms\fields.py:949
+#: .\venv\Lib\site-packages\django\forms\models.py:1621
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:951
+#: .\venv\Lib\site-packages\django\forms\fields.py:1070
+#: .\venv\Lib\site-packages\django\forms\models.py:1619
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1071
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1313
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1343
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\venv\Lib\site-packages\django\forms\forms.py:97
+msgid ":"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:925
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:930
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:937
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:946
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1383
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1474
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1623
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:528
+msgid "Clear"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:529
+msgid "Currently"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:530
+msgid "Change"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:869
+msgid "Unknown"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:34
+msgctxt "Task"
+msgid "Ready"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:36
+msgctxt "Task"
+msgid "Running"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:38
+msgctxt "Task"
+msgid "Failed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\tasks\base.py:40
+msgctxt "Task"
+msgid "Successful"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:878
+msgid "yes,no,maybe"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:908
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:925
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:927
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:929
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:931
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:933
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:935
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:74
+msgid "p.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:75
+msgid "a.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:80
+msgid "PM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:81
+msgid "AM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:153
+msgid "midnight"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:155
+msgid "noon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:25
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:26
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:27
+#, fuzzy
+#| msgid "Search"
+msgid "March"
+msgstr "Hľadať"
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:28
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:29
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:30
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:31
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:32
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:33
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:34
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:35
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:36
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:39
+msgid "jan"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:40
+msgid "feb"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:41
+msgid "mar"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:42
+msgid "apr"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:43
+msgid "may"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:44
+msgid "jun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:45
+msgid "jul"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:46
+msgid "aug"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:47
+msgid "sep"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:48
+msgid "oct"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:49
+msgid "nov"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:50
+msgid "dec"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:55
+#, fuzzy
+#| msgid "Search"
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Hľadať"
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:69
+#, fuzzy
+#| msgid "Search"
+msgctxt "alt. month"
+msgid "March"
+msgstr "Hľadať"
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:282
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\venv\Lib\site-packages\django\utils\text.py:301
+#: .\venv\Lib\site-packages\django\utils\timesince.py:135
+msgid ", "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:29
+msgid "Forbidden"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:64
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:115
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:353
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:68
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:8
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr "Index %(directory)s"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:204
 msgid "The install worked successfully! Congratulations!"
-msgstr ""
+msgstr "Inštalácia prebehla úspešne! Gratulujeme!"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
 #, python-format
@@ -395,6 +2084,9 @@ msgid ""
 "View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
 "target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
 msgstr ""
+"Pozrite si <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/"
+"\" target=\"_blank\" rel=\"noopener\">poznámky k vydaniu</a> pre Django "
+"%(version)s"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:208
 #, python-format
@@ -404,33 +2096,139 @@ msgid ""
 "rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
 "configured any URLs."
 msgstr ""
+"Túto stránku vidíte, pretože <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> je v súbore nastavení a nemáte "
+"nakonfigurované žiadne URL."
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
 msgid "Django Documentation"
-msgstr ""
+msgstr "Django dokumentácia"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
+#, fuzzy
+#| msgid "Topics, references, &amp; how-to's"
 msgid "Topics, references, &amp; how-to’s"
-msgstr ""
+msgstr "Témy, referencie a návody"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:226
 msgid "Tutorial: A Polling App"
-msgstr ""
+msgstr "Tutoriál: Aplikácia na hlasovanie"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:227
 msgid "Get started with Django"
-msgstr ""
+msgstr "Začnite s Djangom"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:235
 msgid "Django Community"
-msgstr ""
+msgstr "Django komunita"
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
 msgid "Connect, get help, or contribute"
-msgstr ""
+msgstr "Spojte sa, získajte pomoc alebo prispejte"
 
-#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:8
-#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:11
-#, python-format
-msgid "Index of %(directory)s"
-msgstr ""
+#, fuzzy
+#~| msgid "Order"
+#~ msgid "Order progress"
+#~ msgstr "Objednávka"
+
+#, fuzzy
+#~| msgid "Shipping"
+#~ msgid "Shipped"
+#~ msgstr "Doprava"
+
+#, fuzzy
+#~| msgid "Delivery"
+#~ msgid "Delivered"
+#~ msgstr "Doručenie"
+
+#, fuzzy
+#~| msgid "Project Status"
+#~ msgid "Status"
+#~ msgstr "Stav projektu"
+
+#, fuzzy
+#~| msgid "Custom Creations"
+#~ msgid "Customer details"
+#~ msgstr "Zákazkové výtvory"
+
+#, fuzzy
+#~| msgid "Shipping Method"
+#~ msgid "Shipping information"
+#~ msgstr "Spôsob dopravy"
+
+#~ msgid "Account"
+#~ msgstr "Účet"
+
+#~ msgid "Full name"
+#~ msgstr "Celé meno"
+
+#~ msgid "Welcome back"
+#~ msgstr "Vitaj späť"
+
+#~ msgid "Miniatures"
+#~ msgstr "Miniatúry"
+
+#~ msgid "Accessories"
+#~ msgstr "Doplnky"
+
+#~ msgid "Order date"
+#~ msgstr "Dátum"
+
+msgid "Join the Darkness"
+msgstr "Pridaj sa do temnoty"
+
+msgid "Create your Velvet Creature account"
+msgstr "Vytvorte si svoj Velvet Creature účet"
+
+msgid "Choose your username"
+msgstr "Vyberte si používateľské meno"
+
+msgid "optional"
+msgstr "voliteľné"
+
+msgid "Min. 8 characters"
+msgstr "Min. 8 znakov"
+
+msgid "Confirm Password"
+msgstr "Potvrdiť heslo"
+
+msgid "Repeat your password"
+msgstr "Zopakujte heslo"
+
+msgid "Create Account"
+msgstr "Vytvoriť účet"
+
+msgid "Already have an account?"
+msgstr "Už máte účet?"
+
+msgid "Login here"
+msgstr "Prihláste sa tu"
+
+
+msgid "Username already exists"
+msgstr "Používateľské meno už existuje"
+
+msgid "Username must be at least 3 characters"
+msgstr "Používateľské meno musí mať aspoň 3 znaky"
+
+msgid "Passwords do not match"
+msgstr "Heslá sa nezhodujú"
+
+msgid "Password must be at least 8 characters"
+msgstr "Heslo musí mať aspoň 8 znakov"
+
+msgid "Password must contain at least one uppercase letter"
+msgstr "Heslo musí obsahovať aspoň jedno veľké písmeno"
+
+msgid "Password must contain at least one number"
+msgstr "Heslo musí obsahovať aspoň jedno číslo"
+
+msgid "Account created successfully!"
+msgstr "Účet bol úspešne vytvorený!"
+
+msgid "Invalid username or password"
+msgstr "Nesprávne meno alebo heslo"
+
+msgid "Profile updated successfully!"
+msgstr "Profil bol úspešne aktualizovaný!"

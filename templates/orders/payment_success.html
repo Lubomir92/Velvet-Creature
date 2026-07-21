@@ -1,47 +1,34 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 
 {% block title %}
-Thank You
+{% trans "Thank You" %}
 {% endblock %}
-
-
 
 {% block content %}
 
-
 <div class="success-page">
 
-
     <div class="success-box">
-
 
         <div class="success-icon">
             ✨
         </div>
 
-
-
         <h1>
-            Thank you for your order
+            {% trans "Thank you for your order" %}
         </h1>
 
-
-
         <p class="success-text">
-
-            Your payment has been successfully processed.
-
+            {% trans "Your payment has been successfully processed." %}
         </p>
-
-
 
         {% if order %}
 
         <div class="order-number">
 
             <h3>
-                Order number:
+                {% trans "Order number:" %}
             </h3>
 
             <p>
@@ -50,49 +37,28 @@ Thank You
 
         </div>
 
-
         {% endif %}
 
-
-
         <p class="success-brand">
-
-            Velvet Creature by Lubma3D
-
+            {% trans "Velvet Creature by Lubma3D" %}
         </p>
-
-
-
 
         {% if user.is_authenticated and order %}
 
-
         <a href="{% url 'order_detail' order.id %}" 
            class="btn">
-
-            View Order
-
+            {% trans "View Order" %}
         </a>
-
 
         {% endif %}
 
-
-
-
         <a href="{% url 'shop' %}" 
            class="btn">
-
-            Continue Shopping
-
+            {% trans "Continue Shopping" %}
         </a>
-
-
 
     </div>
 
-
 </div>
-
 
 {% endblock %}
