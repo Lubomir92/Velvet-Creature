@@ -154,6 +154,8 @@ LANGUAGE_COOKIE_AGE = 1209600
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+STATIC_URL = "/static/"
+
 STATICFILES_DIRS = [
 
     BASE_DIR / "static",
