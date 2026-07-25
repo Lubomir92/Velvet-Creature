@@ -216,3 +216,10 @@ DEFAULT_ADMIN_EMAIL = (
 # =========================================================
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+if os.getenv("CREATE_ADMIN") == "true":
+    import django
+    django.setup()
+    from django.contrib.auth.models import User
+    if not User.objects.filter(username="admin").exists():
+        User.objects.create_superuser("admin", "admin@velvetcreature.fr", "TvojeHeslo123")
