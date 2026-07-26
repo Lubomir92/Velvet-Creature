@@ -57,7 +57,6 @@ def checkout(request):
 
     shipping_methods = ShippingMethod.objects.filter(is_active=True)
     
-    # Predvolená doprava (prvá aktívna)
     selected_shipping_id = request.POST.get("shipping_method") if request.method == "POST" else None
     shipping_price = Decimal("0")
     
@@ -76,7 +75,6 @@ def checkout(request):
         
         payment_method = request.POST.get("payment_method", "card")
         
-        # Získaj dopravu
         shipping_id = request.POST.get("shipping_method")
         shipping_price = Decimal("0")
         
@@ -114,22 +112,6 @@ def checkout(request):
 
         # 🏦 BANKOVÝ PREVOD
         if payment_method == "bank_transfer":
-            try:
-                html_message = render_to_string(
-                    "emails/order_confirmation.html",
-                    {"order": order}
-                )
-                email = EmailMultiAlternatives(
-                    subject=f"Velvet Creature - Order #{order.id}",
-                    body=f"Thank you for your order {order.order_number}. Please transfer the amount to our bank account.\n\nIBAN: FR76 2823 3000 0172 7796 9396 528\nBIC: REVOFRP2\n\nYour order will be processed once payment is received.",
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    to=[order.email]
-                )
-                email.attach_alternative(html_message, "text/html")
-                email.send()
-            except:
-                pass
-
             request.session["cart"] = {}
             return redirect("payment_success")
 
@@ -270,40 +252,6 @@ def payment_success(request):
                     item.product.save()
                 order.stock_updated = True
                 order.save()
-
-            # Email - ak padne, objednávka aj tak prejde
-            try:
-                html_message = render_to_string("emails/order_confirmation.html", {"order": order})
-                
-                if order.status == "pending":
-                    email_body = f"""Thank you for your order #{order.order_number}!
-
-Please transfer the total amount of €{order.total_price} to our bank account:
-
-🏦 Bank: REVOLUT
-👤 Account Name: Velvet Creature
-📋 IBAN: FR76 2823 3000 0172 7796 9396 528
-🔢 BIC/SWIFT: REVOFRP2
-📝 Reference: {order.order_number}
-
-Your order will be processed once payment is received.
-
-Velvet Creature by Lubma3D
-"""
-                else:
-                    email_body = f"Thank you for your order {order.order_number}.\nYour invoice is attached.\n\nVelvet Creature by Lubma3D"
-
-                email = EmailMultiAlternatives(
-                    subject=f"Velvet Creature - Order #{order.id}",
-                    body=email_body,
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    to=[order.email]
-                )
-                email.attach_alternative(html_message, "text/html")
-                email.attach(f"invoice_{order.order_number}.pdf", generate_invoice_bytes(order), "application/pdf")
-                email.send()
-            except Exception as e:
-                print(f"Email error (non-critical): {e}")
         except Order.DoesNotExist:
             pass
 
@@ -311,6 +259,7 @@ Velvet Creature by Lubma3D
         request.session.pop("last_order_id", None)
 
     return render(request, "orders/payment_success.html", {"order": order})
+
 
 def payment_cancel(request):
     return render(request, "orders/payment_cancel.html")
