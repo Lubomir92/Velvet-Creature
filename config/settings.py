@@ -184,36 +184,20 @@ STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
 
 
 # =========================================================
-# EMAIL
+# EMAIL (SendGrid)
 # =========================================================
 
-
-
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
-EMAIL_HOST = "smtp.gmail.com"
-
+EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_PORT = 587
-
 EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "apikey"
+EMAIL_HOST_PASSWORD = os.getenv("SENDGRID_API_KEY")
+DEFAULT_FROM_EMAIL = "Velvet Creature <szlovakl333@gmail.com>"
 
 
-EMAIL_HOST_USER = "szlovakl333@gmail.com"
-
-EMAIL_HOST_PASSWORD = "iqwcpohfvyhjeqvx"
-
-
-DEFAULT_FROM_EMAIL = (
-    "Velvet Creature <szlovakl333@gmail.com>"
-)
-
-
-DEFAULT_ADMIN_EMAIL = (
-    "TVÔJ_GMAIL@gmail.com"
-)
 # =========================================================
 # DEFAULT
 # =========================================================
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
