@@ -271,10 +271,12 @@ def payment_success(request):
                 order.stock_updated = True
                 order.save()
 
-            html_message = render_to_string("emails/order_confirmation.html", {"order": order})
-            
-            if order.status == "pending":
-                email_body = f"""Thank you for your order #{order.order_number}!
+            # Email - ak padne, objednávka aj tak prejde
+            try:
+                html_message = render_to_string("emails/order_confirmation.html", {"order": order})
+                
+                if order.status == "pending":
+                    email_body = f"""Thank you for your order #{order.order_number}!
 
 Please transfer the total amount of €{order.total_price} to our bank account:
 
@@ -288,18 +290,20 @@ Your order will be processed once payment is received.
 
 Velvet Creature by Lubma3D
 """
-            else:
-                email_body = f"Thank you for your order {order.order_number}.\nYour invoice is attached.\n\nVelvet Creature by Lubma3D"
+                else:
+                    email_body = f"Thank you for your order {order.order_number}.\nYour invoice is attached.\n\nVelvet Creature by Lubma3D"
 
-            email = EmailMultiAlternatives(
-                subject=f"Velvet Creature - Order #{order.id}",
-                body=email_body,
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                to=[order.email]
-            )
-            email.attach_alternative(html_message, "text/html")
-            email.attach(f"invoice_{order.order_number}.pdf", generate_invoice_bytes(order), "application/pdf")
-            email.send()
+                email = EmailMultiAlternatives(
+                    subject=f"Velvet Creature - Order #{order.id}",
+                    body=email_body,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    to=[order.email]
+                )
+                email.attach_alternative(html_message, "text/html")
+                email.attach(f"invoice_{order.order_number}.pdf", generate_invoice_bytes(order), "application/pdf")
+                email.send()
+            except Exception as e:
+                print(f"Email error (non-critical): {e}")
         except Order.DoesNotExist:
             pass
 
@@ -307,7 +311,6 @@ Velvet Creature by Lubma3D
         request.session.pop("last_order_id", None)
 
     return render(request, "orders/payment_success.html", {"order": order})
-
 
 def payment_cancel(request):
     return render(request, "orders/payment_cancel.html")
