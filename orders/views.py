@@ -256,13 +256,15 @@ def payment_success(request):
                 order.save()
 
             # Resend API email
+                        # Resend API email s pekným template
             try:
+                html_message = render_to_string("emails/order_confirmation.html", {"order": order})
                 resend.api_key = os.getenv("RESEND_API_KEY")
                 resend.Emails.send({
                     "from": "Velvet Creature <onboarding@resend.dev>",
                     "to": [order.email],
-                    "subject": f"Velvet Creature - Order #{order.id}",
-                    "html": f"<h1>Thank you for your order!</h1><p>Order: {order.order_number}</p><p>Total: €{order.total_price}</p>",
+                    "subject": f"Velvet Creature - Order #{order.order_number}",
+                    "html": html_message,
                 })
             except:
                 pass
