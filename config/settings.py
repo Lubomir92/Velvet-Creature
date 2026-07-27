@@ -187,13 +187,14 @@ STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
 # EMAIL (SendGrid)
 # =========================================================
 
+# EMAIL (Resend)
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_HOST = "smtp.resend.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "apikey"
-EMAIL_HOST_PASSWORD = os.getenv("SENDGRID_API_KEY")
-DEFAULT_FROM_EMAIL = "Velvet Creature <szlovakl333@gmail.com>"
+EMAIL_HOST_USER = "resend"
+EMAIL_HOST_PASSWORD = os.getenv("RESEND_API_KEY")
+DEFAULT_FROM_EMAIL = "Velvet Creature <onboarding@resend.dev>"
 
 
 # =========================================================
