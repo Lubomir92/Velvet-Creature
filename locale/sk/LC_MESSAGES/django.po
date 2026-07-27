@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 22:39+0200\n"
+"POT-Creation-Date: 2026-07-28 01:13+0200\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,10 +50,12 @@ msgid "Personal Information"
 msgstr "Informácie o zákazníkovi"
 
 #: .\accounts\templates\accounts\profile.html:167
+#: .\templates\accounts\register.html:37
 msgid "Username"
 msgstr "Používateľské meno"
 
 #: .\accounts\templates\accounts\profile.html:172
+#: .\templates\accounts\register.html:42
 #: .\templates\custom_orders\create.html:158
 #: .\templates\orders\checkout.html:44 .\templates\orders\order_detail.html:150
 msgid "Email"
@@ -97,47 +99,82 @@ msgstr "Moje objednávky"
 
 #: .\accounts\templates\accounts\profile.html:256
 #: .\templates\orders\order_detail.html:18
-#: .\templates\orders\order_list.html:20
 #: .\venv\Lib\site-packages\django\forms\formsets.py:484
 #: .\venv\Lib\site-packages\django\forms\formsets.py:491
 msgid "Order"
 msgstr "Objednávka"
 
-#: .\accounts\templates\accounts\profile.html:308
-#: .\accounts\templates\accounts\profile.html:504
+#: .\accounts\templates\accounts\profile.html:307
+#: .\accounts\templates\accounts\profile.html:503
 msgid "Details"
 msgstr "Detaily"
 
-#: .\accounts\templates\accounts\profile.html:336
-#: .\templates\orders\order_list.html:46
+#: .\accounts\templates\accounts\profile.html:335
+#: .\templates\orders\order_list.html:44
 msgid "You have no orders yet."
 msgstr "Zatiaľ nemáte žiadne objednávky."
 
-#: .\accounts\templates\accounts\profile.html:368
+#: .\accounts\templates\accounts\profile.html:367
 msgid "My Custom Projects"
 msgstr "Moje zákazkové projekty"
 
-#: .\accounts\templates\accounts\profile.html:403
+#: .\accounts\templates\accounts\profile.html:402
 #: .\custom_orders\templates\custom_orders\detail.html:8
 #: .\templates\about.html:184 .\templates\custom_orders\create.html:5
 #: .\templates\includes\navbar.html:15 .\templates\includes\navbar.html:61
 msgid "Custom Order"
 msgstr "Zákazková objednávka"
 
-#: .\accounts\templates\accounts\profile.html:425
+#: .\accounts\templates\accounts\profile.html:424
 #: .\custom_orders\templates\custom_orders\detail.html:184
 #: .\templates\custom_orders\create.html:215
 #: .\templates\products\detail.html:132
 msgid "Material"
 msgstr "Materiál"
 
-#: .\accounts\templates\accounts\profile.html:487
+#: .\accounts\templates\accounts\profile.html:486
 msgid "Waiting for quote"
 msgstr "Čaká sa na cenovú ponuku"
 
-#: .\accounts\templates\accounts\profile.html:534
+#: .\accounts\templates\accounts\profile.html:533
 msgid "You have no custom projects yet."
 msgstr "Zatiaľ nemáte žiadne zákazkové projekty."
+
+#: .\accounts\views.py:30
+msgid "Username already exists"
+msgstr "Používateľské meno už existuje"
+
+#: .\accounts\views.py:34
+msgid "Username must be at least 3 characters"
+msgstr "Používateľské meno musí mať aspoň 3 znaky"
+
+#: .\accounts\views.py:38
+msgid "Passwords do not match"
+msgstr "Heslá sa nezhodujú"
+
+#: .\accounts\views.py:42
+msgid "Password must be at least 8 characters"
+msgstr "Heslo musí mať aspoň 8 znakov"
+
+#: .\accounts\views.py:46
+msgid "Password must contain at least one uppercase letter"
+msgstr "Heslo musí obsahovať aspoň jedno veľké písmeno"
+
+#: .\accounts\views.py:50
+msgid "Password must contain at least one number"
+msgstr "Heslo musí obsahovať aspoň jedno číslo"
+
+#: .\accounts\views.py:61
+msgid "Account created successfully!"
+msgstr "Účet bol úspešne vytvorený!"
+
+#: .\accounts\views.py:85
+msgid "Invalid username or password"
+msgstr "Nesprávne meno alebo heslo"
+
+#: .\accounts\views.py:127
+msgid "Profile updated successfully!"
+msgstr "Profil bol úspešne aktualizovaný!"
 
 #: .\custom_orders\templates\custom_orders\detail.html:29
 msgid "Custom Project"
@@ -231,7 +268,6 @@ msgid "Engraving image"
 msgstr "Obrázok na gravírovanie"
 
 #: .\custom_orders\templates\custom_orders\detail.html:382
-#: .\templates\custom_orders\create.html:440
 msgid "Files"
 msgstr "Súbory"
 
@@ -254,6 +290,30 @@ msgstr "Správa od Velvet Creature"
 #: .\custom_orders\templates\custom_orders\detail.html:529
 msgid "Back to account"
 msgstr "Späť na účet"
+
+#: .\orders\models.py:30
+msgid "Pending"
+msgstr "Čaká sa"
+
+#: .\orders\models.py:31
+msgid "Paid"
+msgstr "Zaplatené"
+
+#: .\orders\models.py:32
+msgid "Processing"
+msgstr "Spracúva sa"
+
+#: .\orders\models.py:33
+#, fuzzy
+#| msgid "Shipping"
+msgid "Shipped"
+msgstr "Odoslané"
+
+#: .\orders\models.py:34
+#, fuzzy
+#| msgid "Delivery"
+msgid "Delivered"
+msgstr "Doručené"
 
 #: .\templates\about.html:8
 #, fuzzy
@@ -325,6 +385,57 @@ msgstr ""
 msgid "Visit Shop"
 msgstr ""
 
+#: .\templates\accounts\register.html:4 .\templates\includes\navbar.html:49
+#: .\templates\includes\navbar.html:74
+msgid "Register"
+msgstr "Registrácia"
+
+#: .\templates\accounts\register.html:13
+msgid "Join the Darkness"
+msgstr "Pridaj sa do temnoty"
+
+#: .\templates\accounts\register.html:14
+msgid "Create your Velvet Creature account"
+msgstr "Vytvorte si svoj Velvet Creature účet"
+
+#: .\templates\accounts\register.html:38
+msgid "Choose your username"
+msgstr "Vyberte si používateľské meno"
+
+#: .\templates\accounts\register.html:42
+msgid "optional"
+msgstr "voliteľné"
+
+#: .\templates\accounts\register.html:47
+#, fuzzy
+#| msgid "Confirm Password"
+msgid "Password"
+msgstr "Potvrdiť heslo"
+
+#: .\templates\accounts\register.html:48
+msgid "Min. 8 characters"
+msgstr "Min. 8 znakov"
+
+#: .\templates\accounts\register.html:52
+msgid "Confirm Password"
+msgstr "Potvrdiť heslo"
+
+#: .\templates\accounts\register.html:53
+msgid "Repeat your password"
+msgstr "Zopakujte heslo"
+
+#: .\templates\accounts\register.html:56
+msgid "Create Account"
+msgstr "Vytvoriť účet"
+
+#: .\templates\accounts\register.html:61
+msgid "Already have an account?"
+msgstr "Už máte účet?"
+
+#: .\templates\accounts\register.html:61
+msgid "Login here"
+msgstr "Prihláste sa tu"
+
 #: .\templates\base.html:108
 msgid "Loading..."
 msgstr ""
@@ -345,7 +456,6 @@ msgstr ""
 #: .\templates\cart\cart_detail.html:222 .\templates\cart\cart_drawer.html:155
 #: .\templates\orders\checkout.html:141 .\templates\orders\order_detail.html:95
 #: .\templates\orders\order_detail.html:232
-#: .\templates\orders\order_list.html:24
 msgid "Total"
 msgstr ""
 
@@ -484,12 +594,6 @@ msgstr "Zobraziť produkt"
 msgid "Your creation goes into production."
 msgstr ""
 
-#: .\templates\custom_orders\create.html:91
-#, fuzzy
-#| msgid "Custom Project"
-msgid "Custom 3D Print"
-msgstr "3D tlač na mieru"
-
 #: .\templates\custom_orders\create.html:96
 msgid "Bring your idea to life with custom 3D printing and engraving."
 msgstr "Oživte svoj nápad s 3D tlačou a gravírovaním na mieru."
@@ -522,35 +626,6 @@ msgstr "Gravírovanie"
 msgid "Engraving image / logo"
 msgstr "Obrázok na gravírovanie"
 
-#: .\templates\custom_orders\create.html:387
-msgid "Dimensions (mm)"
-msgstr "Rozmery (mm)"
-
-#: .\templates\custom_orders\create.html:398
-msgid "Width"
-msgstr ""
-
-#: .\templates\custom_orders\create.html:410
-#, fuzzy
-#| msgid "Weight"
-msgid "Height"
-msgstr "Hmotnosť"
-
-#: .\templates\custom_orders\create.html:422
-msgid "Depth"
-msgstr ""
-
-#: .\templates\custom_orders\create.html:449
-msgid "3D Model"
-msgstr ""
-
-#: .\templates\custom_orders\create.html:462
-#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
-#, fuzzy
-#| msgid "No image"
-msgid "Image"
-msgstr "Bez obrázka"
-
 #: .\templates\custom_orders\create.html:482
 msgid "Send Request"
 msgstr "Odoslať požiadavku"
@@ -575,10 +650,6 @@ msgstr "Odhlásiť sa"
 #: .\templates\includes\navbar.html:48 .\templates\includes\navbar.html:73
 msgid "Login"
 msgstr "Prihlásenie"
-
-#: .\templates\includes\navbar.html:49 .\templates\includes\navbar.html:74
-msgid "Register"
-msgstr "Registrácia"
 
 #: .\templates\orders\checkout.html:54 .\templates\orders\order_detail.html:155
 msgid "Address"
@@ -656,7 +727,6 @@ msgid ""
 msgstr ""
 
 #: .\templates\orders\order_detail.html:119
-#: .\templates\orders\order_list.html:28
 msgid "Items"
 msgstr ""
 
@@ -690,9 +760,11 @@ msgstr ""
 msgid "Shipping method"
 msgstr "Spôsob dopravy"
 
-#: .\templates\orders\order_list.html:22
-msgid "Date"
-msgstr ""
+#: .\templates\orders\order_list.html:45
+#, fuzzy
+#| msgid "Shipping"
+msgid "Start Shopping"
+msgstr "Doprava"
 
 #: .\templates\orders\payment_cancel.html:8
 msgid "Payment Cancelled"
@@ -739,12 +811,12 @@ msgstr "Bez obrázka"
 msgid "Weight"
 msgstr "Hmotnosť"
 
-#: .\templates\products\detail.html:178 .\templates\products\home.html:93
+#: .\templates\products\detail.html:178 .\templates\products\home.html:98
 #: .\templates\products\shop.html:140
 msgid "In Stock"
 msgstr "Na sklade"
 
-#: .\templates\products\detail.html:188 .\templates\products\home.html:95
+#: .\templates\products\detail.html:188 .\templates\products\home.html:100
 #: .\templates\products\shop.html:152
 msgid "Sold Out"
 msgstr "Vypredané"
@@ -766,7 +838,7 @@ msgstr ""
 "Vstúp do sveta, kde sa gotická elegancia stretáva s ručne navrhnutým 3D "
 "dizajnom. Každý výtvor je tvarovaný presnosťou, temnotou a fantáziou."
 
-#: .\templates\products\home.html:36 .\templates\products\home.html:77
+#: .\templates\products\home.html:36 .\templates\products\home.html:80
 msgid "New Arrivals"
 msgstr "Novinky"
 
@@ -774,31 +846,31 @@ msgstr "Novinky"
 msgid "Why Velvet Creature?"
 msgstr "Prečo Velvet Creature?"
 
-#: .\templates\products\home.html:55
+#: .\templates\products\home.html:56
 msgid "3D Printed"
 msgstr "3D tlač"
 
-#: .\templates\products\home.html:56
+#: .\templates\products\home.html:57
 msgid "Precision-crafted models with high-end detail and texture."
 msgstr "Precízne vytvorené modely s vysokou úrovňou detailov a textúr."
 
-#: .\templates\products\home.html:60
+#: .\templates\products\home.html:62
 msgid "Hand Finished"
 msgstr "Ručne dokončené"
 
-#: .\templates\products\home.html:61
+#: .\templates\products\home.html:63
 msgid "Each piece is refined manually for premium quality."
 msgstr "Každý kus je ručne upravený pre prémiovú kvalitu."
 
-#: .\templates\products\home.html:65
+#: .\templates\products\home.html:68
 msgid "Dark Aesthetic"
 msgstr "Temná estetika"
 
-#: .\templates\products\home.html:66
+#: .\templates\products\home.html:69
 msgid "Inspired by gothic art, fantasy worlds and cinematic design."
 msgstr "Inšpirované gotickým umením, fantasy svetmi a filmovým dizajnom."
 
-#: .\templates\products\home.html:107
+#: .\templates\products\home.html:111
 msgid "Detail"
 msgstr "Detail"
 
@@ -1286,6 +1358,12 @@ msgstr ""
 #| msgid "Files"
 msgid "File"
 msgstr "Súbory"
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
+#, fuzzy
+#| msgid "No image"
+msgid "Image"
+msgstr "Bez obrázka"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\json.py:24
 msgid "A JSON object"
@@ -2128,19 +2206,57 @@ msgid "Connect, get help, or contribute"
 msgstr "Spojte sa, získajte pomoc alebo prispejte"
 
 #, fuzzy
-#~| msgid "Order"
-#~ msgid "Order progress"
-#~ msgstr "Objednávka"
+#~| msgid "Welcome back"
+#~ msgid "Welcome"
+#~ msgstr "Vitaj späť"
 
 #, fuzzy
-#~| msgid "Shipping"
-#~ msgid "Shipped"
-#~ msgstr "Doprava"
+#~| msgid "Django Community"
+#~ msgid "Django Admin"
+#~ msgstr "Django komunita"
+
+#, fuzzy
+#~| msgid "View Product"
+#~ msgid "Products"
+#~ msgstr "Zobraziť produkt"
+
+#, fuzzy
+#~| msgid "Custom Order"
+#~ msgid "Custom Orders"
+#~ msgstr "Zákazková objednávka"
+
+#, fuzzy
+#~| msgid "Username"
+#~ msgid "Users"
+#~ msgstr "Používateľské meno"
 
 #, fuzzy
 #~| msgid "Delivery"
-#~ msgid "Delivered"
+#~ msgid "Deliver"
 #~ msgstr "Doručenie"
+
+#, fuzzy
+#~| msgid "You have no orders yet."
+#~ msgid "No orders yet."
+#~ msgstr "Zatiaľ nemáte žiadne objednávky."
+
+#, fuzzy
+#~| msgid "Custom Project"
+#~ msgid "Custom 3D Print"
+#~ msgstr "3D tlač na mieru"
+
+#~ msgid "Dimensions (mm)"
+#~ msgstr "Rozmery (mm)"
+
+#, fuzzy
+#~| msgid "Weight"
+#~ msgid "Height"
+#~ msgstr "Hmotnosť"
+
+#, fuzzy
+#~| msgid "Order"
+#~ msgid "Order progress"
+#~ msgstr "Objednávka"
 
 #, fuzzy
 #~| msgid "Project Status"
@@ -2163,9 +2279,6 @@ msgstr "Spojte sa, získajte pomoc alebo prispejte"
 #~ msgid "Full name"
 #~ msgstr "Celé meno"
 
-#~ msgid "Welcome back"
-#~ msgstr "Vitaj späť"
-
 #~ msgid "Miniatures"
 #~ msgstr "Miniatúry"
 
@@ -2175,60 +2288,4 @@ msgstr "Spojte sa, získajte pomoc alebo prispejte"
 #~ msgid "Order date"
 #~ msgstr "Dátum"
 
-msgid "Join the Darkness"
-msgstr "Pridaj sa do temnoty"
 
-msgid "Create your Velvet Creature account"
-msgstr "Vytvorte si svoj Velvet Creature účet"
-
-msgid "Choose your username"
-msgstr "Vyberte si používateľské meno"
-
-msgid "optional"
-msgstr "voliteľné"
-
-msgid "Min. 8 characters"
-msgstr "Min. 8 znakov"
-
-msgid "Confirm Password"
-msgstr "Potvrdiť heslo"
-
-msgid "Repeat your password"
-msgstr "Zopakujte heslo"
-
-msgid "Create Account"
-msgstr "Vytvoriť účet"
-
-msgid "Already have an account?"
-msgstr "Už máte účet?"
-
-msgid "Login here"
-msgstr "Prihláste sa tu"
-
-
-msgid "Username already exists"
-msgstr "Používateľské meno už existuje"
-
-msgid "Username must be at least 3 characters"
-msgstr "Používateľské meno musí mať aspoň 3 znaky"
-
-msgid "Passwords do not match"
-msgstr "Heslá sa nezhodujú"
-
-msgid "Password must be at least 8 characters"
-msgstr "Heslo musí mať aspoň 8 znakov"
-
-msgid "Password must contain at least one uppercase letter"
-msgstr "Heslo musí obsahovať aspoň jedno veľké písmeno"
-
-msgid "Password must contain at least one number"
-msgstr "Heslo musí obsahovať aspoň jedno číslo"
-
-msgid "Account created successfully!"
-msgstr "Účet bol úspešne vytvorený!"
-
-msgid "Invalid username or password"
-msgstr "Nesprávne meno alebo heslo"
-
-msgid "Profile updated successfully!"
-msgstr "Profil bol úspešne aktualizovaný!"

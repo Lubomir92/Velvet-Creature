@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Velvet Creature\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-21 22:39+0200\n"
+"POT-Creation-Date: 2026-07-28 01:13+0200\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,10 +45,12 @@ msgid "Personal Information"
 msgstr "Informations client"
 
 #: .\accounts\templates\accounts\profile.html:167
+#: .\templates\accounts\register.html:37
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
 #: .\accounts\templates\accounts\profile.html:172
+#: .\templates\accounts\register.html:42
 #: .\templates\custom_orders\create.html:158
 #: .\templates\orders\checkout.html:44 .\templates\orders\order_detail.html:150
 msgid "Email"
@@ -92,47 +94,82 @@ msgstr "Mes commandes"
 
 #: .\accounts\templates\accounts\profile.html:256
 #: .\templates\orders\order_detail.html:18
-#: .\templates\orders\order_list.html:20
 #: .\venv\Lib\site-packages\django\forms\formsets.py:484
 #: .\venv\Lib\site-packages\django\forms\formsets.py:491
 msgid "Order"
 msgstr "Commande"
 
-#: .\accounts\templates\accounts\profile.html:308
-#: .\accounts\templates\accounts\profile.html:504
+#: .\accounts\templates\accounts\profile.html:307
+#: .\accounts\templates\accounts\profile.html:503
 msgid "Details"
 msgstr "Détails"
 
-#: .\accounts\templates\accounts\profile.html:336
-#: .\templates\orders\order_list.html:46
+#: .\accounts\templates\accounts\profile.html:335
+#: .\templates\orders\order_list.html:44
 msgid "You have no orders yet."
 msgstr "Vous n'avez pas encore de commandes."
 
-#: .\accounts\templates\accounts\profile.html:368
+#: .\accounts\templates\accounts\profile.html:367
 msgid "My Custom Projects"
 msgstr "Mes projets personnalisés"
 
-#: .\accounts\templates\accounts\profile.html:403
+#: .\accounts\templates\accounts\profile.html:402
 #: .\custom_orders\templates\custom_orders\detail.html:8
 #: .\templates\about.html:184 .\templates\custom_orders\create.html:5
 #: .\templates\includes\navbar.html:15 .\templates\includes\navbar.html:61
 msgid "Custom Order"
 msgstr "Commande personnalisée"
 
-#: .\accounts\templates\accounts\profile.html:425
+#: .\accounts\templates\accounts\profile.html:424
 #: .\custom_orders\templates\custom_orders\detail.html:184
 #: .\templates\custom_orders\create.html:215
 #: .\templates\products\detail.html:132
 msgid "Material"
 msgstr "Matériau"
 
-#: .\accounts\templates\accounts\profile.html:487
+#: .\accounts\templates\accounts\profile.html:486
 msgid "Waiting for quote"
 msgstr "En attente du devis"
 
-#: .\accounts\templates\accounts\profile.html:534
+#: .\accounts\templates\accounts\profile.html:533
 msgid "You have no custom projects yet."
 msgstr "Vous n'avez pas encore de projets personnalisés."
+
+#: .\accounts\views.py:30
+msgid "Username already exists"
+msgstr "Ce nom d'utilisateur existe déjà"
+
+#: .\accounts\views.py:34
+msgid "Username must be at least 3 characters"
+msgstr "Le nom d'utilisateur doit contenir au moins 3 caractères"
+
+#: .\accounts\views.py:38
+msgid "Passwords do not match"
+msgstr "Les mots de passe ne correspondent pas"
+
+#: .\accounts\views.py:42
+msgid "Password must be at least 8 characters"
+msgstr "Le mot de passe doit contenir au moins 8 caractères"
+
+#: .\accounts\views.py:46
+msgid "Password must contain at least one uppercase letter"
+msgstr "Le mot de passe doit contenir au moins une lettre majuscule"
+
+#: .\accounts\views.py:50
+msgid "Password must contain at least one number"
+msgstr "Le mot de passe doit contenir au moins un chiffre"
+
+#: .\accounts\views.py:61
+msgid "Account created successfully!"
+msgstr "Compte créé avec succès !"
+
+#: .\accounts\views.py:85
+msgid "Invalid username or password"
+msgstr "Nom d'utilisateur ou mot de passe incorrect"
+
+#: .\accounts\views.py:127
+msgid "Profile updated successfully!"
+msgstr "Profil mis à jour avec succès !"
 
 #: .\custom_orders\templates\custom_orders\detail.html:29
 msgid "Custom Project"
@@ -226,7 +263,6 @@ msgid "Engraving image"
 msgstr "Image de gravure"
 
 #: .\custom_orders\templates\custom_orders\detail.html:382
-#: .\templates\custom_orders\create.html:440
 msgid "Files"
 msgstr "Fichiers"
 
@@ -249,6 +285,32 @@ msgstr "Message de Velvet Creature"
 #: .\custom_orders\templates\custom_orders\detail.html:529
 msgid "Back to account"
 msgstr "Retour au compte"
+
+#: .\orders\models.py:30
+msgid "Pending"
+msgstr "En attente"
+
+#: .\orders\models.py:31
+msgid "Paid"
+msgstr "Payé"
+
+#: .\orders\models.py:32
+#, fuzzy
+#| msgid "Our Process"
+msgid "Processing"
+msgstr "En traitement"
+
+#: .\orders\models.py:33
+#, fuzzy
+#| msgid "Shipping"
+msgid "Shipped"
+msgstr "Expédié"
+
+#: .\orders\models.py:34
+#, fuzzy
+#| msgid "Delivery"
+msgid "Delivered"
+msgstr "Livré"
 
 #: .\templates\about.html:8
 msgid "About Velvet Creature"
@@ -324,6 +386,57 @@ msgstr "Créez votre propre créature"
 msgid "Visit Shop"
 msgstr "Visiter la Boutique"
 
+#: .\templates\accounts\register.html:4 .\templates\includes\navbar.html:49
+#: .\templates\includes\navbar.html:74
+msgid "Register"
+msgstr "S'inscrire"
+
+#: .\templates\accounts\register.html:13
+msgid "Join the Darkness"
+msgstr "Rejoignez les Ténèbres"
+
+#: .\templates\accounts\register.html:14
+msgid "Create your Velvet Creature account"
+msgstr "Créez votre compte Velvet Creature"
+
+#: .\templates\accounts\register.html:38
+msgid "Choose your username"
+msgstr "Choisissez votre nom d'utilisateur"
+
+#: .\templates\accounts\register.html:42
+msgid "optional"
+msgstr "optionnel"
+
+#: .\templates\accounts\register.html:47
+#, fuzzy
+#| msgid "Confirm Password"
+msgid "Password"
+msgstr "Confirmer le mot de passe"
+
+#: .\templates\accounts\register.html:48
+msgid "Min. 8 characters"
+msgstr "Min. 8 caractères"
+
+#: .\templates\accounts\register.html:52
+msgid "Confirm Password"
+msgstr "Confirmer le mot de passe"
+
+#: .\templates\accounts\register.html:53
+msgid "Repeat your password"
+msgstr "Répétez votre mot de passe"
+
+#: .\templates\accounts\register.html:56
+msgid "Create Account"
+msgstr "Créer un compte"
+
+#: .\templates\accounts\register.html:61
+msgid "Already have an account?"
+msgstr "Vous avez déjà un compte ?"
+
+#: .\templates\accounts\register.html:61
+msgid "Login here"
+msgstr "Connectez-vous ici"
+
 #: .\templates\base.html:108
 msgid "Loading..."
 msgstr "Chargement..."
@@ -344,7 +457,6 @@ msgstr "Récapitulatif"
 #: .\templates\cart\cart_detail.html:222 .\templates\cart\cart_drawer.html:155
 #: .\templates\orders\checkout.html:141 .\templates\orders\order_detail.html:95
 #: .\templates\orders\order_detail.html:232
-#: .\templates\orders\order_list.html:24
 msgid "Total"
 msgstr "Total"
 
@@ -445,10 +557,10 @@ msgstr "Envoyez votre idée"
 
 #: .\templates\custom_orders\create.html:31
 msgid "Describe your project and upload your 3D model or reference image."
-msgstr "Décrivez votre projet et téléchargez votre modèle 3D ou image de référence."
+msgstr ""
+"Décrivez votre projet et téléchargez votre modèle 3D ou image de référence."
 
 #: .\templates\custom_orders\create.html:41
-
 msgid "Project review"
 msgstr "Révision du projet"
 
@@ -457,7 +569,6 @@ msgid "We check your requirements, material and possibilities."
 msgstr "Nous vérifions vos exigences, le matériau et les possibilités."
 
 #: .\templates\custom_orders\create.html:55
-
 msgid "Price estimation"
 msgstr "Estimation du prix"
 
@@ -467,24 +578,20 @@ msgstr "Estimation du prix"
 msgid "You receive a custom quote."
 msgstr "Vous recevez un devis personnalisé."
 
-
+#: .\templates\custom_orders\create.html:69
 #, fuzzy
 #| msgid "View Product"
 msgid "Production"
 msgstr "Production"
 
-
+#: .\templates\custom_orders\create.html:73
 msgid "Your creation goes into production."
 msgstr "Votre création passe en production."
 
-#: .\templates\custom_orders\create.html:91
-#, fuzzy
-msgid "Custom 3D Print"
-msgstr "Impression 3D personnalisée"
-
-
+#: .\templates\custom_orders\create.html:96
 msgid "Bring your idea to life with custom 3D printing and engraving."
-msgstr "	Donnez vie à votre idée avec l'impression 3D et la gravure personnalisées"
+msgstr ""
+"\tDonnez vie à votre idée avec l'impression 3D et la gravure personnalisées"
 
 #: .\templates\custom_orders\create.html:135
 #: .\templates\orders\checkout.html:25
@@ -501,7 +608,7 @@ msgstr "Nom"
 msgid "Project Type"
 msgstr "Type de projet"
 
-
+#: .\templates\custom_orders\create.html:271
 #, fuzzy
 #| msgid "Engraving"
 msgid "Enable engraving"
@@ -512,33 +619,6 @@ msgstr "Gravure"
 #| msgid "Engraving image"
 msgid "Engraving image / logo"
 msgstr "Image de gravure"
-
-#: .\templates\custom_orders\create.html:387
-msgid "Dimensions (mm)"
-msgstr ""
-
-#: .\templates\custom_orders\create.html:398
-msgid "Width"
-msgstr ""
-
-#: .\templates\custom_orders\create.html:410
-#, fuzzy
-#| msgid "Weight"
-msgid "Height"
-msgstr "Poids"
-
-#: .\templates\custom_orders\create.html:422
-msgid "Depth"
-msgstr ""
-
-#: .\templates\custom_orders\create.html:449
-msgid "3D Model"
-msgstr ""
-
-#: .\templates\custom_orders\create.html:462
-#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
-msgid "Image"
-msgstr "Image"
 
 #: .\templates\custom_orders\create.html:482
 msgid "Send Request"
@@ -564,10 +644,6 @@ msgstr "Déconnexion"
 #: .\templates\includes\navbar.html:48 .\templates\includes\navbar.html:73
 msgid "Login"
 msgstr "Connexion"
-
-#: .\templates\includes\navbar.html:49 .\templates\includes\navbar.html:74
-msgid "Register"
-msgstr "S'inscrire"
 
 #: .\templates\orders\checkout.html:54 .\templates\orders\order_detail.html:155
 msgid "Address"
@@ -647,7 +723,6 @@ msgstr ""
 "Votre commande sera traitée une fois le paiement reçu."
 
 #: .\templates\orders\order_detail.html:119
-#: .\templates\orders\order_list.html:28
 msgid "Items"
 msgstr "Articles"
 
@@ -681,9 +756,11 @@ msgstr "Télécharger la Facture PDF"
 msgid "Shipping method"
 msgstr "Mode de livraison"
 
-#: .\templates\orders\order_list.html:22
-msgid "Date"
-msgstr "Date"
+#: .\templates\orders\order_list.html:45
+#, fuzzy
+#| msgid "Continue Shopping"
+msgid "Start Shopping"
+msgstr "Continuer les Achats"
 
 #: .\templates\orders\payment_cancel.html:8
 msgid "Payment Cancelled"
@@ -730,12 +807,12 @@ msgstr "Pas d'image"
 msgid "Weight"
 msgstr "Poids"
 
-#: .\templates\products\detail.html:178 .\templates\products\home.html:93
+#: .\templates\products\detail.html:178 .\templates\products\home.html:98
 #: .\templates\products\shop.html:140
 msgid "In Stock"
 msgstr "En stock"
 
-#: .\templates\products\detail.html:188 .\templates\products\home.html:95
+#: .\templates\products\detail.html:188 .\templates\products\home.html:100
 #: .\templates\products\shop.html:152
 msgid "Sold Out"
 msgstr "Épuisé"
@@ -758,7 +835,7 @@ msgstr ""
 "artisanal. Chaque création est sculptée avec précision, obscurité et "
 "imagination."
 
-#: .\templates\products\home.html:36 .\templates\products\home.html:77
+#: .\templates\products\home.html:36 .\templates\products\home.html:80
 msgid "New Arrivals"
 msgstr "Nouveautés"
 
@@ -766,34 +843,34 @@ msgstr "Nouveautés"
 msgid "Why Velvet Creature?"
 msgstr "Pourquoi Velvet Creature ?"
 
-#: .\templates\products\home.html:55
+#: .\templates\products\home.html:56
 msgid "3D Printed"
 msgstr "Imprimé en 3D"
 
-#: .\templates\products\home.html:56
+#: .\templates\products\home.html:57
 msgid "Precision-crafted models with high-end detail and texture."
 msgstr "Modèles fabriqués avec précision, détails et textures haut de gamme."
 
-#: .\templates\products\home.html:60
+#: .\templates\products\home.html:62
 msgid "Hand Finished"
 msgstr "Fini à la Main"
 
-#: .\templates\products\home.html:61
+#: .\templates\products\home.html:63
 msgid "Each piece is refined manually for premium quality."
 msgstr "Chaque pièce est finie manuellement pour une qualité premium."
 
-#: .\templates\products\home.html:65
+#: .\templates\products\home.html:68
 msgid "Dark Aesthetic"
 msgstr "Esthétique Sombre"
 
-#: .\templates\products\home.html:66
+#: .\templates\products\home.html:69
 msgid "Inspired by gothic art, fantasy worlds and cinematic design."
 msgstr ""
 "Inspiré par l'art gothique, les mondes fantastiques et le design "
 "cinématographique.Inspiré par l'art gothique, les mondes fantastiques et le "
 "design cinématographique."
 
-#: .\templates\products\home.html:107
+#: .\templates\products\home.html:111
 msgid "Detail"
 msgstr "Détails"
 
@@ -1304,6 +1381,10 @@ msgstr "Identifiant universel unique"
 #: .\venv\Lib\site-packages\django\db\models\fields\files.py:244
 msgid "File"
 msgstr "Fichier"
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
+msgid "Image"
+msgstr "Image"
 
 #: .\venv\Lib\site-packages\django\db\models\fields\json.py:24
 msgid "A JSON object"
@@ -2188,28 +2269,64 @@ msgstr "Communauté Django"
 msgid "Connect, get help, or contribute"
 msgstr "Se connecter, obtenir de l'aide ou contribuer"
 
+#~ msgid "Admin Dashboard"
+#~ msgstr "Tableau de bord"
+
+#~ msgid "Welcome"
+#~ msgstr "Bienvenue"
+
+#, fuzzy
+#~| msgid "Django Community"
+#~ msgid "Django Admin"
+#~ msgstr "Administration Django"
+
+#~ msgid "E-shop"
+#~ msgstr "Boutique"
+
+#, fuzzy
+#~| msgid "View Product"
+#~ msgid "Products"
+#~ msgstr "Production"
+
+#, fuzzy
+#~| msgid "Custom Order"
+#~ msgid "Custom Orders"
+#~ msgstr "Commande personnalisée"
+
+#, fuzzy
+#~| msgid "Username"
+#~ msgid "Users"
+#~ msgstr "Nom d'utilisateur"
+
+#~ msgid "Guest"
+#~ msgstr "Invité"
+
+#, fuzzy
+#~| msgid "Delivery"
+#~ msgid "Deliver"
+#~ msgstr "Livraison"
+
+#, fuzzy
+#~| msgid "You have no orders yet."
+#~ msgid "No orders yet."
+#~ msgstr "Vous n'avez pas encore de commandes."
+
+#, fuzzy
+#~ msgid "Custom 3D Print"
+#~ msgstr "Impression 3D personnalisée"
+
+#, fuzzy
+#~| msgid "Weight"
+#~ msgid "Height"
+#~ msgstr "Poids"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
 #, fuzzy
 #~| msgid "Orders"
 #~ msgid "Order progress"
 #~ msgstr "Progression de la commande"
-
-#~ msgid "Paid"
-#~ msgstr "Payé"
-
-#, fuzzy
-#~| msgid "Our Process"
-#~ msgid "Processing"
-#~ msgstr "En traitement"
-
-#, fuzzy
-#~| msgid "Shipping"
-#~ msgid "Shipped"
-#~ msgstr "Expédié"
-
-#, fuzzy
-#~| msgid "Delivery"
-#~ msgid "Delivered"
-#~ msgstr "Livré"
 
 #, fuzzy
 #~| msgid "Project Status"
@@ -2246,59 +2363,3 @@ msgstr "Se connecter, obtenir de l'aide ou contribuer"
 
 
 
-msgid "Join the Darkness"
-msgstr "Rejoignez les Ténèbres"
-
-msgid "Create your Velvet Creature account"
-msgstr "Créez votre compte Velvet Creature"
-
-msgid "Choose your username"
-msgstr "Choisissez votre nom d'utilisateur"
-
-msgid "optional"
-msgstr "optionnel"
-
-msgid "Min. 8 characters"
-msgstr "Min. 8 caractères"
-
-msgid "Confirm Password"
-msgstr "Confirmer le mot de passe"
-
-msgid "Repeat your password"
-msgstr "Répétez votre mot de passe"
-
-msgid "Create Account"
-msgstr "Créer un compte"
-
-msgid "Already have an account?"
-msgstr "Vous avez déjà un compte ?"
-
-msgid "Login here"
-msgstr "Connectez-vous ici"
-
-msgid "Username already exists"
-msgstr "Ce nom d'utilisateur existe déjà"
-
-msgid "Username must be at least 3 characters"
-msgstr "Le nom d'utilisateur doit contenir au moins 3 caractères"
-
-msgid "Passwords do not match"
-msgstr "Les mots de passe ne correspondent pas"
-
-msgid "Password must be at least 8 characters"
-msgstr "Le mot de passe doit contenir au moins 8 caractères"
-
-msgid "Password must contain at least one uppercase letter"
-msgstr "Le mot de passe doit contenir au moins une lettre majuscule"
-
-msgid "Password must contain at least one number"
-msgstr "Le mot de passe doit contenir au moins un chiffre"
-
-msgid "Account created successfully!"
-msgstr "Compte créé avec succès !"
-
-msgid "Invalid username or password"
-msgstr "Nom d'utilisateur ou mot de passe incorrect"
-
-msgid "Profile updated successfully!"
-msgstr "Profil mis à jour avec succès !"

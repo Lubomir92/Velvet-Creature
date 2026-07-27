@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.translation import gettext_lazy as _
 from products.models import Product
 import uuid
 from decimal import Decimal
@@ -12,7 +13,7 @@ class ShippingMethod(models.Model):
     website = models.URLField(blank=True)
     logo = models.CharField(max_length=10, blank=True, help_text="Emoji logo")
     is_active = models.BooleanField(default=True)
-    sort_order = models.IntegerField(default=0);
+    sort_order = models.IntegerField(default=0)
 
     class Meta:
         ordering = ["sort_order"]
@@ -26,11 +27,11 @@ class ShippingMethod(models.Model):
 class Order(models.Model):
 
     STATUS_CHOICES = [
-        ("pending", "Pending"),
-        ("paid", "Paid"),
-        ("processing", "Processing"),
-        ("shipped", "Shipped"),
-        ("delivered", "Delivered"),
+        ("pending", _("Pending")),
+        ("paid", _("Paid")),
+        ("processing", _("Processing")),
+        ("shipped", _("Shipped")),
+        ("delivered", _("Delivered")),
     ]
 
     order_number = models.CharField(max_length=20, blank=True, null=True)

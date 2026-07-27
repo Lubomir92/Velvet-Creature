@@ -183,9 +183,7 @@ STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
 
 
-# =========================================================
-# EMAIL (SendGrid)
-# =========================================================
+
 
 # EMAIL (Resend)
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
