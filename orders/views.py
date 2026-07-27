@@ -57,33 +57,29 @@ def checkout(request):
 
     shipping_methods = ShippingMethod.objects.filter(is_active=True)
     
-    selected_shipping_id = request.POST.get("shipping_method") if request.method == "POST" else None
-    shipping_price = Decimal("0")
-    
-    if selected_shipping_id:
-        try:
-            shipping = ShippingMethod.objects.get(id=selected_shipping_id)
-            shipping_price = shipping.price
-        except:
-            pass
-    elif shipping_methods.exists():
-        shipping_price = shipping_methods.first().price
-
-    total = subtotal + shipping_price
-
     if request.method == "POST":
         
-        payment_method = request.POST.get("payment_method", "card")
-        
+        # 🚚 DOPRAVA JE POVINNÁ!
         shipping_id = request.POST.get("shipping_method")
-        shipping_price = Decimal("0")
+        if not shipping_id:
+            return render(request, "orders/checkout.html", {
+                "error": "Veuillez sélectionner un mode de livraison.",
+                "subtotal": subtotal,
+                "shipping_price": Decimal("0"),
+                "total": subtotal,
+                "items": products,
+                "shipping_methods": shipping_methods,
+            })
         
+        shipping_price = Decimal("0")
         if shipping_id:
             try:
                 shipping = ShippingMethod.objects.get(id=shipping_id)
                 shipping_price = shipping.price
             except:
                 pass
+
+        payment_method = request.POST.get("payment_method", "card")
 
         order = Order.objects.create(
             user=request.user if request.user.is_authenticated else None,
@@ -144,16 +140,20 @@ def checkout(request):
 
             return redirect(session.url)
 
+    # GET request
+    shipping_price = Decimal("0")
+    if shipping_methods.exists():
+        shipping_price = shipping_methods.first().price
+
     return render(
         request,
         "orders/checkout.html",
         {
             "subtotal": subtotal,
             "shipping_price": shipping_price,
-            "total": total,
+            "total": subtotal + shipping_price,
             "items": products,
             "shipping_methods": shipping_methods,
-            "selected_shipping": selected_shipping_id
         }
     )
 
