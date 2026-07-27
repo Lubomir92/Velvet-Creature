@@ -252,6 +252,22 @@ def payment_success(request):
                     item.product.save()
                 order.stock_updated = True
                 order.save()
+
+            # Email cez Resend
+            try:
+                subject = f"Velvet Creature - Order #{order.id}"
+                body = f"Thank you for your order {order.order_number}.\n\nTotal: €{order.total_price}\n\nVelvet Creature by Lubma3D"
+                
+                send_mail(
+                    subject=subject,
+                    message=body,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[order.email],
+                    fail_silently=True,
+                )
+            except:
+                pass
+
         except Order.DoesNotExist:
             pass
 
