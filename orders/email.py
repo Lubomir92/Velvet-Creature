@@ -1,4 +1,6 @@
-from django.core.mail import EmailMultiAlternatives
+import os
+import resend
+from django.conf import settings
 from django.template.loader import render_to_string
 
 
@@ -11,15 +13,13 @@ def send_order_email(order, subject, template):
         }
     )
 
-    email = EmailMultiAlternatives(
-        subject=subject,
-        body="",
-        to=[order.email]
-    )
-
-    email.attach_alternative(
-        html,
-        "text/html"
-    )
-
-    email.send()
+    try:
+        resend.api_key = os.getenv("RESEND_API_KEY")
+        resend.Emails.send({
+            "from": "Velvet Creature <onboarding@resend.dev>",
+            "to": [order.email],
+            "subject": subject,
+            "html": html,
+        })
+    except Exception as e:
+        print(f"Email error: {e}")
