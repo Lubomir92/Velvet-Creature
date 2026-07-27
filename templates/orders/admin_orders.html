@@ -1,6 +1,7 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Admin Dashboard{% endblock %}
+{% block title %}{% if LANGUAGE_CODE == 'fr' %}Tableau de bord{% elif LANGUAGE_CODE == 'sk' %}Admin panel{% else %}Admin Dashboard{% endif %}{% endblock %}
 
 
 {% block content %}
@@ -11,9 +12,13 @@
 
 <!-- ========== HEADER ========== -->
 <h1 style="color:#d4af37; margin-bottom:10px; font-family: 'Playfair Display', serif;">
-    🛠️ Admin Dashboard
+    🛠️ {% if LANGUAGE_CODE == 'fr' %}Tableau de bord{% elif LANGUAGE_CODE == 'sk' %}Admin panel{% else %}Admin Dashboard{% endif %}
 </h1>
-<p style="color:#8a8a7a; margin-bottom:30px;">Vitaj, {{ user.username }} | <a href="/admin/" style="color:#d4af37;">Django Admin</a> | <a href="{% url 'home' %}" style="color:#d4af37;">E-shop</a></p>
+<p style="color:#8a8a7a; margin-bottom:30px;">
+{% if LANGUAGE_CODE == 'fr' %}Bienvenue{% elif LANGUAGE_CODE == 'sk' %}Vitaj{% else %}Welcome{% endif %}, {{ user.username }} | 
+<a href="/admin/" style="color:#d4af37;">Django Admin</a> | 
+<a href="{% url 'home' %}" style="color:#d4af37;">{% if LANGUAGE_CODE == 'fr' %}Boutique{% elif LANGUAGE_CODE == 'sk' %}E-shop{% else %}E-shop{% endif %}</a>
+</p>
 
 
 
@@ -22,27 +27,27 @@
 
     <a href="{% url 'admin_orders' %}" 
        style="background:rgba(212,175,55,0.15); border:1px solid rgba(212,175,55,0.3); color:#d4af37; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:600;">
-        📋 Objednávky
+        📋 {% if LANGUAGE_CODE == 'fr' %}Commandes{% elif LANGUAGE_CODE == 'sk' %}Objednávky{% else %}Orders{% endif %}
     </a>
 
     <a href="/admin/products/product/" 
        style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.15); color:#c0b090; padding:12px 20px; border-radius:10px; text-decoration:none;">
-        📦 Produkty
+        📦 {% if LANGUAGE_CODE == 'fr' %}Produits{% elif LANGUAGE_CODE == 'sk' %}Produkty{% else %}Products{% endif %}
     </a>
 
     <a href="/admin/products/category/" 
        style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.15); color:#c0b090; padding:12px 20px; border-radius:10px; text-decoration:none;">
-        📁 Kategórie
+        📁 {% if LANGUAGE_CODE == 'fr' %}Catégories{% elif LANGUAGE_CODE == 'sk' %}Kategórie{% else %}Categories{% endif %}
     </a>
 
     <a href="/admin/custom_orders/customorder/" 
        style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.15); color:#c0b090; padding:12px 20px; border-radius:10px; text-decoration:none;">
-        🛠️ Zákazkové
+        🛠️ {% if LANGUAGE_CODE == 'fr' %}Perso.{% elif LANGUAGE_CODE == 'sk' %}Zákazkové{% else %}Custom{% endif %}
     </a>
 
     <a href="/admin/reviews/review/" 
        style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.15); color:#c0b090; padding:12px 20px; border-radius:10px; text-decoration:none;">
-        ⭐ Recenzie
+        ⭐ {% if LANGUAGE_CODE == 'fr' %}Avis{% elif LANGUAGE_CODE == 'sk' %}Recenzie{% else %}Reviews{% endif %}
     </a>
 
     <a href="/admin/wishlist/wishlist/" 
@@ -52,7 +57,7 @@
 
     <a href="/admin/auth/user/" 
        style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.15); color:#c0b090; padding:12px 20px; border-radius:10px; text-decoration:none;">
-        👤 Používatelia
+        👤 {% if LANGUAGE_CODE == 'fr' %}Utilisateurs{% elif LANGUAGE_CODE == 'sk' %}Používatelia{% else %}Users{% endif %}
     </a>
 
 </div>
@@ -61,7 +66,7 @@
 
 <!-- ========== NADPIS OBJEDNÁVOK ========== -->
 <h2 style="color:#d4af37; margin-bottom:20px; font-family: 'Playfair Display', serif;">
-    📋 Objednávky
+    📋 {% if LANGUAGE_CODE == 'fr' %}Commandes{% elif LANGUAGE_CODE == 'sk' %}Objednávky{% else %}Orders{% endif %}
 </h2>
 
 
@@ -97,7 +102,7 @@ onmouseout="this.style.borderColor='rgba(212,175,55,0.15)'"
 {% if order.user %}
 👤 {{ order.user.username }}
 {% else %}
-🛒 Hosť
+🛒 {% if LANGUAGE_CODE == 'fr' %}Invité{% elif LANGUAGE_CODE == 'sk' %}Hosť{% else %}Guest{% endif %}
 {% endif %}
 | 📧 {{ order.email }}
 </div>
@@ -136,22 +141,22 @@ background:rgba(255,255,255,0.05); color:#aaa;
 {% if order.status == "pending" %}
 <a href="{% url 'mark_paid' order.id %}"
 style="color:#4caf50; font-size:13px; text-decoration:none;">
-✅ Paid
+✅ {% if LANGUAGE_CODE == 'fr' %}Payé{% elif LANGUAGE_CODE == 'sk' %}Zaplatené{% else %}Paid{% endif %}
 </a>
 {% elif order.status == "paid" %}
 <a href="{% url 'mark_processing' order.id %}"
 style="color:#d4af37; font-size:13px; text-decoration:none;">
-⚙️ Process
+⚙️ {% if LANGUAGE_CODE == 'fr' %}Traiter{% elif LANGUAGE_CODE == 'sk' %}Spracovať{% else %}Process{% endif %}
 </a>
 {% elif order.status == "processing" %}
 <a href="{% url 'mark_shipped' order.id %}"
 style="color:#ff9800; font-size:13px; text-decoration:none;">
-📦 Ship
+📦 {% if LANGUAGE_CODE == 'fr' %}Expédier{% elif LANGUAGE_CODE == 'sk' %}Odoslať{% else %}Ship{% endif %}
 </a>
 {% elif order.status == "shipped" %}
 <a href="{% url 'mark_delivered' order.id %}"
 style="color:#4caf50; font-size:13px; text-decoration:none;">
-🏠 Deliver
+🏠 {% if LANGUAGE_CODE == 'fr' %}Livrer{% elif LANGUAGE_CODE == 'sk' %}Doručiť{% else %}Deliver{% endif %}
 </a>
 {% endif %}
 
@@ -163,7 +168,9 @@ style="color:#4caf50; font-size:13px; text-decoration:none;">
 
 <div style="text-align:center; padding:60px 20px;">
     <div style="font-size:50px; margin-bottom:15px;">📋</div>
-    <p style="color:#8a8a7a; font-size:16px;">Zatiaľ žiadne objednávky.</p>
+    <p style="color:#8a8a7a; font-size:16px;">
+    {% if LANGUAGE_CODE == 'fr' %}Aucune commande.{% elif LANGUAGE_CODE == 'sk' %}Žiadne objednávky.{% else %}No orders yet.{% endif %}
+    </p>
 </div>
 
 {% endfor %}
