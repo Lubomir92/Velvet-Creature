@@ -263,7 +263,7 @@ def payment_success(request):
                     message=body,
                     from_email=settings.DEFAULT_FROM_EMAIL,
                     recipient_list=[order.email],
-                    fail_silently=True,
+                    fail_silently=False,
                 )
             except:
                 pass
