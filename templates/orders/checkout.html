@@ -71,8 +71,8 @@
         {% for method in shipping_methods %}
         <label class="shipping-option {% if method.id|stringformat:"s" == selected_shipping %}selected{% endif %}">
             <input type="radio" name="shipping_method" value="{{ method.id }}" 
-                   {% if method.id|stringformat:"s" == selected_shipping %}checked{% endif %}
-                   onchange="updateTotal(this)">
+                   {% if method.id|stringformat:"s" == selected_shipping %}checked{% elif forloop.first %}checked{% endif %}
+                   onchange="updateTotal(this)" required>
             <span class="shipping-logo">{{ method.logo }}</span>
             <span class="shipping-name">{{ method.name }}</span>
             {% if method.description %}
