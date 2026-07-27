@@ -12,6 +12,8 @@ from .email import send_order_email
 from .forms import ShippingForm
 from decimal import Decimal
 import stripe
+import resend
+import os
 
 from .models import Order, OrderItem, ShippingMethod
 from .invoice import generate_invoice, generate_invoice_bytes
@@ -253,18 +255,15 @@ def payment_success(request):
                 order.stock_updated = True
                 order.save()
 
-            # Email cez Resend
+            # Resend API email
             try:
-                subject = f"Velvet Creature - Order #{order.id}"
-                body = f"Thank you for your order {order.order_number}.\n\nTotal: €{order.total_price}\n\nVelvet Creature by Lubma3D"
-                
-                send_mail(
-                    subject=subject,
-                    message=body,
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=[order.email],
-                    fail_silently=False,
-                )
+                resend.api_key = os.getenv("RESEND_API_KEY")
+                resend.Emails.send({
+                    "from": "Velvet Creature <onboarding@resend.dev>",
+                    "to": [order.email],
+                    "subject": f"Velvet Creature - Order #{order.id}",
+                    "html": f"<h1>Thank you for your order!</h1><p>Order: {order.order_number}</p><p>Total: €{order.total_price}</p>",
+                })
             except:
                 pass
 
