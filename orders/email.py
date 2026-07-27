@@ -1,17 +1,16 @@
 import os
 import resend
-from django.conf import settings
-from django.template.loader import render_to_string
 
 
 def send_order_email(order, subject, template):
 
-    html = render_to_string(
-        template,
-        {
-            "order": order
-        }
-    )
+    # Jednoduchá textová správa
+    body = f"""Order: {order.order_number}
+Status: {order.status}
+Total: €{order.total_price}
+Customer: {order.first_name} {order.last_name}
+Email: {order.email}
+"""
 
     try:
         resend.api_key = os.getenv("RESEND_API_KEY")
@@ -19,7 +18,7 @@ def send_order_email(order, subject, template):
             "from": "Velvet Creature <onboarding@resend.dev>",
             "to": [order.email],
             "subject": subject,
-            "html": html,
+            "text": body,
         })
     except Exception as e:
         print(f"Email error: {e}")
