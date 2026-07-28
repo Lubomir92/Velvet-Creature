@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 
 {% block title %}
@@ -44,7 +45,7 @@
 
 
                 <div class="no-image">
-                    No image available
+                    {% if LANGUAGE_CODE == 'fr' %}Pas d'image disponible{% elif LANGUAGE_CODE == 'sk' %}Obrázok nie je k dispozícii{% else %}No image available{% endif %}
                 </div>
 
 
@@ -158,12 +159,6 @@
 
 
 
-</div>
-
-
-
-
-
             <p class="price">
                 €{{ product.price }}
             </p>
@@ -171,7 +166,7 @@
 
 <div class="stock-status available">
 
-    🎃 Available
+    🎃 {% if LANGUAGE_CODE == 'fr' %}Disponible{% elif LANGUAGE_CODE == 'sk' %}Dostupné{% else %}Available{% endif %}
 
 </div>
 
@@ -181,7 +176,7 @@
 
 <div class="stock-status sold">
 
-    Sold out
+    {% if LANGUAGE_CODE == 'fr' %}Épuisé{% elif LANGUAGE_CODE == 'sk' %}Vypredané{% else %}Sold out{% endif %}
 
 </div>
 
@@ -210,7 +205,7 @@
 
 
                 <h3>
-                    Product Details
+                    {% if LANGUAGE_CODE == 'fr' %}Détails du produit{% elif LANGUAGE_CODE == 'sk' %}Detaily produktu{% else %}Product Details{% endif %}
                 </h3>
 
 
@@ -220,7 +215,7 @@
 
                 <p>
                     <strong>
-                        Material:
+                        {% if LANGUAGE_CODE == 'fr' %}Matériau{% elif LANGUAGE_CODE == 'sk' %}Materiál{% else %}Material{% endif %}:
                     </strong>
 
                     {{ product.material }}
@@ -238,7 +233,7 @@
                 <p>
 
                     <strong>
-                        Size:
+                        {% if LANGUAGE_CODE == 'fr' %}Taille{% elif LANGUAGE_CODE == 'sk' %}Veľkosť{% else %}Size{% endif %}:
                     </strong>
 
                     {{ product.size }}
@@ -256,7 +251,7 @@
                 <p>
 
                     <strong>
-                        Weight:
+                        {% if LANGUAGE_CODE == 'fr' %}Poids{% elif LANGUAGE_CODE == 'sk' %}Hmotnosť{% else %}Weight{% endif %}:
                     </strong>
 
                     {{ product.weight }} g
@@ -306,7 +301,7 @@
                     onclick="addToCart({{ product.id }}); return false;"
                 >
 
-                    Add to cart 🛒
+                    {% if LANGUAGE_CODE == 'fr' %}Ajouter au panier{% elif LANGUAGE_CODE == 'sk' %}Pridať do košíka{% else %}Add to cart{% endif %} 🛒
 
                 </button>
 
@@ -318,7 +313,7 @@
                     class="btn-secondary"
                 >
 
-                    ← Back to collection
+                    {% if LANGUAGE_CODE == 'fr' %}← Retour à la collection{% elif LANGUAGE_CODE == 'sk' %}← Späť na kolekciu{% else %}← Back to collection{% endif %}
 
                 </a>
 
@@ -392,7 +387,7 @@ function changeImage(url){
 
 <h2>
 
-You may also like
+{% if LANGUAGE_CODE == 'fr' %}Vous pourriez aussi aimer{% elif LANGUAGE_CODE == 'sk' %}Tiež by sa vám mohlo páčiť{% else %}You may also like{% endif %}
 
 </h2>
 
@@ -460,7 +455,7 @@ href="{% url 'product_detail' item.slug %}"
 class="btn-secondary"
 >
 
-View
+{% if LANGUAGE_CODE == 'fr' %}Voir{% elif LANGUAGE_CODE == 'sk' %}Zobraziť{% else %}View{% endif %}
 
 </a>
 
@@ -497,15 +492,11 @@ View
      CUSTOMER REVIEWS
 ========================== -->
 
-<!-- =========================
-     CUSTOMER REVIEWS
-========================== -->
-
 <section class="reviews-section">
 
 
 <h2>
-    Customer Reviews
+    {% if LANGUAGE_CODE == 'fr' %}Avis clients{% elif LANGUAGE_CODE == 'sk' %}Recenzie zákazníkov{% else %}Customer Reviews{% endif %}
 </h2>
 
 
@@ -542,7 +533,7 @@ View
 
 
     <p>
-        Based on {{ reviews.count }} reviews
+        {% if LANGUAGE_CODE == 'fr' %}Basé sur {{ reviews.count }} avis{% elif LANGUAGE_CODE == 'sk' %}Na základe {{ reviews.count }} recenzií{% else %}Based on {{ reviews.count }} reviews{% endif %}
     </p>
 
 
@@ -639,7 +630,7 @@ View
 
 <div class="no-reviews">
 
-⭐ No reviews yet. Be the first one!
+⭐ {% if LANGUAGE_CODE == 'fr' %}Pas encore d'avis. Soyez le premier !{% elif LANGUAGE_CODE == 'sk' %}Zatiaľ žiadne recenzie. Buďte prvý!{% else %}No reviews yet. Be the first one!{% endif %}
 
 </div>
 
@@ -664,7 +655,7 @@ View
 
 
 <h3>
-Write your review
+{% if LANGUAGE_CODE == 'fr' %}Écrivez votre avis{% elif LANGUAGE_CODE == 'sk' %}Napíšte recenziu{% else %}Write your review{% endif %}
 </h3>
 
 
@@ -703,7 +694,7 @@ Write your review
 
 <button class="btn-primary">
 
-⭐ Submit Review
+⭐ {% if LANGUAGE_CODE == 'fr' %}Publier l'avis{% elif LANGUAGE_CODE == 'sk' %}Odoslať recenziu{% else %}Submit Review{% endif %}
 
 </button>
 
@@ -722,7 +713,7 @@ Write your review
 
 <div class="login-review">
 
-Login to write a review.
+{% if LANGUAGE_CODE == 'fr' %}Connectez-vous pour écrire un avis.{% elif LANGUAGE_CODE == 'sk' %}Prihláste sa pre napísanie recenzie.{% else %}Login to write a review.{% endif %}
 
 </div>
 
