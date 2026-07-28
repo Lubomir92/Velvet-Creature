@@ -548,9 +548,7 @@ if(icon){
         icon.classList.add("active");
 
 
-        showToast(
-            "🎃 Added to Wishlist"
-        );
+        showToast("🎃 " + (document.documentElement.lang === 'fr' ? 'Ajouté à la liste de souhaits' : document.documentElement.lang === 'sk' ? 'Pridané do zoznamu želaní' : 'Added to Wishlist'));
 
 
     }
@@ -560,9 +558,7 @@ if(icon){
         icon.classList.remove("active");
 
 
-        showToast(
-            "🎃 Removed from Wishlist"
-        );
+        showToast("🎃 " + (document.documentElement.lang === 'fr' ? 'Retiré de la liste de souhaits' : document.documentElement.lang === 'sk' ? 'Odstránené zo zoznamu želaní' : 'Removed from Wishlist'));
 
 
     }
