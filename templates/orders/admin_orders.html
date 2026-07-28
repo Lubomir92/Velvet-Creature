@@ -135,7 +135,7 @@ background:rgba(0,100,0,0.15); color:#00c000;
 background:rgba(255,255,255,0.05); color:#aaa;
 {% endif %}
 ">
-{{ order.get_status_display }}
+{% if order.status == 'pending' %}{% if LANGUAGE_CODE == 'fr' %}En attente{% elif LANGUAGE_CODE == 'sk' %}Čaká sa{% else %}Pending{% endif %}{% elif order.status == 'paid' %}{% if LANGUAGE_CODE == 'fr' %}Payé{% elif LANGUAGE_CODE == 'sk' %}Zaplatené{% else %}Paid{% endif %}{% elif order.status == 'processing' %}{% if LANGUAGE_CODE == 'fr' %}En traitement{% elif LANGUAGE_CODE == 'sk' %}Spracúva sa{% else %}Processing{% endif %}{% elif order.status == 'shipped' %}{% if LANGUAGE_CODE == 'fr' %}Expédié{% elif LANGUAGE_CODE == 'sk' %}Odoslané{% else %}Shipped{% endif %}{% elif order.status == 'delivered' %}{% if LANGUAGE_CODE == 'fr' %}Livré{% elif LANGUAGE_CODE == 'sk' %}Doručené{% else %}Delivered{% endif %}{% else %}{{ order.get_status_display }}{% endif %}
 </span>
 
 {% if order.status == "pending" %}
