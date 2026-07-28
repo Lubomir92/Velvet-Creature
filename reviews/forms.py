@@ -19,7 +19,7 @@ class ReviewForm(forms.ModelForm):
                 attrs={
                     "rows": 5,
                     "class": "review-textarea",
-                    "placeholder": "Write your review..."
+                    "placeholder": "Écrivez votre avis..."
                 }
             )
 

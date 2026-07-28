@@ -670,7 +670,7 @@ class="btn-secondary"
 
 <div class="rating-field">
 
-{{ review_form.rating.label }}
+{% if LANGUAGE_CODE == 'fr' %}Note{% elif LANGUAGE_CODE == 'sk' %}Hodnotenie{% else %}Rating{% endif %}
 
 {{ review_form.rating }}
 
@@ -682,7 +682,7 @@ class="btn-secondary"
 
 <div class="comment-field">
 
-{{ review_form.comment.label }}
+{% if LANGUAGE_CODE == 'fr' %}Commentaire{% elif LANGUAGE_CODE == 'sk' %}Komentár{% else %}Comment{% endif %}
 
 {{ review_form.comment }}
 
