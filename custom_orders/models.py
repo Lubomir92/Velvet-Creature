@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.utils.translation import gettext_lazy as _
 
 
 class CustomOrder(models.Model):
@@ -13,21 +13,21 @@ class CustomOrder(models.Model):
 
     STATUS_CHOICES = [
 
-        ("new", "New"),
+        ("new", _("New")),
 
-        ("review", "Under Review"),
+        ("review", _("Under Review")),
 
-        ("quote_sent", "Quote Sent"),
+        ("quote_sent", _("Quote Sent")),
 
-        ("accepted", "Accepted"),
+        ("accepted", _("Accepted")),
 
-        ("printing", "Production"),
+        ("printing", _("Production")),
 
-        ("finished", "Finished"),
+        ("finished", _("Finished")),
 
-        ("shipped", "Shipped"),
+        ("shipped", _("Shipped")),
 
-        ("cancelled", "Cancelled"),
+        ("cancelled", _("Cancelled")),
 
     ]
 
@@ -40,11 +40,11 @@ class CustomOrder(models.Model):
 
     SERVICE_CHOICES = [
 
-        ("printing", "3D Printing"),
+        ("printing", _("3D Printing")),
 
-        ("engraving", "Engraving"),
+        ("engraving", _("Engraving")),
 
-        ("both", "3D Printing + Engraving"),
+        ("both", _("3D Printing + Engraving")),
 
     ]
 
@@ -57,13 +57,13 @@ class CustomOrder(models.Model):
 
     ENGRAVING_CHOICES = [
 
-        ("none", "No engraving"),
+        ("none", _("No engraving")),
 
-        ("text", "Text engraving"),
+        ("text", _("Text engraving")),
 
-        ("logo", "Logo engraving"),
+        ("logo", _("Logo engraving")),
 
-        ("image", "Image engraving"),
+        ("image", _("Image engraving")),
 
     ]
 

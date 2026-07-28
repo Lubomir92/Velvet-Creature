@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Velvet Creature\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-28 01:13+0200\n"
+"POT-Creation-Date: 2026-07-28 10:20+0200\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -171,6 +171,87 @@ msgstr "Nom d'utilisateur ou mot de passe incorrect"
 msgid "Profile updated successfully!"
 msgstr "Profil mis à jour avec succès !"
 
+#: .\custom_orders\models.py:16
+msgid "New"
+msgstr ""
+
+#: .\custom_orders\models.py:18
+#, fuzzy
+#| msgid "Review"
+msgid "Under Review"
+msgstr "En révision"
+
+#: .\custom_orders\models.py:20
+#, fuzzy
+#| msgid "Quote sent"
+msgid "Quote Sent"
+msgstr "Devis envoyé"
+
+#: .\custom_orders\models.py:22
+msgid "Accepted"
+msgstr ""
+
+#: .\custom_orders\models.py:24 .\templates\custom_orders\create.html:69
+#, fuzzy
+#| msgid "View Product"
+msgid "Production"
+msgstr "Production"
+
+#: .\custom_orders\models.py:26
+#: .\custom_orders\templates\custom_orders\detail.html:132
+msgid "Finished"
+msgstr "Terminé"
+
+#: .\custom_orders\models.py:28 .\orders\models.py:33
+msgid "Shipped"
+msgstr "Expédié"
+
+#: .\custom_orders\models.py:30
+#, fuzzy
+#| msgid "Payment Cancelled"
+msgid "Cancelled"
+msgstr "Paiement annulé"
+
+#: .\custom_orders\models.py:43
+#, fuzzy
+#| msgid "Printing"
+msgid "3D Printing"
+msgstr "Impression"
+
+#: .\custom_orders\models.py:45
+#: .\custom_orders\templates\custom_orders\detail.html:266
+#: .\templates\custom_orders\create.html:262
+msgid "Engraving"
+msgstr "Gravure"
+
+#: .\custom_orders\models.py:47
+msgid "3D Printing + Engraving"
+msgstr ""
+
+#: .\custom_orders\models.py:60
+#, fuzzy
+#| msgid "Engraving"
+msgid "No engraving"
+msgstr "Gravure"
+
+#: .\custom_orders\models.py:62
+#, fuzzy
+#| msgid "Engraving"
+msgid "Text engraving"
+msgstr "Gravure"
+
+#: .\custom_orders\models.py:64
+#, fuzzy
+#| msgid "Engraving"
+msgid "Logo engraving"
+msgstr "Gravure"
+
+#: .\custom_orders\models.py:66
+#, fuzzy
+#| msgid "Engraving"
+msgid "Image engraving"
+msgstr "Gravure"
+
 #: .\custom_orders\templates\custom_orders\detail.html:29
 msgid "Custom Project"
 msgstr "Projet personnalisé"
@@ -194,10 +275,6 @@ msgstr "En révision"
 #: .\custom_orders\templates\custom_orders\detail.html:115
 msgid "Quote sent"
 msgstr "Devis envoyé"
-
-#: .\custom_orders\templates\custom_orders\detail.html:132
-msgid "Finished"
-msgstr "Terminé"
 
 #: .\custom_orders\templates\custom_orders\detail.html:162
 msgid "Project Details"
@@ -228,11 +305,6 @@ msgstr "Taille"
 #: .\templates\custom_orders\create.html:237
 msgid "Description"
 msgstr "Description"
-
-#: .\custom_orders\templates\custom_orders\detail.html:266
-#: .\templates\custom_orders\create.html:262
-msgid "Engraving"
-msgstr "Gravure"
 
 #: .\custom_orders\templates\custom_orders\detail.html:274
 msgid "Enabled"
@@ -299,12 +371,6 @@ msgstr "Payé"
 #| msgid "Our Process"
 msgid "Processing"
 msgstr "En traitement"
-
-#: .\orders\models.py:33
-#, fuzzy
-#| msgid "Shipping"
-msgid "Shipped"
-msgstr "Expédié"
 
 #: .\orders\models.py:34
 #, fuzzy
@@ -572,18 +638,6 @@ msgstr "Nous vérifions vos exigences, le matériau et les possibilités."
 msgid "Price estimation"
 msgstr "Estimation du prix"
 
-#: .\templates\custom_orders\create.html:59
-#, fuzzy
-#| msgid "You have no custom projects yet."
-msgid "You receive a custom quote."
-msgstr "Vous recevez un devis personnalisé."
-
-#: .\templates\custom_orders\create.html:69
-#, fuzzy
-#| msgid "View Product"
-msgid "Production"
-msgstr "Production"
-
 #: .\templates\custom_orders\create.html:73
 msgid "Your creation goes into production."
 msgstr "Votre création passe en production."
@@ -602,11 +656,6 @@ msgstr "Informations client"
 #: .\templates\orders\order_detail.html:145
 msgid "Name"
 msgstr "Nom"
-
-#: .\templates\custom_orders\create.html:192
-#, fuzzy
-msgid "Project Type"
-msgstr "Type de projet"
 
 #: .\templates\custom_orders\create.html:271
 #, fuzzy
@@ -2269,6 +2318,15 @@ msgstr "Communauté Django"
 msgid "Connect, get help, or contribute"
 msgstr "Se connecter, obtenir de l'aide ou contribuer"
 
+#, fuzzy
+#~| msgid "You have no custom projects yet."
+#~ msgid "You receive a custom quote."
+#~ msgstr "Vous recevez un devis personnalisé."
+
+#, fuzzy
+#~ msgid "Project Type"
+#~ msgstr "Type de projet"
+
 #~ msgid "Admin Dashboard"
 #~ msgstr "Tableau de bord"
 
@@ -2360,6 +2418,3 @@ msgstr "Se connecter, obtenir de l'aide ou contribuer"
 
 #~ msgid "Order date"
 #~ msgstr "Date"
-
-
-

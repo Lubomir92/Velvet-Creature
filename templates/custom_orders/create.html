@@ -56,7 +56,7 @@
             </h3>
 
             <p>
-                {% trans "You receive a custom quote." %}
+                {% if LANGUAGE_CODE == 'fr' %}Vous recevez un devis personnalisé.{% elif LANGUAGE_CODE == 'sk' %}Dostanete cenovú ponuku na mieru.{% else %}You receive a custom quote.{% endif %}
             </p>
         </div>
 
@@ -189,7 +189,7 @@
 
 
 <h3>
-{% trans "Project Type" %}
+{% if LANGUAGE_CODE == 'fr' %}Type de projet{% elif LANGUAGE_CODE == 'sk' %}Typ projektu{% else %}Project Type{% endif %}
 </h3>
 
 
