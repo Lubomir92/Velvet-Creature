@@ -16,3 +16,5 @@ gunicorn
 dj-database-url
 psycopg2-binary
 resend
+cloudinary
+django-cloudinary-storage

@@ -25,6 +25,8 @@ ALLOWED_HOSTS = [
 # =========================================================
 
 INSTALLED_APPS = [
+    'cloudinary_storage',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -164,11 +166,18 @@ STATICFILES_DIRS = [
 
 
 # =========================================================
-# MEDIA FILES (PRODUCT IMAGES)
+# MEDIA FILES (CLOUDINARY)
 # =========================================================
 
-MEDIA_URL = "/media/"
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'lgn9ohzj',
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+}
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 
