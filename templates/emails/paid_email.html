@@ -1,123 +1,26 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
 <meta charset="UTF-8">
-
-<title>Payment received</title>
-
+<title>Paiement reçu</title>
 </head>
-
-
 <body style="background:#111;color:#eee;font-family:Arial;padding:30px;">
-
-
-<div style="
-max-width:600px;
-margin:auto;
-background:#1b1b1b;
-padding:30px;
-border-radius:10px;
-">
-
-
-<h1 style="color:#d4af37;">
-Velvet Creature
-</h1>
-
-
-<h2>
-Payment received
-</h2>
-
-
-<p>
-Hello {{ order.first_name }},
-</p>
-
-
-<p>
-Thank you for your payment.
-Your order is now confirmed and will be prepared soon.
-</p>
-
-
-
+<div style="max-width:600px;margin:auto;background:#1b1b1b;padding:30px;border-radius:10px;">
+<h1 style="color:#d4af37;">Velvet Creature</h1>
+<h2>Paiement reçu</h2>
+<p>Bonjour {{ order.first_name }},</p>
+<p>Merci pour votre paiement. Votre commande est confirmée et sera préparée prochainement.</p>
 <hr>
-
-
-
-<h3>
-Order {{ order.order_number }}
-</h3>
-
-
-
-<h3>
-Products:
-</h3>
-
-
+<h3>Commande {{ order.order_number }}</h3>
+<h3>Produits :</h3>
 {% for item in order.items.all %}
-
-<p>
-
-{{ item.product.name }}
-
-<br>
-
-Quantity:
-{{ item.quantity }}
-
-<br>
-
-Price:
-€{{ item.price }}
-
-</p>
-
-
+<p>{{ item.product.name }}<br>Quantité : {{ item.quantity }}<br>Prix : €{{ item.price }}</p>
 <hr>
-
 {% endfor %}
-
-
-
-<h2 style="color:#d4af37;">
-
-Total:
-€{{ order.total_price }}
-
-</h2>
-
-<h3>
-Status:
-</h3>
-
-<p>
-Paid
-</p>
-
-
-
-<p>
-We will notify you when your order starts being prepared.
-</p>
-
-
-
-<p style="color:#888;">
-
-Velvet Creature by Lubma3D
-
-</p>
-
-
-
+<h2 style="color:#d4af37;">Total : €{{ order.total_price }}</h2>
+<h3>Statut :</h3><p>Payé</p>
+<p>Nous vous informerons dès que votre commande sera en préparation.</p>
+<p style="color:#888;">Velvet Creature by Lubma3D</p>
 </div>
-
-
 </body>
-
 </html>

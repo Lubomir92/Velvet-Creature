@@ -1,72 +1,20 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="UTF-8">
-<title>Order Processing</title>
+<title>Commande en préparation</title>
 </head>
-
 <body style="background:#111;color:#eee;font-family:Arial;padding:30px;">
-
-<div style="
-max-width:600px;
-margin:auto;
-background:#1b1b1b;
-padding:30px;
-border-radius:12px;
-">
-
-<h1 style="color:#d4af37;">
-Velvet Creature
-</h1>
-
-<h2>
-🛠 Your order is being prepared
-</h2>
-
-<p>
-
-Hello {{ order.first_name }},
-
-</p>
-
-<p>
-
-Your order <strong>{{ order.order_number }}</strong> is now being prepared by our team.
-
-</p>
-
-<p>
-
-We will notify you again as soon as it has been shipped.
-
-</p>
-
+<div style="max-width:600px;margin:auto;background:#1b1b1b;padding:30px;border-radius:12px;">
+<h1 style="color:#d4af37;">Velvet Creature</h1>
+<h2>🛠 Votre commande est en préparation</h2>
+<p>Bonjour {{ order.first_name }},</p>
+<p>Votre commande <strong>{{ order.order_number }}</strong> est en cours de préparation par notre équipe.</p>
+<p>Nous vous informerons dès qu'elle sera expédiée.</p>
 <hr>
-
-<h3>
-Order Number
-</h3>
-
-<p>
-{{ order.order_number }}
-</p>
-
-<h3>
-Total
-</h3>
-
-<p>
-€{{ order.total_price }}
-</p>
-
-<p style="color:#888;margin-top:40px;">
-
-Velvet Creature by Lubma3D
-
-</p>
-
+<h3>Numéro de commande</h3><p>{{ order.order_number }}</p>
+<h3>Total</h3><p>€{{ order.total_price }}</p>
+<p style="color:#888;margin-top:40px;">Velvet Creature by Lubma3D</p>
 </div>
-
 </body>
 </html>
