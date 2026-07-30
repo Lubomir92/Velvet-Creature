@@ -25,8 +25,6 @@ ALLOWED_HOSTS = [
 # =========================================================
 
 INSTALLED_APPS = [
-    'cloudinary_storage',
-    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,27 +124,19 @@ DATABASES = {
 
 USE_I18N = True
 
-
 LANGUAGE_CODE = "fr"
 
 LANGUAGES = [
-
     ("en", "English"),
-
     ("fr", "Français"),
-
     ("sk", "Slovensky"),
-
 ]
 
 LOCALE_PATHS = [
-
     BASE_DIR / "locale",
-
 ]
 
 LANGUAGE_COOKIE_NAME = "django_language"
-
 LANGUAGE_COOKIE_AGE = 1209600
 
 
@@ -155,29 +145,15 @@ LANGUAGE_COOKIE_AGE = 1209600
 # =========================================================
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
 STATIC_URL = "/static/"
-
 STATICFILES_DIRS = [
-
     BASE_DIR / "static",
-
 ]
 
 
 # =========================================================
-# MEDIA FILES (CLOUDINARY)
+# MEDIA FILES
 # =========================================================
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'lgn9ohzj',
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-STATIC_URL = '/static/'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
@@ -188,15 +164,14 @@ MEDIA_ROOT = BASE_DIR / "media"
 # =========================================================
 
 STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY")
-
 STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
-
 STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET")
 
 
-
-
+# =========================================================
 # EMAIL (Resend)
+# =========================================================
+
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.resend.com"
 EMAIL_PORT = 587
