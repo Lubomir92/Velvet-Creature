@@ -50,6 +50,8 @@ class Order(models.Model):
     address = models.CharField(max_length=255, blank=True)
     city = models.CharField(max_length=100, blank=True)
     country = models.CharField(max_length=100, blank=True)
+    phone = models.CharField(max_length=50, blank=True, default="")
+    postal_code = models.CharField(max_length=20, blank=True, default="")
     note = models.TextField(blank=True)
 
     payment_method = models.CharField(max_length=50, default="Stripe")

@@ -61,7 +61,7 @@ def checkout(request):
     
     if request.method == "POST":
         
-        # 🚚 DOPRAVA JE POVINNÁ!
+        # DOPRAVA JE POVINNÁ!
         shipping_id = request.POST.get("shipping_method")
         if not shipping_id:
             return render(request, "orders/checkout.html", {
@@ -91,6 +91,8 @@ def checkout(request):
             address=request.POST.get("address"),
             city=request.POST.get("city"),
             country=request.POST.get("country"),
+            phone=request.POST.get("phone", ""),
+            postal_code=request.POST.get("postal_code", ""),
             shipping_method_id=shipping_id if shipping_id else None,
             shipping_price=shipping_price,
             total_price=subtotal + shipping_price,
@@ -108,12 +110,12 @@ def checkout(request):
 
         request.session["last_order_id"] = order.id
 
-        # 🏦 BANKOVÝ PREVOD
+        # BANKOVÝ PREVOD
         if payment_method == "bank_transfer":
             request.session["cart"] = {}
             return redirect("payment_success")
 
-        # 💳 PLATBA KARTOU
+        # PLATBA KARTOU
         else:
             session = stripe.checkout.Session.create(
                 customer_email=order.email,
@@ -158,10 +160,6 @@ def checkout(request):
             "shipping_methods": shipping_methods,
         }
     )
-
-
-
-
 # ==================================================
 # USER ORDERS
 # ==================================================
