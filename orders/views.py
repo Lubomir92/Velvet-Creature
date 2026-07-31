@@ -254,8 +254,7 @@ def payment_success(request):
                 order.stock_updated = True
                 order.save()
 
-            # Resend API email
-                        # Resend API email s pekným template
+            # Resend API email - zákazníkovi
             try:
                 html_message = render_to_string("emails/order_confirmation.html", {"order": order})
                 resend.api_key = os.getenv("RESEND_API_KEY")
@@ -264,6 +263,25 @@ def payment_success(request):
                     "to": [order.email],
                     "subject": f"Velvet Creature - Order #{order.order_number}",
                     "html": html_message,
+                })
+                
+                # Admin notifikácia
+                resend.Emails.send({
+                    "from": "Velvet Creature <onboarding@resend.dev>",
+                    "to": ["szlovakl333@gmail.com"],
+                    "subject": f"🔔 Nouvelle commande #{order.order_number}",
+                    "html": f"""
+                    <h2>Nouvelle commande!</h2>
+                    <p><strong>Numéro:</strong> {order.order_number}</p>
+                    <p><strong>Client:</strong> {order.first_name} {order.last_name}</p>
+                    <p><strong>Email:</strong> {order.email}</p>
+                    <p><strong>Téléphone:</strong> {order.phone}</p>
+                    <p><strong>Total:</strong> €{order.total_price}</p>
+                    <p><strong>Paiement:</strong> {order.payment_method}</p>
+                    <p><strong>Adresse:</strong> {order.address}, {order.postal_code} {order.city}, {order.country}</p>
+                    <p><strong>Note:</strong> {order.note}</p>
+                    <p><a href="https://www.velvetcreature.fr/fr/orders/admin/">Voir les commandes</a></p>
+                    """,
                 })
             except:
                 pass
