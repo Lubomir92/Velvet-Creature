@@ -93,6 +93,7 @@ def checkout(request):
             country=request.POST.get("country"),
             phone=request.POST.get("phone", ""),
             postal_code=request.POST.get("postal_code", ""),
+            note=request.POST.get("note", ""),
             shipping_method_id=shipping_id if shipping_id else None,
             shipping_price=shipping_price,
             total_price=subtotal + shipping_price,
