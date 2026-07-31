@@ -268,7 +268,7 @@ def payment_success(request):
                 # Admin notifikácia
                 resend.Emails.send({
                     "from": "Velvet Creature <onboarding@resend.dev>",
-                    "to": ["szlovakl333@gmail.com"],
+                    "to": ["lubma3D@outlook.fr"],
                     "subject": f"🔔 Nouvelle commande #{order.order_number}",
                     "html": f"""
                     <h2>Nouvelle commande!</h2>
