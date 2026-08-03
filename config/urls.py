@@ -36,6 +36,7 @@ urlpatterns = [
 # ==========================================
 
 urlpatterns += i18n_patterns(
+    prefix_default_language=True,
    
 
     # HOME
