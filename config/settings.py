@@ -127,8 +127,9 @@ USE_I18N = True
 LANGUAGE_CODE = "fr"
 
 LANGUAGES = [
-    ("en", "English"),
+
     ("fr", "Français"),
+    ("en", "English"),
     ("sk", "Slovensky"),
 ]
 
