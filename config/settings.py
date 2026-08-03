@@ -53,9 +53,9 @@ MIDDLEWARE = [
 
     'django.contrib.sessions.middleware.SessionMiddleware',
 
-    'django.middleware.locale.LocaleMiddleware',
-
     'django.middleware.common.CommonMiddleware',
+
+    'django.middleware.locale.LocaleMiddleware',
 
     'django.middleware.csrf.CsrfViewMiddleware',
 
@@ -127,7 +127,6 @@ USE_I18N = True
 LANGUAGE_CODE = "fr"
 
 LANGUAGES = [
-
     ("fr", "Français"),
     ("en", "English"),
     ("sk", "Slovensky"),
@@ -138,7 +137,7 @@ LOCALE_PATHS = [
 ]
 
 LANGUAGE_COOKIE_NAME = "django_language"
-LANGUAGE_COOKIE_AGE = 1209600
+LANGUAGE_COOKIE_AGE = 0
 
 
 # =========================================================
