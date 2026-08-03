@@ -36,7 +36,7 @@ urlpatterns = [
 # ==========================================
 
 urlpatterns += i18n_patterns(
-
+   
 
     # HOME
     path(
