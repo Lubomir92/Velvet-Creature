@@ -3,6 +3,17 @@
 
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+        Velvet Creature
+        {% endblock %}
+    </title>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VP3E5ZHH0N"></script>
     <script>
@@ -11,80 +22,37 @@
       gtag('js', new Date());
       gtag('config', 'G-VP3E5ZHH0N');
     </script>
-<head>
 
-    <meta charset="UTF-8">
+    <!-- Presmerovanie na francúzštinu -->
+    <script>
+    if (window.location.pathname === '/' || window.location.pathname === '') {
+        window.location.href = '/fr/';
+    }
+    </script>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-
-    <title>
-        {% block title %}
-        Velvet Creature
-        {% endblock %}
-    </title>
-
-
-    <!-- =========================
-         GOOGLE FONTS
-    ========================== -->
-
-            <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
           rel="stylesheet">
-    <!-- =========================
-         CSS
-    ========================== -->
 
-    <link rel="stylesheet"
-          href="{% static 'css/base.css' %}">
-
-    <link rel="stylesheet"
-          href="{% static 'css/buttons.css' %}">
-
-    <link rel="stylesheet"
-          href="{% static 'css/navbar.css' %}">
-
-    <link rel="stylesheet"
-          href="{% static 'css/hero.css' %}">
-
-    <link rel="stylesheet"
-          href="{% static 'css/shop.css' %}">
-
-    <link rel="stylesheet"
-          href="{% static 'css/product.css' %}">
-
-    <link rel="stylesheet"
-          href="{% static 'css/cart.css' %}">
-
-    <link rel="stylesheet"
-          href="{% static 'css/wishlist.css' %}">
-
-    <link rel="stylesheet"
-          href="{% static 'css/forms.css' %}">
-
-    <link rel="stylesheet"
-          href="{% static 'css/profile.css' %}">
-
-    <link rel="stylesheet"
-          href="{% static 'css/footer.css' %}">
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hero.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shop.css' %}">
+    <link rel="stylesheet" href="{% static 'css/product.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'css/wishlist.css' %}">
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
-
-    <link rel="stylesheet"
-          href="{% static 'css/responsive.css' %}">
-
-    <!-- FINAL OVERRIDES -->
-    <link rel="stylesheet"
-          href="{% static 'css/style.css' %}">
-
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
 
-
-
 <body>
-
 
 <!-- PAVUČINY V ROHOCH -->
 <div style="position: fixed; top: 0; left: 0; font-size: 120px; opacity: 0.08; pointer-events: none; z-index: 0; transform: rotate(180deg);">🕸️</div>
@@ -117,574 +85,149 @@
 </div>
 
 <style>
-    /* EB Garamond - viktoriánske písmo */
     body {
         font-family: "EB Garamond", "Playfair Display", serif !important;
         font-size: 18px !important;
         letter-spacing: 0.3px !important;
         line-height: 1.7 !important;
     }
-    
     h1, h2, h3, h4 {
         font-family: "EB Garamond", "Playfair Display", serif !important;
         letter-spacing: 0.5px !important;
     }
-    
-    h1 {
-        font-size: 2.2rem !important;
-        font-weight: 700 !important;
-    }
-    
-    h2 {
-        font-size: 1.6rem !important;
-        font-weight: 600 !important;
-    }
-    
+    h1 { font-size: 2.2rem !important; font-weight: 700 !important; }
+    h2 { font-size: 1.6rem !important; font-weight: 600 !important; }
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
-    
     @keyframes pulse {
         0%, 100% { opacity: 0.5; }
         50% { opacity: 1; }
     }
 </style>
 
-<div id="toast-message"
-     class="toast-message">
-</div>
-
-
+<div id="toast-message" class="toast-message"></div>
 
 {% include "includes/navbar.html" %}
 
-
-
-
-
 <main class="container">
-
-
     {% block content %}
-
     {% endblock %}
-
-
 </main>
 
+<!-- CART OVERLAY -->
+<div id="drawer-overlay" class="drawer-overlay" onclick="closeCart()"></div>
 
-
-
-
-
-
-<!-- =========================
-     CART OVERLAY
-========================= -->
-
-
-<div id="drawer-overlay"
-     class="drawer-overlay"
-     onclick="closeCart()">
-</div>
-
-
-
-
-
-
-
-<!-- =========================
-     CART DRAWER
-========================= -->
-
-
-<div id="cart-drawer"
-     class="cart-drawer">
-
-
+<!-- CART DRAWER -->
+<div id="cart-drawer" class="cart-drawer">
     {% include "cart/cart_drawer.html" %}
-
-
 </div>
 
-
-
-
-
-
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-
+<!-- JAVASCRIPT -->
 <script>
-
-
 console.log("VELVET CREATURE SYSTEM LOADED");
 
-
-
-
-
-// =========================
-// OPEN CART
-// =========================
-
-
 window.openCart = function(){
-
-
-    document
-    .getElementById("cart-drawer")
-    .classList.add("open");
-
-
-    document
-    .getElementById("drawer-overlay")
-    .classList.add("active");
-
-
+    document.getElementById("cart-drawer").classList.add("open");
+    document.getElementById("drawer-overlay").classList.add("active");
 }
-
-
-
-
-
-
-
-
-// =========================
-// CLOSE CART
-// =========================
-
 
 window.closeCart = function(){
-
-
-    document
-    .getElementById("cart-drawer")
-    .classList.remove("open");
-
-
-    document
-    .getElementById("drawer-overlay")
-    .classList.remove("active");
-
-
+    document.getElementById("cart-drawer").classList.remove("open");
+    document.getElementById("drawer-overlay").classList.remove("active");
 }
-
-
-
-
-
-
-
-
-// =========================
-// ADD TO CART
-// =========================
-
 
 window.addToCart = function(id){
-
-
 fetch(`/cart/add/${id}/`)
-
-
 .then(response => response.json())
-
-
 .then(data => {
-
-
-    if(!data.success)
-        return;
-
-
-
+    if(!data.success) return;
     updateBadge(data.cart_count);
-
-
     refreshDrawer();
-
-
     openCart();
-
-
 });
-
-
 }
-
-
-
-
-
-
-
-
-// =========================
-// CHANGE QUANTITY
-// =========================
-
 
 window.changeQty = function(id, action){
-
-
 fetch(`/cart/${action}/${id}/`)
-
-
 .then(response => response.json())
-
-
 .then(data => {
-
-
-    if(!data.success){
-
-        alert(data.message);
-
-        return;
-
-    }
-
-
+    if(!data.success){ alert(data.message); return; }
     updateBadge(data.cart_count);
-
-
     refreshDrawer();
-
-
-
-    if(document.querySelector(".cart-page")){
-
-        location.reload();
-
-    }
-
-
+    if(document.querySelector(".cart-page")){ location.reload(); }
 });
-
-
 }
-
-
-
-
-
-
-
-
-// =========================
-// REMOVE ITEM
-// =========================
-
 
 window.removeItem = function(id){
-
-
 fetch(`/cart/remove/${id}/`)
-
-
 .then(response => response.json())
-
-
 .then(data => {
-
-
-    if(!data.success)
-        return;
-
-
+    if(!data.success) return;
     updateBadge(data.cart_count);
-
-
     refreshDrawer();
-
-
-
-    if(document.querySelector(".cart-page")){
-
-        location.reload();
-
-    }
-
-
+    if(document.querySelector(".cart-page")){ location.reload(); }
 });
-
-
 }
-
-
-
-
-
-
-
-
-// =========================
-// UPDATE BADGE
-// =========================
-
 
 function updateBadge(count){
-
-
-document
-.querySelectorAll(
-    ".cart-count, .drawer-count"
-)
-
-.forEach(element => {
-
-
+document.querySelectorAll(".cart-count, .drawer-count").forEach(element => {
     element.innerText = count;
-
-
 });
-
-
 }
-
-
-
-
-
-
-
-
-// =========================
-// REFRESH DRAWER
-// =========================
-
 
 function refreshDrawer(){
-
-
 fetch("/cart/drawer/")
-
-
 .then(response => response.text())
-
-
 .then(html => {
-
-
-document
-.getElementById("cart-drawer")
-.innerHTML = html;
-
-
+document.getElementById("cart-drawer").innerHTML = html;
 });
-
-
 }
-
-
-
-
-
-
-
-// =========================
-// MOBILE MENU
-// =========================
-
 
 window.toggleMenu = function(){
-
-
-document
-.getElementById("mobileMenu")
-.classList.toggle("open");
-
-
+document.getElementById("mobileMenu").classList.toggle("open");
 }
-
-
-
-
-
-
-
-
-// =========================
-// WISHLIST
-// =========================
-
 
 window.toggleWishlist = function(event, productId){
-
-
 event.preventDefault();
-
-
-
-fetch(
-    `/wishlist/toggle/${productId}/`
-)
-
-
-
+fetch(`/wishlist/toggle/${productId}/`)
 .then(response => response.json())
-
-
 .then(data => {
-
-
-    if(!data.success)
-        return;
-
-
-
-const icon = document.getElementById(
-    `wishlist-icon-${productId}`
-);
-
-
-
-if(icon){
-
-
-    if(data.added){
-
-        icon.classList.add("active");
-
-
-        showToast("🎃 " + (document.documentElement.lang === 'fr' ? 'Ajouté à la liste de souhaits' : document.documentElement.lang === 'sk' ? 'Pridané do zoznamu želaní' : 'Added to Wishlist'));
-
-
+    if(!data.success) return;
+    const icon = document.getElementById(`wishlist-icon-${productId}`);
+    if(icon){
+        if(data.added){
+            icon.classList.add("active");
+            showToast("🎃 " + (document.documentElement.lang === 'fr' ? 'Ajouté à la liste de souhaits' : document.documentElement.lang === 'sk' ? 'Pridané do zoznamu želaní' : 'Added to Wishlist'));
+        } else {
+            icon.classList.remove("active");
+            showToast("🎃 " + (document.documentElement.lang === 'fr' ? 'Retiré de la liste de souhaits' : document.documentElement.lang === 'sk' ? 'Odstránené zo zoznamu želaní' : 'Removed from Wishlist'));
+        }
     }
-    else{
-
-
-        icon.classList.remove("active");
-
-
-        showToast("🎃 " + (document.documentElement.lang === 'fr' ? 'Retiré de la liste de souhaits' : document.documentElement.lang === 'sk' ? 'Odstránené zo zoznamu želaní' : 'Removed from Wishlist'));
-
-
-    }
-
-}
-
-
-
 });
-
-
 }
-
-
-
-
-
-
-
-
-// =========================
-// REMOVE WISHLIST ITEM
-// =========================
-
 
 window.removeWishlistItem = function(productId){
-
-
-fetch(
-    `/wishlist/toggle/${productId}/`
-)
-
-
+fetch(`/wishlist/toggle/${productId}/`)
 .then(response => response.json())
-
-
 .then(data => {
-
-
     if(data.success && !data.added){
-
-
-        const card = document.getElementById(
-            `wishlist-card-${productId}`
-        );
-
-
-        if(card){
-
-            card.remove();
-
-        }
-
-
-        showToast(
-            "🎃 Removed from Wishlist"
-        );
-
-
+        const card = document.getElementById(`wishlist-card-${productId}`);
+        if(card){ card.remove(); }
+        showToast("🎃 Removed from Wishlist");
     }
-
-
 });
-
-
 }
-
-
-
-
-
-
-
-
-// =========================
-// TOAST
-// =========================
-
 
 window.showToast = function(message){
-
-
-let toast = document.getElementById(
-    "toast-message"
-);
-
-
-
-if(!toast)
-    return;
-
-
-
+let toast = document.getElementById("toast-message");
+if(!toast) return;
 toast.innerHTML = message;
-
-
 toast.classList.add("show");
-
-
-
-setTimeout(()=>{
-
-
-    toast.classList.remove("show");
-
-
-},2500);
-
-
+setTimeout(()=>{ toast.classList.remove("show"); },2500);
 }
-
-
-
-
-
 </script>
-
-
-
 
 <script>
 function toggleLangDropdown() {
@@ -692,34 +235,27 @@ function toggleLangDropdown() {
     dropdown.classList.toggle('show');
 }
 
-// Loading pri zmene jazyka - zachová aktuálnu stránku
 document.addEventListener('click', function(e) {
     var langLink = e.target.closest('.lang-flag-link, .lang-item, .mobile-language a');
     if (langLink && langLink.getAttribute('href') && langLink.getAttribute('href').startsWith('/')) {
         e.preventDefault();
         var overlay = document.getElementById('loadingOverlay');
         overlay.style.display = 'flex';
-        
-        // Získaj aktuálnu cestu BEZ jazykového prefixu
         var currentPath = window.location.pathname;
-        // Odstráň prefix (/fr/, /en/, /sk/)
         var pathParts = currentPath.split('/').filter(Boolean);
         if (pathParts[0] === 'fr' || pathParts[0] === 'en' || pathParts[0] === 'sk') {
-            pathParts.shift(); // Odstráň prvý (jazyk)
+            pathParts.shift();
         }
         var restOfPath = '/' + pathParts.join('/');
-        
         setTimeout(function() {
             window.location.href = langLink.getAttribute('href') + restOfPath.replace(/^\//, '');
         }, 600);
     }
 });
 
-// Zatvor dropdown keď klikneš mimo
 document.addEventListener('click', function(event) {
     var dropdown = document.getElementById('langDropdown');
     var button = event.target.closest('.lang-current');
-    
     if (!button && dropdown && dropdown.classList.contains('show')) {
         dropdown.classList.remove('show');
     }
@@ -727,12 +263,9 @@ document.addEventListener('click', function(event) {
 </script>
 
 <script>
-// Vytvor lietajúce netopiere
 (function() {
     const container = document.getElementById('batsContainer');
     if (!container) return;
-    
-    // Pridaj keyframes animácie
     const style = document.createElement('style');
     style.textContent = `
         @keyframes flyBat {
@@ -744,8 +277,6 @@ document.addEventListener('click', function(event) {
         }
     `;
     document.head.appendChild(style);
-    
-    // Vytvor netopiere
     for (let i = 0; i < 6; i++) {
         const bat = document.createElement('span');
         bat.textContent = '🦇';
@@ -765,7 +296,6 @@ document.addEventListener('click', function(event) {
 })();
 </script>
 
-<!-- CUSTOM CURSOR - PAVÚK -->
 <div id="customCursor" style="
     position: fixed;
     pointer-events: none;
@@ -782,19 +312,12 @@ document.addEventListener('click', function(event) {
     const cursor = document.getElementById('customCursor');
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
-    
-    // Skry pôvodný kurzor
     document.body.style.cursor = 'none';
-    
-    // Ukáž custom cursor
     cursor.style.display = 'block';
-    
     document.addEventListener('mousemove', function(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
-    
-    // Animácia - jemné oneskorenie
     function animate() {
         cursorX += (mouseX - cursorX) * 0.15;
         cursorY += (mouseY - cursorY) * 0.15;
@@ -802,17 +325,13 @@ document.addEventListener('click', function(event) {
         cursor.style.top = cursorY + 'px';
         requestAnimationFrame(animate);
     }
-    
     animate();
-    
-    // Zvýraznenie pri hover na odkazy/tlačidlá
     document.addEventListener('mouseover', function(e) {
         if (e.target.closest('a, button, .btn, input[type="submit"], .cart-icon, .lang-flag-link')) {
             cursor.style.fontSize = '30px';
             cursor.style.filter = 'drop-shadow(0 0 12px rgba(255, 100, 100, 0.8))';
         }
     });
-    
     document.addEventListener('mouseout', function(e) {
         if (e.target.closest('a, button, .btn, input[type="submit"], .cart-icon, .lang-flag-link')) {
             cursor.style.fontSize = '24px';
@@ -823,5 +342,4 @@ document.addEventListener('click', function(event) {
 </script>
 
 </body>
-
 </html>
