@@ -164,6 +164,38 @@ Velvet Creature
 
 
 
+<!-- ========== KONTAKT ========== -->
+<div class="about-contact">
+    <h2>📧 {% trans "Contact Us" %}</h2>
+    
+    <div class="contact-grid">
+        <div class="contact-card">
+            <span class="contact-icon">📧</span>
+            <h3>Email</h3>
+            <p>Lubma3d@outlook.fr</p>
+        </div>
+        
+        <div class="contact-card">
+            <span class="contact-icon">📞</span>
+            <h3>{% trans "Phone" %}</h3>
+            <p>+33 6 88 03 37 70</p>
+        </div>
+        
+        <div class="contact-card">
+            <span class="contact-icon">📍</span>
+            <h3>{% trans "Address" %}</h3>
+            <p>120 Avenue Camerone<br>30290 Laudun-l'Ardoise<br>France</p>
+        </div>
+        
+        <div class="contact-card">
+            <span class="contact-icon">🌍</span>
+            <h3>{% trans "Shipping" %}</h3>
+            <p>{% trans "We ship worldwide! USA, Europe, and beyond." %}</p>
+        </div>
+    </div>
+</div>
+
+
 
 
 
@@ -306,6 +338,58 @@ class="btn btn-secondary">
     transform: scale(1.05);
 }
 
+/* KONTAKT */
+.about-contact {
+    text-align: center;
+    padding: 50px 0 30px;
+}
+
+.about-contact h2 {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    background: rgba(10, 5, 5, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 14px;
+    padding: 25px 15px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.contact-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-3px);
+}
+
+.contact-icon {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact-card h3 {
+    color: #d4af37;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-family: 'EB Garamond', serif;
+}
+
+.contact-card p {
+    color: #b0a080;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
 /* AKČNÁ SEKCIA */
 .about-action {
     text-align: center;
@@ -354,6 +438,10 @@ class="btn btn-secondary">
 @media (max-width: 768px) {
     .about-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
     }
     
     .about-hero h1 {
