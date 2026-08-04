@@ -231,13 +231,13 @@
 // Aktualizácia cien pri výbere dopravy
 const shippingPrices = {
     {% for method in shipping_methods %}
-    "{{ method.id }}": {{ method.price }},
+    "{{ method.id }}": {{ method.price|stringformat:".2f" }},
     {% endfor %}
 };
 
 function updateTotal(radio) {
-    const shippingPrice = shippingPrices[radio.value] || 0;
-    const subtotal = {{ subtotal }};
+    const shippingPrice = parseFloat(shippingPrices[radio.value]) || 0;
+    const subtotal = parseFloat("{{ subtotal|stringformat:".2f" }}");
     const total = subtotal + shippingPrice;
     
     document.getElementById('shippingAmount').textContent = '€' + shippingPrice.toFixed(2).replace('.', ',');
