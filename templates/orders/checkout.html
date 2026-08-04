@@ -251,12 +251,17 @@ const shippingRadios = document.querySelectorAll('input[name="shipping_method"]'
 
 function toggleRelayField() {
     const selected = document.querySelector('input[name="shipping_method"]:checked');
-    if (selected && selected.value === "3") {
-        relayField.style.display = 'block';
-        relayInput.setAttribute('required', 'required');
-    } else {
-        relayField.style.display = 'none';
-        relayInput.removeAttribute('required');
+    if (selected) {
+        const label = selected.closest('label');
+        const nameEl = label.querySelector('.shipping-name');
+        const name = nameEl ? nameEl.textContent.trim() : '';
+        if (name.toLowerCase().includes('mondial relay')) {
+            relayField.style.display = 'block';
+            relayInput.setAttribute('required', 'required');
+        } else {
+            relayField.style.display = 'none';
+            relayInput.removeAttribute('required');
+        }
     }
 }
 
