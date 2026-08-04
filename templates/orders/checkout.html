@@ -66,7 +66,7 @@
 </div>
 
 <div class="checkout-field">
-<label>{% trans "Postal Code" %}</label>
+<label>{% trans "Postal Code" %} *</label>
 <input type="text" name="postal_code" required>
 </div>
 
@@ -251,12 +251,16 @@ const shippingRadios = document.querySelectorAll('input[name="shipping_method"]'
 
 function toggleRelayField() {
     const selected = document.querySelector('input[name="shipping_method"]:checked');
-    if (selected && selected.parentElement.textContent.includes('Mondial')) {
-        relayField.style.display = 'block';
-        relayInput.required = true;
-    } else {
-        relayField.style.display = 'none';
-        relayInput.required = false;
+    if (selected) {
+        const label = selected.parentElement;
+        const nameSpan = label.querySelector('.shipping-name');
+        if (nameSpan && nameSpan.textContent.toLowerCase().includes('mondial')) {
+            relayField.style.display = 'block';
+            relayInput.setAttribute('required', 'required');
+        } else {
+            relayField.style.display = 'none';
+            relayInput.removeAttribute('required');
+        }
     }
 }
 
