@@ -1,7 +1,5 @@
-from django.core.mail import EmailMultiAlternatives
-from django.template.loader import render_to_string
-from django.conf import settings
-
+import os
+import resend
 
 
 # ==================================================
@@ -10,89 +8,28 @@ from django.conf import settings
 
 def send_custom_order_received_email(order):
 
-
-    subject = "Custom Order Received - Velvet Creature"
-
-
-
-    text_message = f"""
-Hello {order.name},
-
-
-Thank you for your custom project request.
-
-
-We have received your order and our team will review it shortly.
-
-
-Order number:
-#{order.id}
-
-
-Service:
-{order.get_service_display()}
-
-
-Material:
-{order.material}
-
-
-Description:
-{order.description}
-
-
-Engraving:
-{"Yes" if order.engraving else "No"}
-
-
-
-Velvet Creature
-"""
-
-
-
-    html_message = render_to_string(
-
-        "emails/custom_order_received.html",
-
-        {
-            "order": order
-        }
-
-    )
-
-
-
-    email = EmailMultiAlternatives(
-
-        subject,
-
-        text_message,
-
-        settings.DEFAULT_FROM_EMAIL,
-
-        [
-            order.email
-        ]
-
-    )
-
-
-
-    email.attach_alternative(
-
-        html_message,
-
-        "text/html"
-
-    )
-
-
-
-    email.send()
-
-
-
+    try:
+        resend.api_key = os.getenv("RESEND_API_KEY")
+        resend.Emails.send({
+            "from": "Velvet Creature <onboarding@resend.dev>",
+            "to": [order.email],
+            "subject": f"Custom Order Received - Velvet Creature",
+            "html": f"""
+            <h2>Hello {order.name},</h2>
+            <p>Thank you for your custom project request.</p>
+            <p>We have received your order and our team will review it shortly.</p>
+            <hr>
+            <p><strong>Order number:</strong> #{order.id}</p>
+            <p><strong>Service:</strong> {order.get_service_display()}</p>
+            <p><strong>Material:</strong> {order.material}</p>
+            <p><strong>Description:</strong> {order.description}</p>
+            <p><strong>Engraving:</strong> {"Yes" if order.engraving else "No"}</p>
+            <br>
+            <p>Velvet Creature</p>
+            """,
+        })
+    except Exception as e:
+        print(f"Email error: {e}")
 
 
 # ==================================================
@@ -101,87 +38,27 @@ Velvet Creature
 
 def send_admin_new_custom_order_email(order):
 
-
-    subject = (
-        f"NEW CUSTOM ORDER #{order.id} - Velvet Creature"
-    )
-
-
-
-    message = f"""
-New custom project received!
-
-
-Customer:
-
-{order.name}
-
-
-Email:
-
-{order.email}
-
-
-Phone:
-
-{order.phone}
-
-
-
-Service:
-
-{order.get_service_display()}
-
-
-
-Material:
-
-{order.material}
-
-
-
-Quantity:
-
-{order.quantity}
-
-
-
-Description:
-
-{order.description}
-
-
-
-Engraving:
-
-{"Yes" if order.engraving else "No"}
-
-
-
-Engraving type:
-
-{order.get_engraving_type_display()}
-
-
-
-Velvet Creature Admin
-"""
-
-
-
-    email = EmailMultiAlternatives(
-
-        subject,
-
-        message,
-
-        settings.DEFAULT_FROM_EMAIL,
-
-        [
-            settings.DEFAULT_ADMIN_EMAIL
-        ]
-
-    )
-
-
-    email.send()
+    try:
+        resend.api_key = os.getenv("RESEND_API_KEY")
+        resend.Emails.send({
+            "from": "Velvet Creature <onboarding@resend.dev>",
+            "to": ["lubma3D@outlook.fr"],
+            "subject": f"🔔 NEW CUSTOM ORDER #{order.id} - Velvet Creature",
+            "html": f"""
+            <h2>New custom project received!</h2>
+            <hr>
+            <p><strong>Customer:</strong> {order.name}</p>
+            <p><strong>Email:</strong> {order.email}</p>
+            <p><strong>Phone:</strong> {order.phone}</p>
+            <p><strong>Service:</strong> {order.get_service_display()}</p>
+            <p><strong>Material:</strong> {order.material}</p>
+            <p><strong>Quantity:</strong> {order.quantity}</p>
+            <p><strong>Description:</strong> {order.description}</p>
+            <p><strong>Engraving:</strong> {"Yes" if order.engraving else "No"}</p>
+            <p><strong>Engraving type:</strong> {order.get_engraving_type_display()}</p>
+            <br>
+            <p><a href="https://www.velvetcreature.fr/admin/">View in Admin</a></p>
+            """,
+        })
+    except Exception as e:
+        print(f"Email error: {e}")
