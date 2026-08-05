@@ -14,6 +14,7 @@ from decimal import Decimal
 import stripe
 import resend
 import os
+from django.utils import timezone
 
 from .models import Order, OrderItem, ShippingMethod
 from .invoice import generate_invoice, generate_invoice_bytes
@@ -82,6 +83,16 @@ def checkout(request):
                 pass
 
         payment_method = request.POST.get("payment_method", "card")
+                # Kontrola duplicitnej objednávky
+        existing = Order.objects.filter(
+            email=request.POST.get("email"),
+            status="pending",
+            created__gte=timezone.now() - timezone.timedelta(minutes=30)
+        ).first()
+        
+        if existing:
+            request.session["last_order_id"] = existing.id
+            return redirect("payment_success")
 
         order = Order.objects.create(
             user=request.user if request.user.is_authenticated else None,
@@ -317,11 +328,35 @@ def stripe_webhook(request):
         order_id = session["metadata"]["order_id"]
         try:
             order = Order.objects.get(id=order_id)
+            
+            # Ochrana proti duplicitnému spracovaniu
+            if order.status == "paid":
+                return HttpResponse(status=200)
+            
             order.status = "paid"
+            
+            # Uprav sklad len ak ešte nebol upravený
+            if not order.stock_updated:
+                for item in order.items.all():
+                    item.product.stock -= item.quantity
+                    item.product.save()
+                order.stock_updated = True
+                
             order.save()
-            for item in order.items.all():
-                item.product.stock -= item.quantity
-                item.product.save()
+            
+            # Odoslať email zákazníkovi
+            try:
+                html_message = render_to_string("emails/order_confirmation.html", {"order": order})
+                resend.api_key = os.getenv("RESEND_API_KEY")
+                resend.Emails.send({
+                    "from": "Velvet Creature <onboarding@resend.dev>",
+                    "to": [order.email],
+                    "subject": f"Velvet Creature - Order #{order.order_number}",
+                    "html": html_message,
+                })
+            except:
+                pass
+                
         except Order.DoesNotExist:
             pass
 
