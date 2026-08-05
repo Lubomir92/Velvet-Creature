@@ -253,7 +253,7 @@ function updateTotal(radio) {
     document.getElementById('totalAmount').textContent = '€' + total.toFixed(2).replace('.', ',');
 }
 
-// Zobraziť/skryť pole pre Mondial Relay Point ID
+// Zobraziť/skryť pole pre výdajné miesta
 const relayField = document.getElementById('relay-point-field');
 const relayInput = document.getElementById('relay_point');
 const shippingRadios = document.querySelectorAll('input[name="shipping_method"]');
@@ -264,7 +264,7 @@ function toggleRelayField() {
         const label = selected.closest('label');
         const nameEl = label.querySelector('.shipping-name');
         const name = nameEl ? nameEl.textContent.trim() : '';
-        if (name.toLowerCase().includes('mondial relay') || name.toLowerCase().includes('chronopost')) { {
+        if (name.toLowerCase().includes('mondial relay') || name.toLowerCase().includes('chronopost')) {
             relayField.style.display = 'block';
             relayInput.setAttribute('required', 'required');
         } else {
