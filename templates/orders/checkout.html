@@ -67,7 +67,7 @@
 
 <div class="checkout-field">
 <label>{% trans "Postal Code" %} *</label>
-<input type="text" name="postal_code" required>
+<input type="text" name="postal_code" required placeholder="{% trans 'Required for all deliveries' %}">
 </div>
 
 <div class="checkout-field full" id="relay-point-field" style="display:none;">
@@ -260,7 +260,7 @@ function toggleRelayField() {
         const label = selected.closest('label');
         const nameEl = label.querySelector('.shipping-name');
         const name = nameEl ? nameEl.textContent.trim() : '';
-        if (name.toLowerCase().includes('mondial relay')) {
+        if (name.toLowerCase().includes('mondial relay') || name.toLowerCase().includes('chronopost shop to shop')) {
             relayField.style.display = 'block';
             relayInput.setAttribute('required', 'required');
         } else {
