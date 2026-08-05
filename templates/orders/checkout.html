@@ -74,12 +74,10 @@
 <label>{% trans "Relay Point ID / Box Address" %} *</label>
 <input type="text" name="relay_point" id="relay_point" placeholder="{% trans 'Required for Mondial Relay & Chronopost Shop to Shop' %}">
 <small style="color:#d4af37; display:block; margin-top:5px;">
-        🔍 <a id="mondial-link" href="https://www.mondialrelay.fr/trouver-le-point-relais-le-plus-proche-de-chez-moi/" target="_blank" style="color:#d4af37; text-decoration:underline;">
-        {% trans "Find a Mondial Relay Point" %}
-    </a>
-    <a id="chronopost-link" href="https://www.chronopost.fr/fr/particulier/trouver-un-point-chronopost" target="_blank" style="color:#d4af37; text-decoration:underline; display:none;">
-        {% trans "Find a Chronopost Point" %}
-    </a>
+    🔍 {% trans "Find your delivery point:" %}<br>
+    <a href="https://www.mondialrelay.fr/trouver-le-point-relais-le-plus-proche-de-chez-moi/" target="_blank" style="color:#d4af37; text-decoration:underline;">Mondial Relay</a>
+    &nbsp;|&nbsp;
+    <a href="https://www.chronopost.fr/fr/particulier/trouver-un-point-chronopost" target="_blank" style="color:#d4af37; text-decoration:underline;">Chronopost</a>
 </small>
 </div>
 
@@ -255,9 +253,6 @@ function updateTotal(radio) {
 // Zobraziť/skryť pole pre výdajné miesta
 const relayField = document.getElementById('relay-point-field');
 const relayInput = document.getElementById('relay_point');
-const relayLabel = relayField.querySelector('label');
-const mondialLink = document.getElementById('mondial-link');
-const chronopostLink = document.getElementById('chronopost-link');
 const shippingRadios = document.querySelectorAll('input[name="shipping_method"]');
 
 function toggleRelayField() {
@@ -267,20 +262,9 @@ function toggleRelayField() {
         const nameEl = label.querySelector('.shipping-name');
         const name = nameEl ? nameEl.textContent.trim() : '';
         
-        if (name.toLowerCase().includes('point relais')) {
+        if (name.toLowerCase().includes('point relais') || name.toLowerCase().includes('shop to shop')) {
             relayField.style.display = 'block';
             relayInput.setAttribute('required', 'required');
-            relayLabel.innerHTML = '{% trans "Mondial Relay Point ID" %} *';
-            relayInput.placeholder = '{% trans "Enter Mondial Relay Point ID" %}';
-            mondialLink.style.display = 'inline';
-            chronopostLink.style.display = 'none';
-        } else if (name.toLowerCase().includes('shop to shop')) {
-            relayField.style.display = 'block';
-            relayInput.setAttribute('required', 'required');
-            relayLabel.innerHTML = '{% trans "Chronopost Point ID" %} *';
-            relayInput.placeholder = '{% trans "Enter Chronopost Point ID" %}';
-            mondialLink.style.display = 'none';
-            chronopostLink.style.display = 'inline';
         } else {
             relayField.style.display = 'none';
             relayInput.removeAttribute('required');
