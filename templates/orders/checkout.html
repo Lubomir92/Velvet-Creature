@@ -70,9 +70,9 @@
 <input type="text" name="postal_code" required placeholder="{% trans 'Required for all deliveries' %}">
 </div>
 
-<div class="checkout-field full" id="relay-point-field" style="display:none;">
+<div class="checkout-field full relay-point-field" style="display:none;">
 <label>{% trans "Relay Point ID / Box Address" %} *</label>
-<input type="text" name="relay_point" id="relay_point" placeholder="{% trans 'Required for Mondial Relay & Chronopost Shop to Shop' %}">
+<input type="text" name="relay_point" class="relay-point-input" placeholder="{% trans 'Required for Mondial Relay & Chronopost Shop to Shop' %}">
 <small style="color:#d4af37; display:block; margin-top:5px;">
     🔍 {% trans "Find your delivery point:" %}<br>
     <a href="https://www.mondialrelay.fr/trouver-le-point-relais-le-plus-proche-de-chez-moi/" target="_blank" style="color:#d4af37; text-decoration:underline;">Mondial Relay</a>
@@ -96,9 +96,10 @@
     <div class="shipping-options">
         {% for method in shipping_methods %}
         <label class="shipping-option {% if method.id|stringformat:"s" == selected_shipping %}selected{% endif %}">
-            <input type="radio" name="shipping_method" value="{{ method.id }}" 
+            <input type="radio" name="shipping_method" value="{{ method.id }}"
+                   id="shipping-method-{{ method.id }}"
                    {% if method.id|stringformat:"s" == selected_shipping %}checked{% elif forloop.first %}checked{% endif %}
-                   onchange="updateTotal(this)" required>
+                   required>
             <span class="shipping-logo">{{ method.logo }}</span>
             <span class="shipping-name">{{ method.name }}</span>
             {% if method.description %}
@@ -234,49 +235,44 @@
 
 
 <script>
-// Aktualizácia cien pri výbere dopravy
+// Aktualizácia cien
 const shippingPrices = {
     {% for method in shipping_methods %}
     "{{ method.id }}": {{ method.price|stringformat:".2f" }},
     {% endfor %}
 };
 
-function updateTotal(radio) {
-    const shippingPrice = parseFloat(shippingPrices[radio.value]) || 0;
-    const subtotal = parseFloat("{{ subtotal|stringformat:".2f" }}");
-    const total = subtotal + shippingPrice;
+// Zobrazenie/skrytie relay poľa
+document.addEventListener('DOMContentLoaded', function() {
+    const radios = document.querySelectorAll('input[name="shipping_method"]');
+    const relayField = document.querySelector('.relay-point-field');
+    const relayInput = document.querySelector('.relay-point-input');
     
-    document.getElementById('shippingAmount').textContent = '€' + shippingPrice.toFixed(2).replace('.', ',');
-    document.getElementById('totalAmount').textContent = '€' + total.toFixed(2).replace('.', ',');
-}
-
-// Zobraziť/skryť pole pre výdajné miesta
-const relayField = document.getElementById('relay-point-field');
-const relayInput = document.getElementById('relay_point');
-const shippingRadios = document.querySelectorAll('input[name="shipping_method"]');
-
-function toggleRelayField() {
-    const selected = document.querySelector('input[name="shipping_method"]:checked');
-    if (selected) {
-        const label = selected.closest('label');
-        const nameEl = label.querySelector('.shipping-name');
-        const name = nameEl ? nameEl.textContent.trim() : '';
-        
-        if (name.toLowerCase().includes('point relais') || name.toLowerCase().includes('shop to shop')) {
+    function toggleRelay() {
+        const selected = document.querySelector('input[name="shipping_method"]:checked');
+        if (selected && (selected.value === '1' || selected.value === '3')) {
             relayField.style.display = 'block';
-            relayInput.setAttribute('required', 'required');
+            relayInput.required = true;
         } else {
             relayField.style.display = 'none';
-            relayInput.removeAttribute('required');
+            relayInput.required = false;
         }
+        
+        // Aktualizácia ceny
+        const price = parseFloat(shippingPrices[selected.value]) || 0;
+        const subtotal = parseFloat("{{ subtotal|stringformat:".2f" }}");
+        const total = subtotal + price;
+        document.getElementById('shippingAmount').textContent = '€' + price.toFixed(2).replace('.', ',');
+        document.getElementById('totalAmount').textContent = '€' + total.toFixed(2).replace('.', ',');
     }
-}
-
-shippingRadios.forEach(radio => {
-    radio.addEventListener('change', toggleRelayField);
+    
+    radios.forEach(radio => {
+        radio.addEventListener('change', toggleRelay);
+    });
+    
+    // Spusti pri načítaní
+    toggleRelay();
 });
-
-toggleRelayField();
 </script>
 
 
@@ -316,7 +312,6 @@ toggleRelayField();
     border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
 }
 
-/* ========== SHIPPING SECTION ========== */
 .shipping-section {
     margin: 20px 0;
     padding: 20px;
@@ -387,7 +382,6 @@ toggleRelayField();
     white-space: nowrap;
 }
 
-/* ========== SUMMARY ========== */
 .summary-subtotal, .summary-shipping {
     display: flex;
     justify-content: space-between;
@@ -395,11 +389,6 @@ toggleRelayField();
     padding: 8px 0;
     color: #8a8a7a;
     font-size: 14px;
-}
-
-.summary-subtotal span:last-child, .summary-shipping span:last-child {
-    color: #b0a080;
-    font-weight: 600;
 }
 
 .checkout-field label {
@@ -438,11 +427,6 @@ toggleRelayField();
     margin-bottom: 5px;
 }
 
-.checkout-product p {
-    color: #8a8a7a !important;
-    font-size: 14px;
-}
-
 .checkout-total {
     display: flex;
     justify-content: space-between;
@@ -454,7 +438,6 @@ toggleRelayField();
     color: #ffffff !important;
 }
 
-/* TLAČIDLO */
 .payment-btn {
     margin-top: 25px;
     width: 100%;
@@ -486,10 +469,6 @@ toggleRelayField();
     width: 100%;
 }
 
-.payment-lock {
-    font-size: 18px;
-}
-
 .secure-info {
     margin-top: 25px;
     padding: 20px;
@@ -505,12 +484,6 @@ toggleRelayField();
     padding: 8px 0;
     color: #b0a080 !important;
     font-size: 14px;
-}
-
-.secure-icon {
-    font-size: 16px;
-    width: 24px;
-    text-align: center;
 }
 
 .card-icons {
@@ -535,10 +508,6 @@ toggleRelayField();
     gap: 5px;
 }
 
-.card-icon:hover {
-    background: rgba(212, 175, 55, 0.12);
-}
-
 .bank-info {
     margin-top: 20px;
     padding: 20px;
@@ -554,15 +523,6 @@ toggleRelayField();
     margin-bottom: 15px;
     padding-bottom: 12px;
     border-bottom: 1px solid rgba(212, 175, 55, 0.15);
-}
-
-.bank-icon {
-    font-size: 24px;
-}
-
-.bank-info-header strong {
-    color: #d4af37;
-    font-size: 16px;
 }
 
 .bank-details {
@@ -602,13 +562,11 @@ toggleRelayField();
     .checkout-layout {
         grid-template-columns: 1fr;
     }
-    
     .bank-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 2px;
     }
-    
     .shipping-option {
         flex-wrap: wrap;
     }
