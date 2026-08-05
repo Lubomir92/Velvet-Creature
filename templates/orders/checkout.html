@@ -71,8 +71,8 @@
 </div>
 
 <div class="checkout-field full" id="relay-point-field" style="display:none;">
-<label>{% trans "Mondial Relay Point ID / Box Address" %} *</label>
-<input type="text" name="relay_point" id="relay_point" placeholder="{% trans 'Required for Mondial Relay delivery' %}">
+<label>{% trans "Relay Point ID / Box Address" %} *</label>
+<input type="text" name="relay_point" id="relay_point" placeholder="{% trans 'Required for Mondial Relay & Chronopost Shop to Shop' %}">
 <small style="color:#d4af37; display:block; margin-top:5px;">
     🔍 <a href="https://www.mondialrelay.fr/trouver-le-point-relais-le-plus-proche-de-chez-moi/" target="_blank" style="color:#d4af37; text-decoration:underline;">
         {% trans "Find a Mondial Relay Point" %}
@@ -260,7 +260,7 @@ function toggleRelayField() {
         const label = selected.closest('label');
         const nameEl = label.querySelector('.shipping-name');
         const name = nameEl ? nameEl.textContent.trim() : '';
-        if (name.toLowerCase().includes('mondial relay') || name.toLowerCase().includes('chronopost shop to shop')) {
+        if (name.toLowerCase().includes('mondial relay') || name.toLowerCase().includes('chronopost')) { {
             relayField.style.display = 'block';
             relayInput.setAttribute('required', 'required');
         } else {
