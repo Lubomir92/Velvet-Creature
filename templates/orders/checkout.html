@@ -264,7 +264,7 @@ function toggleRelayField() {
         const label = selected.closest('label');
         const nameEl = label.querySelector('.shipping-name');
         const name = nameEl ? nameEl.textContent.trim() : '';
-        if (name.toLowerCase().includes('mondial relay') || name.toLowerCase().includes('chronopost')) {
+        if (name === 'Mondial Relay - Point Relais' || name === 'Shop to Shop by Chronopost') {
             relayField.style.display = 'block';
             relayInput.setAttribute('required', 'required');
         } else {
