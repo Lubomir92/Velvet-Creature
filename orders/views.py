@@ -82,17 +82,56 @@ def checkout(request):
             except:
                 pass
 
+        # Kontrola relay pointu pre Mondial Relay Point Relais (3) a Chronopost Shop to Shop (1)
+        if shipping_id in ['1', '3']:
+            relay_point = request.POST.get("relay_point", "").strip()
+            if not relay_point:
+                return render(request, "orders/checkout.html", {
+                    "error": "Veuillez entrer l'ID du point relais.",
+                    "subtotal": subtotal,
+                    "shipping_price": shipping_price,
+                    "total": subtotal + shipping_price,
+                    "items": products,
+                    "shipping_methods": shipping_methods,
+                })
+
         payment_method = request.POST.get("payment_method", "card")
-                # Kontrola duplicitnej objednávky
+
+        # Kontrola duplicitnej objednávky - podľa emailu a celkovej sumy
         existing = Order.objects.filter(
             email=request.POST.get("email"),
+            total_price=subtotal + shipping_price,
             status="pending",
-            created__gte=timezone.now() - timezone.timedelta(minutes=30)
+            created__gte=timezone.now() - timezone.timedelta(hours=2)
         ).first()
         
         if existing:
+            # Ak existuje pending objednávka s rovnakou sumou, použijeme ju
             request.session["last_order_id"] = existing.id
-            return redirect("payment_success")
+            if payment_method == "bank_transfer":
+                request.session["cart"] = {}
+                return redirect("payment_success")
+            else:
+                # Pre kartu - vytvoríme novú Stripe session pre existujúcu objednávku
+                session = stripe.checkout.Session.create(
+                    customer_email=existing.email,
+                    payment_method_types=["card"],
+                    mode="payment",
+                    line_items=[{
+                        "price_data": {
+                            "currency": "eur",
+                            "product_data": {
+                                "name": f"Velvet Creature Order #{existing.id}"
+                            },
+                            "unit_amount": int(existing.total_price * 100),
+                        },
+                        "quantity": 1,
+                    }],
+                    metadata={"order_id": existing.id},
+                    success_url=request.build_absolute_uri(reverse("payment_success")),
+                    cancel_url=request.build_absolute_uri(reverse("payment_cancel")),
+                )
+                return redirect(session.url)
 
         order = Order.objects.create(
             user=request.user if request.user.is_authenticated else None,
