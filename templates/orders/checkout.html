@@ -149,7 +149,7 @@
 <h4>{{ item.product.name }}</h4>
 <p>{{ item.qty }} × €{{ item.product.price }}</p>
 </div>
-<strong>€{% widthratio item.product.price 1 item.qty %}</strong>
+<strong>€{{ item.total_price|floatformat:2 }}</strong>
 </div>
 
 {% endfor %}
