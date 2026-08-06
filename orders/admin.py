@@ -86,6 +86,7 @@ class OrderAdmin(admin.ModelAdmin):
                     "email",
                     "first_name",
                     "last_name",
+                    "phone",
                 )
             }
         ),
@@ -97,6 +98,7 @@ class OrderAdmin(admin.ModelAdmin):
                 "fields": (
                     "address",
                     "city",
+                    "postal_code",
                     "country",
                 )
             }
@@ -111,6 +113,17 @@ class OrderAdmin(admin.ModelAdmin):
                     "shipping_price",
                     "carrier",
                     "tracking_number",
+                )
+            }
+        ),
+
+
+        (
+            "Additional information",
+            {
+                "fields": (
+                    "note",
+                    "relay_point",
                 )
             }
         ),
