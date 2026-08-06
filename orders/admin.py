@@ -80,7 +80,7 @@ class OrderAdmin(admin.ModelAdmin):
             send_order_email(
                 order=order,
                 subject='Your order has been shipped!',
-                template='emails/order_shipped.html'
+                template='emails/shipped_email.html'
             )
             if request:
                 self.message_user(request, f"Shipping email sent to {order.email}", messages.SUCCESS)
