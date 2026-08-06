@@ -97,12 +97,12 @@ def checkout(request):
 
         payment_method = request.POST.get("payment_method", "card")
 
-        # Kontrola duplicitnej objednávky - podľa emailu a celkovej sumy
+        # Kontrola duplicitnej objednávky - za posledných 5 minút
         existing = Order.objects.filter(
             email=request.POST.get("email"),
             total_price=subtotal + shipping_price,
             status="pending",
-            created__gte=timezone.now() - timezone.timedelta(hours=2)
+            created__gte=timezone.now() - timezone.timedelta(minutes=5)
         ).first()
         
         if existing:
@@ -160,6 +160,12 @@ def checkout(request):
             )
 
         request.session["last_order_id"] = order.id
+
+        # Posli email zakaznikovi hned po vytvoreni objednavky
+        try:
+            send_order_email(order, f"Velvet Creature - Order #{order.order_number}", "emails/custom_order_received.html")
+        except:
+            pass
 
         # BANKOVÝ PREVOD
         if payment_method == "bank_transfer":
