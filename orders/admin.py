@@ -42,13 +42,23 @@ class OrderAdmin(admin.ModelAdmin):
     status_colored.admin_order_field = 'status'
 
     def save_model(self, request, obj, form, change):
+        print(f"DEBUG save_model: change={change}, status={obj.status}")
         if change:
-            old_obj = Order.objects.get(pk=obj.pk)
-            if old_obj.status != obj.status:
-                if obj.status == 'confirmed':
-                    self.send_confirmation_email(obj, request)
-                elif obj.status == 'shipped':
-                    self.send_shipped_email(obj, request)
+            try:
+                old_obj = Order.objects.get(pk=obj.pk)
+                print(f"DEBUG: old_status={old_obj.status}, new_status={obj.status}")
+                if old_obj.status != obj.status:
+                    print(f"DEBUG: Status changed! Sending email for {obj.status}")
+                    if obj.status == 'confirmed':
+                        self.send_confirmation_email(obj, request)
+                    elif obj.status == 'shipped':
+                        self.send_shipped_email(obj, request)
+                else:
+                    print("DEBUG: Status unchanged")
+            except Exception as e:
+                print(f"DEBUG ERROR: {e}")
+        else:
+            print("DEBUG: New order, skipping email")
         
         super().save_model(request, obj, form, change)
 
