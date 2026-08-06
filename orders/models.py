@@ -52,6 +52,7 @@ class Order(models.Model):
     country = models.CharField(max_length=100, blank=True)
     phone = models.CharField(max_length=50, blank=True, default="")
     postal_code = models.CharField(max_length=20, blank=True, default="")
+    relay_point = models.CharField(max_length=100, blank=True, default="")
     note = models.TextField(blank=True)
 
     payment_method = models.CharField(max_length=50, default="Stripe")
