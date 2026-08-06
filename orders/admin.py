@@ -1,4 +1,5 @@
 from django.contrib import admin, messages
+from django.utils.html import format_html
 from .models import Order, OrderItem
 from .email import send_order_email
 
@@ -11,11 +12,34 @@ class OrderItemInline(admin.TabularInline):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'first_name', 'last_name', 'email', 'status', 'created']
+    list_display = ['order_number_colored', 'first_name', 'last_name', 'email', 'status_colored', 'created']
     list_filter = ['status', 'created']
-    search_fields = ['first_name', 'last_name', 'email', 'id']
+    search_fields = ['first_name', 'last_name', 'email', 'order_number']
     inlines = [OrderItemInline]
     actions = ['send_confirmation_email', 'send_shipped_email']
+
+    def order_number_colored(self, obj):
+        return format_html('<strong>{}</strong>', obj.order_number)
+    order_number_colored.short_description = 'Order Number'
+    order_number_colored.admin_order_field = 'order_number'
+
+    def status_colored(self, obj):
+        colors = {
+            'pending': 'orange',
+            'processing': 'blue',
+            'confirmed': 'green',
+            'shipped': 'purple',
+            'delivered': 'teal',
+            'cancelled': 'red',
+        }
+        color = colors.get(obj.status, 'black')
+        return format_html(
+            '<span style="color: {}; font-weight: bold;">{}</span>',
+            color,
+            obj.get_status_display()
+        )
+    status_colored.short_description = 'Status'
+    status_colored.admin_order_field = 'status'
 
     def save_model(self, request, obj, form, change):
         if change:
@@ -39,7 +63,7 @@ class OrderAdmin(admin.ModelAdmin):
                 self.message_user(request, f"Confirmation email sent to {order.email}", messages.SUCCESS)
         except Exception as e:
             if request:
-                self.message_user(request, f"Failed to send confirmation email: {e}", messages.ERROR)
+                self.message_user(request, f"Failed: {e}", messages.ERROR)
 
     def send_shipped_email(self, order, request=None):
         try:
@@ -52,7 +76,7 @@ class OrderAdmin(admin.ModelAdmin):
                 self.message_user(request, f"Shipping email sent to {order.email}", messages.SUCCESS)
         except Exception as e:
             if request:
-                self.message_user(request, f"Failed to send shipping email: {e}", messages.ERROR)
+                self.message_user(request, f"Failed: {e}", messages.ERROR)
 
     send_confirmation_email.short_description = "Send confirmation email"
     send_shipped_email.short_description = "Send shipping email"
