@@ -11,10 +11,6 @@ from wishlist.models import Wishlist
 from reviews.models import Review
 
 
-
-
-
-
 # REGISTER
 def register(request):
 
@@ -28,27 +24,27 @@ def register(request):
         # Validácia
         if User.objects.filter(username=username).exists():
             messages.error(request, _("Username already exists"))
-            return redirect("register")
+            return render(request, "accounts/register.html")
 
         if len(username) < 3:
             messages.error(request, _("Username must be at least 3 characters"))
-            return redirect("register")
+            return render(request, "accounts/register.html")
 
         if password != password2:
             messages.error(request, _("Passwords do not match"))
-            return redirect("register")
+            return render(request, "accounts/register.html")
 
         if len(password) < 8:
             messages.error(request, _("Password must be at least 8 characters"))
-            return redirect("register")
+            return render(request, "accounts/register.html")
 
         if not re.search(r'[A-Z]', password):
             messages.error(request, _("Password must contain at least one uppercase letter"))
-            return redirect("register")
+            return render(request, "accounts/register.html")
 
         if not re.search(r'[0-9]', password):
             messages.error(request, _("Password must contain at least one number"))
-            return redirect("register")
+            return render(request, "accounts/register.html")
 
 
         user = User.objects.create_user(
@@ -64,8 +60,6 @@ def register(request):
 
 
     return render(request, "accounts/register.html")
-
-
 
 
 # LOGIN
@@ -86,8 +80,6 @@ def login_view(request):
 
 
     return render(request, "accounts/login.html")
-
-
 
 
 # PROFILE
@@ -115,7 +107,6 @@ def profile(request):
     )
 
 
-
 @login_required
 def update_profile(request):
     if request.method == "POST":
@@ -126,7 +117,6 @@ def update_profile(request):
         user.save()
         messages.success(request, _("Profile updated successfully!"))
     return redirect("profile")
-
 
 
 # LOGOUT
