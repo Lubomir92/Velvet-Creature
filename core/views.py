@@ -22,3 +22,5 @@ def about(request):
         request,
         "about.html"
     )
+def legal(request):
+    return render(request, "legal.html")

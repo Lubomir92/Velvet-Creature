@@ -17,4 +17,6 @@ urlpatterns = [
         name="about"
     ),
 
+    path("legal/", views.legal, name="legal"),
+
 ]
