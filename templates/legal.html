@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Legal Information" %}{% endblock %}
+
+{% block content %}
+
+<div class="legal-page">
+    <div class="legal-container">
+        
+        <h1>📜 {% trans "Legal Information" %}</h1>
+        
+        <!-- IDENTIFIKÁCIA PREDAJCU -->
+        <section class="legal-section">
+            <h2>1. {% trans "Seller Identification" %}</h2>
+            
+            <p>
+                <strong>Lubma3D</strong><br>
+                {% trans "Legal form: Auto-entrepreneur (Micro-entreprise)" %}<br>
+                {% trans "SIRET:" %} 10457886900018<br>
+                {% trans "SIREN:" %} 104578869<br>
+                {% trans "VAT: Not applicable - Article 293B of the French General Tax Code (Franchise en base de TVA)" %}<br>
+                {% trans "Registered with:" %} INPI<br>
+                {% trans "Address:" %} 120 avenue Camerone, 30290 L'Ardoise, France<br>
+                {% trans "Email:" %} lubma3D@outlook.fr
+            </p>
+        </section>
+        
+        <!-- OBCHODNÉ PODMIENKY -->
+        <section class="legal-section">
+            <h2>2. {% trans "Terms and Conditions" %} (CGV)</h2>
+            
+            <h3>2.1 {% trans "Scope" %}</h3>
+            <p>{% trans "These General Terms and Conditions of Sale (CGV) apply to all orders placed on the website www.velvetcreature.fr. By placing an order, the customer acknowledges having read and accepted these terms without reservation. These CGV are concluded between the seller Lubma3D and any natural or legal person wishing to make a purchase via this website." %}</p>
+            
+            <h3>2.2 {% trans "Products" %}</h3>
+            <p>{% trans "All products offered for sale are described and presented as accurately as possible. Each item is 3D printed and hand-finished, which may result in slight variations from the product photos. These variations cannot be considered as defects. The photographs and descriptions of the products are for illustrative purposes only and are not contractually binding." %}</p>
+            
+            <h3>2.3 {% trans "Prices" %}</h3>
+            <p>{% trans "All prices are displayed in euros (EUR). In accordance with Article 293B of the French General Tax Code, VAT is not applicable (franchise en base de TVA). The price invoiced is the price indicated on the order confirmation. Shipping costs are calculated at checkout based on the delivery method and destination. The seller reserves the right to modify prices at any time, but products will be invoiced at the price in effect at the time of order confirmation." %}</p>
+            
+            <h3>2.4 {% trans "Order Process" %}</h3>
+            <p>{% trans "The customer places an order via the website. The order is confirmed once payment has been received. An email confirmation will be sent to the address provided. The seller reserves the right to cancel any order in case of stock error, payment issue, or suspected fraud. The customer will be notified and refunded if applicable." %}</p>
+            
+            <h3>2.5 {% trans "Payment" %}</h3>
+            <p>{% trans "Payment is made online via credit card (Stripe) or bank transfer. The customer guarantees that they have the necessary authorizations to use the chosen payment method. The seller uses Stripe as a secure payment provider and never stores credit card data on its servers." %}</p>
+        </section>
+        
+        <!-- DODACIE PODMIENKY -->
+        <section class="legal-section">
+            <h2>3. {% trans "Shipping & Delivery" %}</h2>
+            
+            <h3>3.1 {% trans "Order Processing" %}</h3>
+            <p>{% trans "All products are made to order via 3D printing. Processing and manufacturing time is typically 3 to 7 working days. During peak periods, this may extend up to 10 working days. The customer will be informed by email of any significant delay." %}</p>
+            
+            <h3>3.2 {% trans "Shipping Methods" %}</h3>
+            <p>{% trans "We offer delivery via:" %}</p>
+            <ul>
+                <li><strong>Mondial Relay</strong> – {% trans "Delivery to a relay point" %}</li>
+                <li><strong>Colissimo</strong> – {% trans "Home delivery with tracking" %}</li>
+                <li><strong>Chronopost</strong> – {% trans "Express delivery" %}</li>
+            </ul>
+            
+            <h3>3.3 {% trans "Delivery Times" %}</h3>
+            <p>{% trans "Estimated delivery times after dispatch:" %}</p>
+            <ul>
+                <li>{% trans "France: 2 to 5 working days" %}</li>
+                <li>{% trans "Europe: 5 to 10 working days" %}</li>
+                <li>{% trans "International: 10 to 20 working days" %}</li>
+            </ul>
+            
+            <h3>3.4 {% trans "Shipping Issues" %}</h3>
+            <p>{% trans "In case of delay, damage, or loss of package, the customer must contact the seller as soon as possible at lubma3D@outlook.fr. The seller will work with the carrier to resolve the issue. The seller cannot be held responsible for delays caused by the carrier or force majeure events." %}</p>
+        </section>
+        
+        <!-- PRÁVO NA ODSTÚPENIE -->
+        <section class="legal-section">
+            <h2>4. {% trans "Right of Withdrawal & Returns" %}</h2>
+            
+            <h3>4.1 {% trans "Legal Withdrawal Period" %}</h3>
+            <p>{% trans "In accordance with Article L221-18 of the French Consumer Code, the customer has a period of fourteen (14) days from the date of receipt of the goods to exercise their right of withdrawal without having to justify their decision or pay any penalties. This right applies to sales concluded remotely." %}</p>
+            
+            <h3>4.2 {% trans "How to Exercise the Right of Withdrawal" %}</h3>
+            <p>{% trans "To exercise the right of withdrawal, the customer must notify their decision by email at lubma3D@outlook.fr before the expiration of the 14-day period. A withdrawal form can be provided upon request. The customer must return the product(s) within fourteen (14) days following notification of their withdrawal." %}</p>
+            
+            <h3>4.3 {% trans "Return Conditions" %}</h3>
+            <p>{% trans "Products must be returned in their original condition, unused, in their original packaging. Return shipping costs are the responsibility of the customer. The seller recommends using a tracked shipping method. The customer is responsible for the product until it is received by the seller." %}</p>
+            
+            <h3>4.4 {% trans "Refund" %}</h3>
+            <p>{% trans "Upon receipt and verification of the returned items, the seller will refund the total amount paid (including outward shipping costs) within fourteen (14) days maximum, using the same payment method as the original transaction. The refund of the return shipping costs is not required by law and remains the responsibility of the customer." %}</p>
+            
+            <h3>4.5 {% trans "Exceptions" %}</h3>
+            <p>{% trans "According to Article L221-28 of the French Consumer Code, the right of withdrawal does not apply to:" %}</p>
+            <ul>
+                <li>{% trans "Products made to the customer's specifications or clearly personalized (custom orders)" %}</li>
+                <li>{% trans "Products that have been unsealed and cannot be returned for health or hygiene reasons" %}</li>
+            </ul>
+        </section>
+        
+        <!-- ZÁRUKA -->
+        <section class="legal-section">
+            <h2>5. {% trans "Legal Warranties" %}</h2>
+            
+            <h3>5.1 {% trans "Legal Warranty of Conformity" %}</h3>
+            <p>{% trans "In accordance with Articles L217-4 to L217-14 of the French Consumer Code, the seller is required to deliver goods that conform to the contract and is liable for any lack of conformity existing at the time of delivery. The customer has a period of two (2) years from delivery of the goods to report any lack of conformity." %}</p>
+            
+            <h3>5.2 {% trans "Legal Warranty Against Hidden Defects" %}</h3>
+            <p>{% trans "In accordance with Articles 1641 to 1649 of the French Civil Code, the seller is bound by the warranty against hidden defects of the item sold that render it unfit for its intended use. The buyer may bring an action within two (2) years from the discovery of the defect. In case of a proven hidden defect, the buyer may choose between keeping the product with a price reduction or returning it for a full refund." %}</p>
+            
+            <h3>5.3 {% trans "Product-Specific Notes" %}</h3>
+            <p>{% trans "Our products are 3D printed using PLA (polylactic acid), a biodegradable and non-toxic material. Each piece is hand-finished. Slight variations in color, surface texture, or finish are inherent to the 3D printing process and do not constitute defects. Each piece is unique." %}</p>
+        </section>
+        
+        <!-- GDPR / RGPD -->
+        <section class="legal-section">
+            <h2>6. {% trans "Privacy & Data Protection" %} (RGPD)</h2>
+            
+            <h3>6.1 {% trans "Data Controller" %}</h3>
+            <p>
+                {% trans "The data controller is:" %}<br>
+                <strong>Lubma3D</strong><br>
+                120 avenue Camerone, 30290 L'Ardoise, France<br>
+                {% trans "Email:" %} lubma3D@outlook.fr
+            </p>
+            
+            <h3>6.2 {% trans "Data Collected" %}</h3>
+            <p>{% trans "We collect only the data necessary to process your order: name, first name, email address, postal address, phone number. Payment data is processed directly by our secure payment provider (Stripe) and is never stored on our servers." %}</p>
+            
+            <h3>6.3 {% trans "Purpose of Processing" %}</h3>
+            <p>{% trans "Your personal data is used exclusively for:" %}</p>
+            <ul>
+                <li>{% trans "Processing and delivering your order" %}</li>
+                <li>{% trans "Communicating with you about your order" %}</li>
+                <li>{% trans "Legal obligations (invoicing, accounting)" %}</li>
+            </ul>
+            <p>{% trans "Your data will never be sold, rented, or transferred to third parties for commercial purposes." %}</p>
+            
+            <h3>6.4 {% trans "Your Rights" %}</h3>
+            <p>{% trans "In accordance with the General Data Protection Regulation (GDPR) and the French Data Protection Act, you have the following rights regarding your personal data:" %}</p>
+            <ul>
+                <li>{% trans "Right of access – Article 15 GDPR" %}</li>
+                <li>{% trans "Right of rectification – Article 16 GDPR" %}</li>
+                <li>{% trans "Right to erasure (right to be forgotten) – Article 17 GDPR" %}</li>
+                <li>{% trans "Right to restriction of processing – Article 18 GDPR" %}</li>
+                <li>{% trans "Right to data portability – Article 20 GDPR" %}</li>
+                <li>{% trans "Right to object – Article 21 GDPR" %}</li>
+            </ul>
+            <p>{% trans "To exercise these rights, contact us at: lubma3D@outlook.fr. You also have the right to file a complaint with the CNIL (www.cnil.fr)." %}</p>
+            
+            <h3>6.5 {% trans "Cookies" %}</h3>
+            <p>{% trans "Our site uses only technical cookies necessary for its operation:" %}</p>
+            <ul>
+                <li>{% trans "Session cookie (session identification)" %}</li>
+                <li>{% trans "CSRF cookie (security)" %}</li>
+                <li>{% trans "Language preference cookie" %}</li>
+            </ul>
+            <p>{% trans "No advertising, tracking, or third-party cookies are used. In accordance with CNIL recommendations, these technical cookies do not require prior consent." %}</p>
+            
+            <h3>6.6 {% trans "Data Retention Period" %}</h3>
+            <p>{% trans "Your personal data is retained for the duration necessary to fulfill the purposes for which it was collected, plus applicable legal retention periods:" %}</p>
+            <ul>
+                <li>{% trans "Order data: 5 years from the end of the commercial relationship" %}</li>
+                <li>{% trans "Invoices: 10 years (legal accounting obligation)" %}</li>
+                <li>{% trans "Cookies: maximum 13 months" %}</li>
+            </ul>
+        </section>
+        
+        <!-- DUŠEVNÉ VLASTNÍCTVO -->
+        <section class="legal-section">
+            <h2>7. {% trans "Intellectual Property" %}</h2>
+            
+            <h3>7.1 {% trans "Content & Designs" %}</h3>
+            <p>{% trans "All content on the website www.velvetcreature.fr (texts, images, logos, 3D models, product designs) is the exclusive property of Lubma3D and is protected by French and international intellectual property laws. Any reproduction, distribution, modification, or use of this content without express authorization is prohibited." %}</p>
+            
+            <h3>7.2 {% trans "3D Models" %}</h3>
+            <p>{% trans "The 3D models used to create the products are the exclusive creation and property of Lubma3D. The sale of a physical product does not transfer any intellectual property rights over the 3D model." %}</p>
+        </section>
+        
+        <!-- RIEŠENIE SPOROV -->
+        <section class="legal-section">
+            <h2>8. {% trans "Dispute Resolution" %}</h2>
+            
+            <h3>8.1 {% trans "Applicable Law" %}</h3>
+            <p>{% trans "These terms and conditions are governed by French law. Any dispute relating to their interpretation or execution shall fall under the jurisdiction of the competent French courts." %}</p>
+            
+            <h3>8.2 {% trans "Mediation" %}</h3>
+            <p>{% trans "In accordance with Articles L611-1 and following of the French Consumer Code, the customer has the right to resort to a consumer mediator free of charge for the amicable resolution of any dispute with the seller. You can also use the European Commission's Online Dispute Resolution (ODR) platform:" %} <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a></p>
+            
+            <h3>8.3 {% trans "Contact" %}</h3>
+            <p>
+                {% trans "For any questions, complaints, or information, you can contact us at:" %}<br>
+                📧 <strong>lubma3D@outlook.fr</strong><br>
+                📍 120 avenue Camerone, 30290 L'Ardoise, France
+            </p>
+        </section>
+        
+        <p class="legal-update">{% trans "Last updated: August 2026" %}</p>
+        
+    </div>
+</div>
+
+
+<style>
+.legal-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    color: #c0b090;
+}
+
+.legal-container {
+    background: rgba(10, 5, 5, 0.9);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.legal-container h1 {
+    color: #d4af37;
+    font-family: 'EB Garamond', 'Playfair Display', serif;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+.legal-section {
+    margin-bottom: 45px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.legal-section:last-of-type {
+    border-bottom: none;
+}
+
+.legal-section h2 {
+    color: #d4af37;
+    font-family: 'EB Garamond', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.legal-section h3 {
+    color: #b0a080;
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    margin: 20px 0 10px 0;
+}
+
+.legal-section p {
+    color: #9a9a8a;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.legal-section ul {
+    list-style: disc;
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+
+.legal-section ul li {
+    color: #9a9a8a;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.legal-section a {
+    color: #d4af37;
+    text-decoration: underline;
+}
+
+.legal-section a:hover {
+    color: #f0d060;
+}
+
+.legal-update {
+    text-align: center;
+    color: #6a6a5a;
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    .legal-container {
+        padding: 30px 20px;
+    }
+    .legal-container h1 {
+        font-size: 28px;
+    }
+    .legal-section h2 {
+        font-size: 20px;
+    }
+}
+</style>
+
+{% endblock %}
