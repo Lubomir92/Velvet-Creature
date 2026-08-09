@@ -1,200 +1,199 @@
 {% extends "base.html" %}
-{% load i18n %}
 
-{% block title %}{% trans "Legal Information" %}{% endblock %}
+{% block title %}Mentions légales & CGV{% endblock %}
 
 {% block content %}
 
 <div class="legal-page">
     <div class="legal-container">
         
-        <h1>📜 {% trans "Legal Information" %}</h1>
+        <h1>📜 Mentions légales & CGV</h1>
         
-        <!-- IDENTIFIKÁCIA PREDAJCU -->
+        <!-- IDENTIFICATION DU VENDEUR -->
         <section class="legal-section">
-            <h2>1. {% trans "Seller Identification" %}</h2>
+            <h2>1. Identification du vendeur</h2>
             
             <p>
                 <strong>Lubma3D</strong><br>
-                {% trans "Legal form: Auto-entrepreneur (Micro-entreprise)" %}<br>
-                {% trans "SIRET:" %} 10457886900018<br>
-                {% trans "SIREN:" %} 104578869<br>
-                {% trans "VAT: Not applicable - Article 293B of the French General Tax Code (Franchise en base de TVA)" %}<br>
-                {% trans "Registered with:" %} INPI<br>
-                {% trans "Address:" %} 120 avenue Camerone, 30290 L'Ardoise, France<br>
-                {% trans "Email:" %} lubma3D@outlook.fr
+                Forme juridique : Auto-entrepreneur (Micro-entreprise)<br>
+                SIRET : 10457886900018<br>
+                SIREN : 104578869<br>
+                TVA : Non applicable - Article 293B du Code Général des Impôts (Franchise en base de TVA)<br>
+                Immatriculé auprès de : INPI<br>
+                Adresse : 120 avenue Camerone, 30290 L'Ardoise, France<br>
+                Email : lubma3D@outlook.fr
             </p>
         </section>
         
-        <!-- OBCHODNÉ PODMIENKY -->
+        <!-- CONDITIONS GÉNÉRALES DE VENTE -->
         <section class="legal-section">
-            <h2>2. {% trans "Terms and Conditions" %} (CGV)</h2>
+            <h2>2. Conditions Générales de Vente (CGV)</h2>
             
-            <h3>2.1 {% trans "Scope" %}</h3>
-            <p>{% trans "These General Terms and Conditions of Sale (CGV) apply to all orders placed on the website www.velvetcreature.fr. By placing an order, the customer acknowledges having read and accepted these terms without reservation. These CGV are concluded between the seller Lubma3D and any natural or legal person wishing to make a purchase via this website." %}</p>
+            <h3>2.1 Champ d'application</h3>
+            <p>Les présentes Conditions Générales de Vente (CGV) s'appliquent à toutes les commandes passées sur le site www.velvetcreature.fr. En passant commande, le client reconnaît avoir lu et accepté ces conditions sans réserve. Ces CGV sont conclues entre le vendeur Lubma3D et toute personne physique ou morale souhaitant effectuer un achat via ce site.</p>
             
-            <h3>2.2 {% trans "Products" %}</h3>
-            <p>{% trans "All products offered for sale are described and presented as accurately as possible. Each item is 3D printed and hand-finished, which may result in slight variations from the product photos. These variations cannot be considered as defects. The photographs and descriptions of the products are for illustrative purposes only and are not contractually binding." %}</p>
+            <h3>2.2 Produits</h3>
+            <p>Tous les produits proposés à la vente sont décrits et présentés aussi précisément que possible. Chaque article est imprimé en 3D et fini à la main, ce qui peut entraîner de légères variations par rapport aux photos des produits. Ces variations ne peuvent être considérées comme des défauts. Les photographies et descriptions des produits sont à titre indicatif et n'ont pas de valeur contractuelle.</p>
             
-            <h3>2.3 {% trans "Prices" %}</h3>
-            <p>{% trans "All prices are displayed in euros (EUR). In accordance with Article 293B of the French General Tax Code, VAT is not applicable (franchise en base de TVA). The price invoiced is the price indicated on the order confirmation. Shipping costs are calculated at checkout based on the delivery method and destination. The seller reserves the right to modify prices at any time, but products will be invoiced at the price in effect at the time of order confirmation." %}</p>
+            <h3>2.3 Prix</h3>
+            <p>Tous les prix sont affichés en euros (EUR). Conformément à l'Article 293B du Code Général des Impôts, la TVA n'est pas applicable (franchise en base de TVA). Le prix facturé est celui indiqué lors de la confirmation de commande. Les frais de livraison sont calculés au moment du paiement en fonction du mode de livraison et de la destination. Le vendeur se réserve le droit de modifier les prix à tout moment, mais les produits seront facturés au prix en vigueur au moment de la confirmation de commande.</p>
             
-            <h3>2.4 {% trans "Order Process" %}</h3>
-            <p>{% trans "The customer places an order via the website. The order is confirmed once payment has been received. An email confirmation will be sent to the address provided. The seller reserves the right to cancel any order in case of stock error, payment issue, or suspected fraud. The customer will be notified and refunded if applicable." %}</p>
+            <h3>2.4 Processus de commande</h3>
+            <p>Le client passe commande via le site internet. La commande est confirmée une fois le paiement reçu. Un email de confirmation sera envoyé à l'adresse indiquée. Le vendeur se réserve le droit d'annuler toute commande en cas d'erreur de stock, de problème de paiement ou de suspicion de fraude. Le client sera informé et remboursé le cas échéant.</p>
             
-            <h3>2.5 {% trans "Payment" %}</h3>
-            <p>{% trans "Payment is made online via credit card (Stripe) or bank transfer. The customer guarantees that they have the necessary authorizations to use the chosen payment method. The seller uses Stripe as a secure payment provider and never stores credit card data on its servers." %}</p>
+            <h3>2.5 Paiement</h3>
+            <p>Le paiement s'effectue en ligne par carte bancaire (Stripe) ou par virement bancaire. Le client garantit qu'il dispose des autorisations nécessaires pour utiliser le mode de paiement choisi. Le vendeur utilise Stripe comme prestataire de paiement sécurisé et ne stocke jamais les données de carte bancaire sur ses serveurs.</p>
         </section>
         
-        <!-- DODACIE PODMIENKY -->
+        <!-- LIVRAISON -->
         <section class="legal-section">
-            <h2>3. {% trans "Shipping & Delivery" %}</h2>
+            <h2>3. Livraison</h2>
             
-            <h3>3.1 {% trans "Order Processing" %}</h3>
-            <p>{% trans "All products are made to order via 3D printing. Processing and manufacturing time is typically 3 to 7 working days. During peak periods, this may extend up to 10 working days. The customer will be informed by email of any significant delay." %}</p>
+            <h3>3.1 Traitement des commandes</h3>
+            <p>Tous les produits sont fabriqués sur commande par impression 3D. Le délai de traitement et de fabrication est généralement de 3 à 7 jours ouvrés. En période de forte affluence, ce délai peut atteindre jusqu'à 10 jours ouvrés. Le client sera informé par email de tout retard significatif.</p>
             
-            <h3>3.2 {% trans "Shipping Methods" %}</h3>
-            <p>{% trans "We offer delivery via:" %}</p>
+            <h3>3.2 Modes de livraison</h3>
+            <p>Nous proposons la livraison via :</p>
             <ul>
-                <li><strong>Mondial Relay</strong> – {% trans "Delivery to a relay point" %}</li>
-                <li><strong>Colissimo</strong> – {% trans "Home delivery with tracking" %}</li>
-                <li><strong>Chronopost</strong> – {% trans "Express delivery" %}</li>
+                <li><strong>Mondial Relay</strong> – Livraison en point relais</li>
+                <li><strong>Colissimo</strong> – Livraison à domicile avec suivi</li>
+                <li><strong>Chronopost</strong> – Livraison express</li>
             </ul>
             
-            <h3>3.3 {% trans "Delivery Times" %}</h3>
-            <p>{% trans "Estimated delivery times after dispatch:" %}</p>
+            <h3>3.3 Délais de livraison</h3>
+            <p>Délais de livraison estimés après expédition :</p>
             <ul>
-                <li>{% trans "France: 2 to 5 working days" %}</li>
-                <li>{% trans "Europe: 5 to 10 working days" %}</li>
-                <li>{% trans "International: 10 to 20 working days" %}</li>
+                <li>France : 2 à 5 jours ouvrés</li>
+                <li>Europe : 5 à 10 jours ouvrés</li>
+                <li>International : 10 à 20 jours ouvrés</li>
             </ul>
             
-            <h3>3.4 {% trans "Shipping Issues" %}</h3>
-            <p>{% trans "In case of delay, damage, or loss of package, the customer must contact the seller as soon as possible at lubma3D@outlook.fr. The seller will work with the carrier to resolve the issue. The seller cannot be held responsible for delays caused by the carrier or force majeure events." %}</p>
+            <h3>3.4 Problèmes de livraison</h3>
+            <p>En cas de retard, dommage ou perte de colis, le client doit contacter le vendeur dès que possible à lubma3D@outlook.fr. Le vendeur collaborera avec le transporteur pour résoudre le problème. Le vendeur ne peut être tenu responsable des retards causés par le transporteur ou des cas de force majeure.</p>
         </section>
         
-        <!-- PRÁVO NA ODSTÚPENIE -->
+        <!-- DROIT DE RÉTRACTATION -->
         <section class="legal-section">
-            <h2>4. {% trans "Right of Withdrawal & Returns" %}</h2>
+            <h2>4. Droit de rétractation et retours</h2>
             
-            <h3>4.1 {% trans "Legal Withdrawal Period" %}</h3>
-            <p>{% trans "In accordance with Article L221-18 of the French Consumer Code, the customer has a period of fourteen (14) days from the date of receipt of the goods to exercise their right of withdrawal without having to justify their decision or pay any penalties. This right applies to sales concluded remotely." %}</p>
+            <h3>4.1 Délai légal de rétractation</h3>
+            <p>Conformément à l'Article L221-18 du Code de la Consommation, le client dispose d'un délai de quatorze (14) jours à compter de la date de réception des biens pour exercer son droit de rétractation sans avoir à justifier sa décision ni à payer de pénalités. Ce droit s'applique aux contrats conclus à distance.</p>
             
-            <h3>4.2 {% trans "How to Exercise the Right of Withdrawal" %}</h3>
-            <p>{% trans "To exercise the right of withdrawal, the customer must notify their decision by email at lubma3D@outlook.fr before the expiration of the 14-day period. A withdrawal form can be provided upon request. The customer must return the product(s) within fourteen (14) days following notification of their withdrawal." %}</p>
+            <h3>4.2 Comment exercer le droit de rétractation</h3>
+            <p>Pour exercer son droit de rétractation, le client doit notifier sa décision par email à lubma3D@outlook.fr avant l'expiration du délai de 14 jours. Un formulaire de rétractation peut être fourni sur demande. Le client doit retourner le(s) produit(s) dans un délai de quatorze (14) jours suivant la notification de sa rétractation.</p>
             
-            <h3>4.3 {% trans "Return Conditions" %}</h3>
-            <p>{% trans "Products must be returned in their original condition, unused, in their original packaging. Return shipping costs are the responsibility of the customer. The seller recommends using a tracked shipping method. The customer is responsible for the product until it is received by the seller." %}</p>
+            <h3>4.3 Conditions de retour</h3>
+            <p>Les produits doivent être retournés dans leur état d'origine, non utilisés, dans leur emballage d'origine. Les frais de retour sont à la charge du client. Le vendeur recommande d'utiliser un mode d'envoi avec suivi. Le client est responsable du produit jusqu'à sa réception par le vendeur.</p>
             
-            <h3>4.4 {% trans "Refund" %}</h3>
-            <p>{% trans "Upon receipt and verification of the returned items, the seller will refund the total amount paid (including outward shipping costs) within fourteen (14) days maximum, using the same payment method as the original transaction. The refund of the return shipping costs is not required by law and remains the responsibility of the customer." %}</p>
+            <h3>4.4 Remboursement</h3>
+            <p>À réception et vérification des articles retournés, le vendeur remboursera le montant total payé (y compris les frais de livraison aller) dans un délai maximum de quatorze (14) jours, en utilisant le même moyen de paiement que la transaction d'origine. Le remboursement des frais de retour n'est pas exigé par la loi et reste à la charge du client.</p>
             
-            <h3>4.5 {% trans "Exceptions" %}</h3>
-            <p>{% trans "According to Article L221-28 of the French Consumer Code, the right of withdrawal does not apply to:" %}</p>
+            <h3>4.5 Exceptions</h3>
+            <p>Conformément à l'Article L221-28 du Code de la Consommation, le droit de rétractation ne s'applique pas :</p>
             <ul>
-                <li>{% trans "Products made to the customer's specifications or clearly personalized (custom orders)" %}</li>
-                <li>{% trans "Products that have been unsealed and cannot be returned for health or hygiene reasons" %}</li>
+                <li>Aux produits confectionnés selon les spécifications du client ou nettement personnalisés (commandes sur mesure)</li>
+                <li>Aux produits qui ont été descellés et ne peuvent être retournés pour des raisons d'hygiène ou de santé</li>
             </ul>
         </section>
         
-        <!-- ZÁRUKA -->
+        <!-- GARANTIES LÉGALES -->
         <section class="legal-section">
-            <h2>5. {% trans "Legal Warranties" %}</h2>
+            <h2>5. Garanties légales</h2>
             
-            <h3>5.1 {% trans "Legal Warranty of Conformity" %}</h3>
-            <p>{% trans "In accordance with Articles L217-4 to L217-14 of the French Consumer Code, the seller is required to deliver goods that conform to the contract and is liable for any lack of conformity existing at the time of delivery. The customer has a period of two (2) years from delivery of the goods to report any lack of conformity." %}</p>
+            <h3>5.1 Garantie légale de conformité</h3>
+            <p>Conformément aux Articles L217-4 à L217-14 du Code de la Consommation, le vendeur est tenu de livrer un bien conforme au contrat et répond des défauts de conformité existant au moment de la délivrance. Le client dispose d'un délai de deux (2) ans à compter de la délivrance du bien pour signaler tout défaut de conformité.</p>
             
-            <h3>5.2 {% trans "Legal Warranty Against Hidden Defects" %}</h3>
-            <p>{% trans "In accordance with Articles 1641 to 1649 of the French Civil Code, the seller is bound by the warranty against hidden defects of the item sold that render it unfit for its intended use. The buyer may bring an action within two (2) years from the discovery of the defect. In case of a proven hidden defect, the buyer may choose between keeping the product with a price reduction or returning it for a full refund." %}</p>
+            <h3>5.2 Garantie légale des vices cachés</h3>
+            <p>Conformément aux Articles 1641 à 1649 du Code Civil, le vendeur est tenu de la garantie à raison des défauts cachés de la chose vendue qui la rendent impropre à l'usage auquel on la destine. L'acheteur peut agir dans un délai de deux (2) ans à compter de la découverte du vice. En cas de vice caché avéré, l'acheteur peut choisir entre garder le produit avec une réduction de prix ou le retourner pour un remboursement intégral.</p>
             
-            <h3>5.3 {% trans "Product-Specific Notes" %}</h3>
-            <p>{% trans "Our products are 3D printed using PLA (polylactic acid), a biodegradable and non-toxic material. Each piece is hand-finished. Slight variations in color, surface texture, or finish are inherent to the 3D printing process and do not constitute defects. Each piece is unique." %}</p>
+            <h3>5.3 Notes spécifiques aux produits</h3>
+            <p>Nos produits sont imprimés en 3D en utilisant du PLA (acide polylactique), un matériau biodégradable et non toxique. Chaque pièce est finie à la main. De légères variations de couleur, de texture de surface ou de finition sont inhérentes au processus d'impression 3D et ne constituent pas des défauts. Chaque pièce est unique.</p>
         </section>
         
-        <!-- GDPR / RGPD -->
+        <!-- PROTECTION DES DONNÉES -->
         <section class="legal-section">
-            <h2>6. {% trans "Privacy & Data Protection" %} (RGPD)</h2>
+            <h2>6. Protection des données personnelles (RGPD)</h2>
             
-            <h3>6.1 {% trans "Data Controller" %}</h3>
+            <h3>6.1 Responsable du traitement</h3>
             <p>
-                {% trans "The data controller is:" %}<br>
+                Le responsable du traitement est :<br>
                 <strong>Lubma3D</strong><br>
                 120 avenue Camerone, 30290 L'Ardoise, France<br>
-                {% trans "Email:" %} lubma3D@outlook.fr
+                Email : lubma3D@outlook.fr
             </p>
             
-            <h3>6.2 {% trans "Data Collected" %}</h3>
-            <p>{% trans "We collect only the data necessary to process your order: name, first name, email address, postal address, phone number. Payment data is processed directly by our secure payment provider (Stripe) and is never stored on our servers." %}</p>
+            <h3>6.2 Données collectées</h3>
+            <p>Nous collectons uniquement les données nécessaires au traitement de votre commande : nom, prénom, adresse email, adresse postale, téléphone. Les données de paiement sont traitées directement par notre prestataire de paiement sécurisé (Stripe) et ne sont jamais stockées sur nos serveurs.</p>
             
-            <h3>6.3 {% trans "Purpose of Processing" %}</h3>
-            <p>{% trans "Your personal data is used exclusively for:" %}</p>
+            <h3>6.3 Finalité du traitement</h3>
+            <p>Vos données personnelles sont utilisées exclusivement pour :</p>
             <ul>
-                <li>{% trans "Processing and delivering your order" %}</li>
-                <li>{% trans "Communicating with you about your order" %}</li>
-                <li>{% trans "Legal obligations (invoicing, accounting)" %}</li>
+                <li>Le traitement et la livraison de votre commande</li>
+                <li>La communication avec vous concernant votre commande</li>
+                <li>Les obligations légales (facturation, comptabilité)</li>
             </ul>
-            <p>{% trans "Your data will never be sold, rented, or transferred to third parties for commercial purposes." %}</p>
+            <p>Vos données ne seront jamais vendues, louées ou transférées à des tiers à des fins commerciales.</p>
             
-            <h3>6.4 {% trans "Your Rights" %}</h3>
-            <p>{% trans "In accordance with the General Data Protection Regulation (GDPR) and the French Data Protection Act, you have the following rights regarding your personal data:" %}</p>
+            <h3>6.4 Vos droits</h3>
+            <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la Loi Informatique et Libertés, vous disposez des droits suivants :</p>
             <ul>
-                <li>{% trans "Right of access – Article 15 GDPR" %}</li>
-                <li>{% trans "Right of rectification – Article 16 GDPR" %}</li>
-                <li>{% trans "Right to erasure (right to be forgotten) – Article 17 GDPR" %}</li>
-                <li>{% trans "Right to restriction of processing – Article 18 GDPR" %}</li>
-                <li>{% trans "Right to data portability – Article 20 GDPR" %}</li>
-                <li>{% trans "Right to object – Article 21 GDPR" %}</li>
+                <li>Droit d'accès – Article 15 RGPD</li>
+                <li>Droit de rectification – Article 16 RGPD</li>
+                <li>Droit à l'effacement (droit à l'oubli) – Article 17 RGPD</li>
+                <li>Droit à la limitation du traitement – Article 18 RGPD</li>
+                <li>Droit à la portabilité des données – Article 20 RGPD</li>
+                <li>Droit d'opposition – Article 21 RGPD</li>
             </ul>
-            <p>{% trans "To exercise these rights, contact us at: lubma3D@outlook.fr. You also have the right to file a complaint with the CNIL (www.cnil.fr)." %}</p>
+            <p>Pour exercer ces droits, contactez-nous à : lubma3D@outlook.fr. Vous disposez également du droit d'introduire une réclamation auprès de la CNIL (www.cnil.fr).</p>
             
-            <h3>6.5 {% trans "Cookies" %}</h3>
-            <p>{% trans "Our site uses only technical cookies necessary for its operation:" %}</p>
+            <h3>6.5 Cookies</h3>
+            <p>Notre site utilise uniquement des cookies techniques nécessaires à son fonctionnement :</p>
             <ul>
-                <li>{% trans "Session cookie (session identification)" %}</li>
-                <li>{% trans "CSRF cookie (security)" %}</li>
-                <li>{% trans "Language preference cookie" %}</li>
+                <li>Cookie de session (identification de session)</li>
+                <li>Cookie CSRF (sécurité)</li>
+                <li>Cookie de préférence de langue</li>
             </ul>
-            <p>{% trans "No advertising, tracking, or third-party cookies are used. In accordance with CNIL recommendations, these technical cookies do not require prior consent." %}</p>
+            <p>Aucun cookie publicitaire, de tracking ou tiers n'est utilisé. Conformément aux recommandations de la CNIL, ces cookies techniques ne nécessitent pas de consentement préalable.</p>
             
-            <h3>6.6 {% trans "Data Retention Period" %}</h3>
-            <p>{% trans "Your personal data is retained for the duration necessary to fulfill the purposes for which it was collected, plus applicable legal retention periods:" %}</p>
+            <h3>6.6 Durée de conservation</h3>
+            <p>Vos données personnelles sont conservées pendant la durée nécessaire à l'accomplissement des finalités pour lesquelles elles ont été collectées, augmentée des délais légaux de conservation :</p>
             <ul>
-                <li>{% trans "Order data: 5 years from the end of the commercial relationship" %}</li>
-                <li>{% trans "Invoices: 10 years (legal accounting obligation)" %}</li>
-                <li>{% trans "Cookies: maximum 13 months" %}</li>
+                <li>Données de commande : 5 ans à compter de la fin de la relation commerciale</li>
+                <li>Factures : 10 ans (obligation légale comptable)</li>
+                <li>Cookies : 13 mois maximum</li>
             </ul>
         </section>
         
-        <!-- DUŠEVNÉ VLASTNÍCTVO -->
+        <!-- PROPRIÉTÉ INTELLECTUELLE -->
         <section class="legal-section">
-            <h2>7. {% trans "Intellectual Property" %}</h2>
+            <h2>7. Propriété intellectuelle</h2>
             
-            <h3>7.1 {% trans "Content & Designs" %}</h3>
-            <p>{% trans "All content on the website www.velvetcreature.fr (texts, images, logos, 3D models, product designs) is the exclusive property of Lubma3D and is protected by French and international intellectual property laws. Any reproduction, distribution, modification, or use of this content without express authorization is prohibited." %}</p>
+            <h3>7.1 Contenu et designs</h3>
+            <p>Tout le contenu du site www.velvetcreature.fr (textes, images, logos, modèles 3D, designs de produits) est la propriété exclusive de Lubma3D et est protégé par les lois françaises et internationales sur la propriété intellectuelle. Toute reproduction, distribution, modification ou utilisation de ce contenu sans autorisation expresse est interdite.</p>
             
-            <h3>7.2 {% trans "3D Models" %}</h3>
-            <p>{% trans "The 3D models used to create the products are the exclusive creation and property of Lubma3D. The sale of a physical product does not transfer any intellectual property rights over the 3D model." %}</p>
+            <h3>7.2 Modèles 3D</h3>
+            <p>Les modèles 3D utilisés pour créer les produits sont la création et la propriété exclusives de Lubma3D. La vente d'un produit physique ne transfère aucun droit de propriété intellectuelle sur le modèle 3D.</p>
         </section>
         
-        <!-- RIEŠENIE SPOROV -->
+        <!-- RÈGLEMENT DES LITIGES -->
         <section class="legal-section">
-            <h2>8. {% trans "Dispute Resolution" %}</h2>
+            <h2>8. Règlement des litiges</h2>
             
-            <h3>8.1 {% trans "Applicable Law" %}</h3>
-            <p>{% trans "These terms and conditions are governed by French law. Any dispute relating to their interpretation or execution shall fall under the jurisdiction of the competent French courts." %}</p>
+            <h3>8.1 Droit applicable</h3>
+            <p>Les présentes conditions générales sont soumises au droit français. Tout litige relatif à leur interprétation ou à leur exécution relève de la compétence des tribunaux français compétents.</p>
             
-            <h3>8.2 {% trans "Mediation" %}</h3>
-            <p>{% trans "In accordance with Articles L611-1 and following of the French Consumer Code, the customer has the right to resort to a consumer mediator free of charge for the amicable resolution of any dispute with the seller. You can also use the European Commission's Online Dispute Resolution (ODR) platform:" %} <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a></p>
+            <h3>8.2 Médiation</h3>
+            <p>Conformément aux Articles L611-1 et suivants du Code de la Consommation, le client a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable de tout litige avec le vendeur. Vous pouvez également utiliser la plateforme de Règlement en Ligne des Litiges (RLL) de la Commission Européenne : <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a></p>
             
-            <h3>8.3 {% trans "Contact" %}</h3>
+            <h3>8.3 Contact</h3>
             <p>
-                {% trans "For any questions, complaints, or information, you can contact us at:" %}<br>
+                Pour toute question, réclamation ou information, vous pouvez nous contacter à :<br>
                 📧 <strong>lubma3D@outlook.fr</strong><br>
                 📍 120 avenue Camerone, 30290 L'Ardoise, France
             </p>
         </section>
         
-        <p class="legal-update">{% trans "Last updated: August 2026" %}</p>
+        <p class="legal-update">Dernière mise à jour : Août 2026</p>
         
     </div>
 </div>
