@@ -1,6 +1,6 @@
 import os
-import base64
 import resend
+import base64
 from django.template.loader import render_to_string
 from .invoice import generate_invoice_bytes
 
@@ -9,13 +9,12 @@ def send_order_email(order, subject, template):
     try:
         html = render_to_string(template, {"order": order})
         
-        # Vygeneruj PDF faktúru
         pdf_bytes = generate_invoice_bytes(order)
         pdf_base64 = base64.b64encode(pdf_bytes).decode('utf-8')
         
         resend.api_key = os.getenv("RESEND_API_KEY")
         resend.Emails.send({
-            "from": "Velvet Creature <onboarding@resend.dev>",
+            "from": "Velvet Creature <info@velvetcreature.fr>",
             "to": [order.email],
             "subject": subject,
             "html": html,
