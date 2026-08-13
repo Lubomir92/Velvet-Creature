@@ -1,11 +1,18 @@
 from django.contrib import admin
 from django.urls import path, include
-
 from django.conf.urls.i18n import i18n_patterns
-
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.contrib.sitemaps.views import sitemap
+from django.views.generic import TemplateView
+from .sitemaps import StaticViewSitemap, ProductSitemap
+
+
+sitemaps = {
+    "static": StaticViewSitemap,
+    "products": ProductSitemap,
+}
 
 
 # ==========================================
@@ -20,15 +27,17 @@ urlpatterns = [
         include("django.conf.urls.i18n")
     ),
 
-
     # Django admin
     path(
         "admin/",
         admin.site.urls
     ),
 
-]
+    # Robots & Sitemap
+    path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap"),
 
+]
 
 
 # ==========================================
@@ -38,56 +47,27 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
 
     # HOME
-    path(
-        "",
-        include("core.urls")
-    ),
-
+    path("", include("core.urls")),
 
     # SHOP
-    path(
-        "shop/",
-        include("products.urls")
-    ),
-
+    path("shop/", include("products.urls")),
 
     # CART
-    path(
-        "cart/",
-        include("cart.urls")
-    ),
-
+    path("cart/", include("cart.urls")),
 
     # ORDERS
-    path(
-        "orders/",
-        include("orders.urls")
-    ),
-
+    path("orders/", include("orders.urls")),
 
     # ACCOUNTS
-    path(
-        "accounts/",
-        include("accounts.urls")
-    ),
-
+    path("accounts/", include("accounts.urls")),
 
     # CUSTOM ORDERS
-    path(
-        "custom/",
-        include("custom_orders.urls")
-    ),
-
+    path("custom/", include("custom_orders.urls")),
 
     # WISHLIST
-    path(
-        "wishlist/",
-        include("wishlist.urls")
-    ),
-
+    path("wishlist/", include("wishlist.urls")),
 
 )
-
 
 
 # ==========================================
