@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /accounts/
+Disallow: /wishlist/
+
+Sitemap: https://www.velvetcreature.fr/sitemap.xml
