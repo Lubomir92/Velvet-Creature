@@ -94,17 +94,25 @@
         </div>
 
         <!-- Quick Questions -->
-        <div id="quick-questions" style="
+                <div id="quick-questions" style="
             padding: 10px 15px;
             background: rgba(0, 0, 0, 0.3);
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
+            max-height: 90px;
+            overflow-y: auto;
         ">
             <button onclick="askBot('livraison')" class="quick-btn">📦 Livraison</button>
             <button onclick="askBot('paiement')" class="quick-btn">💳 Paiement</button>
             <button onclick="askBot('produits')" class="quick-btn">🖨️ Produits</button>
+            <button onclick="askBot('materials')" class="quick-btn">🧪 Matériaux</button>
+            <button onclick="askBot('sizes')" class="quick-btn">📏 Tailles</button>
+            <button onclick="askBot('custom')" class="quick-btn">🎨 Sur mesure</button>
+            <button onclick="askBot('engraving')" class="quick-btn">✒️ Gravure</button>
             <button onclick="askBot('retour')" class="quick-btn">↩️ Retour</button>
+            <button onclick="askBot('tracking')" class="quick-btn">🔍 Suivi</button>
+            <button onclick="askBot('contact')" class="quick-btn">✉️ Contact</button>
         </div>
 
         <!-- Input -->
@@ -168,6 +176,17 @@
         background: rgba(0, 0, 0, 0.3);
     }
     #chat-messages::-webkit-scrollbar-thumb {
+        background: #d4af37;
+        border-radius: 10px;
+    }
+
+        #quick-questions::-webkit-scrollbar {
+        width: 4px;
+    }
+    #quick-questions::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.3);
+    }
+    #quick-questions::-webkit-scrollbar-thumb {
         background: #d4af37;
         border-radius: 10px;
     }
