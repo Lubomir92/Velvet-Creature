@@ -1,6 +1,3 @@
-
-
-# Odpovede pre bota v troch jazykoch
 from django.utils.translation import gettext as _
 
 # Odpovede pre bota v troch jazykoch
@@ -14,7 +11,7 @@ BOT_RESPONSES = {
         
         "products": "Nos produits sont des créatures gothiques et décorations uniques, imprimées en 3D avec précision et finies à la main. Chaque pièce est une œuvre d'art unique!",
 
-"materials": "Nous utilisons trois matériaux: le PLA (écologique et biodégradable), le PETG (résistant à l'eau et aux chocs) et le TPU (flexible et élastique). Chaque matériau a ses avantages selon l'usage. Chaque pièce est finie à la main.",
+        "materials": "Nous utilisons trois matériaux: le PLA (écologique et biodégradable), le PETG (résistant à l'eau et aux chocs) et le TPU (flexible et élastique). Chaque matériau a ses avantages selon l'usage. Chaque pièce est finie à la main.",
         
         "sizes": "Les tailles varient selon les produits. Consultez la page de chaque produit pour les dimensions exactes. Si vous avez besoin d'une taille spécifique, n'hésitez pas à nous contacter!",
         
@@ -51,9 +48,9 @@ BOT_RESPONSES = {
         
         "payment": "We accept credit card (Stripe) and bank transfer payments. Payment is 100% secure and your card details are never stored on our servers.",
         
-        "products": "products": "Our products are unique gothic creatures and decorations, 3D printed with precision and hand-finished. Each piece is a unique work of art!",
+        "products": "Our products are unique gothic creatures and decorations, 3D printed with precision and hand-finished. Each piece is a unique work of art!",
 
-"materials": "We use three materials: PLA (eco-friendly and biodegradable), PETG (water and impact resistant) and TPU (flexible and elastic). Each material has its advantages depending on use. Each piece is hand-finished.",
+        "materials": "We use three materials: PLA (eco-friendly and biodegradable), PETG (water and impact resistant) and TPU (flexible and elastic). Each material has its advantages depending on use. Each piece is hand-finished.",
         
         "sizes": "Sizes vary by product. Check each product page for exact dimensions. If you need a specific size, don't hesitate to contact us!",
         
@@ -90,9 +87,9 @@ BOT_RESPONSES = {
         
         "payment": "Prijímame platby kartou (Stripe) a bankovým prevodom. Platba je 100% bezpečná a údaje o karte nikdy neukladáme na našich serveroch.",
         
-        "products": "products": "Naše produkty sú jedinečné gotické stvorenia a dekorácie, 3D tlačené s presnosťou a ručne dokončené. Každý kus je jedinečné umelecké dielo!",
+        "products": "Naše produkty sú jedinečné gotické stvorenia a dekorácie, 3D tlačené s presnosťou a ručne dokončené. Každý kus je jedinečné umelecké dielo!",
 
-"materials": "Používame tri materiály: PLA (ekologické a biologicky rozložiteľné), PETG (odolné voči vode a nárazom) a TPU (flexibilné a elastické). Každý materiál má svoje výhody podľa použitia. Každý kus je ručne dokončený.",
+        "materials": "Používame tri materiály: PLA (ekologické a biologicky rozložiteľné), PETG (odolné voči vode a nárazom) a TPU (flexibilné a elastické). Každý materiál má svoje výhody podľa použitia. Každý kus je ručne dokončený.",
         
         "sizes": "Veľkosti sa líšia podľa produktov. Presné rozmery nájdete na stránke každého produktu. Ak potrebujete špecifickú veľkosť, neváhajte nás kontaktovať!",
         
