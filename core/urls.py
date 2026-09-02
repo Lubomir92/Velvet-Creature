@@ -19,4 +19,6 @@ urlpatterns = [
 
     path("legal/", views.legal, name="legal"),
 
+    path("chatbot/", views.chatbot_api, name="chatbot_api")
+
 ]
