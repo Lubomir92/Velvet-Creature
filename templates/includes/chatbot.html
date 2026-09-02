@@ -5,7 +5,7 @@
 <div id="chatbot-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9998;">
     
     <!-- Chat Button -->
-        <button onclick="toggleChat()" style="
+    <button onclick="toggleChat()" style="
         width: 60px;
         height: 60px;
         border-radius: 50%;
@@ -19,21 +19,22 @@
         align-items: center;
         justify-content: center;
     ">
-                <img src="{% static 'images/mr_citrouille.png' %}" alt="Mr.Citrouille" style="
+        <img src="{% static 'images/mr_citrouille.png' %}" alt="Mr.Citrouille" style="
             width: 50px;
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
         ">
     </button>
+
     <!-- Chat Window -->
     <div id="chat-window" style="
         display: none;
         position: fixed;
         bottom: 90px;
         right: 20px;
-        width: 500px;
-        max-height: 500px;
+        width: 360px;
+        max-height: 550px;
         background: rgba(10, 5, 5, 0.95);
         border: 1px solid rgba(212, 175, 55, 0.3);
         border-radius: 15px;
@@ -52,7 +53,7 @@
             justify-content: space-between;
             align-items: center;
         ">
-                        <span>
+            <span>
                 <img src="{% static 'images/mr_citrouille.png' %}" alt="Mr.Citrouille" style="
                     width: 30px;
                     height: 30px;
@@ -72,39 +73,44 @@
             ">✕</button>
         </div>
 
-                <!-- Quick Questions -->
+        <!-- Messages -->
+        <div id="chat-messages" style="
+            padding: 15px;
+            height: 320px;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.4);
+        ">
+            <div class="bot-message" style="
+                background: rgba(212, 175, 55, 0.1);
+                border: 1px solid rgba(212, 175, 55, 0.2);
+                padding: 10px 15px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                color: #c0b090;
+                font-size: 14px;
+            ">
+                {% trans "Bonjour! Je suis Mr.Citrouille, l'assistant de Velvet Creature. Comment puis-je vous aider?" %}
+            </div>
+        </div>
+
+        <!-- Quick Questions -->
         <div id="quick-questions" style="
-    padding: 10px 15px;
-    background: rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-">
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         ">
             <button onclick="askBot('livraison')" class="quick-btn">📦 Livraison</button>
             <button onclick="askBot('paiement')" class="quick-btn">💳 Paiement</button>
             <button onclick="askBot('produits')" class="quick-btn">🖨️ Produits</button>
             <button onclick="askBot('materials')" class="quick-btn">🧪 Matériaux</button>
-            <button onclick="askBot('sizes')" class="quick-btn">📏 Tailles</button>
             <button onclick="askBot('custom')" class="quick-btn">🎨 Sur mesure</button>
-            <button onclick="askBot('engraving')" class="quick-btn">✒️ Gravure</button>
             <button onclick="askBot('retour')" class="quick-btn">↩️ Retour</button>
             <button onclick="askBot('tracking')" class="quick-btn">🔍 Suivi</button>
             <button onclick="askBot('contact')" class="quick-btn">✉️ Contact</button>
         </div>
 
-        <!-- Messages -->
-        <div id="chat-messages" style="
-            padding: 15px;
-            height: 300px;
-            overflow-y: auto;
-            background: rgba(0, 0, 0, 0.4);
-        ">
-            <div class="bot-message" style="...">
-                {% trans "Bonjour! Je suis Mr.Citrouille..." %}
-            </div>
-        </div>
         <!-- Input -->
         <div style="
             display: flex;
@@ -169,17 +175,6 @@
         background: #d4af37;
         border-radius: 10px;
     }
-
-        #quick-questions::-webkit-scrollbar {
-        width: 4px;
-    }
-    #quick-questions::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.3);
-    }
-    #quick-questions::-webkit-scrollbar-thumb {
-        background: #d4af37;
-        border-radius: 10px;
-    }
 </style>
 
 <script>
@@ -227,7 +222,7 @@
 
     function sendToBot(message) {
         const language = getCurrentLanguage();
-        fetch('/' + getCurrentLanguage() + '/chatbot/', {
+        fetch('/' + language + '/chatbot/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
