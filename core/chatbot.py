@@ -123,25 +123,24 @@ BOT_RESPONSES = {
 
 # Kľúčové slová pre rozpoznanie otázky
 KEYWORDS = {
-    "shipping": ["doprava", "livraison", "delivery", "shipping", "doručenie", "expédition", "dodanie", "envoi", "post", "colis", "balík", "doručenie", "kde je", "ou est", "where is"],
+    "shipping": ["doprava", "livraison", "delivery", "shipping", "doručenie", "expédition", "dodanie", "envoi", "post", "colis", "balík", "kde je", "ou est", "where is"],
     "payment": ["platba", "paiement", "payment", "card", "karta", "carte", "virement", "prevod", "stripe", "bank", "cb", "paypal"],
-    "products": ["produkt", "produit", "product", "matériau", "material", "materiál", "pla", "3d", "impression", "tlač", "qualité", "kvalita", "fini", "dokončenie"],
-    "materials": ["matériau", "material", "materiál", "pla", "plastique", "plast", "ecolo", "bio", "biodégradable", "rozložiteľný"],
+    "materials": ["matériau", "material", "materiál", "pla", "petg", "tpu", "plastique", "plast", "ecolo", "bio", "biodégradable", "rozložiteľný", "odolný", "flexible"],
     "sizes": ["taille", "size", "veľkosť", "dimension", "rozmer", "hauteur", "výška", "largeur", "šírka"],
     "custom": ["custom", "personnalis", "zákazk", "sur mesure", "na mieru", "special", "špeciál"],
     "engraving": ["gravure", "engrav", "gravír", "texte", "text", "logo", "image", "obráz"],
     "return": ["retour", "vrátenie", "return", "rembours", "vrátiť", "14 jours", "14 dní", "odstúpenie", "rétractation", "annuler", "zrušiť"],
-    "refund": ["rembours", "refund", "vrátenie peňazí", "peniaze", "argent", "money"],
-    "tracking": ["suivi", "tracking", "sledovanie", "suivre", "track", "sledovať", "čísle", "numero", "kde je moja", "ou est ma", "where is my"],
+    "refund": ["remboursement", "refund", "vrátenie peňazí", "peniaze", "argent", "money"],
+    "tracking": ["suivi", "tracking", "sledovanie", "suivre", "track", "sledovať", "numero", "kde je moja", "ou est ma", "where is my"],
     "stock": ["stock", "sklad", "dispo", "dostupn", "en stock", "na sklade", "rupture", "vypredané"],
     "care": ["nettoy", "care", "starostlivosť", "entretien", "čistenie", "clean", "údržb", "fragile", "krehk"],
     "discounts": ["promo", "discount", "zľava", "réduction", "code", "kód", "offre", "ponuka", "soldes", "výpredaj"],
     "social": ["instagram", "tiktok", "facebook", "social", "réseaux", "siete", "follow", "sledovať"],
-    "about": ["about", "o vás", "qui", "kto ste", "histoir", "príbeh", "lubma3d", "velvet", "čo je", "qu'est", "what is"],
+    "about": ["about", "o vás", "qui", "kto ste", "histoir", "príbeh", "lubma3d", "čo je", "qu'est", "what is"],
     "contact": ["contact", "email", "kontakt", "kde", "ou", "where", "nájsť", "trouver", "adresse", "adresa"],
     "help": ["help", "aide", "pomoc", "aider", "pomôcť", "what can", "que peux", "čo môže"],
+    "products": ["produkt", "produit", "product", "créature", "creature", "dekorácia", "décoration", "decoration", "gotické", "gothique", "gothic"],
 }
-
 
 def get_bot_response(message, language="fr"):
     """
@@ -150,10 +149,24 @@ def get_bot_response(message, language="fr"):
     message_lower = message.lower()
     responses = BOT_RESPONSES.get(language, BOT_RESPONSES["fr"])
     
-    # Hľadáme kľúčové slová v správe
+    # Najprv skontroluj PRESNÉ slová pre materiály
+    material_words = ["matériau", "material", "materiál", "pla", "petg", "tpu", "plastique", "plast", "ecolo", "bio", "biodégradable", "rozložiteľný", "odolný", "flexible", "résistant", "water", "eau", "choc", "náraz"]
+    for word in material_words:
+        if word in message_lower:
+            return responses.get("materials", responses["default"])
+    
+    # Potom skontroluj produkty
+    product_words = ["produkt", "produit", "product", "créature", "creature", "dekorácia", "décoration", "decoration", "gotické", "gothique", "gothic", "quoi", "que vendez", "what do you sell"]
+    for word in product_words:
+        if word in message_lower:
+            return responses.get("products", responses["default"])
+    
+    # Potom ostatné kategórie
     for category, words in KEYWORDS.items():
+        if category in ["materials", "products"]:
+            continue  # tieto sme už skontrolovali
         for word in words:
-            if word.lower() in message_lower:
+            if word in message_lower:
                 return responses.get(category, responses["default"])
     
     # Ak žiadne kľúčové slovo nenájdené, vráť default
