@@ -19,7 +19,12 @@
         align-items: center;
         justify-content: center;
     ">
-        🎃
+                <img src="{% static 'images/mr_citrouille.png' %}" alt="Mr.Citrouille" style="
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        ">
     </button>
     <!-- Chat Window -->
     <div id="chat-window" style="
@@ -47,7 +52,17 @@
             justify-content: space-between;
             align-items: center;
         ">
-            <span>🎃 Mr.Citrouille</span>
+                        <span>
+                <img src="{% static 'images/mr_citrouille.png' %}" alt="Mr.Citrouille" style="
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    vertical-align: middle;
+                    margin-right: 8px;
+                ">
+                Mr.Citrouille
+            </span>
             <button onclick="toggleChat()" style="
                 background: none;
                 border: none;
