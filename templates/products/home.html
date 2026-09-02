@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load i18n %}
-{% load static %}
 
 {% block title %}Velvet Creature{% endblock %}
 
@@ -52,29 +51,24 @@
 
     <div class="why-grid">
 
-               <div class="why-card">
-            <div class="why-icon">
-                <img src="{% static 'images/icon_3d_print.png' %}" alt="3D Printed" class="why-icon-img">
-            </div>
+        <div class="why-card">
+            <div class="why-icon">🧊</div>
             <h3>{% trans "3D Printed" %}</h3>
             <p>{% trans "Precision-crafted models with high-end detail and texture." %}</p>
         </div>
 
         <div class="why-card">
-            <div class="why-icon">
-                <img src="{% static 'images/icon_hand_finish.png' %}" alt="Hand Finished" class="why-icon-img">
-            </div>
+            <div class="why-icon">✨</div>
             <h3>{% trans "Hand Finished" %}</h3>
             <p>{% trans "Each piece is refined manually for premium quality." %}</p>
         </div>
 
         <div class="why-card">
-            <div class="why-icon">
-                <img src="{% static 'images/icon_dark_aesthetic.png' %}" alt="Dark Aesthetic" class="why-icon-img">
-            </div>
+            <div class="why-icon">🌙</div>
             <h3>{% trans "Dark Aesthetic" %}</h3>
             <p>{% trans "Inspired by gothic art, fantasy worlds and cinematic design." %}</p>
         </div>
+
     </div>
 
 </section>
@@ -296,23 +290,8 @@
 }
 
 .why-icon {
+    font-size: 40px;
     margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.why-icon-img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
-    transition: all 0.3s;
-}
-
-.why-card:hover .why-icon-img {
-    filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.7));
-    transform: scale(1.1);
 }
 
 .why-card h3 {
