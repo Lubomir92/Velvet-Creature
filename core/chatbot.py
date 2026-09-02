@@ -12,9 +12,9 @@ BOT_RESPONSES = {
         
         "payment": "Nous acceptons les paiements par carte bancaire (Stripe) et par virement bancaire. Le paiement est 100% sécurisé et vos données bancaires ne sont jamais stockées sur nos serveurs.",
         
-        "products": "Nos produits sont imprimés en 3D en PLA (acide polylactique), un matériau biodégradable et non toxique. Chaque pièce est finie à la main et donc unique!",
-        
-        "materials": "Nous utilisons du PLA (acide polylactique), un matériau écologique et biodégradable. Il est résistant, léger et disponible en plusieurs couleurs. Chaque pièce est finie à la main.",
+        "products": "Nos produits sont imprimés en 3D en PLA (acide polylactique), PETG ou TPU. Le PLA est biodégradable et non toxique, le PETG est résistant à l'eau et aux chocs, et le TPU est flexible et élastique. Chaque pièce est finie à la main et donc unique!",
+
+"materials": "Nous utilisons trois matériaux: le PLA (écologique et biodégradable), le PETG (résistant à l'eau et aux chocs) et le TPU (flexible et élastique). Chaque matériau a ses avantages selon l'usage. Chaque pièce est finie à la main.",
         
         "sizes": "Les tailles varient selon les produits. Consultez la page de chaque produit pour les dimensions exactes. Si vous avez besoin d'une taille spécifique, n'hésitez pas à nous contacter!",
         
@@ -51,9 +51,9 @@ BOT_RESPONSES = {
         
         "payment": "We accept credit card (Stripe) and bank transfer payments. Payment is 100% secure and your card details are never stored on our servers.",
         
-        "products": "Our products are 3D printed in PLA (polylactic acid), a biodegradable and non-toxic material. Each piece is hand-finished and therefore unique!",
-        
-        "materials": "We use PLA (polylactic acid), an eco-friendly and biodegradable material. It's durable, lightweight and available in multiple colours. Each piece is hand-finished.",
+        "products": "Our products are 3D printed in PLA (polylactic acid), PETG or TPU. PLA is biodegradable and non-toxic, PETG is water and impact resistant, and TPU is flexible and elastic. Each piece is hand-finished and therefore unique!",
+
+"materials": "We use three materials: PLA (eco-friendly and biodegradable), PETG (water and impact resistant) and TPU (flexible and elastic). Each material has its advantages depending on use. Each piece is hand-finished.",
         
         "sizes": "Sizes vary by product. Check each product page for exact dimensions. If you need a specific size, don't hesitate to contact us!",
         
@@ -90,9 +90,9 @@ BOT_RESPONSES = {
         
         "payment": "Prijímame platby kartou (Stripe) a bankovým prevodom. Platba je 100% bezpečná a údaje o karte nikdy neukladáme na našich serveroch.",
         
-        "products": "Naše produkty sú 3D tlačené z PLA (kyselina polymliečna), biologicky rozložiteľného a netoxického materiálu. Každý kus je ručne dokončený a preto jedinečný!",
-        
-        "materials": "Používame PLA (kyselina polymliečna), ekologický a biologicky rozložiteľný materiál. Je odolný, ľahký a dostupný vo viacerých farbách. Každý kus je ručne dokončený.",
+        "products": "Naše produkty sú 3D tlačené z PLA (kyselina polymliečna), PETG alebo TPU. PLA je biologicky rozložiteľné a netoxické, PETG je odolné voči vode a nárazom a TPU je flexibilné a elastické. Každý kus je ručne dokončený a preto jedinečný!",
+
+"materials": "Používame tri materiály: PLA (ekologické a biologicky rozložiteľné), PETG (odolné voči vode a nárazom) a TPU (flexibilné a elastické). Každý materiál má svoje výhody podľa použitia. Každý kus je ručne dokončený.",
         
         "sizes": "Veľkosti sa líšia podľa produktov. Presné rozmery nájdete na stránke každého produktu. Ak potrebujete špecifickú veľkosť, neváhajte nás kontaktovať!",
         
