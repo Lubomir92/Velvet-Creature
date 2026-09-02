@@ -204,7 +204,7 @@
 
     function sendToBot(message) {
         const language = getCurrentLanguage();
-        fetch('/chatbot/', {
+        fetch('/' + getCurrentLanguage() + '/chatbot/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
