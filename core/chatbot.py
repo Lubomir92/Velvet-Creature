@@ -6,7 +6,7 @@ from django.utils.translation import gettext as _
 # Odpovede pre bota v troch jazykoch
 BOT_RESPONSES = {
     "fr": {
-        "greeting": "Bonjour! Je suis l'assistant Velvet Creature. Comment puis-je vous aider?",
+        "greeting": "Bonjour! Je suis l'assistant Mr.Citrouille. Comment puis-je vous aider?",
         
         "shipping": "Nous livrons en France (2-5 jours), en Europe (5-10 jours) et à l'international (10-20 jours). Les commandes sont expédiées après 3-7 jours ouvrés de fabrication. Modes de livraison: Mondial Relay (point relais et domicile) et Shop to Shop by Chronopost.",
         
@@ -45,7 +45,7 @@ BOT_RESPONSES = {
         "default": "Je suis désolé, je ne comprends pas. Je peux vous aider sur: livraison, paiement, produits, retours, suivi, matériaux, tailles, commandes personnalisées, gravure, remboursements, stock, entretien, promos, réseaux sociaux ou contact.",
     },
     "en": {
-        "greeting": "Hello! I'm the Velvet Creature assistant. How can I help you?",
+        "greeting": "Hello! I'm Mr.Citrouille. How can I help you?",
         
         "shipping": "We deliver to France (2-5 days), Europe (5-10 days) and internationally (10-20 days). Orders ship after 3-7 working days of production. Delivery methods: Mondial Relay (pickup points and home delivery) and Shop to Shop by Chronopost.",
         
@@ -84,7 +84,7 @@ BOT_RESPONSES = {
         "default": "I'm sorry, I don't understand. I can help with: shipping, payment, products, returns, tracking, materials, sizes, custom orders, engraving, refunds, stock, care, discounts, social media or contact.",
     },
     "sk": {
-        "greeting": "Ahoj! Som asistent Velvet Creature. Ako vám môžem pomôcť?",
+        "greeting": "Ahoj! Som asistent Mr.Citrouille. Ako vám môžem pomôcť?",
         
         "shipping": "Doručujeme do Francúzska (2-5 dní), Európy (5-10 dní) a medzinárodne (10-20 dní). Objednávky odosielame po 3-7 pracovných dňoch výroby. Spôsoby dopravy: Mondial Relay (výdajné miesta a doručenie domov) a Shop to Shop by Chronopost.",
         
