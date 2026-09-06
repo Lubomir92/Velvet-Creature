@@ -472,10 +472,11 @@
 .product-image-wrapper,
 .featured-card .product-image-wrapper {
     position: relative;
-    padding: 14px;                    /* priestor pre rám */
+    padding: 15px;
     background: #1a1206;
     border-radius: 10px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    overflow: visible !important;   /* dôležité: prekoná inline overflow:hidden */
 }
 
 .product-image-wrapper img,
@@ -489,16 +490,25 @@
     z-index: 1;
 }
 
-/* Rám ako prekryvný obrázok */
+/* Rám – presahuje obrázok */
 .product-image-wrapper::after,
 .featured-card .product-image-wrapper::after {
     content: "";
     position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
     background: url('/static/images/victorian-frame.png') center / 100% 100% no-repeat;
     pointer-events: none;
-    z-index: 3;
+    z-index: 10;                  /* rám navrchu */
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.7));
+}
+.product-image-wrapper::after,
+.featured-card .product-image-wrapper::after {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* odstráň -10px */
 }
