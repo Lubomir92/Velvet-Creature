@@ -468,17 +468,16 @@
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* ========== VICTORIAN FRAME OVERLAY (cez obrázok) ========== */
+/* ========== VICTORIAN FRAME ========== */
 .product-image-wrapper,
 .featured-card .product-image-wrapper {
     position: relative;
-    padding: 15px;               /* priestor okolo obrázku pre rám */
+    padding: 14px;                    /* priestor pre rám */
     background: #1a1206;
     border-radius: 10px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Samotný obrázok produktu */
 .product-image-wrapper img,
 .featured-card .product-image-wrapper img {
     display: block;
@@ -487,17 +486,19 @@
     object-fit: cover;
     border-radius: 4px;
     position: relative;
-    z-index: 1;                  /* obrázok pod rámom */
+    z-index: 1;
 }
 
-/* Rám ako prekryvný prvok */
-.product-image-wrapper::before,
-.featured-card .product-image-wrapper::before {
+/* Rám ako prekryvný obrázok */
+.product-image-wrapper::after,
+.featured-card .product-image-wrapper::after {
     content: "";
     position: absolute;
-    inset: 0;                    /* pokrýva celý wrapper vrátane paddingu */
-    background: url('/static/images/victorian-frame.png') center/100% 100% no-repeat;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: url('/static/images/victorian-frame.png') center / 100% 100% no-repeat;
     pointer-events: none;
-    z-index: 2;                  /* rám nad obrázkom */
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+    z-index: 3;
 }
