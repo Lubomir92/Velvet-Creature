@@ -468,39 +468,40 @@
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* ========== VICTORIAN FRAME ========== */
+/* ========== VICTORIAN FRAME AS BACKGROUND ========== */
 .product-image-wrapper {
     position: relative;
-    padding: 20px;                    /* priestor pre rám */
-    background: #1a1206;
-    border-radius: 10px;
-    overflow: hidden;
+    background:
+        url('/static/images/victorian-frame.png') center / 100% 100% no-repeat,
+        #1a1206;
+    padding: 18px;                /* okraj rámu – môžeš upraviť na 15-25 px */
+    border-radius: 6px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
-/* Produktový obrázok – zobraziť celý bez orezania */
-.product-image-wrapper img:not(.victorian-frame) {
+/* Produktový obrázok – vyplní vnútro rámu */
+.product-image-wrapper img {
     display: block;
-    width: auto;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;             /* dôležité: celý obrázok */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 3px;
     position: relative;
     z-index: 1;
-    border-radius: 4px;
 }
 
-/* Rám – rozprestretý cez celý wrapper */
-.victorian-frame {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Obrázok v prípade no-image */
+.product-image-wrapper .no-image {
     width: 100%;
-    height: 100%;
-    object-fit: fill;                /* rám vyplní celý priestor */
-    pointer-events: none;
-    z-index: 5;
-    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.6));
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: #4a4a3a;
+    z-index: 1;
 }
