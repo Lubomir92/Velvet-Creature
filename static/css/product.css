@@ -468,40 +468,40 @@
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* ========== VICTORIAN FRAME AS BACKGROUND ========== */
+/* ========== VICTORIAN FRAME (FINAL) ========== */
 .product-image-wrapper {
     position: relative;
-    background:
-        url('/static/images/victorian-frame.png') center / 100% 100% no-repeat,
-        #1a1206;
-    padding: 18px;                /* okraj rámu – môžeš upraviť na 15-25 px */
-    border-radius: 6px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 25px;                 /* hrúbka rámu – ak je málo viditeľný, zvýš na 30-40px */
+    background: #1a1206;
+    border-radius: 8px;
     overflow: hidden;
 }
 
-/* Produktový obrázok – vyplní vnútro rámu */
+/* Rám ako podkladové pozadie */
+.product-image-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/victorian-frame.png') center / 100% 100% no-repeat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Produktový obrázok nad rámom */
 .product-image-wrapper img {
+    position: relative;
+    z-index: 1;
     display: block;
     width: 100%;
     height: auto;
     object-fit: cover;
     border-radius: 3px;
-    position: relative;
-    z-index: 1;
 }
 
-/* Obrázok v prípade no-image */
-.product-image-wrapper .no-image {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-    color: #4a4a3a;
-    z-index: 1;
+/* Pre prípad, že ide o .featured-card wrapper */
+.featured-card .product-image-wrapper {
+    padding: 25px;
 }
