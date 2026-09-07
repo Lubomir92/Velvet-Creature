@@ -458,32 +458,44 @@
 
 
 }
-/* ========== VICTORIAN FRAME – FINAL ========== */
+/* ========== VICTORIAN FRAME - FUNGUJE ========== */
 .product-image-wrapper {
     position: relative;
-    height: auto !important;          /* zruší pevnú výšku */
-    padding: 25px !important;         /* priestor pre rám */
-    background: url('/static/images/victorian-frame.svg') no-repeat center !important;
-    background-size: 100% 100% !important;
+    padding: 22px;
+    background: url('/static/images/victorian-frame.svg') no-repeat center;
+    background-size: 100% 100%;
     border-radius: 8px;
-    overflow: hidden;
     box-sizing: border-box;
 }
 
 .product-image-wrapper img {
     display: block;
-    width: 100% !important;
-    height: auto !important;          /* zruší height:100%, aby obrázok nepretiekol */
+    width: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: 4px;
     position: relative;
     z-index: 1;
 }
 
+/* Rám nad obrázkom */
+.product-image-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/static/images/victorian-frame.svg') no-repeat center;
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
 /* Štítok skladu nad rámom */
 .stock-badge {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 10px;
+    right: 10px;
     z-index: 10;
 }
