@@ -458,3 +458,32 @@
 
 
 }
+/* ========== VICTORIAN FRAME – FINAL ========== */
+.product-image-wrapper {
+    position: relative;
+    height: auto !important;          /* zruší pevnú výšku */
+    padding: 25px !important;         /* priestor pre rám */
+    background: url('/static/images/victorian-frame.svg') no-repeat center !important;
+    background-size: 100% 100% !important;
+    border-radius: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.product-image-wrapper img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;          /* zruší height:100%, aby obrázok nepretiekol */
+    object-fit: cover;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Štítok skladu nad rámom */
+.stock-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+}
