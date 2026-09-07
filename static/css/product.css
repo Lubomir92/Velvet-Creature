@@ -459,25 +459,3 @@
 
 }
 
-/* VICTORIAN FRAME OVERLAY */
-.product-image-wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-.victorian-frame {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;      /* rám presne na celý obrázok */
-    pointer-events: none;  /* kliky pôjdu cezeň */
-    z-index: 5;
-}
-
-/* Zabezpečí, že stock badge je viditeľný nad rámom */
-.stock-badge {
-    z-index: 10;
-    position: relative;
-}
