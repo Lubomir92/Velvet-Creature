@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f4d87a"/>
+      <stop offset="50%" style="stop-color:#d4af37"/>
+      <stop offset="100%" style="stop-color:#8f6b1e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Vonkajší rám (okraj) -->
+  <rect x="15" y="15" width="670" height="470" rx="20" ry="20"
+        fill="none" stroke="url(#gold)" stroke-width="12"/>
+
+  <!-- Vnútorná jemná linka -->
+  <rect x="40" y="40" width="620" height="420" rx="12" ry="12"
+        fill="none" stroke="#f9e79b" stroke-width="3"/>
+
+  <!-- Rohové ozdobné oblúky -->
+  <path d="M 15 70 Q 15 15 70 15" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="30" cy="30" r="7" fill="#f4d87a"/>
+  <circle cx="15" cy="70" r="5" fill="#f4d87a"/>
+  <circle cx="70" cy="15" r="5" fill="#f4d87a"/>
+
+  <path d="M 630 15 Q 685 15 685 70" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="670" cy="30" r="7" fill="#f4d87a"/>
+  <circle cx="630" cy="15" r="5" fill="#f4d87a"/>
+  <circle cx="685" cy="70" r="5" fill="#f4d87a"/>
+
+  <path d="M 15 430 Q 15 485 70 485" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="30" cy="470" r="7" fill="#f4d87a"/>
+  <circle cx="15" cy="430" r="5" fill="#f4d87a"/>
+  <circle cx="70" cy="485" r="5" fill="#f4d87a"/>
+
+  <path d="M 630 485 Q 685 485 685 430" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="670" cy="470" r="7" fill="#f4d87a"/>
+  <circle cx="630" cy="485" r="5" fill="#f4d87a"/>
+  <circle cx="685" cy="430" r="5" fill="#f4d87a"/>
+
+  <!-- Stred je priehľadný -->
+</svg>
