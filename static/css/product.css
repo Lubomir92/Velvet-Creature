@@ -459,32 +459,31 @@
 
 }
 
-/* ========== VICTORIAN FRAME (FUNGUJE) ========== */
+/* VICTORIAN SVG FRAME */
 .product-image-wrapper {
     position: relative;
-    padding: 25px;               /* priestor okolo obrázka pre rám */
-    background: url('/static/images/victorian-frame.svg') no-repeat center;
-    background-size: 100% 100%;
-    border-radius: 8px;
     overflow: hidden;
-    box-sizing: border-box;
 }
 
-/* Produktový obrázok – teraz je menší a rám ho obopne */
-.product-image-wrapper img {
-    display: block;
+.product-image-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 4px;
+    height: 100%;
+    background: url('/static/images/victorian-frame.svg') no-repeat center;
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.product-image-wrapper img {
     position: relative;
     z-index: 1;
 }
 
-/* Zabezpečí, že stock badge je nad rámom */
 .stock-badge {
-    position: absolute;
-    top: 12px;
-    right: 12px;
+    position: relative;
     z-index: 10;
 }
