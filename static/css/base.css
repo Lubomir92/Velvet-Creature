@@ -382,3 +382,30 @@ main {
         transform: translate(-50px, 20px) rotate(-5deg) scale(0.8);
     }
 }
+
+/* ========== TEST: DARK BURGUNDY THEME ========== */
+body {
+    background: #1a0510 !important;
+}
+
+/* Karty a panely - tmavá bordová namiesto čiernej */
+.featured-card,
+.why-card,
+.quote-box,
+.auth-card,
+.product-details,
+.related-card,
+.product-image-wrapper,
+.cart-drawer,
+.category-filter,
+.admin-card,
+.legal-container {
+    background: rgba(45, 10, 25, 0.85) !important;
+}
+
+/* Sekcia hero a why */
+.hero,
+.why,
+.quote {
+    background: transparent !important;
+}
