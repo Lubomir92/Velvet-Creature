@@ -175,6 +175,35 @@
         background: #d4af37;
         border-radius: 10px;
     }
+
+        /* Mobilná verzia chatbota */
+    @media (max-width: 500px) {
+        #chat-window {
+            width: calc(100vw - 20px) !important;
+            right: 10px !important;
+            bottom: 85px !important;
+            max-height: 70vh !important;
+        }
+
+        #chat-messages {
+            height: 220px !important;
+        }
+
+        #chatbot-widget button:first-child {
+            width: 55px !important;
+            height: 55px !important;
+        }
+
+        #chatbot-widget button:first-child img {
+            width: 45px !important;
+            height: 45px !important;
+        }
+
+        .quick-btn {
+            font-size: 11px;
+            padding: 6px 10px;
+        }
+    }
 </style>
 
 <script>
