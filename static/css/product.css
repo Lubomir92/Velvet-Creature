@@ -461,22 +461,23 @@
 
 /* ========== VICTORIAN BORDER FRAME ========== */
 .featured-card {
-    border: 20px solid transparent !important;
+    border: 18px solid transparent !important;
     border-image-source: url('/static/images/victorian-frame.png') !important;
-    border-image-slice: 170 !important;
-    border-image-repeat: stretch !important;
-    border-image-width: 20px !important;
+    border-image-slice: 70 !important;
+    border-image-repeat: round !important;
+    border-image-width: 18px !important;
     border-image-outset: 0 !important;
+    padding: 15px !important;
 }
 
 /* Mobilný rám */
 @media (max-width: 768px) {
     .featured-card {
-        border: 15px solid transparent !important;
+        border: 12px solid transparent !important;
         border-image-source: url('/static/images/victorian-frame.png') !important;
-        border-image-slice: 100 !important;
-        border-image-repeat: stretch !important;
-        border-image-width: 15px !important;
+        border-image-slice: 70 !important;
+        border-image-repeat: round !important;
+        border-image-width: 12px !important;
         border-image-outset: 0 !important;
     }
 }
