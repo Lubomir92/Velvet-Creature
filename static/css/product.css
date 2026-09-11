@@ -458,3 +458,30 @@
 
 
 }
+
+/* ========== VICTORIAN FRAME (SVG overlay) ========== */
+.featured-card {
+    position: relative !important;
+    padding: 20px !important;
+    border-radius: 14px;
+    overflow: visible;
+}
+
+.featured-card::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: url('/static/images/victorian-frame.svg') no-repeat center;
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Obsah karty nech zostane viditeľný */
+.featured-card > * {
+    position: relative;
+    z-index: 1;
+}

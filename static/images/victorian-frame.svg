@@ -1,40 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 507" preserveAspectRatio="none">
   <defs>
     <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f4d87a"/>
-      <stop offset="50%" style="stop-color:#d4af37"/>
-      <stop offset="100%" style="stop-color:#8f6b1e"/>
+      <stop offset="0%" stop-color="#f4d87a"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#8f6b1e"/>
     </linearGradient>
   </defs>
 
-  <!-- Vonkajší rám (okraj) -->
-  <rect x="15" y="15" width="670" height="470" rx="20" ry="20"
-        fill="none" stroke="url(#gold)" stroke-width="12"/>
+  <!-- Vonkajší zlatý rám -->
+  <rect x="6" y="6" width="372" height="495" rx="14" ry="14"
+        fill="none" stroke="url(#gold)" stroke-width="10"/>
 
   <!-- Vnútorná jemná linka -->
-  <rect x="40" y="40" width="620" height="420" rx="12" ry="12"
-        fill="none" stroke="#f9e79b" stroke-width="3"/>
+  <rect x="22" y="22" width="340" height="463" rx="8" ry="8"
+        fill="none" stroke="#f9e79b" stroke-width="2"/>
 
-  <!-- Rohové ozdobné oblúky -->
-  <path d="M 15 70 Q 15 15 70 15" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="30" cy="30" r="7" fill="#f4d87a"/>
-  <circle cx="15" cy="70" r="5" fill="#f4d87a"/>
-  <circle cx="70" cy="15" r="5" fill="#f4d87a"/>
+  <!-- Rohové ozdoby - ľavý horný -->
+  <path d="M 6 50 Q 6 6 50 6" fill="none" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="18" cy="18" r="4" fill="#f4d87a"/>
+  <circle cx="6" cy="50" r="3" fill="#f4d87a"/>
+  <circle cx="50" cy="6" r="3" fill="#f4d87a"/>
 
-  <path d="M 630 15 Q 685 15 685 70" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="670" cy="30" r="7" fill="#f4d87a"/>
-  <circle cx="630" cy="15" r="5" fill="#f4d87a"/>
-  <circle cx="685" cy="70" r="5" fill="#f4d87a"/>
+  <!-- Pravý horný -->
+  <path d="M 334 6 Q 378 6 378 50" fill="none" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="366" cy="18" r="4" fill="#f4d87a"/>
+  <circle cx="334" cy="6" r="3" fill="#f4d87a"/>
+  <circle cx="378" cy="50" r="3" fill="#f4d87a"/>
 
-  <path d="M 15 430 Q 15 485 70 485" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="30" cy="470" r="7" fill="#f4d87a"/>
-  <circle cx="15" cy="430" r="5" fill="#f4d87a"/>
-  <circle cx="70" cy="485" r="5" fill="#f4d87a"/>
+  <!-- Ľavý dolný -->
+  <path d="M 6 457 Q 6 501 50 501" fill="none" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="18" cy="489" r="4" fill="#f4d87a"/>
+  <circle cx="6" cy="457" r="3" fill="#f4d87a"/>
+  <circle cx="50" cy="501" r="3" fill="#f4d87a"/>
 
-  <path d="M 630 485 Q 685 485 685 430" fill="none" stroke="url(#gold)" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="670" cy="470" r="7" fill="#f4d87a"/>
-  <circle cx="630" cy="485" r="5" fill="#f4d87a"/>
-  <circle cx="685" cy="430" r="5" fill="#f4d87a"/>
+  <!-- Pravý dolný -->
+  <path d="M 334 501 Q 378 501 378 457" fill="none" stroke="url(#gold)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="366" cy="489" r="4" fill="#f4d87a"/>
+  <circle cx="334" cy="501" r="3" fill="#f4d87a"/>
+  <circle cx="378" cy="457" r="3" fill="#f4d87a"/>
 
-  <!-- Stred je priehľadný -->
+  <!-- Stred zostáva priehľadný -->
 </svg>
