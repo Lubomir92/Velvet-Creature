@@ -385,11 +385,10 @@ main {
 
 /* ========== TEST: DARK BURGUNDY THEME ========== */
 body {
-    background: url('/static/images/bg-burgundy.jpg') no-repeat center center fixed !important;
-    background-size: cover !important;
+    background: #0f0208 !important;
 }
 
-/* Karty a panely - priesvitné, aby bolo vidieť pozadie */
+/* Karty a panely - tmavá bordová namiesto čiernej */
 .featured-card,
 .why-card,
 .quote-box,
@@ -401,8 +400,7 @@ body {
 .category-filter,
 .admin-card,
 .legal-container {
-    background: rgba(30, 5, 15, 0.7) !important;
-    backdrop-filter: blur(4px);
+    background: rgba(30, 5, 15, 0.85) !important;
 }
 
 /* Sekcia hero a why */
