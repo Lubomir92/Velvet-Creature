@@ -461,9 +461,9 @@
 
 /* ========== VICTORIAN BORDER FRAME ========== */
 .featured-card {
-    border: 30px solid transparent !important;
-    border-image: url('/static/images/victorian-frame.png') 80 round !important;
-    border-image-width: 30px !important;
+    border: 25px solid transparent !important;
+    border-image: url('/static/images/victorian-frame.png') 60 stretch !important;
+    border-image-width: 25px !important;
     border-image-outset: 0 !important;
     background-clip: padding-box !important;
 }
