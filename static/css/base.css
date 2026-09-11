@@ -385,7 +385,7 @@ main {
 
 /* ========== TEST: DARK BURGUNDY THEME ========== */
 body {
-    background: #1a0510 !important;
+    background: #0f0208 !important;
 }
 
 /* Karty a panely - tmavá bordová namiesto čiernej */
@@ -400,7 +400,7 @@ body {
 .category-filter,
 .admin-card,
 .legal-container {
-    background: rgba(45, 10, 25, 0.85) !important;
+    background: rgba(30, 5, 15, 0.85) !important;
 }
 
 /* Sekcia hero a why */
