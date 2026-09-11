@@ -485,3 +485,29 @@
     position: relative;
     z-index: 1;
 }
+/* Rám na mobile */
+@media (max-width: 768px) {
+    .featured-card {
+        position: relative !important;
+        padding: 15px !important;
+        overflow: visible !important;
+    }
+
+    .featured-card::before {
+        content: "";
+        position: absolute !important;
+        top: -6px !important;
+        left: -6px !important;
+        right: -6px !important;
+        bottom: -6px !important;
+        background: url('/static/images/victorian-frame.svg') no-repeat center !important;
+        background-size: 100% 100% !important;
+        pointer-events: none !important;
+        z-index: 5 !important;
+    }
+
+    .featured-card > * {
+        position: relative !important;
+        z-index: 1 !important;
+    }
+}
