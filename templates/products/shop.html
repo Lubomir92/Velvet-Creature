@@ -419,19 +419,24 @@
 }
 
 .category-filter a {
-    padding: 9px 20px;
-    background: rgba(10, 5, 5, 0.6);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    color: #b0a080;
+    padding: 10px 22px;
+    background: rgba(60, 15, 35, 0.35);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    color: #c0b090;
     border-radius: 25px;
     text-decoration: none;
     font-size: 14px;
     transition: all 0.3s;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .category-filter a:hover {
+    background: rgba(90, 20, 45, 0.5);
     border-color: #d4af37;
     color: #d4af37;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
 }
 
 .category-filter a.active {
@@ -439,6 +444,7 @@
     border-color: #d4af37;
     color: #d4af37;
     font-weight: 600;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 /* PRODUKTY */
