@@ -393,7 +393,6 @@ body {
     background-color: #0d0208 !important;
 }
 
-/* Jemné žiariace svetlo za obsahom */
 body::before {
     content: "";
     position: fixed;
@@ -414,19 +413,83 @@ body::before {
     50% { opacity: 1; }
 }
 
-/* Karty a panely - bordová s jemnou priehľadnosťou */
+/* ========== PRIESHLADNE KARTY - VSETKY CASTI STRANKY ========== */
+
+/* Hlavna stranka */
 .featured-card,
 .why-card,
 .quote-box,
-.auth-card,
+.hero-logo,
+.category-filter,
+
+/* Produkty */
+.product-card,
+.product-image-wrapper,
 .product-details,
 .related-card,
-.product-image-wrapper,
+.product-gallery,
+.main-product-image,
+.thumbnail,
+
+/* Cart */
+.cart-item,
+.cart-summary,
+.cart-page .cart-box,
 .cart-drawer,
-.category-filter,
+
+/* Checkout */
+.checkout-box,
+.checkout-summary,
+.checkout-form,
+.order-summary,
+
+/* Orders */
+.order-card,
+.order-box,
+.order-item,
+.order-detail-box,
+
+/* Accounts */
+.auth-card,
+.profile-card,
+.profile-box,
+.account-box,
+.user-info-box,
+
+/* Custom orders */
+.custom-order-card,
+.custom-order-box,
+.custom-project-card,
+.custom-project-detail,
+.project-card,
+
+/* Wishlist */
+.wishlist-card,
+.wishlist-item,
+
+/* Reviews */
+.review-card,
+.review-item,
+.reviews-list,
+
+/* Legal */
+.legal-container,
+.legal-section,
+
+/* Admin */
 .admin-card,
-.legal-container {
-    background: rgba(45, 8, 22, 0.75) !important;
+.admin-box,
+.dashboard-card,
+
+/* Vseobecne */
+.card,
+.box,
+.panel,
+.content-box,
+.info-box,
+.form-container,
+.form-box {
+    background: rgba(45, 8, 22, 0.7) !important;
     backdrop-filter: blur(6px);
     border: 1px solid rgba(180, 40, 80, 0.15);
     box-shadow:
@@ -434,9 +497,21 @@ body::before {
         inset 0 1px 0 rgba(255, 100, 150, 0.05);
 }
 
-/* Sekcia hero a why */
+/* Sekcie bez pozadia */
 .hero,
 .why,
-.quote {
+.quote,
+section {
     background: transparent !important;
+}
+
+/* Navbar a footer nech zostanu ako su, len jemne priehladne */
+.navbar {
+    background: rgba(20, 3, 12, 0.92) !important;
+    backdrop-filter: blur(20px);
+}
+
+.footer {
+    background: rgba(20, 3, 12, 0.85) !important;
+    backdrop-filter: blur(10px);
 }
