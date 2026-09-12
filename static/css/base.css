@@ -629,3 +629,65 @@ section {
         0 10px 30px rgba(0, 0, 0, 0.5),
         inset 0 1px 0 rgba(255, 100, 150, 0.05) !important;
 }
+/* ========== PAVUČINY V ROHOCH ========== */
+.spiderweb {
+    position: fixed;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.35;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2));
+    animation: spiderSway 8s ease-in-out infinite;
+}
+
+.spiderweb-tl {
+    top: -20px;
+    left: -20px;
+}
+
+.spiderweb-tr {
+    top: -20px;
+    right: -20px;
+    animation-delay: -2s;
+}
+
+.spiderweb-bl {
+    bottom: -20px;
+    left: -20px;
+    animation-delay: -4s;
+}
+
+.spiderweb-br {
+    bottom: -20px;
+    right: -20px;
+    animation-delay: -6s;
+}
+
+/* Jemné pohupovanie */
+@keyframes spiderSway {
+    0%, 100% {
+        transform: rotate(0deg) translateY(0);
+    }
+    50% {
+        transform: rotate(2deg) translateY(3px);
+    }
+}
+
+/* Na mobile menšie */
+@media (max-width: 768px) {
+    .spiderweb {
+        width: 100px;
+        height: 100px;
+        opacity: 0.25;
+    }
+}
+
+@media (max-width: 480px) {
+    .spiderweb {
+        width: 70px;
+        height: 70px;
+        opacity: 0.2;
+    }
+}
