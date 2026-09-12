@@ -522,3 +522,13 @@ section {
     box-shadow: none !important;
     backdrop-filter: none !important;
 }
+/* ========== ZÁVESY AKO POZADIE ========== */
+body {
+    background-image: 
+        linear-gradient(rgba(20, 3, 10, 0.55), rgba(20, 3, 10, 0.65)),
+        url('/static/images/curtain.png') !important;
+    background-size: cover, cover !important;
+    background-position: center top, center top !important;
+    background-repeat: no-repeat, no-repeat !important;
+    background-attachment: fixed, fixed !important;
+}
