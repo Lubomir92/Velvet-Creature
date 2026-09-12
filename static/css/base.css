@@ -390,7 +390,7 @@ body {
         linear-gradient(rgba(20, 3, 10, 0.55), rgba(20, 3, 10, 0.7)),
         url('/static/images/curtain.png'),
         linear-gradient(180deg, #1a0410 0%, #0d0208 50%, #15030d 100%) !important;
-    background-size: 90% auto, 90% auto, 90% auto !important;
+    background-size: 60% auto, 60% auto, 600% auto !important;
     background-position: center top, center top, center top !important;
     background-repeat: no-repeat, no-repeat, no-repeat !important;
     background-attachment: fixed, fixed, fixed !important;
