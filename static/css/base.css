@@ -385,12 +385,15 @@ main {
 
 /* ========== DARK BURGUNDY THEME ========== */
 body {
-    background:
-        radial-gradient(ellipse at top, rgba(120, 15, 40, 0.35) 0%, transparent 60%),
-        radial-gradient(ellipse at bottom, rgba(80, 5, 25, 0.4) 0%, transparent 65%),
+    background-color: #15030a !important;
+    background-image:
+        linear-gradient(rgba(20, 3, 10, 0.55), rgba(20, 3, 10, 0.7)),
+        url('/static/images/curtain.png'),
         linear-gradient(180deg, #1a0410 0%, #0d0208 50%, #15030d 100%) !important;
-    background-attachment: fixed !important;
-    background-color: #0d0208 !important;
+    background-size: cover, cover, cover !important;
+    background-position: center top, center top, center top !important;
+    background-repeat: no-repeat, no-repeat, no-repeat !important;
+    background-attachment: fixed, fixed, fixed !important;
 }
 
 body::before {
@@ -521,17 +524,4 @@ section {
     border: none !important;
     box-shadow: none !important;
     backdrop-filter: none !important;
-}
-/* ========== ZÁVESY AKO POZADIE ========== */
-body {
-    background:
-        /* Overlay pre čitateľnosť */
-        linear-gradient(rgba(20, 3, 10, 0.6), rgba(20, 3, 10, 0.7)),
-        
-        /* Závesy - hlavná vrstva */
-        url('/static/images/curtain.png') center top / cover no-repeat fixed,
-        
-        /* Bordové pozadie ako záloha */
-        linear-gradient(180deg, #2a0613 0%, #15030a 50%, #1e0410 100%) !important;
-    background-color: #15030a !important;
 }
