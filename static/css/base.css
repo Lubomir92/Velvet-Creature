@@ -525,3 +525,16 @@ section {
     box-shadow: none !important;
     backdrop-filter: none !important;
 }
+/* Závesy na mobile */
+@media (max-width: 768px) {
+    body {
+        background-size: 200% auto, 200% auto, 200% auto !important;
+        background-position: center top, center top, center top !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: 280% auto, 280% auto, 280% auto !important;
+    }
+}
