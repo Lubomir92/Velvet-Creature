@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 1000" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="velvetR" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a0613"/>
+      <stop offset="20%" stop-color="#5a0a20"/>
+      <stop offset="50%" stop-color="#8a1030"/>
+      <stop offset="80%" stop-color="#5a0a20"/>
+      <stop offset="100%" stop-color="#2a0613"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M 200,0
+           L 20,0
+           Q 80,250 140,500
+           Q 80,750 20,1000
+           L 200,1000
+           Z"
+        fill="url(#velvetR)"/>
+
+  <path d="M 170,0 Q 180,250 165,500 Q 180,750 170,1000" stroke="rgba(0,0,0,0.4)" stroke-width="6" fill="none"/>
+  <path d="M 130,0 Q 140,250 145,500 Q 140,750 130,1000" stroke="rgba(0,0,0,0.4)" stroke-width="5" fill="none"/>
+  <path d="M 90,0 Q 105,250 125,500 Q 105,750 90,1000" stroke="rgba(0,0,0,0.4)" stroke-width="4" fill="none"/>
+  <path d="M 50,0 Q 70,250 105,500 Q 70,750 50,1000" stroke="rgba(0,0,0,0.3)" stroke-width="3" fill="none"/>
+
+  <path d="M 150,0 Q 160,250 155,500 Q 160,750 150,1000" stroke="rgba(220,60,100,0.25)" stroke-width="8" fill="none"/>
+  <path d="M 70,0 Q 90,250 115,500 Q 90,750 70,1000" stroke="rgba(220,60,100,0.15)" stroke-width="6" fill="none"/>
+
+  <ellipse cx="135" cy="500" rx="22" ry="12"
+           fill="none" stroke="#d4af37" stroke-width="4"/>
+  <ellipse cx="135" cy="500" rx="22" ry="12"
+           fill="none" stroke="#f4d87a" stroke-width="2"/>
+</svg>

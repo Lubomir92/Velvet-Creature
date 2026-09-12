@@ -566,3 +566,43 @@ body .curtain-folds {
     mask-composite: add;
     -webkit-mask-composite: source-over;
 }
+
+/* ========== ZÁVESY – ZVIAZANÉ V STREDE ========== */
+.curtain-left,
+.curtain-right {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 180px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.curtain-left {
+    left: 0;
+    background: url('/static/images/curtain-left.svg') no-repeat left center;
+    background-size: 100% 100%;
+}
+
+.curtain-right {
+    right: 0;
+    background: url('/static/images/curtain-right.svg') no-repeat right center;
+    background-size: 100% 100%;
+}
+
+/* Obsah nad závesmi */
+.navbar,
+main,
+.container,
+footer {
+    position: relative;
+    z-index: 10;
+}
+
+/* Na mobiloch skryť */
+@media (max-width: 768px) {
+    .curtain-left,
+    .curtain-right {
+        display: none !important;
+    }
+}
