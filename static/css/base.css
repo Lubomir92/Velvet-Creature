@@ -559,3 +559,53 @@ section {
     transform: translateY(-4px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
+
+/* ========== JEDNOTNY STYL VSETKYCH KARIET ========== */
+
+/* Zoznam všetkých kariet na stránke */
+.featured-card,
+.shop-card,
+.why-card,
+.quote-box,
+.auth-card,
+.profile-card,
+.order-card,
+.order-box,
+.cart-item,
+.cart-summary,
+.checkout-box,
+.order-summary,
+.product-details,
+.related-card,
+.wishlist-card,
+.review-card,
+.custom-order-card,
+.custom-project-card,
+.category-card,
+.legal-container,
+.admin-card,
+.product-card {
+    background: rgba(40, 8, 20, 0.65) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(180, 40, 80, 0.15) !important;
+    border-radius: 16px !important;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 100, 150, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* Hover efekt pre všetky karty */
+.featured-card:hover,
+.shop-card:hover,
+.why-card:hover,
+.related-card:hover,
+.wishlist-card:hover,
+.review-card:hover,
+.custom-order-card:hover,
+.custom-project-card:hover,
+.product-card:hover {
+    border-color: rgba(180, 40, 80, 0.4) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
