@@ -393,25 +393,6 @@ body {
     background-color: #0d0208 !important;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:
-        radial-gradient(circle at 20% 30%, rgba(180, 30, 70, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(150, 20, 60, 0.08) 0%, transparent 40%);
-    pointer-events: none;
-    z-index: 0;
-    animation: bgGlow 12s ease-in-out infinite;
-}
-
-@keyframes bgGlow {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-}
 
 /* ========== PRIESHLADNE KARTY - VSETKY CASTI STRANKY ========== */
 
