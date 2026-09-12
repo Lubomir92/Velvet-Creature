@@ -524,11 +524,14 @@ section {
 }
 /* ========== ZÁVESY AKO POZADIE ========== */
 body {
-    background-image: 
-        linear-gradient(rgba(20, 3, 10, 0.55), rgba(20, 3, 10, 0.65)),
-        url('/static/images/curtain.png') !important;
-    background-size: cover, cover !important;
-    background-position: center top, center top !important;
-    background-repeat: no-repeat, no-repeat !important;
-    background-attachment: fixed, fixed !important;
+    background:
+        /* Overlay pre čitateľnosť */
+        linear-gradient(rgba(20, 3, 10, 0.6), rgba(20, 3, 10, 0.7)),
+        
+        /* Závesy - hlavná vrstva */
+        url('/static/images/curtain.png') center top / cover no-repeat fixed,
+        
+        /* Bordové pozadie ako záloha */
+        linear-gradient(180deg, #2a0613 0%, #15030a 50%, #1e0410 100%) !important;
+    background-color: #15030a !important;
 }
