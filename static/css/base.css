@@ -619,3 +619,13 @@ section {
     box-shadow: none !important;
     backdrop-filter: none !important;
 }
+/* Custom order karta - rovnaký štýl ako ostatné */
+.custom-order-card {
+    background: rgba(40, 8, 20, 0.65) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(180, 40, 80, 0.15) !important;
+    border-radius: 16px !important;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 100, 150, 0.05) !important;
+}
