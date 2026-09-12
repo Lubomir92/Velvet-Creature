@@ -384,22 +384,11 @@ main {
 }
 
 /* ========== DARK BURGUNDY VELVET THEME ========== */
+/* ========== DARK BURGUNDY VELVET THEME ========== */
 body {
     background:
         /* Jemný svetelný zdroj hore */
         radial-gradient(ellipse at 50% 0%, rgba(180, 30, 70, 0.25) 0%, transparent 55%),
-        
-        /* Záhyby látky - vertikálne */
-        repeating-linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.35) 0px,
-            rgba(0, 0, 0, 0.35) 8px,
-            rgba(120, 15, 45, 0.15) 30px,
-            rgba(180, 30, 70, 0.25) 55px,
-            rgba(120, 15, 45, 0.15) 80px,
-            rgba(0, 0, 0, 0.35) 102px,
-            rgba(0, 0, 0, 0.35) 110px
-        ),
         
         /* Hlbšie tiene pre hĺbku */
         linear-gradient(
