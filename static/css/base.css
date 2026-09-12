@@ -383,16 +383,38 @@ main {
     }
 }
 
-/* ========== DARK BURGUNDY THEME ========== */
+/* ========== DARK BURGUNDY VELVET THEME ========== */
 body {
     background:
-        radial-gradient(ellipse at top, rgba(120, 15, 40, 0.35) 0%, transparent 60%),
-        radial-gradient(ellipse at bottom, rgba(80, 5, 25, 0.4) 0%, transparent 65%),
-        linear-gradient(180deg, #1a0410 0%, #0d0208 50%, #15030d 100%) !important;
+        /* Jemný svetelný zdroj hore */
+        radial-gradient(ellipse at 50% 0%, rgba(180, 30, 70, 0.25) 0%, transparent 55%),
+        
+        /* Záhyby látky - vertikálne */
+        repeating-linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.35) 0px,
+            rgba(0, 0, 0, 0.35) 8px,
+            rgba(120, 15, 45, 0.15) 30px,
+            rgba(180, 30, 70, 0.25) 55px,
+            rgba(120, 15, 45, 0.15) 80px,
+            rgba(0, 0, 0, 0.35) 102px,
+            rgba(0, 0, 0, 0.35) 110px
+        ),
+        
+        /* Hlbšie tiene pre hĺbku */
+        linear-gradient(
+            180deg,
+            #2a0613 0%,
+            #15030a 25%,
+            #1e0410 50%,
+            #15030a 75%,
+            #2a0613 100%
+        ) !important;
     background-attachment: fixed !important;
-    background-color: #0d0208 !important;
+    background-color: #15030a !important;
 }
 
+/* Jemné svetlo prechádzajúce látkou */
 body::before {
     content: "";
     position: fixed;
@@ -401,96 +423,42 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 20% 30%, rgba(180, 30, 70, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(150, 20, 60, 0.08) 0%, transparent 40%);
+        radial-gradient(circle at 25% 20%, rgba(200, 40, 80, 0.1) 0%, transparent 35%),
+        radial-gradient(circle at 75% 60%, rgba(160, 20, 60, 0.08) 0%, transparent 40%);
     pointer-events: none;
     z-index: 0;
-    animation: bgGlow 12s ease-in-out infinite;
+    animation: velvetShimmer 15s ease-in-out infinite;
 }
 
-@keyframes bgGlow {
-    0%, 100% { opacity: 0.6; }
+@keyframes velvetShimmer {
+    0%, 100% { opacity: 0.5; }
     50% { opacity: 1; }
 }
 
-/* ========== PRIESHLADNE KARTY - VSETKY CASTI STRANKY ========== */
-
-/* Hlavna stranka */
+/* Karty a panely - priesvitné bordové */
 .featured-card,
 .why-card,
 .quote-box,
-.hero-logo,
-.category-filter,
-
-/* Produkty */
-.product-card,
-.product-image-wrapper,
+.auth-card,
 .product-details,
 .related-card,
-.product-gallery,
-.main-product-image,
-.thumbnail,
-
-/* Cart */
+.product-image-wrapper,
+.cart-drawer,
+.category-filter,
+.admin-card,
+.legal-container,
+.product-card,
 .cart-item,
 .cart-summary,
-.cart-page .cart-box,
-.cart-drawer,
-
-/* Checkout */
 .checkout-box,
-.checkout-summary,
-.checkout-form,
-.order-summary,
-
-/* Orders */
 .order-card,
-.order-box,
-.order-item,
-.order-detail-box,
-
-/* Accounts */
-.auth-card,
 .profile-card,
-.profile-box,
-.account-box,
-.user-info-box,
-
-/* Custom orders */
-.custom-order-card,
-.custom-order-box,
-.custom-project-card,
-.custom-project-detail,
-.project-card,
-
-/* Wishlist */
 .wishlist-card,
-.wishlist-item,
-
-/* Reviews */
 .review-card,
-.review-item,
-.reviews-list,
-
-/* Legal */
-.legal-container,
-.legal-section,
-
-/* Admin */
-.admin-card,
-.admin-box,
-.dashboard-card,
-
-/* Vseobecne */
-.card,
-.box,
-.panel,
-.content-box,
-.info-box,
-.form-container,
-.form-box {
-    background: rgba(45, 8, 22, 0.7) !important;
-    backdrop-filter: blur(6px);
+.custom-order-card,
+.custom-project-card {
+    background: rgba(40, 8, 20, 0.65) !important;
+    backdrop-filter: blur(8px);
     border: 1px solid rgba(180, 40, 80, 0.15);
     box-shadow:
         0 10px 30px rgba(0, 0, 0, 0.5),
@@ -505,7 +473,15 @@ section {
     background: transparent !important;
 }
 
-/* Navbar a footer nech zostanu ako su, len jemne priehladne */
+/* Logo v hero sekcii bez pozadia */
+.hero-logo {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Navbar a footer */
 .navbar {
     background: rgba(20, 3, 12, 0.92) !important;
     backdrop-filter: blur(20px);
@@ -514,11 +490,4 @@ section {
 .footer {
     background: rgba(20, 3, 12, 0.85) !important;
     backdrop-filter: blur(10px);
-}
-/* Logo v hero sekcii bez pozadia */
-.hero-logo {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
 }
