@@ -539,7 +539,7 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 260px;
+    height: 200px;
     pointer-events: none;
     z-index: 1;
     background: url('/static/images/curtain-top.svg') no-repeat top center;
