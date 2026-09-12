@@ -632,7 +632,7 @@ section {
 /* ========== PAVUČINA HORE ========== */
 .spiderweb-top {
     position: fixed;
-    top: -50px;
+    top: -10px;
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
@@ -650,7 +650,6 @@ section {
     50% { transform: translateX(-50%) rotate(1deg); }
 }
 
-/* Na mobile menšia */
 @media (max-width: 768px) {
     .spiderweb-top {
         width: 150vw;
