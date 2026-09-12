@@ -517,9 +517,21 @@ footer {
 }
 
 /* Na mobiloch skryť */
+/* Závesy na mobile - menšie */
 @media (max-width: 768px) {
     .curtain-left,
     .curtain-right {
-        display: none !important;
+        display: block !important;
+        width: 70px !important;
+        opacity: 0.7;
+    }
+}
+
+/* Závesy na malých mobiloch - ešte menšie */
+@media (max-width: 480px) {
+    .curtain-left,
+    .curtain-right {
+        width: 50px !important;
+        opacity: 0.6;
     }
 }
