@@ -609,3 +609,13 @@ section {
     transform: translateY(-4px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
+
+/* Vnútorné sekcie custom order formulára */
+.engraving-section,
+#printing-fields,
+.custom-order-card > div {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
