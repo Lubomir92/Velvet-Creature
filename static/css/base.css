@@ -528,13 +528,14 @@ section {
 /* Závesy na mobile */
 @media (max-width: 768px) {
     body {
-        background-size: 200% auto, 200% auto, 200% auto !important;
+        background-size: cover, cover, cover !important;
         background-position: center top, center top, center top !important;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        background-size: 280% auto, 280% auto, 280% auto !important;
+        background-size: 150% auto, 150% auto, 150% auto !important;
+        background-position: 30% top, 30% top, 30% top !important;
     }
 }
