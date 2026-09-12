@@ -515,3 +515,10 @@ section {
     background: rgba(20, 3, 12, 0.85) !important;
     backdrop-filter: blur(10px);
 }
+/* Logo v hero sekcii bez pozadia */
+.hero-logo {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
