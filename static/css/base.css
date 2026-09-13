@@ -722,10 +722,11 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('/static/images/card-frame.png') no-repeat center;
+    background: url('/static/images/card-frame.png') no-repeat center center;
     background-size: cover;
     pointer-events: none;
     z-index: 10 !important;
+    transform: scale(1.02);   
 }
 
 .featured-card > * {
