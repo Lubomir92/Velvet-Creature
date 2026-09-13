@@ -86,11 +86,11 @@
         {% trans "New Arrivals" %}
     </h2>
 
-            <div class="featured-grid-wrapper">
+        <div class="featured-grid-wrapper">
         <div class="featured-grid">
 
             {% for product in featured_products %}
-            <a href="{% url 'product_detail' product.slug %}" class="featured-card-link">
+                        <a href="{% url 'product_detail' product.slug %}" class="featured-card-link">
                 <div class="featured-card">
 
                     <div class="product-image-wrapper">
@@ -113,10 +113,9 @@
 
                 </div>
             </a>
-            {% endfor %}
 
             {% for product in featured_products %}
-            <a href="{% url 'product_detail' product.slug %}" class="featured-card-link">
+                        <a href="{% url 'product_detail' product.slug %}" class="featured-card-link">
                 <div class="featured-card">
 
                     <div class="product-image-wrapper">
@@ -139,7 +138,6 @@
 
                 </div>
             </a>
-            {% endfor %}
 
         </div>
     </div>
