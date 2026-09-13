@@ -728,8 +728,19 @@ section {
     z-index: 0;
 }
 
-/* Obsah nad rámom */
-.featured-card > * {
-    position: relative;
-    z-index: 2;
+
+/* Obsah karty pod rámom */
+.featured-card {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+.featured-card::before {
+    z-index: 0 !important;
+}
+
+.product-image-wrapper,
+.featured-info {
+    position: relative !important;
+    z-index: 2 !important;
 }
