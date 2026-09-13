@@ -703,3 +703,30 @@ section {
         opacity: 0.35 !important;
     }
 }
+
+/* TEST: rám na featured-card */
+.featured-card {
+    position: relative !important;
+    background: rgba(40, 8, 20, 0.85) !important;
+    border: none !important;
+    padding: 25px !important;
+    box-shadow: none !important;
+}
+
+.featured-card::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: url('/static/images/card-frame.png') no-repeat center;
+    background-size: 100% 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.featured-card > * {
+    position: relative;
+    z-index: 1;
+}
