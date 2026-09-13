@@ -673,11 +673,11 @@ section {
         background-position: center top, center top, center top !important;
         background-repeat: no-repeat, no-repeat, no-repeat !important;
     }
-}
+
     
     .spiderweb-top {
         width: 100vw !important;
         top: -30px !important;
         opacity: 0.3 !important;
     }
-}
+}  
