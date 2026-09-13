@@ -723,7 +723,7 @@ section {
     right: 0;
     bottom: 0;
     background: url('/static/images/card-frame.png') no-repeat center center;
-    background-size: cover;
+    background-size: 100% 100%;
     pointer-events: none;
     z-index: 10 !important;
     transform: scale(1.02);   
