@@ -827,3 +827,28 @@ section {
         height: 170px !important;
     }
 }
+/* Menšie tlačidlá na mobile */
+@media (max-width: 768px) {
+    .featured-grid .product-buttons {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 5px !important;
+        flex-wrap: wrap !important;
+    }
+
+    .featured-grid .btn-detail,
+    .featured-grid .btn-cart {
+        font-size: 11px !important;
+        padding: 6px 10px !important;
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-grid .btn-detail,
+    .featured-grid .btn-cart {
+        font-size: 10px !important;
+        padding: 5px 8px !important;
+    }
+}
