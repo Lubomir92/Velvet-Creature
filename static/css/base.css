@@ -684,3 +684,22 @@ section {
         opacity: 0.3 !important;
     }
 }  
+/* ========== PAVUČINA - TABLET ========== */
+
+/* Tablet na výšku (portrait) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .spiderweb-top {
+        width: 120vw !important;
+        top: 0 !important;
+        opacity: 0.35 !important;
+    }
+}
+
+/* Tablet na šírku (landscape) */
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+    .spiderweb-top {
+        width: 100vw !important;
+        top: -20px !important;
+        opacity: 0.35 !important;
+    }
+}
