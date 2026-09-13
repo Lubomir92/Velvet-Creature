@@ -704,17 +704,17 @@ section {
     }
 }
 
-/* Rám na featured-card */
+/* ========== RÁM NA KARTE ========== */
 .featured-card {
     position: relative !important;
     background: rgba(40, 8, 20, 0.85) !important;
     border: none !important;
-    padding: 30px !important;
+    padding: 25px !important;
     box-shadow: none !important;
     overflow: visible !important;
+    box-sizing: border-box !important;
 }
 
-/* Rám ako pozadie cez celú kartu */
 .featured-card::before {
     content: "";
     position: absolute;
@@ -725,22 +725,10 @@ section {
     background: url('/static/images/card-frame.png') no-repeat center;
     background-size: 100% 100%;
     pointer-events: none;
-    z-index: 0;
+    z-index: 10 !important;
 }
 
-
-/* Obsah karty pod rámom */
-.featured-card {
-    overflow: visible !important;
-    position: relative !important;
-}
-
-.featured-card::before {
-    z-index: 0 !important;
-}
-
-.product-image-wrapper,
-.featured-info {
-    position: relative !important;
-    z-index: 2 !important;
+.featured-card > * {
+    position: relative;
+    z-index: 1 !important;
 }
