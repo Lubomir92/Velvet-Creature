@@ -852,24 +852,3 @@ section {
         padding: 5px 8px !important;
     }
 }
-/* Karta ako odkaz */
-.featured-card-link {
-    text-decoration: none !important;
-    color: inherit !important;
-    display: block !important;
-    cursor: pointer !important;
-    transition: transform 0.3s;
-}
-
-.featured-card-link:hover {
-    transform: translateY(-4px);
-}
-
-.featured-card-link .featured-card {
-    transition: all 0.3s;
-}
-
-.featured-card-link:hover .featured-card {
-    border-color: rgba(180, 40, 80, 0.4) !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-}
