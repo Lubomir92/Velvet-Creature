@@ -709,12 +709,12 @@ section {
     position: relative !important;
     background: rgba(40, 8, 20, 0.85) !important;
     border: none !important;
-    padding: 0 !important;
+    padding: 30px !important;
     box-shadow: none !important;
     overflow: visible !important;
 }
 
-/* Rám ako pozadie POD obsahom */
+/* Rám ako pozadie cez celú kartu */
 .featured-card::before {
     content: "";
     position: absolute;
@@ -728,7 +728,7 @@ section {
     z-index: 0;
 }
 
-/* Obsah NAD rámom */
+/* Obsah nad rámom */
 .featured-card > * {
     position: relative;
     z-index: 2;
