@@ -669,7 +669,7 @@ section {
 /* Landscape orientácia (otočený mobil/tablet) */
 @media (orientation: landscape) and (max-height: 600px) {
     body {
-        background-size: auto 100%, auto 100%, auto 100% !important;
+        background-size: auto 200%, auto 200%, auto 200% !important;
         background-position: left top, left top, left top !important;
         background-repeat: no-repeat, no-repeat, no-repeat !important;
     }
