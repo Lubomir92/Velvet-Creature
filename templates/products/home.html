@@ -86,84 +86,86 @@
         {% trans "New Arrivals" %}
     </h2>
 
-     <div class="featured-grid">
+        <div class="featured-grid-wrapper">
+        <div class="featured-grid">
 
-        {% for product in featured_products %}
-        <div class="featured-card">
+            {% for product in featured_products %}
+            <div class="featured-card">
 
-            <div class="product-image-wrapper">
+                <div class="product-image-wrapper">
 
-                {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                {% else %}
-                    <div class="no-image">🦇</div>
-                {% endif %}
-
-                {% if product.stock > 0 %}
-                    <span class="stock-badge">{% trans "In Stock" %}</span>
-                {% else %}
-                    <span class="stock-badge sold">{% trans "Sold Out" %}</span>
-                {% endif %}
-
-            </div>
-
-            <div class="featured-info">
-                <h3>{{ product.name }}</h3>
-                <p class="price">€{{ product.price }}</p>
-
-                <div class="product-buttons">
-                    <a href="{% url 'product_detail' product.slug %}" class="btn btn-detail">
-                        {% trans "Detail" %}
-                    </a>
-                    {% if product.stock > 0 %}
-                    <button type="button" class="btn btn-cart" onclick="addToCart({{ product.id }}); return false;">
-                        {% trans "Add to cart" %}
-                    </button>
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                        <div class="no-image">🦇</div>
                     {% endif %}
+
+                    {% if product.stock > 0 %}
+                        <span class="stock-badge">{% trans "In Stock" %}</span>
+                    {% else %}
+                        <span class="stock-badge sold">{% trans "Sold Out" %}</span>
+                    {% endif %}
+
                 </div>
+
+                <div class="featured-info">
+                    <h3>{{ product.name }}</h3>
+                    <p class="price">€{{ product.price }}</p>
+
+                    <div class="product-buttons">
+                        <a href="{% url 'product_detail' product.slug %}" class="btn btn-detail">
+                            {% trans "Detail" %}
+                        </a>
+                        {% if product.stock > 0 %}
+                        <button type="button" class="btn btn-cart" onclick="addToCart({{ product.id }}); return false;">
+                            {% trans "Add to cart" %}
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+
             </div>
+            {% endfor %}
+
+            {% for product in featured_products %}
+            <div class="featured-card">
+
+                <div class="product-image-wrapper">
+
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                        <div class="no-image">🦇</div>
+                    {% endif %}
+
+                    {% if product.stock > 0 %}
+                        <span class="stock-badge">{% trans "In Stock" %}</span>
+                    {% else %}
+                        <span class="stock-badge sold">{% trans "Sold Out" %}</span>
+                    {% endif %}
+
+                </div>
+
+                <div class="featured-info">
+                    <h3>{{ product.name }}</h3>
+                    <p class="price">€{{ product.price }}</p>
+
+                    <div class="product-buttons">
+                        <a href="{% url 'product_detail' product.slug %}" class="btn btn-detail">
+                            {% trans "Detail" %}
+                        </a>
+                        {% if product.stock > 0 %}
+                        <button type="button" class="btn btn-cart" onclick="addToCart({{ product.id }}); return false;">
+                            {% trans "Add to cart" %}
+                        </button>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
 
         </div>
-        {% endfor %}
-
-        {% for product in featured_products %}
-        <div class="featured-card">
-
-            <div class="product-image-wrapper">
-
-                {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                {% else %}
-                    <div class="no-image">🦇</div>
-                {% endif %}
-
-                {% if product.stock > 0 %}
-                    <span class="stock-badge">{% trans "In Stock" %}</span>
-                {% else %}
-                    <span class="stock-badge sold">{% trans "Sold Out" %}</span>
-                {% endif %}
-
-            </div>
-
-            <div class="featured-info">
-                <h3>{{ product.name }}</h3>
-                <p class="price">€{{ product.price }}</p>
-
-                <div class="product-buttons">
-                    <a href="{% url 'product_detail' product.slug %}" class="btn btn-detail">
-                        {% trans "Detail" %}
-                    </a>
-                    {% if product.stock > 0 %}
-                    <button type="button" class="btn btn-cart" onclick="addToCart({{ product.id }}); return false;">
-                        {% trans "Add to cart" %}
-                    </button>
-                    {% endif %}
-                </div>
-            </div>
-
-        </div>
-        {% endfor %}
-
     </div>
     </div>
 
