@@ -734,3 +734,25 @@ section {
     position: relative;
     z-index: 1 !important;
 }
+/* ========== NEKONEČNÝ POSUN KARIET ========== */
+.featured-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 30px;
+    animation: slideCards 30s linear infinite;
+    width: max-content;
+}
+
+@keyframes slideCards {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Zastaví posun pri hoveri (voliteľné) */
+.featured-grid:hover {
+    animation-play-state: paused;
+}
