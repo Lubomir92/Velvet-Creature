@@ -665,3 +665,17 @@ section {
         top: 80px;
     }
 }
+
+/* Landscape orientácia (otočený mobil/tablet) */
+@media (orientation: landscape) and (max-height: 600px) {
+    body {
+        background-size: 140% auto, 140% auto, 140% auto !important;
+        background-position: center top, center top, center top !important;
+    }
+    
+    .spiderweb-top {
+        width: 100vw !important;
+        top: -30px !important;
+        opacity: 0.3 !important;
+    }
+}
