@@ -748,7 +748,7 @@ section {
     display: flex !important;
     flex-wrap: nowrap !important;
     gap: 30px;
-    animation: slideCards 40s linear infinite;
+    animation: slideCards 20s linear infinite;
     width: max-content;
 }
 
