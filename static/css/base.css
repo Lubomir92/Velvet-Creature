@@ -937,3 +937,18 @@ section {
         font-size: 15px !important;
     }
 }
+/* Vycentrovanie názvu a ceny */
+.featured-card-link .featured-info {
+    text-align: center !important;
+    align-items: center !important;
+}
+
+.featured-card-link .featured-info h3 {
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.featured-card-link .price {
+    text-align: center !important;
+    width: 100% !important;
+}
