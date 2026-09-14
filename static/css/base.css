@@ -852,7 +852,7 @@ section {
         padding: 5px 8px !important;
     }
 }
-/* Karta ako klikateľný odkaz */
+/* ========== JEDNOTNÉ USPORIADANIE KARIET ========== */
 .featured-card-link {
     text-decoration: none !important;
     color: inherit !important;
@@ -865,87 +865,75 @@ section {
     transform: translateY(-4px);
 }
 
+/* Karta má pevnú štruktúru */
 .featured-card-link .featured-card {
-    transition: all 0.3s;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
 }
 
-.featured-card-link:hover .featured-card {
-    border-color: rgba(180, 40, 80, 0.4) !important;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-}
-
+/* Info - pevná štruktúra */
 .featured-card-link .featured-info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 15px;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+    padding: 15px !important;
+    min-height: 100px !important;
 }
 
-.featured-card-link .price {
-    margin-top: auto;
-}
-
-/* === MOBILNÉ ÚPRAVY === */
-@media (max-width: 768px) {
-    .featured-grid .featured-card {
-        width: 200px !important;
-        min-width: 200px !important;
-        max-width: 200px !important;
-        height: 340px !important;
-        min-height: 340px !important;
-        max-height: 340px !important;
-    }
-
-    .featured-grid .product-image-wrapper {
-        height: 170px !important;
-        flex-shrink: 0 !important;
-    }
-
-    .featured-grid .featured-info {
-        padding: 8px 10px !important;
-    }
-
-    .featured-grid .featured-info h3 {
-    font-size: 13px !important;
-    line-height: 1.2 !important;
-    max-height: 32px !important;
+/* Názov produktu - max 2 riadky */
+.featured-card-link .featured-info h3 {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+    max-height: 42px !important;
     overflow: hidden !important;
     display: -webkit-box !important;
-    line-clamp: 2 !important;
     -webkit-line-clamp: 2 !important;
+    line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
-    margin-bottom: 5px !important;
+    margin-bottom: 10px !important;
+    color: #e0d7c0 !important;
 }
 
-    .featured-grid .price {
-        font-size: 15px !important;
-        margin: 5px 0 0 0 !important;
+/* Cena - vždy pod názvom */
+.featured-card-link .price {
+    color: #d4af37 !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    margin-top: auto !important;
+}
+
+/* Na mobile - menšie */
+@media (max-width: 768px) {
+    .featured-card-link .featured-info {
+        padding: 10px !important;
+        min-height: 85px !important;
+    }
+
+    .featured-card-link .featured-info h3 {
+        font-size: 14px !important;
+        max-height: 36px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .featured-card-link .price {
+        font-size: 16px !important;
     }
 }
 
 @media (max-width: 480px) {
-    .featured-grid .featured-card {
-        width: 170px !important;
-        min-width: 170px !important;
-        max-width: 170px !important;
-        height: 300px !important;
-        min-height: 300px !important;
-        max-height: 300px !important;
+    .featured-card-link .featured-info {
+        padding: 8px !important;
+        min-height: 75px !important;
     }
 
-    .featured-grid .product-image-wrapper {
-        height: 140px !important;
+    .featured-card-link .featured-info h3 {
+        font-size: 13px !important;
+        max-height: 32px !important;
     }
 
-    .featured-grid .featured-info h3 {
-        font-size: 12px !important;
-        max-height: 28px !important;
-    }
-
-    .featured-grid .price {
-        font-size: 14px !important;
+    .featured-card-link .price {
+        font-size: 15px !important;
     }
 }
