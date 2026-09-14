@@ -852,3 +852,100 @@ section {
         padding: 5px 8px !important;
     }
 }
+/* Karta ako klikateľný odkaz */
+.featured-card-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block !important;
+    cursor: pointer !important;
+    transition: transform 0.3s;
+}
+
+.featured-card-link:hover {
+    transform: translateY(-4px);
+}
+
+.featured-card-link .featured-card {
+    transition: all 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-card-link:hover .featured-card {
+    border-color: rgba(180, 40, 80, 0.4) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.featured-card-link .featured-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 15px;
+}
+
+.featured-card-link .price {
+    margin-top: auto;
+}
+
+/* === MOBILNÉ ÚPRAVY === */
+@media (max-width: 768px) {
+    .featured-grid .featured-card {
+        width: 200px !important;
+        min-width: 200px !important;
+        max-width: 200px !important;
+        height: 340px !important;
+        min-height: 340px !important;
+        max-height: 340px !important;
+    }
+
+    .featured-grid .product-image-wrapper {
+        height: 170px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .featured-grid .featured-info {
+        padding: 8px 10px !important;
+    }
+
+    .featured-grid .featured-info h3 {
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    max-height: 32px !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    line-clamp: 2 !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    margin-bottom: 5px !important;
+}
+
+    .featured-grid .price {
+        font-size: 15px !important;
+        margin: 5px 0 0 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-grid .featured-card {
+        width: 170px !important;
+        min-width: 170px !important;
+        max-width: 170px !important;
+        height: 300px !important;
+        min-height: 300px !important;
+        max-height: 300px !important;
+    }
+
+    .featured-grid .product-image-wrapper {
+        height: 140px !important;
+    }
+
+    .featured-grid .featured-info h3 {
+        font-size: 12px !important;
+        max-height: 28px !important;
+    }
+
+    .featured-grid .price {
+        font-size: 14px !important;
+    }
+}
