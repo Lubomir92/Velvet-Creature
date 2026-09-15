@@ -2,6 +2,9 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 import dj_database_url
+import cloudinary
+
+
 
 load_dotenv()
 
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'accounts',
     "wishlist",
     "reviews",
+    'cloudinary'
 ]
 
 
@@ -186,3 +190,14 @@ DEFAULT_FROM_EMAIL = "Velvet Creature <onboarding@resend.dev>"
 # =========================================================
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# =========================================================
+# CLOUDINARY
+# =========================================================
+
+import cloudinary
+cloudinary.config(
+    cloud_name = os.getenv("CLOUDINARY_CLOUD_NAME"),
+    api_key = os.getenv("CLOUDINARY_API_KEY"),
+    api_secret = os.getenv("CLOUDINARY_API_SECRET")
+)
