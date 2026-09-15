@@ -955,7 +955,7 @@ section {
 /* ========== SVIETNIK VĽAVO DOLE ========== */
 .candle-decoration {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px;
     left: 20px;
     width: 120px;
     height: auto;
