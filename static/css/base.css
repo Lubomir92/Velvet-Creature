@@ -957,7 +957,7 @@ section {
     position: fixed !important;
     bottom: 30px !important;
     left: 20px !important;
-    width: 130px !important;
+    width: 180px !important;
     height: auto !important;
     pointer-events: none !important;
     z-index: 1 !important;
@@ -968,7 +968,7 @@ section {
 /* Na tablete - menšia */
 @media (max-width: 768px) {
     .candle-decoration {
-        width: 110px !important;
+        width: 140px !important;
         bottom: 20px !important;
         left: 15px !important;
     }
@@ -977,7 +977,7 @@ section {
 /* Na malom mobile - ešte menšia, ale väčšia ako predtým */
 @media (max-width: 480px) {
     .candle-decoration {
-        width: 90px !important;
+        width: 120px !important;
         bottom: 15px !important;
         left: 10px !important;
     }
