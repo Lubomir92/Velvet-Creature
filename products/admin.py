@@ -58,8 +58,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 
-
-
 @admin.register(ProductImage)
 class ProductImageAdmin(admin.ModelAdmin):
 
@@ -67,6 +65,3 @@ class ProductImageAdmin(admin.ModelAdmin):
         "product",
         "created",
     )
-    
-    list_filter = ("created",)  # 👈 Pridaj toto
-    search_fields = ("product__name",)  # 👈 A toto

@@ -76,7 +76,11 @@ class Product(models.Model):
     featured = models.BooleanField(
         default=False
     )
-
+    video_url = models.URLField(
+        blank=True,
+        null=True,
+        verbose_name="Video URL (Cloudinary)"
+    )
 
     # ==========================================
     # CATEGORY
@@ -138,3 +142,5 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return f"{self.product.name} image"
+
+
