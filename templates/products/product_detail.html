@@ -51,6 +51,19 @@
 
                 {% endif %}
 
+        {% if product.video_url %}
+<div class="product-video" style="margin-top: 20px;">
+    <video controls width="100%" style="
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        display: block;
+    ">
+        <source src="{{ product.video_url }}" type="video/mp4">
+        Váš prehliadač nepodporuje video.
+    </video>
+</div>
+{% endif %}
+
 
 
             </div>
