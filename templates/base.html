@@ -66,7 +66,7 @@
 <!-- PAVUČINA HORE -->
 <img src="{% static 'images/spiderweb.png' %}" alt="" class="spiderweb-top">
 
-<img src="{% static 'images/candle.png' %}" alt="Candle" class="candle-decoration">
+
 
 <!-- LIETAJÚCE NETOPIERE -->
 <div id="batsContainer" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden;"></div>
@@ -348,6 +348,8 @@ document.addEventListener('click', function(event) {
     });
 })();
 </script>
+
+<img src="{% static 'images/candle.png' %}" alt="Candle" class="candle-decoration">
 {% include "includes/footer.html" %}
 </body>
 </html>
