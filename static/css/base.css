@@ -954,42 +954,31 @@ section {
 }
 /* ========== SVIETNIK VĽAVO DOLE ========== */
 .candle-decoration {
-    position: fixed;
-    bottom: 80px;
-    left: 20px;
-    width: 120px;
-    height: auto;
-    pointer-events: none;
-    z-index: 5;
+    position: fixed !important;
+    bottom: 30px !important;
+    left: 20px !important;
+    width: 130px !important;
+    height: auto !important;
+    pointer-events: none !important;
+    z-index: 100 !important;
     filter: drop-shadow(0 0 20px rgba(255, 180, 50, 0.5));
     animation: candleFlicker 3s ease-in-out infinite;
 }
 
-/* Jemné blikanie sviečky */
-@keyframes candleFlicker {
-    0%, 100% {
-        filter: drop-shadow(0 0 20px rgba(255, 180, 50, 0.5));
-        transform: scale(1);
-    }
-    50% {
-        filter: drop-shadow(0 0 30px rgba(255, 180, 50, 0.8));
-        transform: scale(1.02);
-    }
-}
-
-/* Na mobile menší */
+/* Na tablete - menšia */
 @media (max-width: 768px) {
     .candle-decoration {
-        width: 80px;
-        bottom: 15px;
-        left: 15px;
+        width: 110px !important;
+        bottom: 20px !important;
+        left: 15px !important;
     }
 }
 
+/* Na malom mobile - ešte menšia, ale väčšia ako predtým */
 @media (max-width: 480px) {
     .candle-decoration {
-        width: 60px;
-        bottom: 10px;
-        left: 10px;
+        width: 90px !important;
+        bottom: 15px !important;
+        left: 10px !important;
     }
 }
