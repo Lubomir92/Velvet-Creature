@@ -99,6 +99,7 @@
 
 
 
+                <a href="{% url 'product_detail' product.slug %}" style="text-decoration: none; color: inherit; display: block;">
         <div class="shop-card">
 
 
@@ -193,12 +194,11 @@
 
 
 
-                        <a href="#"
+                                                <a href="#"
    class="wishlist-btn"
    data-product="{{ product.id }}"
-   onclick="toggleWishlist(event, {{ product.id }})"
+   onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist(event, {{ product.id }});"
    title="{% trans 'Wishlist' %}">
-
 
 
     <img src="{% static 'icons/pumpkin.svg' %}"
@@ -284,9 +284,9 @@
 
 
 
-                    <button type="button"
+                                        <button type="button"
                             class="btn secondary"
-                            onclick="addToCart({{ product.id }}); return false;">
+                            onclick="event.preventDefault(); event.stopPropagation(); addToCart({{ product.id }}); return false;">
 
 
 
@@ -303,17 +303,14 @@
 
 
 
-                </div>
-
-
-
+                               </div>
 
             </div>
 
-
-
-
         </div>
+        </a>
+
+        {% endfor %}
 
 
 
