@@ -982,20 +982,3 @@ section {
         left: 10px !important;
     }
 }
-/* Shop karta ako klikateľný odkaz */
-.shop-card-link {
-    text-decoration: none !important;
-    color: inherit !important;
-    display: block !important;
-    cursor: pointer !important;
-    transition: transform 0.3s;
-}
-
-.shop-card-link:hover {
-    transform: translateY(-4px);
-}
-
-.shop-card-link .shop-card {
-    transition: all 0.3s;
-    height: 100%;
-}
