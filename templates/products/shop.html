@@ -100,7 +100,7 @@
 
 
                 <a href="{% url 'product_detail' product.slug %}" style="text-decoration: none; color: inherit; display: block;">
-        <div class="shop-card">
+       <div class="shop-card" onclick="window.location.href='{% url 'product_detail' product.slug %}'" style="cursor: pointer;">
 
 
 
@@ -310,7 +310,7 @@
         </div>
         </a>
 
-        {% endfor %}
+        
 
 
 
