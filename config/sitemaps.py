@@ -29,4 +29,4 @@ class ProductSitemap(Sitemap):
         return Product.objects.all()
 
     def lastmod(self, obj):
-        return obj.updated
+        return obj.created
